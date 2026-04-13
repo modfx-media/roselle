@@ -28,7 +28,7 @@ export default function Hero() {
 
   return (
     <div id="hero" data-section="hero">
-      <section className="hero-section" style={{ position: "relative" }}>
+      <section className="hero-section">
         <div className="hero-grid-bg" aria-hidden="true" />
 
         <div className="site-container" style={{ position: "relative", zIndex: 1 }}>

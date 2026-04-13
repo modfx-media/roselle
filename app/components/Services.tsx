@@ -4,7 +4,7 @@ import SpotlightCard from "./motion/SpotlightCard";
 import MagneticButton from "./motion/MagneticButton";
 import ParallaxImage from "./motion/ParallaxImage";
 
-const services = [
+const SERVICES = [
   {
     title: "Chiropractic Care",
     desc: "Restore spinal alignment and mobility through precise, gentle adjustments. Relief from back pain, neck pain, sciatica, and more.",
@@ -54,24 +54,32 @@ export default function Services() {
     <div id="features" data-section="features">
       <section className="services-section">
         <div className="site-container">
+
           <RevealSection>
             <div className="services-header">
               <div>
-                <h2 className="services-title">Comprehensive Care,<br />Designed Around You</h2>
-                <p className="services-sub">A full spectrum of holistic services to resolve pain and restore function.</p>
+                <p className="section-label">Our Services</p>
+                <h2 className="services-title">
+                  Comprehensive Care,<br />Designed Around You
+                </h2>
+                <p className="services-sub">
+                  A full spectrum of holistic services to resolve pain and restore function.
+                </p>
               </div>
-              <MagneticButton onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+              <MagneticButton
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              >
                 Schedule a Consultation
               </MagneticButton>
             </div>
           </RevealSection>
 
           <div className="services-grid">
-            {services.map((s, i) => (
-              <RevealSection key={s.title} delay={i * 0.08}>
+            {SERVICES.map((s, i) => (
+              <RevealSection key={s.title} delay={i * 0.07}>
                 <SpotlightCard className="service-card">
                   <div className="service-card-img">
-                    <ParallaxImage src={s.img} alt={s.title} speed={0.08} />
+                    <ParallaxImage src={s.img} alt={s.title} speed={0.07} />
                   </div>
                   <div className="service-card-body">
                     <div className="service-tags">
@@ -86,11 +94,11 @@ export default function Services() {
                       style={{
                         fontSize: "var(--text-xs)",
                         color: "var(--fg)",
-                        opacity: 0.6,
-                        marginTop: "var(--s1)",
-                        display: "inline-block",
-                        borderBottom: "1px solid rgba(42,41,40,0.25)",
+                        opacity: 0.55,
+                        borderBottom: "1px solid rgba(42,41,40,0.2)",
                         paddingBottom: "1px",
+                        display: "inline-block",
+                        marginTop: "auto",
                         transition: "opacity 0.2s",
                       }}
                     >
@@ -101,6 +109,7 @@ export default function Services() {
               </RevealSection>
             ))}
           </div>
+
         </div>
       </section>
     </div>
