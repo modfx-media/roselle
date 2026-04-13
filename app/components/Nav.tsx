@@ -23,45 +23,24 @@ export default function Nav() {
       <nav
         role="navigation"
         aria-label="Main navigation"
-        style={{ position: "fixed", top: "var(--s2)", left: 0, right: 0, zIndex: 100 }}
+        className="fixed top-s2 left-0 right-0 z-100"
       >
-        {/* ── Nav bar ── */}
-        <div style={{
-          width: "100%",
-          maxWidth: "var(--max-w)",
-          margin: "0 auto",
-          padding: "0 var(--s4)",
-          height: "var(--nav-h)",
-          backgroundColor: "var(--card-bg)",
-          borderRadius: "var(--radius-xl)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          backdropFilter: "blur(8px)",
-          WebkitBackdropFilter: "blur(8px)",
-          position: "relative",
-        }}>
+        <div className="w-full max-w-max-w mx-auto px-s4 h-nav-h bg-card-bg rounded-xl
+                        flex items-center justify-between backdrop-blur-sm relative">
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            style={{
-              background: "none", border: "none", cursor: "pointer", padding: 0,
-              fontFamily: "var(--font-libre-baskerville, Georgia, serif)",
-              fontSize: "var(--text-xl)", fontWeight: 500, color: "var(--fg)",
-            }}
+            className="bg-transparent border-none cursor-pointer p-0
+                       font-serif text-xl font-medium text-fg"
             aria-label="Go to top"
           >
             Roselle Center
           </button>
 
           {/* Desktop links */}
-          <div className="nav-links" style={{ display: "flex", alignItems: "center", gap: "var(--s4)" }}>
+          <div className="hidden md:flex items-center gap-s4">
             {LINKS.map(l => (
-              <button
-                key={l.label}
-                className="nav-link"
-                onClick={() => go(l.id)}
-              >
+              <button key={l.label} className="nav-link" onClick={() => go(l.id)}>
                 {l.label}
               </button>
             ))}
@@ -74,46 +53,26 @@ export default function Nav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="navigation-menu"
-            className="show-mobile"
-            style={{
-              position: "absolute",
-              top: "50%", right: "var(--s3)",
-              transform: "translateY(-50%)",
-              width: 40, height: 40,
-              background: open ? "var(--fg)" : "transparent",
-              border: "none",
-              borderRadius: "var(--radius-md)",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "background 0.3s ease",
-              zIndex: 10,
-            }}
+            className="md:hidden absolute top-1/2 right-s3 -translate-y-1/2
+                       w-10 h-10 border-none rounded-md cursor-pointer
+                       flex items-center justify-center transition-colors duration-300 z-10"
+            style={{ background: open ? "var(--color-fg)" : "transparent" }}
           >
             <motion.span
               animate={open ? { rotate: 45, y: 0 } : { rotate: 0, y: -4 }}
               transition={{ duration: 0.3, ease: [0.5, 0.5, 0, 1] }}
-              style={{
-                display: "block", position: "absolute",
-                width: "40%", height: "2px",
-                background: open ? "var(--card-bg)" : "var(--fg)",
-                borderRadius: "1px",
-              }}
+              className="block absolute w-[40%] h-0.5 rounded-sm"
+              style={{ background: open ? "var(--color-card-bg)" : "var(--color-fg)" }}
             />
             <motion.span
               animate={open ? { rotate: -45, y: 0 } : { rotate: 0, y: 4 }}
               transition={{ duration: 0.3, ease: [0.5, 0.5, 0, 1] }}
-              style={{
-                display: "block", position: "absolute",
-                width: "40%", height: "2px",
-                background: open ? "var(--card-bg)" : "var(--fg)",
-                borderRadius: "1px",
-              }}
+              className="block absolute w-[40%] h-0.5 rounded-sm"
+              style={{ background: open ? "var(--color-card-bg)" : "var(--color-fg)" }}
             />
           </button>
 
-          {/* Dark dropdown */}
+          {/* Dropdown menu */}
           <AnimatePresence>
             {open && (
               <motion.div
@@ -122,29 +81,13 @@ export default function Nav() {
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.85, y: -8 }}
                 transition={{ duration: 0.35, ease: [0.5, 0.5, 0, 1] }}
-                style={{
-                  position: "absolute",
-                  top: "calc(100% + 8px)", right: 0,
-                  width: "220px",
-                  borderRadius: "var(--radius-xl)",
-                  padding: "var(--s3)",
-                  transformOrigin: "top right",
-                  zIndex: 200,
-                  boxShadow: "0 20px 40px -8px rgba(42,41,40,0.35)",
-                }}
-                className="nav-menu-dropdown"
+                className="nav-menu-dropdown absolute top-[calc(100%+8px)] right-0
+                           w-[220px] rounded-xl p-s3 origin-top-right z-200
+                           shadow-[0_20px_40px_-8px_rgba(42,41,40,0.35)]"
               >
-                <p style={{
-                  fontSize: "var(--text-xl)",
-                  color: "var(--card-bg)",
-                  marginBottom: "var(--s3)",
-                  fontFamily: "var(--font-libre-baskerville, Georgia, serif)",
-                  fontWeight: 500,
-                }}>
-                  Menu
-                </p>
+                <p className="text-xl text-bg mb-s3 font-serif font-medium">Menu</p>
 
-                <ul role="menu" style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "var(--s2)" }}>
+                <ul role="menu" className="list-none m-0 p-0 flex flex-col gap-s2">
                   {LINKS.map((l, i) => (
                     <motion.li
                       key={l.label}
@@ -156,27 +99,18 @@ export default function Nav() {
                       <button
                         aria-label={`Navigate to ${l.label}`}
                         onClick={() => go(l.id)}
-                        style={{
-                          display: "flex", justifyContent: "space-between", alignItems: "center",
-                          width: "100%", background: "none", border: "none",
-                          cursor: "pointer", padding: 0,
-                        }}
+                        className="flex justify-between items-center w-full bg-transparent
+                                   border-none cursor-pointer p-0"
                       >
-                        <span style={{ fontSize: "var(--text-base)", color: "var(--card-bg)" }}>
-                          {l.label}
-                        </span>
-                        <span style={{
-                          width: 7, height: 7, borderRadius: "50%",
-                          backgroundColor: "var(--card-bg)", flexShrink: 0, opacity: 0.7,
-                        }} />
+                        <span className="text-base text-bg">{l.label}</span>
+                        <span className="w-[7px] h-[7px] rounded-full bg-bg shrink-0 opacity-70" />
                       </button>
                     </motion.li>
                   ))}
                 </ul>
 
-                {/* Phone in menu */}
-                <div style={{ marginTop: "var(--s3)", paddingTop: "var(--s2)", borderTop: "1px solid rgba(245,244,239,0.12)" }}>
-                  <a href="tel:+17036987117" style={{ fontSize: "var(--text-sm)", color: "rgba(245,244,239,0.6)" }}>
+                <div className="mt-s3 pt-s2 border-t border-white/[0.12]">
+                  <a href="tel:+17036987117" className="text-sm" style={{ color: "rgba(245,244,239,0.6)" }}>
                     (703) 698-7117
                   </a>
                 </div>
@@ -185,11 +119,6 @@ export default function Nav() {
           </AnimatePresence>
         </div>
       </nav>
-
-      <style>{`
-        @media (min-width: 769px) { .show-mobile { display: none !important; } }
-        @media (max-width: 768px) { .nav-links { display: none !important; } }
-      `}</style>
     </>
   );
 }

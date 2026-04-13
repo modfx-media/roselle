@@ -44,43 +44,53 @@ const REVIEWS = [
 export default function Testimonials() {
   return (
     <div id="testimonials" data-section="testimonials">
-      <section className="testimonials-section">
-        <div className="site-container">
+      <section className="bg-fg py-section-py">
+        <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 
           <RevealSection>
-            <div className="testimonials-header">
-              <p className="section-label" style={{ justifyContent: "center", color: "rgba(198,177,128,0.8)" }}>
+            <div className="text-center mb-s8">
+              <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans justify-center"
+                style={{ color: "rgba(198,177,128,0.8)" }}>
                 Patient Stories
               </p>
-              <h2>What Our Patients Say</h2>
-              <p>4.5★ on Google &nbsp;·&nbsp; 52 reviews &nbsp;·&nbsp; Fairfax, VA</p>
+              <h2 className="text-fluid-4xl text-bg tracking-tight mb-s2">What Our Patients Say</h2>
+              <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>
+                4.5&#9733; on Google &nbsp;&middot;&nbsp; 52 reviews &nbsp;&middot;&nbsp; Fairfax, VA
+              </p>
             </div>
           </RevealSection>
 
-          <div className="testimonials-grid">
+          <div className="grid grid-cols-2 gap-s4 max-md:grid-cols-1">
             {REVIEWS.map((t, i) => (
               <RevealSection key={t.name} delay={i * 0.1}>
-                <SpotlightCard className="testimonial-card">
-                  <div className="testimonial-body">
+                <SpotlightCard className="bg-card-bg rounded-xl overflow-hidden grid grid-cols-2 min-h-[300px]
+                                          max-md:grid-cols-1">
+                  <div className="p-s4 flex flex-col justify-between gap-s3">
                     <div>
-                      <span className="testimonial-category">{t.cat}</span>
-                      <h3>{t.title}</h3>
-                      <blockquote>&ldquo;{t.quote}&rdquo;</blockquote>
+                      <span className="inline-block rounded-full py-0.5 px-2.5 text-xs text-fg w-fit mb-s1"
+                        style={{ background: "rgba(42,41,40,0.08)" }}>{t.cat}</span>
+                      <h3 className="text-xl text-fg mb-s2">{t.title}</h3>
+                      <blockquote className="text-sm leading-relaxed italic"
+                        style={{ color: "rgba(42,41,40,0.7)" }}>
+                        &ldquo;{t.quote}&rdquo;
+                      </blockquote>
                     </div>
-                    <div className="testimonial-author">
-                      <div className="testimonial-avatar">
+                    <div className="flex items-center gap-s2 mt-auto pt-s2"
+                      style={{ borderTop: "1px solid rgba(42,41,40,0.08)" }}>
+                      <div className="w-[38px] h-[38px] rounded-md overflow-hidden shrink-0 bg-fg relative">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={t.av} alt={t.name} loading="lazy" />
+                        <img src={t.av} alt={t.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                       </div>
                       <div>
-                        <p className="testimonial-author-name">{t.name}</p>
-                        <p className="testimonial-author-date">{t.date}</p>
+                        <p className="text-sm font-semibold text-fg">{t.name}</p>
+                        <p className="text-xs mt-0.5" style={{ color: "rgba(42,41,40,0.5)" }}>{t.date}</p>
                       </div>
                     </div>
                   </div>
-                  <div className="testimonial-image">
+                  <div className="relative max-md:min-h-[220px]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={t.img} alt="" aria-hidden="true" loading="lazy" />
+                    <img src={t.img} alt="" aria-hidden="true" loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                 </SpotlightCard>
               </RevealSection>
@@ -88,20 +98,15 @@ export default function Testimonials() {
           </div>
 
           <RevealSection delay={0.25}>
-            <div style={{ textAlign: "center", marginTop: "var(--s8)" }}>
+            <div className="text-center mt-s8">
               <a
                 href="https://www.google.com/maps/place/Roselle+Center+for+Healing"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  fontSize: "var(--text-sm)",
-                  color: "rgba(245,244,239,0.5)",
-                  borderBottom: "1px solid rgba(245,244,239,0.2)",
-                  paddingBottom: "2px",
-                  transition: "color 0.2s",
-                }}
+                className="text-sm pb-0.5 transition-colors duration-200"
+                style={{ color: "rgba(245,244,239,0.5)", borderBottom: "1px solid rgba(245,244,239,0.2)" }}
               >
-                View all reviews on Google →
+                View all reviews on Google &rarr;
               </a>
             </div>
           </RevealSection>

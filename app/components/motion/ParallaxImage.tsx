@@ -21,7 +21,7 @@ export default function ParallaxImage({ src, alt, className = "", speed = 0.15 }
   const y = useTransform(scrollYProgress, [0, 1], [`${speed * -100}%`, `${speed * 100}%`]);
 
   return (
-    <div ref={ref} className={`hero-parallax-wrap ${className}`} style={{ overflow: "hidden" }}>
+    <div ref={ref} className={`hero-parallax-wrap ${className}`} style={{ overflow: "hidden", position: "relative" }}>
       <motion.img
         src={src}
         alt={alt}

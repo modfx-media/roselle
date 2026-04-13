@@ -36,36 +36,45 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer id="footer" className="footer-section">
-      {/* Faded hero image blending into dark */}
+    <footer id="footer" className="bg-fg">
+      {/* Faded hero image */}
       <div className="footer-image-wrap">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&h=500&fit=crop"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
+          alt="" aria-hidden="true" loading="lazy"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      <div className="footer-inner">
-        <div className="site-container">
+      <div className="pt-s8 pb-s6">
+        <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 
-          <div className="footer-top">
+          <div className="grid grid-cols-[280px_1fr] gap-s8 mb-s8 pb-s8
+                          max-lg:grid-cols-1 max-lg:gap-s6"
+            style={{ borderBottom: "1px solid rgba(245,244,239,0.1)" }}>
             {/* Brand column */}
             <div>
-              <p className="footer-brand">Roselle Center<br />for Healing</p>
-              <p className="footer-tagline">
+              <p className="text-2xl text-bg font-serif font-medium leading-snug">
+                Roselle Center<br />for Healing
+              </p>
+              <p className="text-sm mt-s2 leading-relaxed" style={{ color: "rgba(245,244,239,0.4)" }}>
                 Holistic chiropractic &amp; integrative wellness<br />in Fairfax, VA.
               </p>
-              <div className="footer-contact-info">
-                <a href="tel:+17036987117">(703) 698-7117</a>
-                <a href="mailto:rosellecare@gmail.com">rosellecare@gmail.com</a>
-                <p>8500 Executive Park Ave, Suite 300<br />Fairfax, VA 22031</p>
+              <div className="mt-s3 flex flex-col gap-1.5">
+                <a href="tel:+17036987117" className="text-sm transition-colors duration-200 hover:text-bg"
+                  style={{ color: "rgba(245,244,239,0.55)" }}>(703) 698-7117</a>
+                <a href="mailto:rosellecare@gmail.com" className="text-sm transition-colors duration-200 hover:text-bg"
+                  style={{ color: "rgba(245,244,239,0.55)" }}>rosellecare@gmail.com</a>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
+                  8500 Executive Park Ave, Suite 300<br />Fairfax, VA 22031
+                </p>
               </div>
-              <div className="footer-social">
+              <div className="flex gap-s3 flex-wrap mt-s3">
                 {SOCIAL.map(s => (
-                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer">
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                    className="text-xs transition-colors duration-200 hover:text-bg"
+                    style={{ color: "rgba(245,244,239,0.4)" }}>
                     {s.label}
                   </a>
                 ))}
@@ -73,17 +82,20 @@ export default function Footer() {
             </div>
 
             {/* Link columns */}
-            <div className="footer-links-row">
+            <div className="grid grid-cols-3 gap-s6 max-md:grid-cols-2 max-md:gap-s4
+                            max-[480px]:grid-cols-1">
               {Object.entries(LINKS).map(([group, links]) => (
-                <div key={group} className="footer-col">
-                  <span className="footer-col-title">{group}</span>
+                <div key={group} className="flex flex-col gap-s2">
+                  <span className="text-xs tracking-widest uppercase mb-s1"
+                    style={{ color: "rgba(245,244,239,0.35)" }}>{group}</span>
                   {links.map(l => (
                     <a
                       key={l.label}
                       href={l.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="footer-link"
+                      className="text-sm transition-colors duration-200 hover:text-bg"
+                      style={{ color: "rgba(245,244,239,0.6)" }}
                     >
                       {l.label}
                     </a>
@@ -93,17 +105,17 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="footer-bottom">
-            <span className="footer-copy">
-              © {year} Roselle Center for Healing · Fairfax, VA
+          <div className="flex justify-between items-center gap-s4 flex-wrap">
+            <span className="text-xs" style={{ color: "rgba(245,244,239,0.3)" }}>
+              &copy; {year} Roselle Center for Healing &middot; Fairfax, VA
             </span>
-            <div style={{ display: "flex", gap: "var(--s4)" }}>
-              <a href="https://www.rosellecare.com/contact" target="_blank" rel="noopener noreferrer" className="footer-link">
-                Contact
-              </a>
-              <a href="https://www.rosellecare.com/sitemap" target="_blank" rel="noopener noreferrer" className="footer-link">
-                Sitemap
-              </a>
+            <div className="flex gap-s4">
+              <a href="https://www.rosellecare.com/contact" target="_blank" rel="noopener noreferrer"
+                className="text-sm transition-colors duration-200 hover:text-bg"
+                style={{ color: "rgba(245,244,239,0.6)" }}>Contact</a>
+              <a href="https://www.rosellecare.com/sitemap" target="_blank" rel="noopener noreferrer"
+                className="text-sm transition-colors duration-200 hover:text-bg"
+                style={{ color: "rgba(245,244,239,0.6)" }}>Sitemap</a>
             </div>
           </div>
 
