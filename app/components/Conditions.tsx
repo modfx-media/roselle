@@ -6,12 +6,12 @@ import SplitReveal from "./motion/SplitReveal";
 
 // dotX/dotY: % of the 1400x583 rendered image container
 const REGIONS = [
-  { label: "Head & Neck",         sub: "Cervical · Tension",      href: "https://www.rosellecare.com/neck-pain",     dotX: 75, dotY: 18 },
-  { label: "Upper Back",          sub: "Thoracic · Postural",     href: "https://www.rosellecare.com/back-pain",     dotX: 76, dotY: 32 },
-  { label: "Shoulder & Clavicle", sub: "Rotator · Impingement",   href: "https://www.rosellecare.com/shoulder-pain", dotX: 68, dotY: 38 },
-  { label: "Mid-Back",            sub: "Thoracic · Rib",          href: "https://www.rosellecare.com/back-pain",     dotX: 77, dotY: 52 },
-  { label: "Lower Back",          sub: "Lumbar · Sacral",         href: "https://www.rosellecare.com/back-pain",     dotX: 76, dotY: 68 },
-  { label: "Elbow, Hand & Wrist", sub: "Carpal · Tennis · Nerve", href: "https://www.rosellecare.com/shoulder-pain", dotX: 88, dotY: 60 },
+  { label: "Head & Neck",         sub: "Cervical · Tension",      href: "https://www.rosellecare.com/neck-pain",     dotX: 61, dotY: 28 },
+  { label: "Upper Back",          sub: "Thoracic · Postural",     href: "https://www.rosellecare.com/back-pain",     dotX: 62, dotY: 38 },
+  { label: "Shoulder & Clavicle", sub: "Rotator · Impingement",   href: "https://www.rosellecare.com/shoulder-pain", dotX: 70, dotY: 50 },
+  { label: "Mid-Back",            sub: "Thoracic · Rib",          href: "https://www.rosellecare.com/back-pain",     dotX: 63, dotY: 60 },
+  { label: "Lower Back",          sub: "Lumbar · Sacral",         href: "https://www.rosellecare.com/back-pain",     dotX: 64, dotY: 68 },
+  { label: "Elbow, Hand & Wrist", sub: "Carpal · Tennis · Nerve", href: "https://www.rosellecare.com/shoulder-pain", dotX: 70, dotY: 90 },
 ];
 
 const IMG_W = 1400;
@@ -126,6 +126,19 @@ export default function Conditions() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                    animate={{
+                      boxShadow: act
+                        ? ["0 0 12px rgba(198,177,128,0.5)", "0 0 35px rgba(198,177,128,1)", "0 0 12px rgba(198,177,128,0.5)"]
+                        : ["0 0 4px rgba(198,177,128,0.0)", "0 0 18px rgba(198,177,128,0.4)", "0 0 4px rgba(198,177,128,0.0)"],
+                      transition: {
+                        boxShadow: {
+                          duration: act ? 1.0 : 2.8,
+                          repeat: Infinity,
+                          delay: act ? 0 : i * 0.45,
+                          ease: "easeInOut",
+                        },
+                      },
+                    }}
                   >
                     <p className="text-xs font-semibold tracking-widest uppercase"
                       style={{ color: act ? "rgba(245,244,239,0.95)" : "rgba(245,244,239,0.65)" }}>
@@ -173,18 +186,32 @@ export default function Conditions() {
                     onMouseEnter={() => { setActive(r.label); recalc(); }}
                     onMouseLeave={() => setActive(null)}
                   >
+                    {/* Always-on pulse ring */}
+                    <motion.div
+                      className="absolute rounded-full"
+                      animate={{ scale: [1, 2.8, 1], opacity: [0.6, 0, 0.6] }}
+                      transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                      style={{ width: 10, height: 10, top: -5, left: -5,
+                        background: act ? "rgba(198,177,128,0.9)" : "rgba(255,255,255,0.5)" }}
+                    />
+                    {/* Extra ring on hover */}
                     {act && (
                       <motion.div className="absolute rounded-full"
-                        initial={{ scale: 0.5, opacity: 0.8 }}
-                        animate={{ scale: 3, opacity: 0 }}
-                        transition={{ duration: 0.9, repeat: Infinity }}
-                        style={{ width: 10, height: 10, top: -5, left: -5, background: "rgba(198,177,128,0.8)" }} />
+                        initial={{ scale: 0.5, opacity: 0.9 }}
+                        animate={{ scale: 4, opacity: 0 }}
+                        transition={{ duration: 0.8, repeat: Infinity }}
+                        style={{ width: 10, height: 10, top: -5, left: -5, background: "rgba(198,177,128,1)" }} />
                     )}
                     <motion.div
                       animate={{
                         width: act ? 10 : 7, height: act ? 10 : 7,
-                        background: act ? "#c6b180" : "rgba(255,255,255,0.7)",
-                        boxShadow: act ? "0 0 12px rgba(198,177,128,1)" : "0 0 4px rgba(255,255,255,0.4)",
+                        background: act ? "#c6b180" : "rgba(255,255,255,0.85)",
+                        boxShadow: act
+                          ? ["0 0 8px rgba(198,177,128,0.8)", "0 0 24px rgba(198,177,128,1)", "0 0 8px rgba(198,177,128,0.8)"]
+                          : ["0 0 4px rgba(255,255,255,0.4)", "0 0 12px rgba(255,255,255,0.8)", "0 0 4px rgba(255,255,255,0.4)"],
+                        transition: {
+                          boxShadow: { duration: act ? 1.0 : 2.0, repeat: Infinity, ease: "easeInOut" },
+                        },
                       }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       style={{ borderRadius: "2px" }}
