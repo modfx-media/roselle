@@ -38,11 +38,11 @@ export default function Contact() {
         {/* ── Full-bleed background image with parallax ── */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.img
-            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1800&h=1200&fit=crop"
+            src="/1771.jpg"
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover"
-            style={{ y: imgY, scale: 1.12, filter: "brightness(0.22) saturate(0.6)" }}
+            style={{ y: imgY, scale: 1.12, filter: "brightness(0.28) saturate(0.7)" }}
           />
           {/* Vignette */}
           <div className="absolute inset-0"

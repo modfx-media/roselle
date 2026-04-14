@@ -11,42 +11,42 @@ const SERVICES = [
     title: "Chiropractic Care",
     desc: "Restore spinal alignment and mobility through precise, gentle adjustments. Relief from back pain, neck pain, sciatica, and more.",
     tags: ["Spinal Alignment", "Pain Relief", "Adjustments"],
-    img: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
+    img: "/services/man-medical-office-physiotherapist-is-rehabilitating-back.jpg",
     href: "https://www.rosellecare.com/services/chiropractic.html",
   },
   {
     title: "Acupuncture",
     desc: "Support healing, balance energy, and address chronic conditions through traditional acupuncture therapy.",
     tags: ["Energy Balance", "Chronic Pain", "Healing"],
-    img: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&h=600&fit=crop",
+    img: "/services/close-up-cupping-therapy-experience.jpg",
     href: "https://www.rosellecare.com/services/acupuncture.html",
   },
   {
-    title: "Massage Therapy",
-    desc: "Relieve tension, reduce stress, and support your body's natural healing with therapeutic massage.",
-    tags: ["Relaxation", "Tension Relief", "Recovery"],
-    img: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=600&fit=crop",
-    href: "https://www.rosellecare.com/services/massage-therapy.html",
-  },
-  {
-    title: "Applied Kinesiology",
+    title: "Applied Kinesiology (AK)",
     desc: "A diagnostic system using muscle testing to identify imbalances and guide individualized treatment.",
     tags: ["Muscle Testing", "Diagnosis", "Balance"],
-    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
+    img: "/services/download.jpeg",
     href: "https://www.rosellecare.com/services/applied-kinesiology.html",
   },
   {
-    title: "Nutritional Guidance",
+    title: "Nutrition",
     desc: "Personalized nutritional plans from our holistic nutritionists to improve overall wellness and vitality.",
     tags: ["Wellness", "Diet", "Lifestyle"],
     img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=600&fit=crop",
     href: "https://www.rosellecare.com/services/nutrition.html",
   },
   {
-    title: "Functional Medicine",
-    desc: "Long-term health support addressing root causes of chronic conditions through integrative medicine.",
-    tags: ["Root Cause", "Chronic Conditions", "Prevention"],
-    img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&h=600&fit=crop",
+    title: "Massage Therapy",
+    desc: "Relieve tension, reduce stress, and support your body's natural healing with therapeutic and cupping massage.",
+    tags: ["Relaxation", "Cupping", "Recovery"],
+    img: "/services/closeup-young-man-getting-neck-massage-therapy-spa-clinic.jpg",
+    href: "https://www.rosellecare.com/services/massage-therapy.html",
+  },
+  {
+    title: "Functional Medicine & Thermography",
+    desc: "Long-term health support addressing root causes of chronic conditions through integrative medicine and advanced thermographic imaging.",
+    tags: ["Root Cause", "Thermography", "Prevention"],
+    img: "/services/woman-with-physical-impairment-analyzing-x-ray-scan-with-doctor-checkup-visit-medical-cabinet-old-patient-wheelchair-user-looking-bones-radiography-diagnosis-results-healthcare.jpg",
     href: "https://www.rosellecare.com/functional-medicine",
   },
 ];
@@ -65,7 +65,7 @@ export default function Services() {
                   Our Services
                 </p>
                 <SplitReveal
-                  text="Comprehensive Care, Designed Around You"
+                  text="Comprehensive Chiropractic, Acupuncture & Wellness Services"
                   as="h2"
                   className="text-fluid-4xl text-fg tracking-tight"
                 />

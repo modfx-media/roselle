@@ -37,15 +37,7 @@ export default function Footer() {
 
   return (
     <footer id="footer" className="bg-fg">
-      {/* Faded hero image */}
-      <div className="footer-image-wrap">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&h=500&fit=crop"
-          alt="" aria-hidden="true" loading="lazy"
-          className="w-full h-full object-cover"
-        />
-      </div>
+      {/* removed image */}
 
       <div className="pt-s8 pb-s6">
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">

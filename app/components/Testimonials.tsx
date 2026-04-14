@@ -1,112 +1,177 @@
 "use client";
+import { motion } from "framer-motion";
 import RevealSection from "./motion/RevealSection";
-import SpotlightCard from "./motion/SpotlightCard";
 
 const REVIEWS = [
   {
-    cat: "Long-Term Patient",
-    title: "10+ Years of Trust",
-    quote: "I have been coming to Roselle Center for over 10 years. I love it! Dr. Lamp is exceptional in identifying root causes and intervening accordingly.",
-    name: "Rhonda L.",
-    date: "April 2026",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=700&fit=crop&crop=face",
-    av: "https://i.pravatar.cc/80?img=25",
+    quote: "My health has significantly improved because of the Roselle Center. I was bedridden. I no longer pass out. I used a walker and now I walk unaided. This past weekend, I hiked four miles!",
+    name: "Sandra E.",
+    location: "Fairfax, VA",
+    tag: "Life-Changing Care",
   },
   {
-    cat: "Wellbeing",
-    title: "Multi-Pronged Approach",
-    quote: "Roselle Center has been such a boon to both my mental and physical health. Their multi-pronged approach fits in well with my personal outlook on health and wellness.",
-    name: "Elizabeth S.",
-    date: "April 2026",
-    img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=700&fit=crop",
-    av: "https://i.pravatar.cc/80?img=47",
-  },
-  {
-    cat: "Family Care",
-    title: "A Doctor Who Listens",
-    quote: "It's so refreshing to have a doctor that listens. Dr. Lamp has given us hope after 3 months of misdiagnoses from pediatric specialists.",
-    name: "Holly S.",
-    date: "April 2026",
-    img: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&h=700&fit=crop",
-    av: "https://i.pravatar.cc/80?img=32",
-  },
-  {
-    cat: "Chiropractic",
-    title: "Amazing Since 1995",
-    quote: "The staff is always friendly, courteous and helpful. I have known Dr. Lamp since 1995 and he is the ONLY doctor I have seen since. He is absolutely amazing!",
+    quote: "I have known Dr. Lamp since 1995 and he is the ONLY doctor I have seen since. He is absolutely amazing!",
     name: "Rick W.",
-    date: "April 2026",
-    img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=700&fit=crop",
-    av: "https://i.pravatar.cc/80?img=11",
+    location: "Fairfax, VA",
+    tag: "30 Years of Trust",
+  },
+  {
+    quote: "Within 6 months I was migraine free. They treat the whole body, not just the symptoms.",
+    name: "Gary W.",
+    location: "Herndon, VA",
+    tag: "Migraine Relief",
+  },
+  {
+    quote: "I am 90% less inflamed within a few months. Dr. Zhang meets me where I am each time — no cookie-cutter treatments.",
+    name: "KL CC",
+    location: "Google Review",
+    tag: "Acupuncture",
+  },
+  {
+    quote: "Their multi-pronged approach — chiropractic, acupuncture, nutrition — fits perfectly with my personal outlook on wellness.",
+    name: "Elizabeth S.",
+    location: "Northern Virginia",
+    tag: "Holistic Wellness",
   },
 ];
 
 export default function Testimonials() {
+  const [featured, ...rest] = REVIEWS;
+
   return (
     <div id="testimonials" data-section="testimonials">
-      <section className="bg-bg py-section-py">
+      <section className="bg-bg py-section-py overflow-hidden">
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 
+          {/* Header */}
           <RevealSection>
-            <div className="text-center mb-s8">
-              <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans justify-center"
-                style={{ color: "rgba(198,177,128,0.8)" }}>
-                Patient Stories
-              </p>
-              <h2 className="text-fluid-4xl text-fg tracking-tight mb-s2">What Our Patients Say</h2>
-              <p className="text-fluid-base" style={{ color: "rgba(42,41,40,0.55)" }}>
-                4.5&#9733; on Google &nbsp;&middot;&nbsp; 52 reviews &nbsp;&middot;&nbsp; Fairfax, VA
-              </p>
+            <div className="flex items-end justify-between gap-s4 mb-s10 max-md:flex-col max-md:items-start">
+              <div>
+                <div className="flex items-center gap-3 mb-s3">
+                  <span className="w-5 h-px" style={{ background: "rgba(198,177,128,0.5)" }} />
+                  <p className="text-xs tracking-[0.22em] uppercase font-sans"
+                    style={{ color: "rgba(198,177,128,0.85)" }}>Patient Stories</p>
+                </div>
+                <h2 className="text-fluid-4xl text-fg tracking-tight leading-[1.05]">
+                  What Our<br />Patients Say
+                </h2>
+              </div>
+              <div className="flex items-center gap-s4 shrink-0">
+                <div className="text-right">
+                  <p className="text-3xl font-serif font-medium text-fg leading-none">4.7<span className="text-accent">★</span></p>
+                  <p className="text-xs mt-1" style={{ color: "rgba(42,41,40,0.45)" }}>110 Google Reviews</p>
+                </div>
+                <div className="w-px h-10" style={{ background: "rgba(42,41,40,0.12)" }} />
+                <div className="text-right">
+                  <p className="text-3xl font-serif font-medium text-fg leading-none">40+</p>
+                  <p className="text-xs mt-1" style={{ color: "rgba(42,41,40,0.45)" }}>Years of healing</p>
+                </div>
+              </div>
             </div>
           </RevealSection>
 
-          <div className="grid grid-cols-2 gap-s4 max-md:grid-cols-1">
-            {REVIEWS.map((t, i) => (
-              <RevealSection key={t.name} delay={i * 0.1}>
-                <SpotlightCard className="bg-card-bg rounded-xl overflow-hidden grid grid-cols-2 min-h-[300px]
-                                          max-md:grid-cols-1">
-                  <div className="p-s4 flex flex-col justify-between gap-s3">
-                    <div>
-                      <span className="inline-block rounded-full py-0.5 px-2.5 text-xs text-fg w-fit mb-s1"
-                        style={{ background: "rgba(42,41,40,0.08)" }}>{t.cat}</span>
-                      <h3 className="text-xl text-fg mb-s2">{t.title}</h3>
-                      <blockquote className="text-sm leading-relaxed italic"
-                        style={{ color: "rgba(42,41,40,0.7)" }}>
-                        &ldquo;{t.quote}&rdquo;
-                      </blockquote>
+          {/* Layout: featured left + grid right */}
+          <div className="grid grid-cols-[1fr_1fr] gap-s4 max-md:grid-cols-1">
+
+            {/* Featured large card */}
+            <RevealSection>
+              <motion.div
+                className="relative rounded-2xl p-s8 flex flex-col justify-between h-full min-h-[380px] overflow-hidden"
+                style={{
+                  background: "linear-gradient(145deg, rgba(198,177,128,0.12) 0%, rgba(198,177,128,0.04) 100%)",
+                  border: "1px solid rgba(198,177,128,0.2)",
+                }}
+                whileHover={{ scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              >
+                {/* Decorative quote mark */}
+                <div className="absolute top-s4 right-s5 font-serif leading-none select-none pointer-events-none"
+                  style={{ fontSize: "10rem", color: "rgba(198,177,128,0.08)", lineHeight: 1 }}>
+                  &ldquo;
+                </div>
+
+                <div>
+                  <span className="inline-block rounded-full px-3 py-1 text-xs mb-s4"
+                    style={{ background: "rgba(198,177,128,0.15)", color: "rgba(198,177,128,0.9)", border: "1px solid rgba(198,177,128,0.25)" }}>
+                    {featured.tag}
+                  </span>
+                  <div className="flex gap-0.5 mb-s3">
+                    {[...Array(5)].map((_, i) => <span key={i} className="text-accent">★</span>)}
+                  </div>
+                  <blockquote className="font-serif leading-relaxed text-fg"
+                    style={{ fontSize: "clamp(1.1rem, 1.8vw, 1.35rem)" }}>
+                    &ldquo;{featured.quote}&rdquo;
+                  </blockquote>
+                </div>
+
+                <div className="flex items-center gap-s2 mt-s6 pt-s4"
+                  style={{ borderTop: "1px solid rgba(198,177,128,0.15)" }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold shrink-0"
+                    style={{ background: "rgba(198,177,128,0.2)", color: "rgba(42,41,40,0.8)" }}>
+                    {featured.name[0]}
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-fg">{featured.name}</p>
+                    <p className="text-xs" style={{ color: "rgba(42,41,40,0.45)" }}>{featured.location}</p>
+                  </div>
+                </div>
+              </motion.div>
+            </RevealSection>
+
+            {/* 2x2 grid of smaller cards */}
+            <div className="grid grid-cols-2 gap-s4 max-sm:grid-cols-1">
+              {rest.map((r, i) => (
+                <RevealSection key={r.name} delay={i * 0.07}>
+                  <motion.div
+                    className="rounded-2xl p-s4 flex flex-col gap-s2 h-full"
+                    style={{
+                      background: i % 2 === 0 ? "rgba(42,41,40,0.03)" : "rgba(245,244,239,1)",
+                      border: "1px solid rgba(42,41,40,0.07)",
+                      boxShadow: "0 2px 16px rgba(42,41,40,0.04)",
+                    }}
+                    whileHover={{ y: -3, boxShadow: "0 8px 32px rgba(42,41,40,0.09)" }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="inline-block rounded-full px-2.5 py-0.5 text-xs"
+                        style={{ background: "rgba(198,177,128,0.12)", color: "rgba(198,177,128,0.85)" }}>
+                        {r.tag}
+                      </span>
+                      <div className="flex gap-0.5">
+                        {[...Array(5)].map((_, j) => <span key={j} className="text-accent text-xs">★</span>)}
+                      </div>
                     </div>
-                    <div className="flex items-center gap-s2 mt-auto pt-s2"
-                      style={{ borderTop: "1px solid rgba(42,41,40,0.08)" }}>
-                      <div className="w-[38px] h-[38px] rounded-md overflow-hidden shrink-0 bg-fg relative">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={t.av} alt={t.name} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
+                    <blockquote className="text-sm leading-relaxed flex-1"
+                      style={{ color: "rgba(42,41,40,0.7)" }}>
+                      &ldquo;{r.quote}&rdquo;
+                    </blockquote>
+                    <div className="flex items-center gap-2 pt-s2"
+                      style={{ borderTop: "1px solid rgba(42,41,40,0.06)" }}>
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold shrink-0"
+                        style={{ background: "var(--color-fg)", color: "var(--color-bg)" }}>
+                        {r.name[0]}
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-fg">{t.name}</p>
-                        <p className="text-xs mt-0.5" style={{ color: "rgba(42,41,40,0.5)" }}>{t.date}</p>
+                        <p className="text-xs font-semibold text-fg">{r.name}</p>
+                        <p className="text-xs" style={{ color: "rgba(42,41,40,0.4)" }}>{r.location}</p>
                       </div>
                     </div>
-                  </div>
-                  <div className="relative max-md:min-h-[220px]">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={t.img} alt="" aria-hidden="true" loading="lazy"
-                      className="absolute inset-0 w-full h-full object-cover" />
-                  </div>
-                </SpotlightCard>
-              </RevealSection>
-            ))}
+                  </motion.div>
+                </RevealSection>
+              ))}
+            </div>
           </div>
 
-          <RevealSection delay={0.25}>
-            <div className="text-center mt-s8">
+          {/* CTA */}
+          <RevealSection delay={0.2}>
+            <div className="text-center mt-s10">
               <a
-                href="https://www.google.com/maps/place/Roselle+Center+for+Healing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm pb-0.5 transition-colors duration-200"
-                style={{ color: "rgba(42,41,40,0.5)", borderBottom: "1px solid rgba(42,41,40,0.15)" }}
+                href="https://www.google.com/maps/search/Roselle+Center+for+Healing+Fairfax+VA"
+                target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-100 opacity-55 text-fg"
+                style={{ borderBottom: "1px solid rgba(42,41,40,0.2)", paddingBottom: "2px" }}
               >
-                View all reviews on Google &rarr;
+                View all 110 reviews on Google →
               </a>
             </div>
           </RevealSection>
