@@ -1,8 +1,9 @@
 "use client";
 import RevealSection from "./motion/RevealSection";
-import ParallaxImage from "./motion/ParallaxImage";
+import GsapImageParallax from "./motion/GsapImageParallax";
 import CountUp from "./motion/CountUp";
 import SplitReveal from "./motion/SplitReveal";
+import ScrollDrift from "./motion/ScrollDrift";
 
 const STATS = [
   { value: "30", suffix: "+", label: "Years of Practice" },
@@ -19,16 +20,17 @@ export default function About() {
           <div className="grid grid-cols-[1fr_1px_1fr] gap-x-s10 items-stretch relative z-1
                           max-[900px]:grid-cols-1 max-[900px]:gap-y-s8">
 
-            {/* Left: sticky image */}
+            {/* Left: drifting image card */}
             <RevealSection>
               <div className="flex flex-col gap-s6 max-[900px]:pr-0 pr-s4">
-                <div className="sticky" style={{ top: "calc(var(--spacing-nav-h) + var(--spacing-s4))" }}>
+                <ScrollDrift distance={320}>
                   <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
                     style={{ background: "rgba(255,255,255,0.04)" }}>
-                    <ParallaxImage
+                    <GsapImageParallax
                       src="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
                       alt="Dr. Tom Roselle, DC"
-                      speed={0.1}
+                      speed={0.22}
+                      className="w-full rounded-xl"
                     />
                     <div className="absolute bottom-s3 left-s3 right-s3 rounded-lg p-s2 px-s3 z-2"
                       style={{
@@ -43,7 +45,7 @@ export default function About() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </ScrollDrift>
               </div>
             </RevealSection>
 

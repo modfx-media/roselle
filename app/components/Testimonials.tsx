@@ -44,7 +44,7 @@ const REVIEWS = [
 export default function Testimonials() {
   return (
     <div id="testimonials" data-section="testimonials">
-      <section className="bg-fg py-section-py">
+      <section className="bg-bg py-section-py">
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 
           <RevealSection>
@@ -53,8 +53,8 @@ export default function Testimonials() {
                 style={{ color: "rgba(198,177,128,0.8)" }}>
                 Patient Stories
               </p>
-              <h2 className="text-fluid-4xl text-bg tracking-tight mb-s2">What Our Patients Say</h2>
-              <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>
+              <h2 className="text-fluid-4xl text-fg tracking-tight mb-s2">What Our Patients Say</h2>
+              <p className="text-fluid-base" style={{ color: "rgba(42,41,40,0.55)" }}>
                 4.5&#9733; on Google &nbsp;&middot;&nbsp; 52 reviews &nbsp;&middot;&nbsp; Fairfax, VA
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function Testimonials() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm pb-0.5 transition-colors duration-200"
-                style={{ color: "rgba(245,244,239,0.5)", borderBottom: "1px solid rgba(245,244,239,0.2)" }}
+                style={{ color: "rgba(42,41,40,0.5)", borderBottom: "1px solid rgba(42,41,40,0.15)" }}
               >
                 View all reviews on Google &rarr;
               </a>

@@ -7,21 +7,27 @@ import Conditions from "./components/Conditions";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import SectionMarquee from "./components/SectionMarquee";
+import SmoothScroll from "./components/motion/SmoothScroll";
 
 export default function Home() {
   return (
     <>
       <Nav />
-      <main className="relative z-1">
-        <Hero />
-        <About />
-        <Services />
-        <WhyUs />
-        <Conditions />
-        <Testimonials />
-        <Contact />
-        <Footer />
-      </main>
+      <SmoothScroll>
+        <main className="relative z-1">
+          <Hero />
+          <About />
+          <SectionMarquee />
+          <Services />
+          <WhyUs />
+          <Conditions />
+          <SectionMarquee direction={-1} />
+          <Testimonials />
+          <Contact />
+          <Footer />
+        </main>
+      </SmoothScroll>
     </>
   );
 }

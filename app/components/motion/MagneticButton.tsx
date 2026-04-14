@@ -54,7 +54,6 @@ export default function MagneticButton({
       type={type}
       className={className}
       style={{ ...style, x: springX, y: springY, scale: springScale }}
-      onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
       whileTap={{ scale: 0.96 }}

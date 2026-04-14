@@ -277,3 +277,14 @@
    ============================================================ */
 @media (min-width: 769px) { .show-mobile { display: none !important; } }
 @media (max-width: 768px) { .hide-mobile { display: none !important; } }
+
+/* ── Lenis smooth scroll ── */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
