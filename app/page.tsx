@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import SectionMarquee from "./components/SectionMarquee";
 import SmoothScroll from "./components/motion/SmoothScroll";
 
+import HealthEducation from "./components/HealthEducation";
+
 export default function Home() {
   return (
     <>
@@ -24,6 +26,7 @@ export default function Home() {
           <Conditions />
           <SectionMarquee direction={-1} />
           <Testimonials />
+          <HealthEducation />
           <Contact />
           <Footer />
         </main>
