@@ -6,12 +6,12 @@ import SplitReveal from "./motion/SplitReveal";
 
 // dotX/dotY: % of the 1400x583 rendered image container
 const REGIONS = [
-  { label: "Head & Neck",         sub: "Cervical · Tension",      href: "https://www.rosellecare.com/neck-pain",     dotX: 61, dotY: 28 },
-  { label: "Upper Back",          sub: "Thoracic · Postural",     href: "https://www.rosellecare.com/back-pain",     dotX: 62, dotY: 38 },
-  { label: "Shoulder & Clavicle", sub: "Rotator · Impingement",   href: "https://www.rosellecare.com/shoulder-pain", dotX: 70, dotY: 50 },
-  { label: "Mid-Back",            sub: "Thoracic · Rib",          href: "https://www.rosellecare.com/back-pain",     dotX: 63, dotY: 60 },
-  { label: "Lower Back",          sub: "Lumbar · Sacral",         href: "https://www.rosellecare.com/back-pain",     dotX: 64, dotY: 68 },
-  { label: "Elbow, Hand & Wrist", sub: "Carpal · Tennis · Nerve", href: "https://www.rosellecare.com/shoulder-pain", dotX: 70, dotY: 90 },
+  { label: "Head & Neck",         sub: "Cervical · Tension",      href: "/neck-pain",     dotX: 61, dotY: 28 },
+  { label: "Upper Back",          sub: "Thoracic · Postural",     href: "/back-pain",     dotX: 62, dotY: 38 },
+  { label: "Shoulder & Clavicle", sub: "Rotator · Impingement",   href: "/shoulder-pain", dotX: 70, dotY: 50 },
+  { label: "Mid-Back",            sub: "Thoracic · Rib",          href: "/back-pain",     dotX: 63, dotY: 60 },
+  { label: "Lower Back",          sub: "Lumbar · Sacral",         href: "/back-pain",     dotX: 64, dotY: 68 },
+  { label: "Elbow, Hand & Wrist", sub: "Carpal · Tennis · Nerve", href: "/shoulder-pain", dotX: 70, dotY: 90 },
 ];
 
 const IMG_W = 1400;
@@ -113,7 +113,7 @@ export default function Conditions() {
                   <motion.a
                     key={r.label}
                     ref={el => { labelRefs.current[i] = el; }}
-                    href={r.href} target="_blank" rel="noopener noreferrer"
+                    href={r.href}
                     className="flex flex-col cursor-pointer rounded-xl px-4 py-3"
                     style={{
                       background: act ? "rgba(198,177,128,0.12)" : "rgba(245,244,239,0.05)",

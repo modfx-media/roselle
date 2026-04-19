@@ -12,42 +12,42 @@ const SERVICES = [
     desc: "Restore spinal alignment and mobility through precise, gentle adjustments. Relief from back pain, neck pain, sciatica, and more.",
     tags: ["Spinal Alignment", "Pain Relief", "Adjustments"],
     img: "/services/man-medical-office-physiotherapist-is-rehabilitating-back.jpg",
-    href: "https://www.rosellecare.com/services/chiropractic.html",
+    href: "/services/chiropractic.html",
   },
   {
     title: "Acupuncture",
     desc: "Support healing, balance energy, and address chronic conditions through traditional acupuncture therapy.",
     tags: ["Energy Balance", "Chronic Pain", "Healing"],
     img: "/services/close-up-cupping-therapy-experience.jpg",
-    href: "https://www.rosellecare.com/services/acupuncture.html",
+    href: "/services/acupuncture.html",
   },
   {
     title: "Applied Kinesiology (AK)",
     desc: "A diagnostic system using muscle testing to identify imbalances and guide individualized treatment.",
     tags: ["Muscle Testing", "Diagnosis", "Balance"],
     img: "/services/download.jpeg",
-    href: "https://www.rosellecare.com/services/applied-kinesiology.html",
+    href: "/services/applied-kinesiology.html",
   },
   {
     title: "Nutrition",
     desc: "Personalized nutritional plans from our holistic nutritionists to improve overall wellness and vitality.",
     tags: ["Wellness", "Diet", "Lifestyle"],
     img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=600&fit=crop",
-    href: "https://www.rosellecare.com/services/nutrition.html",
+    href: "/services/nutrition.html",
   },
   {
     title: "Massage Therapy",
     desc: "Relieve tension, reduce stress, and support your body's natural healing with therapeutic and cupping massage.",
     tags: ["Relaxation", "Cupping", "Recovery"],
     img: "/services/closeup-young-man-getting-neck-massage-therapy-spa-clinic.jpg",
-    href: "https://www.rosellecare.com/services/massage-therapy.html",
+    href: "/services/massage-therapy.html",
   },
   {
     title: "Functional Medicine & Thermography",
     desc: "Long-term health support addressing root causes of chronic conditions through integrative medicine and advanced thermographic imaging.",
     tags: ["Root Cause", "Thermography", "Prevention"],
     img: "/services/woman-with-physical-impairment-analyzing-x-ray-scan-with-doctor-checkup-visit-medical-cabinet-old-patient-wheelchair-user-looking-bones-radiography-diagnosis-results-healthcare.jpg",
-    href: "https://www.rosellecare.com/functional-medicine",
+    href: "/functional-medicine",
   },
 ];
 
@@ -100,8 +100,6 @@ export default function Services() {
                     <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(42,41,40,0.65)" }}>{s.desc}</p>
                     <a
                       href={s.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className="text-xs text-fg inline-block mt-auto pb-px transition-opacity duration-200
                                  opacity-55 hover:opacity-100"
                       style={{ borderBottom: "1px solid rgba(42,41,40,0.2)" }}

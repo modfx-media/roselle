@@ -64,7 +64,7 @@ export default function WhyUs() {
               </p>
               <MagneticButton
                 className="btn-primary-inverted"
-                onClick={() => window.open("https://www.rosellecare.com/appointment", "_blank")}
+                onClick={() => window.location.href = "/appointment"}
               >
                 Book an Appointment
               </MagneticButton>

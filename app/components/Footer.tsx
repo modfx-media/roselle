@@ -2,25 +2,25 @@
 
 const LINKS = {
   Services: [
-    { label: "Chiropractic Care",   href: "https://www.rosellecare.com/services/chiropractic.html" },
-    { label: "Acupuncture",         href: "https://www.rosellecare.com/services/acupuncture.html" },
-    { label: "Massage Therapy",     href: "https://www.rosellecare.com/services/massage-therapy.html" },
-    { label: "Applied Kinesiology", href: "https://www.rosellecare.com/services/applied-kinesiology.html" },
-    { label: "Nutrition",           href: "https://www.rosellecare.com/services/nutrition.html" },
-    { label: "Functional Medicine", href: "https://www.rosellecare.com/functional-medicine" },
+    { label: "Chiropractic Care",   href: "/services/chiropractic.html" },
+    { label: "Acupuncture",         href: "/services/acupuncture.html" },
+    { label: "Massage Therapy",     href: "/services/massage-therapy.html" },
+    { label: "Applied Kinesiology", href: "/services/applied-kinesiology.html" },
+    { label: "Nutrition",           href: "/services/nutrition.html" },
+    { label: "Functional Medicine", href: "/functional-medicine" },
   ],
   Patients: [
-    { label: "New Patient Center",  href: "https://www.rosellecare.com/new-patient-center.html" },
-    { label: "Online Forms",        href: "https://www.rosellecare.com/online-forms.html" },
-    { label: "Book Appointment",    href: "https://www.rosellecare.com/appointment" },
-    { label: "Testimonials",        href: "https://www.rosellecare.com/testimonials.html" },
-    { label: "Patient Feedback",    href: "https://www.rosellecare.com/contact-us/patient-feedback.html" },
+    { label: "New Patient Center",  href: "/new-patient-center.html" },
+    { label: "Online Forms",        href: "/online-forms.html" },
+    { label: "Book Appointment",    href: "/appointment" },
+    { label: "Testimonials",        href: "/testimonials.html" },
+    { label: "Patient Feedback",    href: "/contact-us/patient-feedback.html" },
   ],
   About: [
-    { label: "Our Doctors",         href: "https://www.rosellecare.com/about-us.html/staff" },
+    { label: "Our Doctors",         href: "/about-us/meet-the-doctors---therapists.html" },
     { label: "Dr. Tom Roselle, DC", href: "https://www.drtomroselle.com/" },
-    { label: "Purpose & Mission",   href: "https://www.rosellecare.com/purpose-a-misson" },
-    { label: "Center Hours",        href: "https://www.rosellecare.com/about-us/center-hours.html" },
+    { label: "Purpose & Mission",   href: "/purpose-a-misson" },
+    { label: "Center Hours",        href: "/about-us/center-hours.html" },
     { label: "Directions",          href: "https://maps.app.goo.gl/5WJebWVTjWfPRX3VA" },
   ],
 };
@@ -39,7 +39,7 @@ export default function Footer() {
     <footer id="footer" className="bg-fg">
       {/* removed image */}
 
-      <div className="pt-s8 pb-s6">
+      <div className="pt-s8 pb-s8 max-md:pb-32">
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 
           <div className="grid grid-cols-[280px_1fr] gap-s8 mb-s8 pb-s8
@@ -80,33 +80,36 @@ export default function Footer() {
                 <div key={group} className="flex flex-col gap-s2">
                   <span className="text-xs tracking-widest uppercase mb-s1"
                     style={{ color: "rgba(245,244,239,0.35)" }}>{group}</span>
-                  {links.map(l => (
-                    <a
-                      key={l.label}
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm transition-colors duration-200 hover:text-bg"
-                      style={{ color: "rgba(245,244,239,0.6)" }}
-                    >
-                      {l.label}
-                    </a>
-                  ))}
+                  {links.map(l => {
+                    const isExternal = l.href.startsWith("http");
+                    return (
+                      <a
+                        key={l.label}
+                        href={l.href}
+                        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        className="text-sm transition-colors duration-200 hover:text-bg"
+                        style={{ color: "rgba(245,244,239,0.6)" }}
+                      >
+                        {l.label}
+                      </a>
+                    );
+                  })}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="flex justify-between items-center gap-s4 flex-wrap">
-            <span className="text-xs" style={{ color: "rgba(245,244,239,0.3)" }}>
-              &copy; {year} Roselle Center for Healing &middot; Fairfax, VA
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-s4 pt-s2 pb-s2">
+            <span className="text-xs text-center sm:text-left" style={{ color: "rgba(245,244,239,0.5)" }}>
+              &copy; {year} Roselle Center for Healing &middot; Fairfax, VA &middot; Powered by{" "}
+              <a href="https://modfxmedia.com/" target="_blank" rel="noopener noreferrer" className="transition-colors duration-200 hover:text-bg" style={{ color: "rgba(245,244,239,0.6)" }}>ModFXMedia</a>
             </span>
             <div className="flex gap-s4">
-              <a href="https://www.rosellecare.com/contact" target="_blank" rel="noopener noreferrer"
-                className="text-sm transition-colors duration-200 hover:text-bg"
+              <a href="/contact"
+                className="text-xs sm:text-sm transition-colors duration-200 hover:text-bg"
                 style={{ color: "rgba(245,244,239,0.6)" }}>Contact</a>
-              <a href="https://www.rosellecare.com/sitemap" target="_blank" rel="noopener noreferrer"
-                className="text-sm transition-colors duration-200 hover:text-bg"
+              <a href="/sitemap"
+                className="text-xs sm:text-sm transition-colors duration-200 hover:text-bg"
                 style={{ color: "rgba(245,244,239,0.6)" }}>Sitemap</a>
             </div>
           </div>

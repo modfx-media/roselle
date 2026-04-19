@@ -23,7 +23,32 @@ export default function About() {
             {/* Left: drifting image card */}
             <RevealSection>
               <div className="flex flex-col gap-s6 max-[900px]:pr-0 pr-s4">
-                <ScrollDrift distance={320}>
+                <div className="max-[900px]:hidden">
+                  <ScrollDrift distance={320}>
+                    <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
+                      style={{ background: "rgba(255,255,255,0.04)" }}>
+                      <GsapImageParallax
+                        src="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
+                        alt="Dr. Tom Roselle, DC"
+                        speed={0.22}
+                        className="w-full rounded-xl"
+                      />
+                      <div className="absolute bottom-s3 left-s3 right-s3 rounded-lg p-s2 px-s3 z-2"
+                        style={{
+                          background: "rgba(42,41,40,0.75)",
+                          backdropFilter: "blur(12px)",
+                          WebkitBackdropFilter: "blur(12px)",
+                          border: "1px solid rgba(198,177,128,0.2)",
+                        }}>
+                        <p className="text-sm font-semibold text-bg font-serif">Dr. Tom Roselle, DC</p>
+                        <p className="text-xs mt-0.5 leading-snug" style={{ color: "rgba(198,177,128,0.85)" }}>
+                          PAK &middot; PAc &middot; DCCN &middot; DCBCN &middot; Facility Director
+                        </p>
+                      </div>
+                    </div>
+                  </ScrollDrift>
+                </div>
+                <div className="hidden max-[900px]:block">
                   <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
                     style={{ background: "rgba(255,255,255,0.04)" }}>
                     <GsapImageParallax
@@ -45,7 +70,7 @@ export default function About() {
                       </p>
                     </div>
                   </div>
-                </ScrollDrift>
+                </div>
               </div>
             </RevealSection>
 
@@ -119,9 +144,7 @@ export default function About() {
               {/* CTA link */}
               <RevealSection delay={0.5}>
                 <a
-                  href="https://www.rosellecare.com/about-us.html/staff"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/about-us.html/staff"
                   className="inline-flex items-center gap-2 text-sm pb-0.5 transition-colors duration-200"
                   style={{ color: "rgba(245,244,239,0.65)", borderBottom: "1px solid rgba(245,244,239,0.2)" }}
                 >

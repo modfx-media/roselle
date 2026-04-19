@@ -109,7 +109,7 @@ export default function Hero() {
 
             {/* CTAs */}
             <motion.div variants={item} className="flex gap-s2 flex-wrap justify-center">
-              <MagneticButton onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
+              <MagneticButton onClick={() => window.location.href = "/appointment"}>
                 Book an Appointment
               </MagneticButton>
               <a href="tel:+17036987117"

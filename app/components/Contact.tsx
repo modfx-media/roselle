@@ -281,7 +281,7 @@ export default function Contact() {
                 </p>
                 <div className="flex flex-col gap-2 relative z-1">
                   <MagneticButton
-                    onClick={() => window.open("https://www.rosellecare.com/appointment", "_blank")}
+                    onClick={() => window.location.href = "/appointment"}
                     className="btn-primary-inverted w-fit">
                     Book Online
                   </MagneticButton>
