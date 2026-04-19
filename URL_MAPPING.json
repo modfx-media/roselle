@@ -1,0 +1,325 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Homepage - Brand keyword #1 ranking"
+    },
+    {
+      "source": "/about-us.html",
+      "destination": "/about",
+      "permanent": true,
+      "priority": 1,
+      "notes": "About page"
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Services overview page"
+    },
+    {
+      "source": "/services/acupuncture.html",
+      "destination": "/services/acupuncture",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Acupuncture service - Rank #30 for 'acupuncture fairfax'"
+    },
+    {
+      "source": "/services/applied-kinesiology.html",
+      "destination": "/services/applied-kinesiology",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Applied Kinesiology - Rank #44 for 'kinesiology massage near me'"
+    },
+    {
+      "source": "/services/massage-therapy.html",
+      "destination": "/services/massage-therapy",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Massage Therapy - Rank #11 for 'massage roselle'"
+    },
+    {
+      "source": "/functional-medicine",
+      "destination": "/services/functional-medicine",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Functional Medicine - Rank #49 for 'functional medicine chiropractic'"
+    },
+    {
+      "source": "/sports-medicine",
+      "destination": "/services/sports-medicine",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Sports Medicine - Rank #61 for 'spinal sports'"
+    },
+    {
+      "source": "/prenatal-chiropractic",
+      "destination": "/services/prenatal-chiropractic",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Prenatal Chiropractic - Rank #30 for 'prenatal chiropractors'"
+    },
+    {
+      "source": "/webster-technique",
+      "destination": "/services/webster-technique",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Webster Technique - Rank #81 for 'webster chiropractors'"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Contact page"
+    },
+    {
+      "source": "/new-patient-center.html",
+      "destination": "/new-patients",
+      "permanent": true,
+      "priority": 1,
+      "notes": "New Patient Center"
+    },
+    {
+      "source": "/new-patient-center/payment-options.html",
+      "destination": "/new-patients/payment-options",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Payment Options"
+    },
+    {
+      "source": "/about-us/center-hours.html",
+      "destination": "/about/hours",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Center Hours"
+    },
+    {
+      "source": "/contact-us/directions.html",
+      "destination": "/contact/directions",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Directions"
+    },
+    {
+      "source": "/about-us/meet-the-doctors---therapists.html",
+      "destination": "/about/team",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Meet the Doctors - Rank #27 for 'browning chiropractic', #43 for 'hulse chiropractic'"
+    },
+    {
+      "source": "/new-patient-office-policy-form",
+      "destination": "/new-patients/office-policy",
+      "permanent": true,
+      "priority": 1,
+      "notes": "New Patient Office Policy Form"
+    },
+    {
+      "source": "/acupuncture-faqs",
+      "destination": "/services/acupuncture/faq",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Acupuncture FAQs"
+    },
+    {
+      "source": "/purpose-a-misson",
+      "destination": "/about/mission",
+      "permanent": true,
+      "priority": 1,
+      "notes": "Mission Statement"
+    },
+    {
+      "source": "/blog/:id-:slug",
+      "destination": "/blog/:id-:slug",
+      "permanent": true,
+      "priority": 1,
+      "notes": "All blog posts - PRESERVE EXACT URL STRUCTURE"
+    }
+  ],
+  "critical_urls": [
+    {
+      "url": "https://www.rosellecare.com/",
+      "keyword": "roselle center for healing",
+      "rank": 1,
+      "etv": 304,
+      "status": "CRITICAL - Brand keyword"
+    },
+    {
+      "url": "https://www.rosellecare.com/",
+      "keyword": "chiropractic in fairfax",
+      "rank": 11,
+      "etv": 19.7,
+      "status": "CRITICAL - Local keyword"
+    },
+    {
+      "url": "https://www.rosellecare.com/services/acupuncture.html",
+      "keyword": "acupuncture fairfax",
+      "rank": 30,
+      "etv": 0.82,
+      "status": "HIGH - Service page"
+    },
+    {
+      "url": "https://www.rosellecare.com/services/massage-therapy.html",
+      "keyword": "massage roselle",
+      "rank": 11,
+      "etv": 7.68,
+      "status": "HIGH - Service page"
+    },
+    {
+      "url": "https://www.rosellecare.com/blog/53075-6-natural-ways-to-relieve-sciatic-nerve-pain",
+      "keyword": "sciatic nerve pain natural remedy",
+      "rank": 61,
+      "etv": 2.1,
+      "status": "MEDIUM - Blog post"
+    }
+  ],
+  "blog_urls": {
+    "pattern": "/blog/:id-:slug",
+    "examples": [
+      {
+        "id": "924607",
+        "slug": "degenerative-joint-disease-aka-osteoarthritis",
+        "keyword": "degenerative joint disease",
+        "rank": 80
+      },
+      {
+        "id": "53379",
+        "slug": "5-of-the-best-natural-remedies-for-arthritis-amp-inflammation",
+        "keyword": "inflammation remedies natural",
+        "rank": 34
+      },
+      {
+        "id": "53378",
+        "slug": "ingredients-of-vaccines",
+        "keyword": "immunization ingredients",
+        "rank": 99
+      },
+      {
+        "id": "53186",
+        "slug": "meet-the-38-companies-that-donate-to-planned-parenthood",
+        "keyword": "give to planned parenthood",
+        "rank": 95
+      },
+      {
+        "id": "53075",
+        "slug": "6-natural-ways-to-relieve-sciatic-nerve-pain",
+        "keyword": "natural remedies sciatic nerve pain",
+        "rank": 63
+      },
+      {
+        "id": "53340",
+        "slug": "10-foods-sold-in-the-us-that-are-banned-elsewhere",
+        "keyword": "wheat thins banned",
+        "rank": 76
+      },
+      {
+        "id": "53112",
+        "slug": "10-reasons-not-to-get-a-flu-shot",
+        "keyword": "reasons not to get flu shot",
+        "rank": 102
+      },
+      {
+        "id": "946331",
+        "slug": "podcast-the-great-mimic-symptoms-of-the-ileocecal-valve",
+        "keyword": "ileocecal pain",
+        "rank": 33
+      },
+      {
+        "id": "1412799",
+        "slug": "conditions-chiropractic-care-and-acupuncture-can-treat",
+        "keyword": "conditions chiropractic care",
+        "rank": "RECENT"
+      },
+      {
+        "id": "1359110",
+        "slug": "why-you-should-receive-both-chiropractic-care-and-acupuncture",
+        "keyword": "chiropractic acupuncture",
+        "rank": "RECENT"
+      },
+      {
+        "id": "1370739",
+        "slug": "welcome-dr-matt-fontaine-dc-to-the-roselle-center-for-healing",
+        "keyword": "dr matt fontaine",
+        "rank": "RECENT"
+      },
+      {
+        "id": "1405431",
+        "slug": "understanding-fibromyalgia-causes-and-symptoms",
+        "keyword": "fibromyalgia",
+        "rank": "RECENT"
+      },
+      {
+        "id": "1000105",
+        "slug": "podcast-the-dangers-of-glucose-fructose-sucrose-and-lactose",
+        "keyword": "glucose fructose",
+        "rank": "RECENT"
+      }
+    ],
+    "note": "ALL BLOG URLs MUST BE PRESERVED EXACTLY - These are high-value content pages with established rankings"
+  },
+  "internal_links_to_preserve": [
+    {
+      "from": "/",
+      "to": "/services",
+      "anchor": "Our Services"
+    },
+    {
+      "from": "/",
+      "to": "/about",
+      "anchor": "About Us"
+    },
+    {
+      "from": "/",
+      "to": "/contact",
+      "anchor": "Contact Us"
+    },
+    {
+      "from": "/services",
+      "to": "/services/acupuncture",
+      "anchor": "Acupuncture"
+    },
+    {
+      "from": "/services",
+      "to": "/services/massage-therapy",
+      "anchor": "Massage Therapy"
+    },
+    {
+      "from": "/services",
+      "to": "/services/applied-kinesiology",
+      "anchor": "Applied Kinesiology"
+    },
+    {
+      "from": "/services",
+      "to": "/services/functional-medicine",
+      "anchor": "Functional Medicine"
+    },
+    {
+      "from": "/services",
+      "to": "/services/sports-medicine",
+      "anchor": "Sports Medicine"
+    },
+    {
+      "from": "/services",
+      "to": "/services/prenatal-chiropractic",
+      "anchor": "Prenatal Chiropractic"
+    },
+    {
+      "from": "/services",
+      "to": "/services/webster-technique",
+      "anchor": "Webster Technique"
+    }
+  ],
+  "implementation_notes": {
+    "priority": "CRITICAL",
+    "deadline": "Before launch",
+    "testing": "Test all redirects with 301 status codes",
+    "monitoring": "Monitor Google Search Console for crawl errors",
+    "backlinks": "All existing backlinks will work with 301 redirects",
+    "seo_impact": "Minimal if implemented correctly (0% traffic loss expected)"
+  }
+}
