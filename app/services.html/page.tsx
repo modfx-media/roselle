@@ -75,14 +75,14 @@ export default function ServicesPage() {
         <main className="relative z-1">
 
           {/* ── Hero Banner ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4
                             pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6"
                   style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
                   <span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Services</span>
                 </nav>
@@ -170,8 +170,7 @@ export default function ServicesPage() {
 
                 <RevealSection>
                   <SpotlightCard className="bg-card-bg rounded-xl p-s6 flex flex-col gap-s3 h-full
-                                            transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
-                                            hover:-translate-y-1">
+                                            card-hover-lift">
                     <span className="text-xs text-accent font-semibold tracking-widest">01</span>
                     <h2 className="text-fluid-2xl text-fg tracking-tight leading-[1.15] mt-s1">
                       Functional Medicine: Looking Beneath The Surface
@@ -189,8 +188,7 @@ export default function ServicesPage() {
 
                 <RevealSection delay={0.1}>
                   <SpotlightCard className="bg-card-bg rounded-xl p-s6 flex flex-col gap-s3 h-full
-                                            transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
-                                            hover:-translate-y-1">
+                                            card-hover-lift">
                     <span className="text-xs text-accent font-semibold tracking-widest">02</span>
                     <h2 className="text-fluid-2xl text-fg tracking-tight leading-[1.15] mt-s1">
                       Massage Therapy That Supports Healing, Not Just Relaxation
@@ -245,11 +243,11 @@ export default function ServicesPage() {
                           <a
                             href={s.href}
                             {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                            className="text-xs inline-block mt-auto pb-px transition-opacity duration-200
-                                       opacity-55 hover:opacity-100"
-                            style={{ color: "rgba(245,244,239,0.65)", borderBottom: "1px solid rgba(245,244,239,0.2)" }}
+                            className="group text-xs inline-block mt-auto pb-px transition-opacity duration-200
+                                       opacity-55 hover:opacity-100 hover-underline-gold"
+                            style={{ color: "rgba(245,244,239,0.65)" }}
                           >
-                            Learn more &rarr;
+                            Learn more <span className="arrow-nudge">&rarr;</span>
                           </a>
                         </div>
                       </SpotlightCard>

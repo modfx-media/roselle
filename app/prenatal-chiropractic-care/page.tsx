@@ -45,10 +45,10 @@ export default function PrenatalChiropracticCarePage() {
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1">
+        <main className="relative z-1 service-page-shell">
 
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>

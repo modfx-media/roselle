@@ -60,14 +60,14 @@ export default function NewPatientCenterPage() {
         <main className="relative z-1">
 
           {/* ── Hero Banner ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4
                             pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6"
                   style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
                   <span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>New Patient Experience</span>
                 </nav>
@@ -204,8 +204,7 @@ export default function NewPatientCenterPage() {
                 {FIRST_VISIT_TESTS.map((test, i) => (
                   <RevealSection key={test.title} delay={i * 0.06}>
                     <SpotlightCard className="bg-card-bg rounded-xl p-s6 flex flex-col gap-s3 h-full
-                                              transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
-                                              hover:-translate-y-1">
+                                              card-hover-lift">
                       <span className="text-xs text-accent font-semibold tracking-widest">
                         {String(i + 1).padStart(2, "0")}
                       </span>

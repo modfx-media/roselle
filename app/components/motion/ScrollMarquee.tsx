@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -22,6 +22,7 @@ export default function ScrollMarquee({
 }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(false);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -56,16 +57,18 @@ export default function ScrollMarquee({
       const dt = Math.min((now - lastTime) / 1000, 0.1);
       lastTime = now;
 
-      x -= speed * dt;
+      if (!pausedRef.current) {
+        x -= speed * dt;
 
-      // Loop
-      if (direction === 1 && x <= -setWidth) x += setWidth;
-      if (direction === -1 && x >= 0) x -= setWidth;
+        // Loop
+        if (direction === 1 && x <= -setWidth) x += setWidth;
+        if (direction === -1 && x >= 0) x -= setWidth;
 
-      track.style.transform = `translate3d(${x}px, 0, 0)`;
+        track.style.transform = `translate3d(${x}px, 0, 0)`;
 
-      // Decay speed back to base
-      speed += (baseSpeed * direction - speed) * 0.05;
+        // Decay speed back to base
+        speed += (baseSpeed * direction - speed) * 0.05;
+      }
 
       rafId = requestAnimationFrame(tick);
     };
@@ -84,11 +87,9 @@ export default function ScrollMarquee({
   return (
     <div
       ref={wrapRef}
-      className={`overflow-hidden ${className}`}
-      style={{
-        maskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-        WebkitMaskImage: "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-      }}
+      className={`overflow-hidden marquee-fade ${className}`}
+      onMouseEnter={() => { pausedRef.current = true; }}
+      onMouseLeave={() => { pausedRef.current = false; }}
     >
       <div ref={trackRef} className="flex gap-4 w-max will-change-transform">
         {doubled.map((t, i) => (

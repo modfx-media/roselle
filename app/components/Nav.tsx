@@ -552,21 +552,29 @@ export default function Nav() {
   const [mobileDeepExpanded, setMobileDeepExpanded] = useState<string | null>(
     null,
   );
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <nav
       role="navigation"
       aria-label="Main navigation"
-      className="fixed top-s2 left-0 right-0 z-100"
+      className={`fixed top-s2 left-0 right-0 z-100 animate-nav-in`}
     >
       <div
-        className="w-full max-w-[1320px] mx-auto px-s4 h-nav-h bg-card-bg rounded-xl
-                      flex items-center justify-between backdrop-blur-sm relative"
+        className={`w-full max-w-[1320px] mx-auto px-s4 h-nav-h rounded-xl
+                      flex items-center justify-between relative transition-all duration-300
+                      ${scrolled ? "nav-frosted" : "bg-card-bg backdrop-blur-sm"}`}
       >
         {/* Logo */}
         <a
           href="/"
-          className="shrink-0 bg-transparent border-none cursor-pointer p-0 font-serif text-xl font-medium text-fg no-underline"
+          className="shrink-0 bg-transparent border-none cursor-pointer p-0 font-serif text-xl font-medium text-fg no-underline transition-transform duration-200 hover:scale-[1.03]"
           aria-label="Roselle Center — Home"
         >
           Roselle Center

@@ -75,7 +75,7 @@ export default function IStorePage() {
         <main className="relative z-1">
 
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
@@ -120,7 +120,7 @@ export default function IStorePage() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group block bg-card-bg rounded-xl p-s6 h-full transition-transform duration-300 hover:-translate-y-1"
+                      className="group block bg-card-bg rounded-xl p-s6 h-full card-hover-lift"
                       style={{ border: "1px solid rgba(42,41,40,0.06)" }}
                     >
                       {item.image && (
@@ -181,7 +181,7 @@ export default function IStorePage() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group block bg-card-bg rounded-xl p-s6 h-full transition-transform duration-300 hover:-translate-y-1"
+                      className="group block bg-card-bg rounded-xl p-s6 h-full card-hover-lift"
                       style={{ border: "1px solid rgba(42,41,40,0.06)" }}
                     >
                       <div className="w-12 h-12 mb-s4 rounded-full bg-fg flex items-center justify-center">

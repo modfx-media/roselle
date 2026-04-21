@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, useReducedMotion } from "framer-motion";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import SmoothScroll from "../../components/motion/SmoothScroll";
@@ -34,76 +35,95 @@ export default function BlogPostClient({
   bodyHtml,
   tags,
 }: BlogPostClientProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1">
+        <main className="relative z-1 post-shell">
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="post-hero relative overflow-hidden">
             <div className="hero-grid-bg" />
+            <div className="post-watermark" aria-hidden="true">{title}</div>
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
+              <motion.div
+                initial={prefersReducedMotion ? false : { opacity: 0 }}
+                animate={prefersReducedMotion ? undefined : { opacity: 1 }}
+                transition={prefersReducedMotion ? undefined : { duration: 0.4, delay: 0.2, ease: "easeOut" }}
+              >
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
                   <span>/</span>
-                  <a href="/blog" className="transition-colors duration-200 hover:text-bg">Blog</a>
+                  <a href="/blog" className="transition-colors duration-200 hover:text-accent">Blog</a>
                   <span>/</span>
                   <span className="truncate max-w-[260px]" style={{ color: "rgba(245,244,239,0.7)" }}>{title}</span>
                 </nav>
-              </RevealSection>
-              <SplitReveal
-                text={title}
-                as="h1"
+              </motion.div>
+              <div className="post-gold-rule mb-s5" aria-hidden="true" />
+              <motion.h1
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+                animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+                transition={prefersReducedMotion ? undefined : { duration: 0.6, ease: "easeOut" }}
                 className="text-fluid-5xl text-bg tracking-tight leading-[1.05]"
-              />
+              >
+                {title}
+              </motion.h1>
               {date && (
-                <RevealSection delay={0.15}>
-                  <p className="mt-s4 text-sm tracking-wide" style={{ color: "rgba(245,244,239,0.45)" }}>
-                    {date}
-                  </p>
-                </RevealSection>
+                <motion.div
+                  initial={prefersReducedMotion ? false : { opacity: 0 }}
+                  animate={prefersReducedMotion ? undefined : { opacity: 1 }}
+                  transition={prefersReducedMotion ? undefined : { duration: 0.4, delay: 0.2, ease: "easeOut" }}
+                  className="post-meta-row mt-s4"
+                >
+                  <span className="post-pill">{date}</span>
+                </motion.div>
               )}
             </div>
           </section>
 
-          {/* ── Featured Image ── */}
-          {featuredImage && (
-            <section className="bg-bg py-s8 overflow-hidden">
-              <div className="w-full max-w-[900px] mx-auto px-s6 max-md:px-s4">
-                <RevealSection>
-                  <div className="rounded-xl overflow-hidden">
-                    <img
-                      src={featuredImage}
-                      alt={featuredImageAlt}
-                      className="w-full h-auto"
-                      loading="eager"
-                    />
-                  </div>
-                </RevealSection>
-              </div>
-            </section>
-          )}
-
           {/* ── Blog Body ── */}
-          <section className="bg-bg py-section-py overflow-hidden">
+          <section className="post-body-section py-section-py overflow-hidden">
             <div className="w-full max-w-[900px] mx-auto px-s6 max-md:px-s4">
               <RevealSection>
-                <div
-                  className="blog-body prose"
-                  dangerouslySetInnerHTML={{ __html: bodyHtml }}
-                />
+                <div className="post-body-wrap">
+                  {featuredImage && (
+                    <motion.div
+                      initial={prefersReducedMotion ? false : { opacity: 0, scale: 1.04 }}
+                      animate={prefersReducedMotion ? undefined : { opacity: 1, scale: 1 }}
+                      transition={prefersReducedMotion ? undefined : { duration: 1, ease: "easeOut" }}
+                      className="mb-10"
+                    >
+                      <div className="post-featured-image group relative rounded-2xl overflow-hidden w-full">
+                        <img
+                          src={featuredImage}
+                          alt={featuredImageAlt}
+                          className="w-full h-auto transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                          loading="eager"
+                        />
+                        <div
+                          className="absolute inset-x-0 bottom-0 h-1/3 pointer-events-none rounded-b-2xl"
+                          style={{ background: "linear-gradient(to top, rgba(3,7,18,0.45) 0%, transparent 100%)" }}
+                        />
+                      </div>
+                    </motion.div>
+                  )}
+                  <div
+                    className="blog-body post-dark-prose prose"
+                    dangerouslySetInnerHTML={{ __html: bodyHtml }}
+                  />
+                </div>
               </RevealSection>
 
               {/* Tags */}
               {tags.length > 0 && (
-                <div className="mt-s8 pt-s6" style={{ borderTop: "1px solid rgba(42,41,40,0.1)" }}>
+                <div className="mt-s8 pt-s6" style={{ borderTop: "1px solid rgba(198,177,128,0.12)" }}>
                   <p className="text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Tags</p>
                   <div className="flex flex-wrap gap-2">
                     {tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-block text-xs px-3 py-1.5 rounded-full bg-card-bg text-fg font-medium"
+                        className="post-pill"
                       >
                         {tag}
                       </span>
@@ -116,24 +136,25 @@ export default function BlogPostClient({
               <div className="mt-s10">
                 <a
                   href="/blog"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors duration-200 hover:text-fg"
+                  className="post-back-link text-sm font-medium"
                 >
-                  ← Back to Blog
+                  <span className="post-back-link-arrow">←</span>
+                  <span>Back to Blog</span>
                 </a>
               </div>
             </div>
           </section>
 
           {/* ── CTA ── */}
-          <section className="bg-bg pb-section-py">
+          <section className="post-body-section pb-section-py">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
               <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
+                <div className="post-cta-panel flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4">
                   <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">
+                    <h3 className="text-fluid-2xl text-bg font-serif font-medium tracking-tight leading-snug">
                       Have Questions? Contact Us Today
                     </h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
+                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.68)" }}>
                       If you have any questions about the topics discussed in this article, our team is here to help. Call us to schedule a consultation.
                     </p>
                   </div>
@@ -146,14 +167,14 @@ export default function BlogPostClient({
           </section>
 
           {/* ── Hours + Location ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
+          <section className="post-hours-section py-section-py overflow-hidden relative">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
               <div className="grid grid-cols-2 gap-s10 max-md:grid-cols-1">
                 <RevealSection>
                   <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mb-s5">Hours of Operation</h3>
                   <div className="flex flex-col">
                     {HOURS.map((h) => (
-                      <div key={h.day} className="flex items-center justify-between py-3 text-sm" style={{ borderBottom: "1px solid rgba(245,244,239,0.08)" }}>
+                      <div key={h.day} className="post-hours-row flex items-center justify-between py-3 text-sm" style={{ borderBottom: "1px solid rgba(245,244,239,0.08)" }}>
                         <span style={{ color: "rgba(245,244,239,0.45)" }}>{h.day}</span>
                         <span className="text-bg font-medium">{h.time}</span>
                       </div>

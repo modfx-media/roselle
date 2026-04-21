@@ -31,14 +31,14 @@ export default function AppliedKinesiologyPage() {
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1">
-          <section className="bg-fg relative overflow-hidden">
+        <main className="relative z-1 service-page-shell">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a><span>/</span>
-                  <a href="/services.html" className="transition-colors duration-200 hover:text-bg">Services</a><span>/</span>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
+                  <a href="/services.html" className="transition-colors duration-200 hover:text-accent">Services</a><span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Applied Kinesiology</span>
                 </nav>
               </RevealSection>
@@ -109,7 +109,7 @@ export default function AppliedKinesiologyPage() {
               <div className="grid grid-cols-2 gap-s4 mt-s8 max-md:grid-cols-1">
                 {BENEFITS.map((b, i) => (
                   <RevealSection key={b} delay={0.05 * i}>
-                    <SpotlightCard className="bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)] rounded-xl p-s5 flex items-center gap-s3 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1">
+                    <SpotlightCard className="bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)] rounded-xl p-s5 flex items-center gap-s3 card-hover-lift">
                       <span className="text-xs font-semibold tracking-widest" style={{ color: "rgba(198,177,128,0.85)" }}>{String(i + 1).padStart(2, "0")}</span>
                       <span className="text-fluid-base text-bg">{b}</span>
                     </SpotlightCard>
@@ -162,7 +162,7 @@ export default function AppliedKinesiologyPage() {
                 <RevealSection>
                   <h3 className="text-fluid-2xl text-fg font-serif tracking-tight leading-snug mb-s5">Hours of Operation</h3>
                   <div className="flex flex-col">
-                    {HOURS.map((h) => (<div key={h.day} className="flex items-center justify-between py-3 text-sm" style={{ borderBottom: "1px solid rgba(42,41,40,0.08)" }}><span style={{ color: "rgba(42,41,40,0.45)" }}>{h.day}</span><span className="text-fg font-medium">{h.time}</span></div>))}
+                    {HOURS.map((h) => (<div key={h.day} className="service-hours-row flex items-center justify-between py-3 text-sm" style={{ borderBottom: "1px solid rgba(42,41,40,0.08)" }}><span style={{ color: "rgba(42,41,40,0.45)" }}>{h.day}</span><span className="text-fg font-medium">{h.time}</span></div>))}
                   </div>
                 </RevealSection>
                 <RevealSection delay={0.12}>

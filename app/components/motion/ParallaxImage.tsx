@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 
 interface Props {
   src: string;
@@ -11,6 +11,7 @@ interface Props {
 
 export default function ParallaxImage({ src, alt, className = "", speed = 0.15 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -18,7 +19,7 @@ export default function ParallaxImage({ src, alt, className = "", speed = 0.15 }
   });
 
   // Move image slightly opposite to scroll direction
-  const y = useTransform(scrollYProgress, [0, 1], [`${speed * -100}%`, `${speed * 100}%`]);
+  const y = useTransform(scrollYProgress, [0, 1], prefersReducedMotion ? ["0%", "0%"] : [`${speed * -100}%`, `${speed * 100}%`]);
 
   return (
     <div ref={ref} className={`hero-parallax-wrap ${className}`} style={{ overflow: "hidden", position: "relative" }}>

@@ -15,7 +15,12 @@ const STATS = [
 export default function About() {
   return (
     <div id="about" data-section="about">
-      <section className="about-noise bg-fg py-section-py overflow-hidden relative">
+      <section className="about-noise py-section-py overflow-hidden relative"
+        style={{
+          background: `radial-gradient(ellipse 40% 40% at 85% 15%, rgba(198,177,128,0.06) 0%, transparent 70%),
+                       linear-gradient(160deg, #030712 0%, #1a1714 50%, #2a2928 100%)`,
+        }}
+      >
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
           <div className="grid grid-cols-[1fr_1px_1fr] gap-x-s10 items-stretch relative z-1
                           max-[900px]:grid-cols-1 max-[900px]:gap-y-s8">
@@ -126,9 +131,10 @@ export default function About() {
                                 max-[900px]:grid-cols-2 max-[480px]:grid-cols-2"
                   style={{ border: "1px solid rgba(245,244,239,0.08)" }}>
                   {STATS.map((s, i) => (
-                    <div key={s.label} className="p-s3"
+                    <div key={s.label} className="p-s3 relative"
                       style={{
                         borderRight: i < STATS.length - 1 ? "1px solid rgba(245,244,239,0.08)" : "none",
+                        background: "radial-gradient(circle, rgba(198,177,128,0.12) 0%, transparent 70%)",
                       }}>
                       <p className="text-fluid-2xl text-bg font-serif leading-none tracking-tight">
                         <CountUp value={s.value} className="text-fluid-2xl text-bg font-serif leading-none tracking-tight" />
@@ -145,11 +151,11 @@ export default function About() {
               <RevealSection delay={0.5}>
                 <a
                   href="/about-us.html/staff"
-                  className="inline-flex items-center gap-2 text-sm pb-0.5 transition-colors duration-200"
+                  className="group inline-flex items-center gap-2 text-sm pb-0.5 transition-colors duration-200"
                   style={{ color: "rgba(245,244,239,0.65)", borderBottom: "1px solid rgba(245,244,239,0.2)" }}
                 >
                   Meet our doctors &amp; specialists
-                  <span className="text-accent">&rarr;</span>
+                  <span className="text-accent arrow-nudge">&rarr;</span>
                 </a>
               </RevealSection>
             </div>

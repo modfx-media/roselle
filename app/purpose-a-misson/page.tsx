@@ -24,13 +24,13 @@ export default function PurposeMissionPage() {
         <main className="relative z-1">
 
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a><span>/</span>
-                  <a href="/new-patient-center.html" className="transition-colors duration-200 hover:text-bg">New Patient Experience</a><span>/</span>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
+                  <a href="/new-patient-center.html" className="transition-colors duration-200 hover:text-accent">New Patient Experience</a><span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Purpose &amp; Mission</span>
                 </nav>
               </RevealSection>
@@ -39,48 +39,108 @@ export default function PurposeMissionPage() {
           </section>
 
           {/* ── Main Content ── */}
-          <section className="bg-bg py-section-py overflow-hidden">
+          <section
+            className="bg-bg py-section-py overflow-hidden"
+            style={{
+              background: "radial-gradient(ellipse 72% 58% at 50% 18%, rgba(198,177,128,0.12) 0%, transparent 62%), linear-gradient(180deg, #f5f4ef 0%, #efebe3 100%)",
+            }}
+          >
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Our Foundation</p>
-                <SplitReveal text="Holistic Purpose & Mission of Roselle Center For Healing" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[36ch]" />
-              </RevealSection>
-
-              {/* Image */}
-              <RevealSection delay={0.1}>
-                <div className="mt-s8 rounded-2xl overflow-hidden">
-                  <img
-                    src="https://cdcssl.ibsrv.net/ibimg/smb/1023x567_80/webmgr/0g/5/2/2024/rcfh-desk.png.webp?69ad103845fefe6b7f70b54853f523bb"
-                    alt="Reception area of Roselle Center for Healing, featuring two staff members assisting a male patient, with computers and a welcoming atmosphere."
-                    className="w-full h-auto object-cover"
+              <div className="py-s2">
+                <RevealSection>
+                  <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Our Foundation</p>
+                  <SplitReveal text="Holistic Purpose & Mission of Roselle Center For Healing" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[36ch]" />
+                  <div
+                    className="mt-s4 h-px w-16"
+                    aria-hidden="true"
+                    style={{ background: "linear-gradient(90deg, #c6b180 0%, rgba(198,177,128,0) 100%)" }}
                   />
-                </div>
-              </RevealSection>
+                </RevealSection>
 
-              {/* Purpose & Mission Statement */}
-              <RevealSection delay={0.15}>
-                <div className="mt-s8 max-w-[780px]">
-                  <h3 className="text-fluid-xl text-fg font-serif tracking-tight leading-snug mb-s5">
-                    The Roselle Center for Healing is a natural integrative healthcare practice, holistic in approach with the accepted purpose and mission of:
-                  </h3>
+                <div className="mt-s8 grid grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] gap-s8 items-start max-[900px]:grid-cols-1">
+                  <RevealSection delay={0.1}>
+                    <div
+                      className="rounded-[24px] overflow-hidden relative"
+                      style={{
+                        border: "1px solid rgba(198,177,128,0.2)",
+                        boxShadow: "0 20px 60px rgba(42,41,40,0.14)",
+                      }}
+                    >
+                      <img
+                        src="https://cdcssl.ibsrv.net/ibimg/smb/1023x567_80/webmgr/0g/5/2/2024/rcfh-desk.png.webp?69ad103845fefe6b7f70b54853f523bb"
+                        alt="Reception area of Roselle Center for Healing, featuring two staff members assisting a male patient, with computers and a welcoming atmosphere."
+                        className="w-full h-auto object-cover"
+                      />
+                      <div
+                        className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
+                        aria-hidden="true"
+                        style={{ background: "linear-gradient(180deg, rgba(42,41,40,0) 0%, rgba(42,41,40,0.18) 100%)" }}
+                      />
+                    </div>
+                  </RevealSection>
 
-                  <div className="flex flex-col gap-s5">
-                    <div className="bg-card-bg rounded-xl p-s5">
-                      <p className="text-xs tracking-widest uppercase text-accent mb-s2 font-sans">Our Purpose</p>
-                      <p className="text-fluid-base text-fg leading-relaxed font-medium">
-                        To serve, educate and empower individuals on their path to create extraordinary health!
+                  <RevealSection delay={0.15}>
+                    <div
+                      className="p-s2"
+                    >
+                      <p className="text-fluid-xl text-fg font-serif tracking-tight leading-snug">
+                        The Roselle Center for Healing is a natural integrative healthcare practice, holistic in approach with the accepted purpose and mission of:
                       </p>
                     </div>
+                  </RevealSection>
+                </div>
 
-                    <div className="bg-card-bg rounded-xl p-s5">
-                      <p className="text-xs tracking-widest uppercase text-accent mb-s2 font-sans">Our Mission</p>
-                      <p className="text-fluid-base text-fg leading-relaxed font-medium">
-                        To provide others with established and advanced techniques in the disciplines of chiropractic, acupuncture and nutritional healing. These goals are met by creating structural, chemical and emotional balance.
-                      </p>
+                <RevealSection delay={0.2}>
+                  <div
+                    className="mt-s8 rounded-[28px] p-s6 max-md:p-s5"
+                    style={{
+                      background: "linear-gradient(180deg, rgba(255,255,255,0.42) 0%, rgba(245,244,239,0.86) 100%)",
+                      border: "1px solid rgba(198,177,128,0.16)",
+                      boxShadow: "0 18px 50px rgba(42,41,40,0.07)",
+                    }}
+                  >
+                    <div className="grid grid-cols-2 gap-s5 max-[900px]:grid-cols-1">
+                      <div
+                        className="rounded-[22px] p-s5"
+                        style={{
+                          background: "linear-gradient(180deg, rgba(218,214,205,0.82) 0%, rgba(245,244,239,0.94) 100%)",
+                          border: "1px solid rgba(198,177,128,0.16)",
+                          boxShadow: "0 16px 40px rgba(42,41,40,0.08)",
+                        }}
+                      >
+                        <p className="text-xs tracking-widest uppercase text-accent mb-s2 font-sans">Our Purpose</p>
+                        <div
+                          className="mb-s4 h-px w-12"
+                          aria-hidden="true"
+                          style={{ background: "linear-gradient(90deg, #c6b180 0%, rgba(198,177,128,0) 100%)" }}
+                        />
+                        <p className="text-fluid-base text-fg leading-relaxed font-medium">
+                          To serve, educate and empower individuals on their path to create extraordinary health!
+                        </p>
+                      </div>
+
+                      <div
+                        className="rounded-[22px] p-s5"
+                        style={{
+                          background: "linear-gradient(180deg, rgba(218,214,205,0.82) 0%, rgba(245,244,239,0.94) 100%)",
+                          border: "1px solid rgba(198,177,128,0.16)",
+                          boxShadow: "0 16px 40px rgba(42,41,40,0.08)",
+                        }}
+                      >
+                        <p className="text-xs tracking-widest uppercase text-accent mb-s2 font-sans">Our Mission</p>
+                        <div
+                          className="mb-s4 h-px w-12"
+                          aria-hidden="true"
+                          style={{ background: "linear-gradient(90deg, #c6b180 0%, rgba(198,177,128,0) 100%)" }}
+                        />
+                        <p className="text-fluid-base text-fg leading-relaxed font-medium">
+                          To provide others with established and advanced techniques in the disciplines of chiropractic, acupuncture and nutritional healing. These goals are met by creating structural, chemical and emotional balance.
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </RevealSection>
+                </RevealSection>
+              </div>
             </div>
           </section>
 

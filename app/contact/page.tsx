@@ -50,14 +50,14 @@ export default function ContactPage() {
         <main className="relative z-1">
 
           {/* ── Hero Banner ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4
                             pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6"
                   style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
                   <span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Contact</span>
                 </nav>
@@ -145,10 +145,10 @@ export default function ContactPage() {
                       href="https://www.rosellecare.com/contact-staff-member.html"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm mt-s2 transition-colors duration-200 text-accent hover:text-fg"
+                      className="group inline-flex items-center gap-2 text-sm mt-s2 transition-colors duration-200 text-accent hover:text-fg"
                     >
                       Contact a Staff Member Directly
-                      <span>&rarr;</span>
+                      <span className="arrow-nudge">&rarr;</span>
                     </a>
                   </RevealSection>
                 </div>
@@ -236,7 +236,7 @@ export default function ContactPage() {
                             onChange={handleChange}
                             className="rounded-xl px-s4 py-3 text-sm bg-card-bg border border-transparent
                                        outline-none transition-colors duration-200
-                                       focus:border-accent text-fg placeholder:text-[rgba(42,41,40,0.35)]"
+                                       input-gold-focus focus:border-accent text-fg placeholder:text-[rgba(42,41,40,0.35)]"
                             placeholder="Your name"
                           />
                         </div>
@@ -254,7 +254,7 @@ export default function ContactPage() {
                             onChange={handleChange}
                             className="rounded-xl px-s4 py-3 text-sm bg-card-bg border border-transparent
                                        outline-none transition-colors duration-200
-                                       focus:border-accent text-fg placeholder:text-[rgba(42,41,40,0.35)]"
+                                       input-gold-focus focus:border-accent text-fg placeholder:text-[rgba(42,41,40,0.35)]"
                             placeholder="Your email"
                           />
                         </div>
@@ -273,7 +273,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           className="rounded-xl px-s4 py-3 text-sm bg-card-bg border border-transparent
                                      outline-none transition-colors duration-200
-                                     focus:border-accent text-fg placeholder:text-[rgba(42,41,40,0.35)]"
+                                     input-gold-focus focus:border-accent text-fg placeholder:text-[rgba(42,41,40,0.35)]"
                           placeholder="Your phone number"
                         />
                       </div>
@@ -292,7 +292,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           className="rounded-xl px-s4 py-3 text-sm bg-card-bg border border-transparent
                                      outline-none transition-colors duration-200 resize-y
-                                     focus:border-accent text-fg placeholder:text-[rgba(42,41,40,0.35)]"
+                                     input-gold-focus focus:border-accent text-fg placeholder:text-[rgba(42,41,40,0.35)]"
                           placeholder="How can we help?"
                         />
                       </div>

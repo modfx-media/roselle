@@ -42,13 +42,13 @@ export default function PatientFeedbackPage() {
         <main className="relative z-1">
 
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a><span>/</span>
-                  <a href="/contact" className="transition-colors duration-200 hover:text-bg">Contact</a><span>/</span>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
+                  <a href="/contact" className="transition-colors duration-200 hover:text-accent">Contact</a><span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Patient Feedback</span>
                 </nav>
               </RevealSection>
@@ -114,7 +114,7 @@ export default function PatientFeedbackPage() {
                         required
                         value={formData.firstName}
                         onChange={handleChange}
-                        className="w-full rounded-lg px-s4 py-3 text-fluid-base text-fg bg-[rgba(245,244,239,0.08)] border border-[rgba(245,244,239,0.12)] outline-none transition-colors duration-200 focus:border-accent placeholder:text-[rgba(245,244,239,0.25)]"
+                        className="w-full rounded-lg px-s4 py-3 text-fluid-base text-fg bg-[rgba(245,244,239,0.08)] border border-[rgba(245,244,239,0.12)] outline-none transition-colors duration-200 input-gold-focus focus:border-accent placeholder:text-[rgba(245,244,239,0.25)]"
                         placeholder="First Name"
                       />
                     </div>
@@ -127,7 +127,7 @@ export default function PatientFeedbackPage() {
                         required
                         value={formData.lastName}
                         onChange={handleChange}
-                        className="w-full rounded-lg px-s4 py-3 text-fluid-base text-fg bg-[rgba(245,244,239,0.08)] border border-[rgba(245,244,239,0.12)] outline-none transition-colors duration-200 focus:border-accent placeholder:text-[rgba(245,244,239,0.25)]"
+                        className="w-full rounded-lg px-s4 py-3 text-fluid-base text-fg bg-[rgba(245,244,239,0.08)] border border-[rgba(245,244,239,0.12)] outline-none transition-colors duration-200 input-gold-focus focus:border-accent placeholder:text-[rgba(245,244,239,0.25)]"
                         placeholder="Last Name"
                       />
                     </div>
@@ -140,7 +140,7 @@ export default function PatientFeedbackPage() {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full rounded-lg px-s4 py-3 text-fluid-base text-fg bg-[rgba(245,244,239,0.08)] border border-[rgba(245,244,239,0.12)] outline-none transition-colors duration-200 focus:border-accent placeholder:text-[rgba(245,244,239,0.25)]"
+                        className="w-full rounded-lg px-s4 py-3 text-fluid-base text-fg bg-[rgba(245,244,239,0.08)] border border-[rgba(245,244,239,0.12)] outline-none transition-colors duration-200 input-gold-focus focus:border-accent placeholder:text-[rgba(245,244,239,0.25)]"
                         placeholder="Email Address"
                       />
                     </div>
@@ -152,7 +152,7 @@ export default function PatientFeedbackPage() {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full rounded-lg px-s4 py-3 text-fluid-base text-fg bg-[rgba(245,244,239,0.08)] border border-[rgba(245,244,239,0.12)] outline-none transition-colors duration-200 focus:border-accent placeholder:text-[rgba(245,244,239,0.25)]"
+                        className="w-full rounded-lg px-s4 py-3 text-fluid-base text-fg bg-[rgba(245,244,239,0.08)] border border-[rgba(245,244,239,0.12)] outline-none transition-colors duration-200 input-gold-focus focus:border-accent placeholder:text-[rgba(245,244,239,0.25)]"
                         placeholder="Phone Number"
                       />
                     </div>

@@ -40,7 +40,11 @@ export default function Testimonials() {
 
   return (
     <div id="testimonials" data-section="testimonials">
-      <section className="bg-bg py-section-py overflow-hidden">
+      <section className="py-section-py overflow-hidden"
+        style={{
+          background: "linear-gradient(180deg, #f5f4ef 0%, rgba(198,177,128,0.06) 50%, #f5f4ef 100%)",
+        }}
+      >
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 
           {/* Header */}
@@ -129,7 +133,7 @@ export default function Testimonials() {
                       border: "1px solid rgba(42,41,40,0.07)",
                       boxShadow: "0 2px 16px rgba(42,41,40,0.04)",
                     }}
-                    whileHover={{ y: -3, boxShadow: "0 8px 32px rgba(42,41,40,0.09)" }}
+                    whileHover={{ y: -4, boxShadow: "0 12px 28px rgba(198,177,128,0.15)" }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   >
                     <div className="flex items-center justify-between">
@@ -168,10 +172,10 @@ export default function Testimonials() {
               <a
                 href="https://www.google.com/maps/search/Roselle+Center+for+Healing+Fairfax+VA"
                 target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-100 opacity-55 text-fg"
-                style={{ borderBottom: "1px solid rgba(42,41,40,0.2)", paddingBottom: "2px" }}
+                className="group inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-100 opacity-55 text-fg hover-underline-gold"
+                style={{ paddingBottom: "2px" }}
               >
-                View all 110 reviews on Google →
+                View all 110 reviews on Google <span className="arrow-nudge">→</span>
               </a>
             </div>
           </RevealSection>

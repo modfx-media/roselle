@@ -24,12 +24,12 @@ export default function NoticeOfPrivacyPracticesPage() {
         <main className="relative z-1">
 
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a><span>/</span>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Notice of Privacy Practices (NPP) Form</span>
                 </nav>
               </RevealSection>
@@ -295,7 +295,7 @@ export default function NoticeOfPrivacyPracticesPage() {
                   <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mt-s10 mb-s4">How else can we use or share your health information?</h3>
                   <p className="text-fluid-base leading-relaxed mb-s6" style={{ color: "rgba(245,244,239,0.55)" }}>
                     We are allowed or required to share your information in other ways – usually in ways that contribute to the public good, such as public health and research. We have to meet many conditions in the law before we can share your information for these purposes. For more information see:{" "}
-                    <a href="https://www.hhs.gov/hipaa/for-individuals/guidance-materials-for-consumers/index.html" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2 transition-colors duration-200 hover:text-bg">www.hhs.gov/ocr/privacy/hipaa/understanding/consumers/index.html</a>.
+                    <a href="https://www.hhs.gov/hipaa/for-individuals/guidance-materials-for-consumers/index.html" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2 transition-colors duration-200 hover:text-accent">www.hhs.gov/ocr/privacy/hipaa/understanding/consumers/index.html</a>.
                   </p>
                 </RevealSection>
 

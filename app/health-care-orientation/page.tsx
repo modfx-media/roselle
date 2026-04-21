@@ -33,13 +33,13 @@ export default function HealthCareOrientationPage() {
         <main className="relative z-1">
 
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a><span>/</span>
-                  <a href="/education-lectures.html" className="transition-colors duration-200 hover:text-bg">Health Education</a><span>/</span>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
+                  <a href="/education-lectures.html" className="transition-colors duration-200 hover:text-accent">Health Education</a><span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Health Care Orientation</span>
                 </nav>
               </RevealSection>
@@ -104,7 +104,7 @@ export default function HealthCareOrientationPage() {
                         value={question}
                         onChange={(e) => setQuestion(e.target.value)}
                         placeholder="Enter any questions you may have…"
-                        className="w-full rounded-lg border border-[rgba(245,244,239,0.12)] bg-[rgba(245,244,239,0.04)] px-s4 py-s3 text-bg text-fluid-base placeholder:text-[rgba(245,244,239,0.25)] focus:outline-none focus:border-accent transition-colors duration-200 resize-y"
+                        className="w-full rounded-lg border border-[rgba(245,244,239,0.12)] bg-[rgba(245,244,239,0.04)] px-s4 py-s3 text-bg text-fluid-base placeholder:text-[rgba(245,244,239,0.25)] focus:outline-none input-gold-focus focus:border-accent transition-colors duration-200 resize-y"
                       />
                     </div>
                     <MagneticButton className="btn-primary self-start" type="submit">Submit Confirmation</MagneticButton>

@@ -25,16 +25,16 @@ export default function PaymentOptionsPage() {
         <main className="relative z-1">
 
           {/* ── Hero Banner ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4
                             pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6"
                   style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
                   <span>/</span>
-                  <a href="/new-patient-center.html" className="transition-colors duration-200 hover:text-bg">New Patient Experience</a>
+                  <a href="/new-patient-center.html" className="transition-colors duration-200 hover:text-accent">New Patient Experience</a>
                   <span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Payment Options</span>
                 </nav>
@@ -91,8 +91,7 @@ export default function PaymentOptionsPage() {
                 <RevealSection>
                   <SpotlightCard className="bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]
                                             rounded-xl p-s6 flex flex-col gap-s3 h-full
-                                            transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
-                                            hover:-translate-y-1">
+                                            card-hover-lift">
                     <span className="text-xs font-semibold tracking-widest" style={{ color: "rgba(198,177,128,0.85)" }}>
                       01
                     </span>
@@ -111,8 +110,7 @@ export default function PaymentOptionsPage() {
                 <RevealSection delay={0.1}>
                   <SpotlightCard className="bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]
                                             rounded-xl p-s6 flex flex-col gap-s3 h-full
-                                            transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
-                                            hover:-translate-y-1">
+                                            card-hover-lift">
                     <span className="text-xs font-semibold tracking-widest" style={{ color: "rgba(198,177,128,0.85)" }}>
                       02
                     </span>

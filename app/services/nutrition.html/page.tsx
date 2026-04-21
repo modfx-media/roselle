@@ -22,15 +22,15 @@ export default function NutritionPage() {
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1">
+        <main className="relative z-1 service-page-shell">
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a><span>/</span>
-                  <a href="/services.html" className="transition-colors duration-200 hover:text-bg">Services</a><span>/</span>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
+                  <a href="/services.html" className="transition-colors duration-200 hover:text-accent">Services</a><span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Nutrition</span>
                 </nav>
               </RevealSection>
@@ -116,7 +116,7 @@ export default function NutritionPage() {
           <section className="bg-bg py-section-py">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
               <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
+                <div className="service-cta-panel flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
                   <div className="flex flex-col gap-s3 max-w-[560px]">
                     <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Experience the Benefits of Nutrition Counseling Today by Scheduling Your Appointment</h3>
                     <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
@@ -138,7 +138,7 @@ export default function NutritionPage() {
                 <RevealSection>
                   <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mb-s5">Hours of Operation</h3>
                   <div className="flex flex-col">
-                    {HOURS.map((h) => (<div key={h.day} className="flex items-center justify-between py-3 text-sm" style={{ borderBottom: "1px solid rgba(245,244,239,0.08)" }}><span style={{ color: "rgba(245,244,239,0.45)" }}>{h.day}</span><span className="text-bg font-medium">{h.time}</span></div>))}
+                    {HOURS.map((h) => (<div key={h.day} className="service-hours-row flex items-center justify-between py-3 text-sm" style={{ borderBottom: "1px solid rgba(245,244,239,0.08)" }}><span style={{ color: "rgba(245,244,239,0.45)" }}>{h.day}</span><span className="text-bg font-medium">{h.time}</span></div>))}
                   </div>
                 </RevealSection>
                 <RevealSection delay={0.12}>

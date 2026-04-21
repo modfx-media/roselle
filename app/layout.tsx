@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import FloatingBackground from "./components/FloatingBackground";
+import MotionProvider from "./components/MotionProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,8 +38,10 @@ export default function RootLayout({
       className={`${inter.variable} ${libreBaskerville.variable}`}
     >
       <body className="antialiased">
-        <FloatingBackground />
-        {children}
+        <MotionProvider>
+          <FloatingBackground />
+          {children}
+        </MotionProvider>
       </body>
     </html>
   );

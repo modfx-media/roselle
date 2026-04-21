@@ -16,7 +16,7 @@ const HOURS = [
   { day: "Sunday", time: "Closed" },
 ];
 
-const inputClass = "w-full rounded-lg bg-[rgba(245,244,239,0.06)] border border-[rgba(245,244,239,0.1)] px-4 py-3 text-sm text-bg placeholder:text-[rgba(245,244,239,0.3)] focus:outline-none focus:border-accent transition-colors duration-200";
+const inputClass = "w-full rounded-lg bg-[rgba(245,244,239,0.06)] border border-[rgba(245,244,239,0.1)] px-4 py-3 text-sm text-bg placeholder:text-[rgba(245,244,239,0.3)] focus:outline-none input-gold-focus focus:border-accent transition-colors duration-200";
 const labelClass = "block text-xs tracking-widest uppercase mb-2 font-sans";
 const labelStyle = { color: "rgba(198,177,128,0.85)" };
 const radioLabelClass = "flex items-center gap-2 text-sm cursor-pointer";
@@ -72,12 +72,12 @@ export default function EHRPatientHealthHistoryFormPage() {
         <main className="relative z-1">
 
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a><span>/</span>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>EHR Patient Health History Form</span>
                 </nav>
               </RevealSection>

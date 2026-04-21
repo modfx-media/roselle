@@ -22,7 +22,11 @@ export default function Hero() {
 
   return (
     <div id="hero" data-section="hero">
-      <section className="pt-[calc(var(--spacing-nav-h)+var(--spacing-s8))] pb-s10 relative overflow-hidden">
+      <section className="pt-[calc(var(--spacing-nav-h)+var(--spacing-s8))] pb-s10 relative overflow-hidden"
+        style={{
+          background: "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(198,177,128,0.08) 0%, transparent 70%), #f5f4ef",
+        }}
+      >
 
         {/* ── Grain texture overlay ── */}
         <div className="absolute inset-0 pointer-events-none z-0" aria-hidden="true" style={{

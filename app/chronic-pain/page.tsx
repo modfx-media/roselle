@@ -22,19 +22,19 @@ export default function ChronicPainPage() {
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1">
+        <main className="relative z-1 service-page-shell">
 
           {/* ── Hero Banner ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="inner-hero-gradient relative overflow-hidden">
             <div className="hero-grid-bg" />
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4
                             pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
               <RevealSection>
                 <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6"
                   style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-bg">Home</a>
+                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
                   <span>/</span>
-                  <a href="/services.html" className="transition-colors duration-200 hover:text-bg">Services</a>
+                  <a href="/services.html" className="transition-colors duration-200 hover:text-accent">Services</a>
                   <span>/</span>
                   <span style={{ color: "rgba(245,244,239,0.7)" }}>Chronic Pain</span>
                 </nav>
@@ -198,7 +198,7 @@ export default function ChronicPainPage() {
                   <div className="flex flex-col">
                     {HOURS.map((h) => (
                       <div key={h.day}
-                        className="flex items-center justify-between py-3 text-sm"
+                        className="service-hours-row flex items-center justify-between py-3 text-sm"
                         style={{ borderBottom: "1px solid rgba(42,41,40,0.08)" }}>
                         <span style={{ color: "rgba(42,41,40,0.45)" }}>{h.day}</span>
                         <span className="text-fg font-medium">{h.time}</span>

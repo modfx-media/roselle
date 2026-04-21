@@ -57,7 +57,7 @@ export default function GsapImageParallax({
   return (
     <div
       ref={wrapRef}
-      className={className}
+      className={`gsap-parallax-frame ${className}`}
       style={{ overflow: "hidden", position: "relative" }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -66,7 +66,7 @@ export default function GsapImageParallax({
         src={src}
         alt={alt}
         loading="eager"
-        className={imgClassName}
+        className={`gsap-parallax-media ${imgClassName}`.trim()}
         style={{
           width: "100%",
           height: `${100 + speed * 100}%`,
@@ -75,6 +75,7 @@ export default function GsapImageParallax({
           willChange: "transform",
         }}
       />
+      <div className="gsap-parallax-overlay" aria-hidden="true" />
     </div>
   );
 }

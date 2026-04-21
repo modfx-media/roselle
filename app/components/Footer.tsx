@@ -1,4 +1,5 @@
 "use client";
+import { useRef, useEffect, useState } from "react";
 
 const LINKS = {
   Services: [
@@ -34,9 +35,36 @@ const SOCIAL = [
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const footerRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = footerRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <footer id="footer" className="bg-fg">
+    <footer
+      id="footer"
+      ref={footerRef}
+      className="footer-gradient"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(20px)",
+        transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
+      }}
+    >
       {/* removed image */}
 
       <div className="pt-s8 pb-s8 max-md:pb-32">
@@ -65,8 +93,8 @@ export default function Footer() {
               <div className="flex gap-s3 flex-wrap mt-s3">
                 {SOCIAL.map(s => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
-                    className="text-xs transition-colors duration-200 hover:text-bg"
-                    style={{ color: "rgba(245,244,239,0.4)" }}>
+                    className="text-xs transition-all duration-200 hover:text-accent hover:scale-[1.15]"
+                    style={{ color: "rgba(245,244,239,0.4)", display: "inline-block" }}>
                     {s.label}
                   </a>
                 ))}
@@ -87,7 +115,7 @@ export default function Footer() {
                         key={l.label}
                         href={l.href}
                         {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                        className="text-sm transition-colors duration-200 hover:text-bg"
+                        className="text-sm transition-colors duration-200 hover:text-bg hover-underline-gold"
                         style={{ color: "rgba(245,244,239,0.6)" }}
                       >
                         {l.label}

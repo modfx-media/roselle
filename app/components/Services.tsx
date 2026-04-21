@@ -85,9 +85,12 @@ export default function Services() {
           <div className="grid grid-cols-3 gap-s4 max-lg:grid-cols-2 max-md:grid-cols-1">
             {SERVICES.map((s, i) => (
               <ScrollScale key={s.title}>
-                <SpotlightCard className="bg-card-bg rounded-xl overflow-hidden flex flex-col h-full">
+                <SpotlightCard className="bg-card-bg rounded-xl overflow-hidden flex flex-col h-full card-hover-lift">
                   <div className="h-[200px] relative overflow-hidden shrink-0">
                     <ParallaxImage src={s.img} alt={s.title} speed={0.07} />
+                    {/* Image gradient overlay */}
+                    <div className="absolute inset-0 pointer-events-none z-1"
+                      style={{ background: "linear-gradient(to top, rgba(42,41,40,0.55) 0%, transparent 45%)" }} />
                   </div>
                   <div className="p-s3 pb-s4 flex flex-col gap-s2 flex-1">
                     <div className="flex flex-wrap gap-1.5">
@@ -100,11 +103,10 @@ export default function Services() {
                     <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(42,41,40,0.65)" }}>{s.desc}</p>
                     <a
                       href={s.href}
-                      className="text-xs text-fg inline-block mt-auto pb-px transition-opacity duration-200
-                                 opacity-55 hover:opacity-100"
-                      style={{ borderBottom: "1px solid rgba(42,41,40,0.2)" }}
+                      className="group text-xs text-fg inline-flex items-center gap-1 mt-auto pb-px transition-opacity duration-200
+                                 opacity-55 hover:opacity-100 hover-underline-gold"
                     >
-                      Learn more &rarr;
+                      Learn more <span className="arrow-nudge">&rarr;</span>
                     </a>
                   </div>
                 </SpotlightCard>

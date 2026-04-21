@@ -27,11 +27,9 @@ export default function WhyUs() {
                 <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">
                   Why Roselle
                 </p>
-                <h2 className="text-fluid-4xl text-fg tracking-tight leading-[1.08]">
-                  <SplitReveal text="The Roselle" as="h2" className="text-fluid-4xl text-fg tracking-tight leading-[1.08]">
-                    {" "}<span className="sr-word inline-block gradient-text">Difference</span>
-                  </SplitReveal>
-                </h2>
+                <SplitReveal text="The Roselle" as="h2" className="text-fluid-4xl text-fg tracking-tight leading-[1.08]">
+                  {" "}<span className="sr-word inline-block gradient-text">Difference</span>
+                </SplitReveal>
               </div>
               <p className="text-fluid-base leading-relaxed max-w-[42ch] self-end"
                 style={{ color: "rgba(42,41,40,0.6)" }}>
@@ -45,9 +43,12 @@ export default function WhyUs() {
             {PILLARS.map((p, i) => (
               <RevealSection key={p.num} delay={i * 0.07}>
                 <SpotlightCard className="bg-card-bg rounded-xl p-s5 px-s4 flex flex-col gap-s2
-                                          transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
-                                          hover:-translate-y-1">
-                  <TextScramble text={p.num} className="text-xs text-accent font-semibold tracking-widest" speed={50} />
+                                          transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
+                                          hover:-translate-y-1 border-l-3 border-l-transparent hover:border-l-accent">
+                  <span className="relative inline-block w-fit">
+                    <span className="absolute inset-0 rounded-full" style={{ background: "radial-gradient(circle, rgba(198,177,128,0.2) 0%, transparent 70%)", transform: "scale(2.5)" }} />
+                    <TextScramble text={p.num} className="text-xs text-accent font-semibold tracking-widest relative z-1" speed={50} />
+                  </span>
                   <h3 className="text-xl text-fg leading-snug mt-s1">{p.title}</h3>
                   <p className="text-sm leading-relaxed flex-1" style={{ color: "rgba(42,41,40,0.65)" }}>{p.body}</p>
                 </SpotlightCard>

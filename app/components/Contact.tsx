@@ -156,8 +156,18 @@ export default function Contact() {
                       <input type="email" placeholder="Your email address" required
                         value={email} onChange={e => setEmail(e.target.value)}
                         aria-label="Email address"
-                        className="flex-1 bg-transparent border-none outline-none px-s3 text-sm h-11 min-w-0"
-                        style={{ color: "rgba(245,244,239,0.8)" }} />
+                        className="flex-1 bg-transparent border-none px-s3 text-sm h-11 min-w-0 rounded-xl transition-all duration-200"
+                        style={{
+                          color: "rgba(245,244,239,0.8)",
+                          outline: "none",
+                        }}
+                        onFocus={(e) => {
+                          e.currentTarget.style.boxShadow = "0 0 0 2px rgba(198,177,128,0.35)";
+                        }}
+                        onBlur={(e) => {
+                          e.currentTarget.style.boxShadow = "none";
+                        }}
+                      />
                       <MagneticButton className="btn-primary-inverted" type="submit">Send</MagneticButton>
                     </motion.form>
                   )}
@@ -183,9 +193,9 @@ export default function Contact() {
                   </p>
                   <a href="https://maps.app.goo.gl/5WJebWVTjWfPRX3VA"
                     target="_blank" rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs mt-s2 transition-opacity hover:opacity-100 opacity-60"
+                    className="group inline-flex items-center gap-1.5 text-xs mt-s2 transition-opacity hover:opacity-100 opacity-60"
                     style={{ color: "rgba(198,177,128,0.9)" }}>
-                    Get Directions →
+                    Get Directions <span className="arrow-nudge">→</span>
                   </a>
                 </div>
                 <div>
@@ -221,7 +231,7 @@ export default function Contact() {
                 <div className="flex items-center justify-between mb-s4">
                   <p className="text-xs tracking-[0.2em] uppercase font-sans"
                     style={{ color: "rgba(198,177,128,0.6)" }}>Hours of Operation</p>
-                  <span className="inline-flex items-center gap-1.5 text-xs rounded-full px-2.5 py-1"
+                  <span className="inline-flex items-center gap-1.5 text-xs rounded-full px-2.5 py-1 gold-pulse"
                     style={{ background: "rgba(198,177,128,0.1)", color: "rgba(198,177,128,0.8)" }}>
                     <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                     Open Today

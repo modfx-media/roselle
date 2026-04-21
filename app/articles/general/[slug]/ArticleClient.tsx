@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import Nav from "../../../components/Nav";
 import Footer from "../../../components/Footer";
 import SmoothScroll from "../../../components/motion/SmoothScroll";
 import RevealSection from "../../../components/motion/RevealSection";
-import SplitReveal from "../../../components/motion/SplitReveal";
 import MagneticButton from "../../../components/motion/MagneticButton";
 import type { SidebarCategory } from "./page";
 
@@ -33,6 +33,7 @@ export default function ArticleClient({
   sidebar,
 }: Props) {
   const [expandedCats, setExpandedCats] = useState<Record<string, boolean>>({});
+  const prefersReducedMotion = useReducedMotion();
 
   const toggleCat = useCallback((id: string) => {
     setExpandedCats((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -42,26 +43,31 @@ export default function ArticleClient({
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1">
+        <main className="relative z-1 post-shell">
           {/* ── Hero ── */}
-          <section className="bg-fg relative overflow-hidden">
+          <section className="post-hero relative overflow-hidden">
             <div className="hero-grid-bg" />
+            <div className="post-watermark" aria-hidden="true">{title}</div>
             <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
+              <motion.div
+                initial={prefersReducedMotion ? false : { opacity: 0 }}
+                animate={prefersReducedMotion ? undefined : { opacity: 1 }}
+                transition={prefersReducedMotion ? undefined : { duration: 0.4, delay: 0.2, ease: "easeOut" }}
+              >
                 <nav
                   className="flex items-center gap-2 text-xs tracking-wide mb-s6"
                   style={{ color: "rgba(245,244,239,0.45)" }}
                 >
                   <a
                     href="/"
-                    className="transition-colors duration-200 hover:text-bg"
+                    className="transition-colors duration-200 hover:text-accent"
                   >
                     Home
                   </a>
                   <span>/</span>
                   <a
                     href="/articles/general"
-                    className="transition-colors duration-200 hover:text-bg"
+                    className="transition-colors duration-200 hover:text-accent"
                   >
                     Articles
                   </a>
@@ -73,53 +79,60 @@ export default function ArticleClient({
                     {title}
                   </span>
                 </nav>
-              </RevealSection>
-              <SplitReveal
-                text={title}
-                as="h1"
+              </motion.div>
+              <div className="post-gold-rule mb-s5" aria-hidden="true" />
+              <motion.h1
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+                animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+                transition={prefersReducedMotion ? undefined : { duration: 0.6, ease: "easeOut" }}
                 className="text-fluid-5xl text-bg tracking-tight leading-[1.05]"
-              />
+              >
+                {title}
+              </motion.h1>
               {category && (
-                <RevealSection delay={0.15}>
-                  <p
-                    className="mt-s4 text-xs tracking-widest uppercase"
-                    style={{ color: "rgba(198,177,128,0.85)" }}
-                  >
-                    {category}
-                  </p>
-                </RevealSection>
+                <motion.div
+                  initial={prefersReducedMotion ? false : { opacity: 0 }}
+                  animate={prefersReducedMotion ? undefined : { opacity: 1 }}
+                  transition={prefersReducedMotion ? undefined : { duration: 0.4, delay: 0.2, ease: "easeOut" }}
+                  className="post-meta-row mt-s4"
+                >
+                  <span className="post-pill">{category}</span>
+                </motion.div>
               )}
             </div>
           </section>
 
           {/* ── Article Body + Sidebar ── */}
-          <section className="bg-bg py-section-py overflow-hidden">
+          <section className="post-body-section py-section-py overflow-hidden">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
               <div className="grid grid-cols-[1fr_300px] gap-s10 max-lg:grid-cols-1">
                 {/* ── Left: Article Content ── */}
                 <div>
                   <RevealSection>
+                    <div className="post-body-wrap">
                     <div
-                      className="blog-body prose"
+                      className="blog-body post-dark-prose prose"
                       dangerouslySetInnerHTML={{ __html: bodyHtml }}
                     />
+                    </div>
                   </RevealSection>
 
                   {/* Back to Articles */}
                   <div className="mt-s10">
                     <a
                       href="/articles/general"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors duration-200 hover:text-fg"
+                      className="post-back-link text-sm font-medium"
                     >
-                      ← Back to Articles
+                      <span className="post-back-link-arrow">←</span>
+                      <span>Back to Articles</span>
                     </a>
                   </div>
                 </div>
 
                 {/* ── Right: Categories Sidebar ── */}
                 <aside className="max-lg:order-first">
-                  <div className="bg-card-bg rounded-xl p-s5">
-                    <h2 className="text-fluid-lg text-fg font-serif tracking-tight mb-s4">
+                  <div className="post-body-wrap">
+                    <h2 className="text-fluid-lg text-bg font-serif tracking-tight mb-s4">
                       Categories
                     </h2>
                     <ul className="flex flex-col gap-1">
@@ -129,7 +142,7 @@ export default function ArticleClient({
                             <a
                               href={`/articles/general/category/${cat.id}`}
                               className="text-sm py-1.5 transition-colors duration-200 hover:text-accent"
-                              style={{ color: "rgba(42,41,40,0.6)" }}
+                              style={{ color: "rgba(245,244,239,0.7)" }}
                             >
                               {cat.name}
                             </a>
@@ -137,7 +150,7 @@ export default function ArticleClient({
                               <button
                                 onClick={() => toggleCat(cat.id)}
                                 className="w-6 h-6 flex items-center justify-center text-xs transition-transform duration-200"
-                                style={{ color: "rgba(42,41,40,0.35)" }}
+                                style={{ color: "rgba(245,244,239,0.4)" }}
                               >
                                 <svg
                                   width="12"
@@ -159,7 +172,7 @@ export default function ArticleClient({
                             <ul
                               className="ml-3 mt-1 mb-2 flex flex-col gap-0.5"
                               style={{
-                                borderLeft: "1px solid rgba(42,41,40,0.1)",
+                                borderLeft: "1px solid rgba(198,177,128,0.12)",
                               }}
                             >
                               {cat.children.map((sub) => (
@@ -167,7 +180,7 @@ export default function ArticleClient({
                                   <a
                                     href={`/articles/general/category/${sub.id}`}
                                     className="block text-xs pl-3 py-1 transition-colors duration-200 hover:text-accent"
-                                    style={{ color: "rgba(42,41,40,0.45)" }}
+                                    style={{ color: "rgba(245,244,239,0.55)" }}
                                   >
                                     {sub.name}
                                   </a>
@@ -185,17 +198,17 @@ export default function ArticleClient({
           </section>
 
           {/* ── CTA ── */}
-          <section className="bg-bg pb-section-py">
+          <section className="post-body-section pb-section-py">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
               <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
+                <div className="post-cta-panel flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4">
                   <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">
+                    <h3 className="text-fluid-2xl text-bg font-serif font-medium tracking-tight leading-snug">
                       Have Questions? Contact Us Today
                     </h3>
                     <p
                       className="text-fluid-base leading-relaxed"
-                      style={{ color: "rgba(42,41,40,0.6)" }}
+                      style={{ color: "rgba(245,244,239,0.68)" }}
                     >
                       If you have any questions about the topics discussed in
                       this article, our team is here to help. Call us to schedule
@@ -218,7 +231,7 @@ export default function ArticleClient({
           </section>
 
           {/* ── Hours + Location ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
+          <section className="post-hours-section py-section-py overflow-hidden relative">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
               <div className="grid grid-cols-2 gap-s10 max-md:grid-cols-1">
                 <RevealSection>
@@ -229,7 +242,7 @@ export default function ArticleClient({
                     {HOURS.map((h) => (
                       <div
                         key={h.day}
-                        className="flex items-center justify-between py-3 text-sm"
+                        className="post-hours-row flex items-center justify-between py-3 text-sm"
                         style={{
                           borderBottom: "1px solid rgba(245,244,239,0.08)",
                         }}

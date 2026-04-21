@@ -35,7 +35,9 @@ const ITEMS = [
 export default function HealthEducation() {
   return (
     <div id="health-education" data-section="health-education">
-      <section className="bg-bg py-section-py">
+      <section className="py-section-py"
+        style={{ background: "linear-gradient(180deg, #f5f4ef 0%, #f0ede6 100%)" }}
+      >
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 
           <RevealSection>
@@ -69,7 +71,7 @@ export default function HealthEducation() {
                     boxShadow: "0 2px 20px rgba(42,41,40,0.06)",
                     textDecoration: "none",
                   }}
-                  whileHover={{ y: -4, boxShadow: "0 16px 48px rgba(42,41,40,0.12)" }}
+                  whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(198,177,128,0.15)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                   {/* Media */}

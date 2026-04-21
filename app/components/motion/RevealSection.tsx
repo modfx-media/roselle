@@ -1,5 +1,6 @@
 "use client";
-import { useRef, useEffect, ReactNode } from "react";
+import { ReactNode } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface Props {
   children: ReactNode;
@@ -8,30 +9,21 @@ interface Props {
 }
 
 export default function RevealSection({ children, className = "", delay = 0 }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.style.transitionDelay = `${delay}s`;
-          el.classList.add("visible");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [delay]);
+  const prefersReducedMotion = useReducedMotion();
 
   return (
-    <div ref={ref} className={`reveal ${className}`}>
+    <motion.div
+      className={`reveal ${className}`}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 28 }}
+      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.18, margin: "0px 0px -40px 0px" }}
+      transition={prefersReducedMotion ? undefined : {
+        duration: 0.72,
+        delay,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }
