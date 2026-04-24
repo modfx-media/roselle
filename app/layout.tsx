@@ -37,6 +37,9 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${libreBaskerville.variable}`}
     >
+      <head>
+        <meta name="color-scheme" content="light" />
+      </head>
       <body className="antialiased">
         <MotionProvider>
           <FloatingBackground />
