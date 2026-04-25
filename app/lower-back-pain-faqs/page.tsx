@@ -6,16 +6,8 @@ import RevealSection from "../components/motion/RevealSection";
 import SplitReveal from "../components/motion/SplitReveal";
 import MagneticButton from "../components/motion/MagneticButton";
 import GsapImageParallax from "../components/motion/GsapImageParallax";
+import Contact from "../components/Contact";
 
-const HOURS = [
-  { day: "Monday", time: "7:00 AM - 5:00 PM" },
-  { day: "Tuesday", time: "10:00 AM - 7:00 PM" },
-  { day: "Wednesday", time: "7:00 AM - 5:00 PM" },
-  { day: "Thursday", time: "2:00 PM - 7:00 PM" },
-  { day: "Friday", time: "7:00 AM - 5:00 PM" },
-  { day: "Saturday", time: "8:00 AM - 1:00 PM" },
-  { day: "Sunday", time: "Closed" },
-];
 
 const FAQS = [
   {
@@ -187,54 +179,8 @@ export default function LowerBackPainFaqsPage() {
             </div>
           </section>
 
-          {/* ── Hours & Location ── */}
-          <section className="about-noise bg-fg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-2 gap-s8 max-lg:grid-cols-1">
-                <RevealSection>
-                  <h3 className="text-fluid-2xl text-bg font-serif leading-tight tracking-tight mb-s4">Hours of Operation</h3>
-                  <ul className="flex flex-col gap-2">
-                    {HOURS.map((h) => (
-                      <li key={h.day} className="flex justify-between text-sm py-1.5"
-                        style={{ borderBottom: "1px solid rgba(245,244,239,0.08)" }}>
-                        <span className="text-bg font-medium">{h.day}</span>
-                        <span style={{ color: "rgba(245,244,239,0.45)" }}>{h.time}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </RevealSection>
 
-                <RevealSection delay={0.1}>
-                  <h3 className="text-fluid-2xl text-bg font-serif leading-tight tracking-tight mb-s4">Location</h3>
-                  <div className="rounded-xl overflow-hidden mb-s4" style={{ border: "1px solid rgba(245,244,239,0.08)" }}>
-                    <iframe
-                      title="Roselle Center for Healing Map"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3107.123456!2d-77.306!3d38.856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b64e8a3c0e1b3d%3A0x1234567890abcdef!2s8500+Executive+Park+Ave+%23300%2C+Fairfax%2C+VA+22031!5e0!3m2!1sen!2sus!4v1234567890"
-                      width="100%"
-                      height="260"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
-                  </div>
-                  <p className="text-sm text-bg font-medium">Roselle Center For Healing</p>
-                  <p className="text-sm mt-1" style={{ color: "rgba(245,244,239,0.45)" }}>
-                    8500 Executive Park Ave, Suite 300<br />Fairfax, VA 22031
-                  </p>
-                  <div className="flex flex-col gap-1 mt-s2">
-                    <a href="tel:+17036987117" className="text-sm text-accent hover:text-bg transition-colors duration-200">
-                      Phone: (703) 698-7117
-                    </a>
-                    <p className="text-sm" style={{ color: "rgba(245,244,239,0.45)" }}>Fax: (703) 698-5729</p>
-                    <a href="mailto:rosellecare@gmail.com" className="text-sm text-accent hover:text-bg transition-colors duration-200">
-                      rosellecare@gmail.com
-                    </a>
-                  </div>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <Contact />
 
           <Footer />
         </main>

@@ -6,16 +6,8 @@ import RevealSection from "../../components/motion/RevealSection";
 import SplitReveal from "../../components/motion/SplitReveal";
 import MagneticButton from "../../components/motion/MagneticButton";
 import GsapImageParallax from "../../components/motion/GsapImageParallax";
+import Contact from "../../components/Contact";
 
-const HOURS = [
-  { day: "Monday", time: "7:00 AM - 5:00 PM" },
-  { day: "Tuesday", time: "10:00 AM - 7:00 PM" },
-  { day: "Wednesday", time: "7:00 AM - 5:00 PM" },
-  { day: "Thursday", time: "2:00 PM - 7:00 PM" },
-  { day: "Friday", time: "7:00 AM - 5:00 PM" },
-  { day: "Saturday", time: "8:00 AM - 1:00 PM" },
-  { day: "Sunday", time: "Closed" },
-];
 
 export default function ChiropracticPage() {
   return (
@@ -129,13 +121,13 @@ export default function ChiropracticPage() {
           </section>
 
           {/* ── CTA ── */}
-          <section className="bg-bg pb-section-py">
+          <section className="bg-bg py-section-py">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
               <RevealSection>
                 <div className="service-cta-panel flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
                   <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Contact Us for an Appointment Today!</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
+                    <h3 className="text-fluid-2xl text-white font-serif font-medium tracking-tight leading-snug">Contact Us for an Appointment Today!</h3>
+                    <p className="text-fluid-base leading-relaxed text-white/80">
                       Chiropractic treatment is a way to treat many common ailments. If you&apos;re looking for an alternative to traditional medicine, you may find our methods helpful. At Roselle Center for Healing, patients from Fairfax, VA, Falls Church, VA, Merrifield, VA, Arlington, VA and Vienna, VA, find pain relief and more.
                     </p>
                   </div>
@@ -147,30 +139,8 @@ export default function ChiropracticPage() {
             </div>
           </section>
 
-          {/* ── Hours + Location ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <div className="grid grid-cols-2 gap-s10 max-md:grid-cols-1">
-                <RevealSection>
-                  <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mb-s5">Hours of Operation</h3>
-                  <div className="flex flex-col">
-                    {HOURS.map((h) => (<div key={h.day} className="service-hours-row flex items-center justify-between py-3 text-sm" style={{ borderBottom: "1px solid rgba(245,244,239,0.08)" }}><span style={{ color: "rgba(245,244,239,0.45)" }}>{h.day}</span><span className="text-bg font-medium">{h.time}</span></div>))}
-                  </div>
-                </RevealSection>
-                <RevealSection delay={0.12}>
-                  <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mb-s5">Merrifield Location In Fairfax, VA</h3>
-                  <p className="text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Your Local Chiropractic Clinic</p>
-                  <p className="text-fluid-base text-bg font-medium mb-s5">Roselle Center For Healing</p>
-                  <div className="flex flex-col gap-s4">
-                    <div><p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(198,177,128,0.85)" }}>Address</p><p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>8500 Executive Park Ave STE 300<br />Fairfax, VA 22031</p></div>
-                    <div><p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(198,177,128,0.85)" }}>Phone</p><a href="tel:+17036987117" className="text-fluid-base text-bg transition-colors duration-200 hover:text-accent">(703) 698-7117</a></div>
-                    <div><p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(198,177,128,0.85)" }}>Fax</p><p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>(703) 698-5729</p></div>
-                    <div><p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(198,177,128,0.85)" }}>Email</p><p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>rosellecare@gmail.com</p></div>
-                  </div>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+
+          <Contact />
 
           <Footer />
         </main>

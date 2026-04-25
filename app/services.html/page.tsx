@@ -9,6 +9,7 @@ import MagneticButton from "../components/motion/MagneticButton";
 import SpotlightCard from "../components/motion/SpotlightCard";
 import ParallaxImage from "../components/motion/ParallaxImage";
 import ScrollScale from "../components/motion/ScrollScale";
+import Contact from "../components/Contact";
 
 const SERVICES = [
   {
@@ -313,6 +314,8 @@ export default function ServicesPage() {
               </RevealSection>
             </div>
           </section>
+
+          <Contact />
 
           <Footer />
         </main>

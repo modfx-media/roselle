@@ -5,16 +5,8 @@ import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
 import SplitReveal from "../components/motion/SplitReveal";
 import MagneticButton from "../components/motion/MagneticButton";
+import Contact from "../components/Contact";
 
-const HOURS = [
-  { day: "Monday", time: "7:00 AM - 5:00 PM" },
-  { day: "Tuesday", time: "10:00 AM - 7:00 PM" },
-  { day: "Wednesday", time: "7:00 AM - 5:00 PM" },
-  { day: "Thursday", time: "2:00 PM - 7:00 PM" },
-  { day: "Friday", time: "7:00 AM - 5:00 PM" },
-  { day: "Saturday", time: "8:00 AM - 1:00 PM" },
-  { day: "Sunday", time: "Closed" },
-];
 
 export default function PurposeMissionPage() {
   return (
@@ -179,41 +171,8 @@ export default function PurposeMissionPage() {
             </div>
           </section>
 
-          {/* ── Hours + Location ── */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-2 gap-s10 max-md:grid-cols-1">
-                <RevealSection>
-                  <p className="text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Hours of Operation</p>
-                  <ul className="flex flex-col gap-2">
-                    {HOURS.map((h) => (
-                      <li key={h.day} className="flex justify-between text-sm" style={{ color: "rgba(42,41,40,0.68)" }}>
-                        <span className="text-fg font-medium">{h.day}</span>
-                        <span>{h.time}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </RevealSection>
-                <RevealSection delay={0.1}>
-                  <p className="text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Merrifield Location in Fairfax, VA</p>
-                  <h3 className="text-fluid-lg text-fg font-serif tracking-tight mb-s3">Roselle Center For Healing</h3>
-                  <address className="not-italic text-sm leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    8500 Executive Park Ave STE 300<br />
-                    Fairfax, VA 22031
-                  </address>
-                  <div className="mt-s3 flex flex-col gap-1">
-                    <a href="tel:+17036987117" className="text-sm transition-colors duration-200 hover:text-fg" style={{ color: "rgba(42,41,40,0.68)" }}>
-                      Phone: (703) 698-7117
-                    </a>
-                    <p className="text-sm" style={{ color: "rgba(42,41,40,0.68)" }}>Fax: (703) 698-5729</p>
-                    <a href="mailto:rosellecare@gmail.com" className="text-sm transition-colors duration-200 hover:text-fg" style={{ color: "rgba(42,41,40,0.68)" }}>
-                      Email: rosellecare@gmail.com
-                    </a>
-                  </div>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+
+          <Contact />
 
           <Footer />
         </main>

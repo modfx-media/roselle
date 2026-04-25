@@ -7,6 +7,7 @@ import SplitReveal from "../components/motion/SplitReveal";
 import GsapImageParallax from "../components/motion/GsapImageParallax";
 import MagneticButton from "../components/motion/MagneticButton";
 import SpotlightCard from "../components/motion/SpotlightCard";
+import Contact from "../components/Contact";
 
 export default function AboutUsPage() {
   return (
@@ -283,87 +284,8 @@ export default function AboutUsPage() {
             </div>
           </section>
 
-          {/* ── Hours & Location ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <div className="grid grid-cols-2 gap-s10 max-md:grid-cols-1">
 
-                {/* Hours */}
-                <RevealSection>
-                  <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mb-s5">
-                    Hours of Operation
-                  </h3>
-                  <div className="flex flex-col">
-                    {[
-                      { day: "Monday",    time: "7:00 am - 5:00 pm" },
-                      { day: "Tuesday",   time: "10:00 am - 7:00 pm" },
-                      { day: "Wednesday", time: "7:00 am - 5:00 pm" },
-                      { day: "Thursday",  time: "2:00 pm - 7:00 pm" },
-                      { day: "Friday",    time: "7:00 am - 5:00 pm" },
-                      { day: "Saturday",  time: "8:00 am - 1:00 pm" },
-                      { day: "Sunday",    time: "Closed" },
-                    ].map((h, i) => (
-                      <div key={h.day} className="flex justify-between items-center py-s2"
-                        style={{ borderBottom: i < 6 ? "1px solid rgba(245,244,239,0.08)" : "none" }}>
-                        <span className="text-sm font-medium text-bg">{h.day}</span>
-                        <span className="text-sm" style={{ color: h.time === "Closed" ? "rgba(245,244,239,0.35)" : "rgba(245,244,239,0.6)" }}>
-                          {h.time}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </RevealSection>
-
-                {/* Location */}
-                <RevealSection delay={0.12}>
-                  <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mb-s2">
-                    Merrifield Location In Fairfax, VA
-                  </h3>
-                  <p className="text-xs tracking-widest uppercase mb-s5"
-                    style={{ color: "rgba(198,177,128,0.75)" }}>
-                    Your Local Chiropractic Clinic
-                  </p>
-
-                  <div className="flex flex-col gap-s3">
-                    <div>
-                      <p className="text-sm font-semibold text-bg mb-1">Roselle Center For Healing</p>
-                      <p className="text-sm leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                        8500 Executive Park Ave STE 300<br />Fairfax, VA 22031
-                      </p>
-                    </div>
-
-                    <div className="flex flex-col gap-1.5">
-                      <a href="tel:+17036987117"
-                        className="text-sm transition-colors duration-200 hover:text-bg"
-                        style={{ color: "rgba(245,244,239,0.6)" }}>
-                        Phone: (703) 698-7117
-                      </a>
-                      <p className="text-sm" style={{ color: "rgba(245,244,239,0.55)" }}>
-                        Fax: (703) 698-5729
-                      </p>
-                      <a href="mailto:rosellecare@gmail.com"
-                        className="text-sm transition-colors duration-200 hover:text-bg"
-                        style={{ color: "rgba(245,244,239,0.6)" }}>
-                        Email: rosellecare@gmail.com
-                      </a>
-                    </div>
-
-                    <a
-                      href="https://maps.app.goo.gl/5WJebWVTjWfPRX3VA"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 text-sm mt-s2 pb-0.5 transition-colors duration-200"
-                      style={{ color: "rgba(245,244,239,0.65)", borderBottom: "1px solid rgba(245,244,239,0.2)" }}
-                    >
-                      Get Directions
-                      <span className="text-accent arrow-nudge">&rarr;</span>
-                    </a>
-                  </div>
-                </RevealSection>
-
-              </div>
-            </div>
-          </section>
+          <Contact />
 
           <Footer />
         </main>

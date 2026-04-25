@@ -6,16 +6,8 @@ import RevealSection from "../../components/motion/RevealSection";
 import SplitReveal from "../../components/motion/SplitReveal";
 import MagneticButton from "../../components/motion/MagneticButton";
 import SpotlightCard from "../../components/motion/SpotlightCard";
+import Contact from "../../components/Contact";
 
-const HOURS = [
-  { day: "Monday", time: "7:00 AM - 5:00 PM" },
-  { day: "Tuesday", time: "10:00 AM - 7:00 PM" },
-  { day: "Wednesday", time: "7:00 AM - 5:00 PM" },
-  { day: "Thursday", time: "2:00 PM - 7:00 PM" },
-  { day: "Friday", time: "7:00 AM - 5:00 PM" },
-  { day: "Saturday", time: "8:00 AM - 1:00 PM" },
-  { day: "Sunday", time: "Closed" },
-];
 
 export default function CenterHoursPage() {
   return (
@@ -43,104 +35,6 @@ export default function CenterHoursPage() {
                 as="h1"
                 className="text-fluid-5xl text-bg tracking-tight leading-[1.05]"
               />
-            </div>
-          </section>
-
-          {/* ── Hours Table (Primary) ── */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-[1fr_1fr] gap-s10 items-start
-                              max-[900px]:grid-cols-1 max-[900px]:gap-s8">
-
-                {/* Hours */}
-                <div>
-                  <RevealSection>
-                    <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">
-                      Hours of Operation
-                    </p>
-                    <h2 className="text-fluid-3xl text-fg tracking-tight leading-[1.12] mb-s6">
-                      Please Call For Available Appointments
-                    </h2>
-                  </RevealSection>
-
-                  <RevealSection delay={0.1}>
-                    <div className="flex flex-col">
-                      {HOURS.map((h) => (
-                        <div key={h.day}
-                          className="flex items-center justify-between py-4 text-fluid-base"
-                          style={{ borderBottom: "1px solid rgba(42,41,40,0.08)" }}>
-                          <span className="font-medium text-fg">{h.day}</span>
-                          <span style={{ color: h.time === "Closed" ? "rgba(42,41,40,0.4)" : "rgba(42,41,40,0.68)" }}>
-                            {h.time}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </RevealSection>
-
-                  <RevealSection delay={0.15}>
-                    <div className="flex flex-wrap gap-s3 mt-s6">
-                      <MagneticButton
-                        className="btn-primary"
-                        onClick={() => window.location.href = "tel:+17036987117"}
-                      >
-                        Call (703) 698-7117
-                      </MagneticButton>
-                      <MagneticButton
-                        className="btn-primary"
-                        onClick={() => window.location.href = "/appointment"}
-                      >
-                        Book Appointment
-                      </MagneticButton>
-                    </div>
-                  </RevealSection>
-                </div>
-
-                {/* Location Card */}
-                <RevealSection delay={0.12}>
-                  <SpotlightCard className="bg-card-bg rounded-xl p-s6 flex flex-col gap-s4
-                                            card-hover-lift">
-                    <h3 className="text-fluid-2xl text-fg font-serif tracking-tight leading-snug">
-                      Merrifield Location In Fairfax, VA
-                    </h3>
-                    <p className="text-xs tracking-widest uppercase text-accent font-sans">
-                      Your Local Chiropractic Clinic
-                    </p>
-                    <p className="text-fluid-base text-fg font-medium">
-                      Roselle Center For Healing
-                    </p>
-                    <div className="flex flex-col gap-s3">
-                      <div>
-                        <p className="text-xs tracking-widest uppercase mb-1 text-accent">Address</p>
-                        <p className="text-fluid-base" style={{ color: "rgba(42,41,40,0.7)" }}>
-                          8500 Executive Park Ave STE 300<br />Fairfax, VA 22031
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs tracking-widest uppercase mb-1 text-accent">Phone</p>
-                        <a href="tel:+17036987117"
-                          className="text-fluid-base text-fg transition-colors duration-200 hover:text-accent">
-                          (703) 698-7117
-                        </a>
-                      </div>
-                      <div>
-                        <p className="text-xs tracking-widest uppercase mb-1 text-accent">Fax</p>
-                        <p className="text-fluid-base" style={{ color: "rgba(42,41,40,0.7)" }}>
-                          (703) 698-5729
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs tracking-widest uppercase mb-1 text-accent">Email</p>
-                        <a href="mailto:rosellecare@gmail.com"
-                          className="text-fluid-base text-fg transition-colors duration-200 hover:text-accent">
-                          rosellecare@gmail.com
-                        </a>
-                      </div>
-                    </div>
-                  </SpotlightCard>
-                </RevealSection>
-
-              </div>
             </div>
           </section>
 
@@ -260,6 +154,8 @@ export default function CenterHoursPage() {
               </RevealSection>
             </div>
           </section>
+
+          <Contact />
 
           <Footer />
         </main>

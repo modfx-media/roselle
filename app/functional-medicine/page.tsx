@@ -9,6 +9,7 @@ import MagneticButton from "../components/motion/MagneticButton";
 import SpotlightCard from "../components/motion/SpotlightCard";
 
 import type { Metadata } from "next";
+import Contact from "../components/Contact";
 
 const TREATMENTS = [
   {
@@ -33,15 +34,6 @@ const TREATMENTS = [
   },
 ];
 
-const HOURS = [
-  { day: "Monday", time: "7:00 am - 5:00 pm" },
-  { day: "Tuesday", time: "10:00 am - 7:00 pm" },
-  { day: "Wednesday", time: "7:00 am - 5:00 pm" },
-  { day: "Thursday", time: "2:00 pm - 7:00 pm" },
-  { day: "Friday", time: "7:00 am - 5:00 pm" },
-  { day: "Saturday", time: "8:00 am - 1:00 pm" },
-  { day: "Sunday", time: "Closed" },
-];
 
 export default function FunctionalMedicinePage() {
   return (
@@ -274,74 +266,8 @@ export default function FunctionalMedicinePage() {
             </div>
           </section>
 
-          {/* ── Hours & Location ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <div className="grid grid-cols-2 gap-s10 max-md:grid-cols-1">
 
-                {/* Hours */}
-                <RevealSection>
-                  <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mb-s5">
-                    Hours of Operation
-                  </h3>
-                  <div className="flex flex-col">
-                    {HOURS.map((h) => (
-                      <div key={h.day}
-                        className="service-hours-row flex items-center justify-between py-3 text-sm"
-                        style={{ borderBottom: "1px solid rgba(245,244,239,0.08)" }}>
-                        <span style={{ color: "rgba(245,244,239,0.7)" }}>{h.day}</span>
-                        <span className="text-bg font-medium">{h.time}</span>
-                      </div>
-                    ))}
-                  </div>
-                </RevealSection>
-
-                {/* Location */}
-                <RevealSection delay={0.12}>
-                  <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mb-s5">
-                    Merrifield Location In Fairfax, VA
-                  </h3>
-                  <div className="flex flex-col gap-s4">
-                    <div>
-                      <p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(198,177,128,0.85)" }}>
-                        Address
-                      </p>
-                      <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.7)" }}>
-                        8500 Executive Park Ave STE 300<br />Fairfax, VA 22031
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(198,177,128,0.85)" }}>
-                        Phone
-                      </p>
-                      <a href="tel:+17036987117"
-                        className="text-fluid-base text-bg transition-colors duration-200 hover:text-accent">
-                        (703) 698-7117
-                      </a>
-                    </div>
-                    <div>
-                      <p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(198,177,128,0.85)" }}>
-                        Fax
-                      </p>
-                      <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.7)" }}>
-                        (703) 698-5729
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-xs tracking-widest uppercase mb-1" style={{ color: "rgba(198,177,128,0.85)" }}>
-                        Email
-                      </p>
-                      <a href="mailto:rosellecare@gmail.com"
-                        className="text-fluid-base text-bg transition-colors duration-200 hover:text-accent">
-                        rosellecare@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                </RevealSection>
-
-              </div>
-            </div>
-          </section>
+          <Contact />
 
           <Footer />
         </main>
