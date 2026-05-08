@@ -1,12 +1,14 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
-
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import ContentBlock from "../components/templates/ContentBlock";
+import FeatureGrid from "../components/templates/FeatureGrid";
+import StatStrip from "../components/templates/StatStrip";
+import PillarSection from "../components/templates/PillarSection";
+import ImageCta from "../components/templates/ImageCta";
 
 export default function SportsInjuriesPage() {
   return (
@@ -14,136 +16,113 @@ export default function SportsInjuriesPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-          {/* HERO */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/conditions-treated" className="transition-colors duration-200 hover:text-accent">Where is Your Pain? Conditions Treated</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Sports Injuries</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Sports Injuries" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Sports Injuries · Fairfax, VA"
+            title="Recover faster. Perform better."
+            subtitle="From weekend warriors to competitive professionals — chiropractic care that restores function and builds resilience."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Conditions Treated", href: "/conditions-treated" },
+              { label: "Sports Injuries" },
+            ]}
+            image="/services/man-medical-office-physiotherapist-is-rehabilitating-back.jpg"
+            imageAlt="Athlete receiving sports rehabilitation care."
+            primaryCta={{ label: "Book an appointment", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          {/* Overview – light */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Athletic Recovery</p>
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Sports injuries are a reality for athletes at every level — from weekend warriors to competitive professionals. Whether it&apos;s a sudden sprain on the field or a gradual overuse injury from repetitive training, these conditions can sideline you and affect your performance long after the initial pain subsides. At Roselle Center For Healing in Fairfax, VA, our chiropractic team helps athletes recover from injury, restore full function, and build resilience against future setbacks.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <StatStrip
+            stats={[
+              { value: "All levels", label: "Athletes" },
+              { value: "Return-to-play", label: "Programs" },
+              { value: "Performance", label: "Optimization" },
+              { value: "Injury", label: "Prevention" },
+            ]}
+          />
 
-          {/* Common Sports Injuries – dark */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>What We Treat</p>
-                <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-snug mb-s6">Common Sports Injuries We Treat</h2>
-              </RevealSection>
-              <div className="grid grid-cols-3 gap-s8 max-md:grid-cols-1">
-                <RevealSection delay={0.05}>
-                  <h3 className="text-fluid-lg text-bg font-serif tracking-tight mb-s3">Sprains &amp; Strains</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    Ligament sprains and muscle strains are among the most frequent sports injuries. They occur when tissues are stretched beyond their normal range, causing pain, swelling, and limited mobility. Proper treatment is essential to ensure complete healing and prevent re-injury.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.1}>
-                  <h3 className="text-fluid-lg text-bg font-serif tracking-tight mb-s3">Joint Dysfunction &amp; Overuse Injuries</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    Repetitive motion can lead to joint dysfunction, tendinitis, and stress fractures. These overuse injuries develop gradually and often worsen without intervention. Chiropractic care helps restore proper joint mechanics and address the biomechanical imbalances that caused the problem.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.15}>
-                  <h3 className="text-fluid-lg text-bg font-serif tracking-tight mb-s3">Shoulder, Knee &amp; Muscle Injuries</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    Rotator cuff injuries, knee ligament damage, and muscle imbalances are common across many sports. These conditions benefit from a combination of chiropractic adjustments, soft tissue therapy, and targeted rehabilitation to restore strength and stability.
-                  </p>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <PillarSection
+            tone="light"
+            eyebrow="Athletic Recovery"
+            title="A reality for athletes at every level."
+            intro="Sports injuries are a reality for athletes at every level — from weekend warriors to competitive professionals. Whether it's a sudden sprain on the field or a gradual overuse injury from repetitive training, these conditions can sideline you and affect your performance long after the initial pain subsides. At Roselle Center For Healing in Fairfax, VA, our chiropractic team helps athletes recover from injury, restore full function, and build resilience against future setbacks."
+            cta={{ label: "Book your assessment", href: "/appointment" }}
+            pillars={[
+              { title: "Recover", description: "Restore full function after injury — not just symptom relief." },
+              { title: "Resilience", description: "Build the durability to withstand future training loads." },
+              { title: "All levels", description: "From weekend warriors to competitive professionals." },
+              { title: "Whole-athlete care", description: "Spinal, soft tissue, and rehabilitative work combined." },
+            ]}
+          />
 
-          {/* Chiropractic Sports Rehabilitation – light */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Our Approach</p>
-                <h2 className="text-fluid-3xl text-fg font-serif tracking-tight leading-snug mb-s6">Chiropractic Sports Rehabilitation</h2>
-              </RevealSection>
-              <div className="grid grid-cols-2 gap-s8 max-md:grid-cols-1">
-                <RevealSection delay={0.05}>
-                  <h3 className="text-fluid-lg text-fg font-serif tracking-tight mb-s3">Spinal Adjustments</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    Precise chiropractic adjustments correct spinal misalignments that may be contributing to pain, reduced range of motion, or impaired performance. Proper spinal alignment is the foundation of efficient movement and athletic function.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.1}>
-                  <h3 className="text-fluid-lg text-fg font-serif tracking-tight mb-s3">Soft Tissue Therapy</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    Therapeutic massage and myofascial release techniques break up adhesions, reduce inflammation, and promote blood flow to injured tissues. This accelerates healing and helps restore flexibility and comfort.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.15}>
-                  <h3 className="text-fluid-lg text-fg font-serif tracking-tight mb-s3">Corrective Exercises</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    We design sport-specific exercise programs that address your unique injury and biomechanical needs. These exercises rebuild strength, correct muscle imbalances, and improve coordination to support a full return to activity.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.2}>
-                  <h3 className="text-fluid-lg text-fg font-serif tracking-tight mb-s3">Performance Optimization</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    Beyond injury recovery, chiropractic care can enhance athletic performance by improving joint mobility, nervous system function, and overall body mechanics. Many professional athletes rely on regular chiropractic care as part of their training regimen.
-                  </p>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <FeatureGrid
+            tone="dark"
+            eyebrow="What We Treat"
+            title="Common Sports Injuries We Treat."
+            cols={3}
+            cards={[
+              {
+                title: "Sprains & Strains",
+                description:
+                  "Among the most frequent — when tissues are stretched beyond their normal range, causing pain, swelling, and limited mobility. Proper treatment is essential to prevent re-injury.",
+              },
+              {
+                title: "Joint Dysfunction & Overuse",
+                description:
+                  "Repetitive motion can lead to joint dysfunction, tendinitis, and stress fractures. Chiropractic care restores proper joint mechanics and addresses the biomechanical imbalances behind the problem.",
+              },
+              {
+                title: "Shoulder, Knee & Muscle Injuries",
+                description:
+                  "Rotator cuff injuries, knee ligament damage, and muscle imbalances are common across sports. We combine adjustments, soft tissue therapy, and rehab to restore strength and stability.",
+              },
+            ]}
+          />
 
-          {/* Getting Back in the Game – dark */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Your Path Forward</p>
-                <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-snug mb-s6">Getting Back in the Game</h2>
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Returning to sport after an injury requires more than the absence of pain — it demands that your body has fully healed and is strong enough to withstand the demands of your activity. Rushing back too soon is one of the most common causes of re-injury. Our team guides you through a gradual, structured return-to-play process, ensuring that each milestone is met before progressing to the next. We also provide ongoing preventive care to keep your body performing at its best and reduce the risk of future injuries.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureGrid
+            eyebrow="Our Approach"
+            title="Chiropractic Sports Rehabilitation."
+            cols={2}
+            cards={[
+              {
+                title: "Spinal Adjustments",
+                description:
+                  "Precise adjustments correct spinal misalignments that may be contributing to pain, reduced range of motion, or impaired performance. Proper alignment is the foundation of efficient movement.",
+              },
+              {
+                title: "Soft Tissue Therapy",
+                description:
+                  "Therapeutic massage and myofascial release break up adhesions, reduce inflammation, and promote blood flow to injured tissues. Faster healing, restored flexibility.",
+              },
+              {
+                title: "Corrective Exercises",
+                description:
+                  "Sport-specific exercise programs that address your unique injury and biomechanical needs — rebuilding strength, correcting imbalances, and improving coordination.",
+              },
+              {
+                title: "Performance Optimization",
+                description:
+                  "Beyond recovery, chiropractic care can enhance athletic performance by improving joint mobility, nervous system function, and overall body mechanics.",
+              },
+            ]}
+          />
 
-          {/* CTA card */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Recover Faster, Perform Better</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>Contact Roselle Center For Healing to start your sports injury rehabilitation and get back to doing what you love.</p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            tone="dark"
+            eyebrow="Your Path Forward"
+            title="Getting Back in the Game."
+            body="Returning to sport after an injury requires more than the absence of pain — it demands that your body has fully healed and is strong enough to withstand the demands of your activity. Rushing back too soon is one of the most common causes of re-injury. Our team guides you through a gradual, structured return-to-play process, ensuring that each milestone is met before progressing to the next. We also provide ongoing preventive care to keep your body performing at its best."
+          />
 
+          <ImageCta
+            eyebrow="Recover and perform"
+            title="Recover faster, perform better."
+            body="Contact Roselle Center For Healing to start your sports injury rehabilitation and get back to doing what you love."
+            image="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1600&q=70&auto=format&fit=crop"
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>

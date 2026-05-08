@@ -1,13 +1,15 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Contact from "../components/Contact";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import GsapImageParallax from "../components/motion/GsapImageParallax";
-import MagneticButton from "../components/motion/MagneticButton";
-import SpotlightCard from "../components/motion/SpotlightCard";
-import Contact from "../components/Contact";
+import PageHero from "../components/templates/PageHero";
+import FeatureSplit from "../components/templates/FeatureSplit";
+import ContentBlock from "../components/templates/ContentBlock";
+import FeatureGrid from "../components/templates/FeatureGrid";
+import StatStrip from "../components/templates/StatStrip";
+import CtaBand from "../components/templates/CtaBand";
 
 export default function AboutUsPage() {
   return (
@@ -15,196 +17,97 @@ export default function AboutUsPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
+          <PageHero
+            eyebrow="About Roselle Center for Healing"
+            title="Healing isn't a destination — it's a journey."
+            subtitle="At Roselle Center for Healing in Fairfax, VA, we help people reclaim their health through personalized, integrative care that treats the whole person — not just the pain."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "About" },
+            ]}
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x488_80/webmgr/0g/5/2/2024/about%20us.png.webp?9756851d43ab801c42fe6f45e0b23372"
+            imageAlt="Woman receiving laser therapy at the Roselle Center for Healing in Fairfax, VA."
+            primaryCta={{ label: "Meet our doctors", href: "/about-us/meet-the-doctors---therapists.html" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          {/* ── Hero Banner ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4
-                            pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6"
-                  style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
-                  <span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>About</span>
-                </nav>
-              </RevealSection>
+          <StatStrip
+            stats={[
+              { value: "40+", label: "Years of practice" },
+              { value: "1M+", label: "Patient visits" },
+              { value: "10+", label: "Integrative therapies" },
+              { value: "Fairfax,VA", label: "Locally rooted" },
+            ]}
+          />
 
-              <SplitReveal
-                text="About Us"
-                as="h1"
-                className="text-fluid-5xl text-bg tracking-tight leading-[1.05]"
-              />
-            </div>
-          </section>
+          <FeatureSplit
+            eyebrow="Our story"
+            title="Rooted in results — meet Roselle Center For Healing."
+            body="Health isn't a single destination — it's a dynamic journey. We help people reclaim their health through personalized, integrative care. Whether you're dealing with chronic back pain, stubborn neck pain, or looking for a deeper understanding of your health, Dr. Tom Roselle and his experienced team are here to guide you toward lasting wellness."
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x488_80/webmgr/0g/5/2/2024/about%20us.png.webp?9756851d43ab801c42fe6f45e0b23372"
+            imageAlt="Patient receiving laser therapy at Roselle Center for Healing."
+            bullets={[
+              "Conventional + functional medicine working together",
+              "Chiropractic, acupuncture, nutrition, massage, advanced diagnostics",
+              "Treatment plans built around how your body wants to heal",
+            ]}
+          />
 
-          {/* ── Intro Section: Rooted In Results ── */}
+          <ContentBlock
+            tone="dark"
+            eyebrow="What makes us different"
+            title="A different kind of healing center."
+            body="Roselle Center for Healing isn't your average chiropractic clinic. It's a place where conventional and functional medicine work together to uncover root causes, not just manage symptoms. From chiropractic care and massage therapy to nutrition, acupuncture, and advanced diagnostic tools, we build treatment plans that support how your body naturally wants to heal. That means no guesswork — just thoughtful care shaped by years of experience and a passion for helping people feel like themselves again."
+          />
+
+          <ContentBlock
+            eyebrow="Expert care, locally"
+            title="Expert care from a chiropractor near you in Fairfax, VA."
+            body="Finding a chiropractor near you should mean more than picking the closest option. At our Fairfax, VA center, Dr. Tom Roselle brings decades of clinical experience, a deep commitment to patient education, and a whole-person approach to every appointment. He's helped thousands find relief from back pain and neck pain using methods that combine traditional chiropractic with innovative therapies, always tailored to the individual."
+          />
+
+          <FeatureGrid
+            tone="dark"
+            eyebrow="Our approach"
+            title="Care that asks better questions."
+            cols={2}
+            cards={[
+              {
+                title: "Addressing pain with purpose",
+                description:
+                  "Back pain and neck pain are two of the most common complaints we see — but they're rarely the whole story. We look beyond the obvious, considering how posture, stress, nutrition, and lifestyle play a role. With chiropractic adjustments, targeted massage therapy and supportive functional medicine, we treat pain at its source — not just the surface.",
+              },
+              {
+                title: "More than symptom relief — a whole-body reset",
+                description:
+                  "Healing should lead to more than comfort — it should lead to clarity. Whether you're struggling with fatigue, unresolved pain, or a health concern that no one's been able to explain, we ask different questions and look in new places. Our team works closely with you, offering care that adapts as your body begins to change.",
+              },
+            ]}
+          />
+
           <section className="bg-bg py-section-py overflow-hidden">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-
               <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">
-                  Our Story
+                <p
+                  className="inline-flex items-center gap-2 text-xs tracking-[0.18em] uppercase mb-s4 font-sans"
+                  style={{ color: "rgba(198,177,128,1)" }}
+                >
+                  <span className="w-6 h-px" style={{ background: "rgba(198,177,128,1)" }} />
+                  Our team
                 </p>
-                <SplitReveal
-                  text="Rooted In Results: Meet Roselle Center For Healing"
-                  as="h2"
-                  className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]"
-                />
-              </RevealSection>
-
-              <div className="grid grid-cols-[1fr_1fr] gap-s10 mt-s10 items-center
-                              max-[900px]:grid-cols-1 max-[900px]:gap-s8">
-
-                {/* Image */}
-                <RevealSection delay={0.1}>
-                  <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
-                    style={{ background: "rgba(42,41,40,0.04)" }}>
-                    <GsapImageParallax
-                      src="https://cdcssl.ibsrv.net/ibimg/smb/1023x488_80/webmgr/0g/5/2/2024/about%20us.png.webp?9756851d43ab801c42fe6f45e0b23372"
-                      alt="Woman receiving laser therapy on her arm from a healthcare professional in a healing center, highlighting integrative chiropractic care at Roselle Center for Healing in Fairfax, VA."
-                      speed={0.18}
-                      className="w-full rounded-xl"
-                    />
-                  </div>
-                </RevealSection>
-
-                {/* Text */}
-                <div className="flex flex-col gap-s4">
-                  <RevealSection delay={0.15}>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                      Health isn&rsquo;t a single destination—it&rsquo;s a dynamic journey. At Roselle Center for
-                      Healing in Fairfax, VA, we help people reclaim their health through
-                      personalized, integrative care that treats the whole person, not just the pain. Whether
-                      you&rsquo;re dealing with chronic back pain, stubborn neck pain, or looking for a deeper
-                      understanding of your health, Dr. Tom Roselle and his experienced team are here
-                      to guide you toward lasting wellness.
-                    </p>
-                  </RevealSection>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* ── A Different Kind Of Healing Center ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <div className="grid grid-cols-[1fr_1px_1fr] gap-x-s10 items-start
-                              max-[900px]:grid-cols-1 max-[900px]:gap-y-s8">
-
-                {/* Left */}
-                <div className="flex flex-col gap-s8">
-                  <RevealSection>
-                    <h2 className="text-fluid-3xl text-bg tracking-tight leading-[1.12]">
-                      A Different Kind Of Healing Center
-                    </h2>
-                    <p className="text-fluid-base leading-relaxed mt-s4" style={{ color: "rgba(245,244,239,0.62)" }}>
-                      Roselle Center for Healing isn&rsquo;t your average chiropractic clinic. It&rsquo;s a place
-                      where conventional and functional medicine work together to uncover root causes,
-                      not just manage symptoms. From chiropractic care and massage therapy to
-                      nutrition, acupuncture, and advanced diagnostic tools, we build treatment plans that
-                      support how your body naturally wants to heal. That means no guesswork—just
-                      thoughtful care shaped by years of experience and a passion for helping people feel
-                      like themselves again.
-                    </p>
-                  </RevealSection>
-                </div>
-
-                {/* Vertical divider */}
-                <div className="w-px self-stretch max-[900px]:hidden"
-                  aria-hidden="true"
-                  style={{ background: "linear-gradient(to bottom, transparent, rgba(198,177,128,0.3) 20%, rgba(198,177,128,0.3) 80%, transparent)" }}
-                />
-
-                {/* Right */}
-                <div className="flex flex-col gap-s8">
-                  <RevealSection delay={0.12}>
-                    <h2 className="text-fluid-3xl text-bg tracking-tight leading-[1.12]">
-                      Expert Care From A Chiropractor Near You In Fairfax, VA
-                    </h2>
-                    <p className="text-fluid-base leading-relaxed mt-s4" style={{ color: "rgba(245,244,239,0.62)" }}>
-                      Finding a chiropractor near you should mean more than picking the closest
-                      option. At our Fairfax, VA center, Dr. Tom Roselle brings decades of clinical
-                      experience, a deep commitment to patient education, and a whole-person approach to every
-                      appointment. He&rsquo;s helped thousands find relief from back pain and neck pain
-                      using methods that combine traditional chiropractic with innovative therapies,
-                      always tailored to the individual.
-                    </p>
-                  </RevealSection>
-                </div>
-
-              </div>
-            </div>
-          </section>
-
-          {/* ── Addressing Pain With Purpose + Whole-Body Reset ── */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-2 gap-s8 max-md:grid-cols-1">
-
-                <RevealSection>
-                  <SpotlightCard className="bg-card-bg rounded-xl p-s6 flex flex-col gap-s3 h-full
-                                            card-hover-lift">
-                    <span className="text-xs text-accent font-semibold tracking-widest">01</span>
-                    <h2 className="text-fluid-2xl text-fg tracking-tight leading-[1.15] mt-s1">
-                      Addressing Pain With Purpose
-                    </h2>
-                    <p className="text-fluid-base leading-relaxed flex-1" style={{ color: "rgba(42,41,40,0.65)" }}>
-                      Back pain and neck pain are two of the most common complaints we see—but they&rsquo;re
-                      rarely the whole story. Pain often points to deeper imbalances in the body.
-                      That&rsquo;s why we look beyond the obvious, considering how posture, stress, nutrition,
-                      and lifestyle all play a role. With chiropractic adjustments, targeted massage
-                      therapy, and supportive functional medicine practices, we treat pain at its
-                      source—not just the surface.
-                    </p>
-                  </SpotlightCard>
-                </RevealSection>
-
-                <RevealSection delay={0.1}>
-                  <SpotlightCard className="bg-card-bg rounded-xl p-s6 flex flex-col gap-s3 h-full
-                                            card-hover-lift">
-                    <span className="text-xs text-accent font-semibold tracking-widest">02</span>
-                    <h2 className="text-fluid-2xl text-fg tracking-tight leading-[1.15] mt-s1">
-                      More Than Symptom Relief—A Whole-Body Reset
-                    </h2>
-                    <p className="text-fluid-base leading-relaxed flex-1" style={{ color: "rgba(42,41,40,0.65)" }}>
-                      What sets Roselle Center for Healing apart is the belief that healing should
-                      lead to more than comfort—it should lead to clarity. Whether you&rsquo;re struggling with
-                      fatigue, unresolved pain, or a health concern that no one&rsquo;s been able to
-                      explain, we&rsquo;re here to ask different questions and look in new places. Our team works
-                      closely with you, offering care that adapts as your body begins to change and
-                      improve.
-                    </p>
-                  </SpotlightCard>
-                </RevealSection>
-
-              </div>
-            </div>
-          </section>
-
-          {/* ── Meet Expert Chiropractors ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans"
-                  style={{ color: "rgba(198,177,128,0.85)" }}>
-                  Our Team
-                </p>
-                <SplitReveal
-                  text="Meet Expert Chiropractors and Therapists"
-                  as="h2"
-                  className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[28ch]"
-                />
+                <h2 className="text-fluid-3xl text-fg font-serif tracking-tight leading-[1.12] max-w-[28ch]">
+                  Meet expert chiropractors and therapists.
+                </h2>
               </RevealSection>
 
               <RevealSection delay={0.12}>
-                <div className="mt-s8 rounded-xl overflow-hidden"
+                <div
+                  className="mt-s8 rounded-xl overflow-hidden"
                   style={{
-                    background: "rgba(245,244,239,0.04)",
-                    border: "1px solid rgba(245,244,239,0.08)",
-                  }}>
-                  {/* Video */}
+                    background: "rgba(42,41,40,0.04)",
+                    border: "1px solid rgba(42,41,40,0.08)",
+                  }}
+                >
                   <div className="w-full aspect-video">
                     <iframe
                       src="https://player.vimeo.com/video/279532866?h=0&title=0&byline=0&portrait=0"
@@ -214,79 +117,29 @@ export default function AboutUsPage() {
                       title="Roselle Center for Healing Introduction"
                     />
                   </div>
-
-                  {/* Description */}
                   <div className="p-s6">
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.62)" }}>
-                      At the Roselle Center for Healing, we take a holistic approach to the health. By educating
-                      patients about the body and about the treatments, they become active partners in achieving
-                      optimal health. We are a practice of chiropractors, acupuncturists, nutritionists, massage
-                      therapists, rehabilitation specialists, and functional medicine experts. Our team works
-                      together to provide complete care to our patients through natural integrative medicine.
-                      This video provides an introduction to our practice and our facility, but we encourage
-                      you to come see for yourself why almost one million patients have visited us over the
-                      last four decades.
-                    </p>
-                  </div>
-                </div>
-              </RevealSection>
-
-              {/* CTA link */}
-              <RevealSection delay={0.2}>
-                <a
-                  href="https://www.rosellecare.com/about-us.html/staff"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 text-sm pb-0.5 mt-s6 transition-colors duration-200"
-                  style={{ color: "rgba(245,244,239,0.65)", borderBottom: "1px solid rgba(245,244,239,0.2)" }}
-                >
-                  Meet our doctors &amp; specialists
-                  <span className="text-accent arrow-nudge">&rarr;</span>
-                </a>
-              </RevealSection>
-            </div>
-          </section>
-
-          {/* ── Take The First Step CTA ── */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10
-                                bg-fg rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-bg font-serif font-medium tracking-tight leading-snug">
-                      Take The First Step Toward Real Relief
-                    </h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                      If you&rsquo;re looking for a chiropractor near you in Fairfax, VA who offers more
-                      than quick fixes, call Roselle Center for Healing at (703) 698-7117. Dr. Tom
-                      Roselle and his team are here to help you uncover the deeper causes of your symptoms
-                      and support your body&rsquo;s natural ability to heal—through chiropractic, functional
-                      medicine, massage therapy, and more.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton
-                      className="btn-primary-inverted"
-                      onClick={() => window.location.href = "tel:+17036987117"}
+                    <p
+                      className="text-fluid-base leading-relaxed"
+                      style={{ color: "rgba(42,41,40,0.7)" }}
                     >
-                      Call (703) 698-7117
-                    </MagneticButton>
-                    <MagneticButton
-                      className="btn-primary-inverted"
-                      onClick={() => window.location.href = "/appointment"}
-                    >
-                      Book an Appointment
-                    </MagneticButton>
+                      At the Roselle Center for Healing, we take a holistic approach. By educating patients about the body and about their treatments, they become active partners in achieving optimal health. We are a practice of chiropractors, acupuncturists, nutritionists, massage therapists, rehabilitation specialists, and functional medicine experts. This video provides an introduction to our practice — but we encourage you to come see why almost one million patients have visited us over the last four decades.
+                    </p>
                   </div>
                 </div>
               </RevealSection>
             </div>
           </section>
 
+          <CtaBand
+            tone="gold"
+            eyebrow="Start your healing journey"
+            title="Take the first step toward real relief."
+            body="If you're looking for a chiropractor near you in Fairfax, VA who offers more than quick fixes, call Roselle Center for Healing. Dr. Tom Roselle and his team will help you uncover the deeper causes of your symptoms and support your body's natural ability to heal."
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book an appointment", href: "/appointment" }}
+          />
 
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>

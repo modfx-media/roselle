@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Hide scrollbar utility used by horizontal scroll tracks */
+.services-track::-webkit-scrollbar { display: none; }
+
 /* ============================================================
    THEME — Design Tokens (Tailwind v4)
    ============================================================ */

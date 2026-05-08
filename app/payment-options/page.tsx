@@ -1,13 +1,12 @@
 "use client";
-
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
-
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import ContentBlock from "../components/templates/ContentBlock";
+import FeatureGrid from "../components/templates/FeatureGrid";
+import CtaBand from "../components/templates/CtaBand";
 
 export default function PaymentOptionsPage() {
   return (
@@ -15,94 +14,38 @@ export default function PaymentOptionsPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-          {/* Hero */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
-                  <span>/</span>
-                  <a href="/new-patient-center" className="transition-colors duration-200 hover:text-accent">New Patient Experience</a>
-                  <span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Payment Options</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal
-                text="Affordable & Flexible Payment Options at Roselle Center for Healing"
-                as="h1"
-                className="text-fluid-5xl text-bg tracking-tight leading-[1.05]"
-              />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Affordable Care · Fairfax, VA"
+            title="Affordable & flexible payment options."
+            subtitle="We've maintained a pricing structure and payment programs that allow natural care for all."
+            crumbs={[{ label: "Home", href: "/" }, { label: "New Patient Experience", href: "/new-patient-center.html" }, { label: "Payment Options" }]}
+            image="/services/payment-options.jpg"
+            imageAlt="Payment options."
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
-          {/* Intro */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="text-fluid-base max-w-3xl" style={{ color: "rgba(28,28,28,0.55)" }}>
-                  At The Roselle Center For Healing, we believe in the value of natural care for you and your family. We have maintained a pricing structure that allows care for all. Roselle Center for Healing is a cash practice and therefore is not a participating provider in insurance. We will, however, submit your claims with your insurance provider for consideration of out-of-network reimbursement once your deductible has been met. This provides you the ease of care without the cumbersome task of keeping up with insurance claims paperwork. We treat auto and personal injury cases, however services must be paid at the time they are rendered unless a lien has been secured with your attorney. Additionally, we have flexible payment programs designed for your individual needs. To learn more about our payment options for chiropractic, acupuncture, nutrition and wellness care, please contact Derreth Painter at (703) 698-7117.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            eyebrow="Our Approach"
+            title="Natural care for you and your family."
+            body="At The Roselle Center For Healing, we believe in the value of natural care. Roselle Center for Healing is a cash practice and is not a participating provider in insurance — however, we will submit your claims for out-of-network reimbursement once your deductible has been met. We treat auto and personal injury cases. To learn more about payment options, contact Derreth Painter at (703) 698-7117."
+          />
 
-          {/* Payment Cards */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <div className="grid grid-cols-3 gap-s6 max-md:grid-cols-1">
-                <RevealSection>
-                  <div className="bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)] rounded-xl p-s6 h-full">
-                    <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s3">Insurance</h3>
-                    <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>
-                      Our office is a cash practice, and as such are not participating providers for any insurance plans. To date, chiropractic care is partially covered by Medicare. As a courtesy, all services will be submitted to your primary insurance company for out-of-network benefits.
-                    </p>
-                  </div>
-                </RevealSection>
-                <RevealSection delay={0.06}>
-                  <div className="bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)] rounded-xl p-s6 h-full">
-                    <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s3">No Insurance</h3>
-                    <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>
-                      For patients who have limited or no insurance, flexible payment options are available.
-                    </p>
-                  </div>
-                </RevealSection>
-                <RevealSection delay={0.12}>
-                  <div className="bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)] rounded-xl p-s6 h-full">
-                    <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s3">Health on a Budget</h3>
-                    <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>
-                      At Roselle Center For Healing, we appreciate you have many choices in your health care. We respect your investment in time and money to regain and maintain optimal health. We continue to focus on giving every patient the care they deserve and designing a means by which comprehensive care can be affordable. Paying attention to your health now will be far less time consuming and less expensive than trying to recover from ailments/injuries in the future. As the old saying goes, &quot;if you don&apos;t have your health, you don&apos;t have anything.&quot; Unfortunately, too many people don&apos;t discover how true that statement is until it is too late. We encourage you to take care of your health now.
-                    </p>
-                  </div>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <FeatureGrid
+            tone="dark"
+            eyebrow="Your Options"
+            title="Insurance, flexible payment, and budget care."
+            cols={3}
+            cards={[
+              { title: "Insurance", description: "Our office is a cash practice. As a courtesy, all services will be submitted to your primary insurance company for out-of-network benefits." },
+              { title: "No Insurance", description: "For patients who have limited or no insurance, flexible payment options are available." },
+              { title: "Health on a Budget", description: "We continue to focus on giving every patient the care they deserve and designing a means by which comprehensive care can be affordable." },
+            ]}
+          />
 
-          {/* CTA */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="bg-card-bg rounded-xl p-s6 text-center">
-                  <h3 className="text-fluid-2xl text-fg font-serif tracking-tight leading-snug mb-s4">
-                    Questions About Payment Options?
-                  </h3>
-                  <p className="text-fluid-base mb-s5 max-w-2xl mx-auto" style={{ color: "rgba(28,28,28,0.55)" }}>
-                    Contact our office to learn more about our flexible payment programs designed for your individual needs.
-                  </p>
-                  <MagneticButton>
-                    <a href="tel:+17036987117" className="inline-flex items-center gap-2 bg-accent text-bg px-8 py-4 rounded-full text-sm font-medium tracking-wide transition-colors duration-200 hover:bg-accent/90">
-                      Call (703) 698-7117
-                    </a>
-                  </MagneticButton>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
-
+          <CtaBand tone="gold" eyebrow="Questions?" title="Talk to us about payment options." body="Contact our office to learn more about our flexible payment programs designed for your individual needs." primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }} secondaryCta={{ label: "Book an appointment", href: "/appointment" }} />
 
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>

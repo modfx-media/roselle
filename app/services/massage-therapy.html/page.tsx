@@ -1,159 +1,108 @@
 "use client";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import SmoothScroll from "../../components/motion/SmoothScroll";
-import RevealSection from "../../components/motion/RevealSection";
-import SplitReveal from "../../components/motion/SplitReveal";
-import MagneticButton from "../../components/motion/MagneticButton";
-import SpotlightCard from "../../components/motion/SpotlightCard";
-import GsapImageParallax from "../../components/motion/GsapImageParallax";
 import Contact from "../../components/Contact";
-
-
-const TECHNIQUES = [
-  { name: "Swedish Massage", desc: "Uses gentle, flowing strokes to promote relaxation and improve circulation" },
-  { name: "Deep Tissue Massage", desc: "Targets deeper muscle layers to relieve chronic tension and knots" },
-  { name: "Sports Massage", desc: "Focuses on preventing injury and enhancing recovery for athletes" },
-  { name: "Trigger Point Therapy", desc: "Applies pressure to specific points to reduce localized pain" },
-  { name: "Prenatal Massage", desc: "Designed for expectant mothers to reduce pregnancy-related discomfort" },
-  { name: "Reflexology", desc: "Stimulates pressure points on the feet or hands linked to other body areas" },
-];
-
-const MASSAGE_BENEFITS = [
-  "Reducing muscle tension and stiffness",
-  "Alleviating chronic pain and improving joint mobility",
-  "Enhancing blood circulation and promoting faster healing",
-  "Lowering stress and anxiety levels",
-  "Boosting mood through the release of endorphins",
-  "Supporting recovery from injuries and physical exertion",
-];
+import SmoothScroll from "../../components/motion/SmoothScroll";
+import PageHero from "../../components/templates/PageHero";
+import FeatureSplit from "../../components/templates/FeatureSplit";
+import FeatureGrid from "../../components/templates/FeatureGrid";
+import StatStrip from "../../components/templates/StatStrip";
+import PillarSection from "../../components/templates/PillarSection";
+import ImageCta from "../../components/templates/ImageCta";
 
 export default function MassageTherapyPage() {
   return (
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1 service-page-shell">
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/services.html" className="transition-colors duration-200 hover:text-accent">Services</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Massage Therapy</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Expert Massage Therapy at Roselle Center for Healing in Fairfax, VA" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+        <main className="relative z-1">
+          <PageHero
+            eyebrow="Massage Therapy · Fairfax, VA"
+            title="Expert massage therapy at Roselle Center for Healing."
+            subtitle="A natural way to relax, reduce tension, and support overall health."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services.html" },
+              { label: "Massage Therapy" },
+            ]}
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x681_80/webmgr/0g/5/2/massage%20therapy.jpg.webp?5d81ced378b1d807f74ed89a022d31f0"
+            imageAlt="Massage therapy session."
+            primaryCta={{ label: "Book a session", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-[1fr_1fr] gap-s10 items-center max-[900px]:grid-cols-1 max-[900px]:gap-s8">
-                <div>
-                  <RevealSection>
-                    <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Therapeutic Care</p>
-                    <h2 className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]">Expert Massage Therapy in Fairfax, VA</h2>
-                  </RevealSection>
-                  <RevealSection delay={0.1}>
-                    <p className="text-fluid-base leading-relaxed mt-s6" style={{ color: "rgba(42,41,40,0.68)" }}>
-                      Massage therapy provides clients with a natural way to relax, reduce tension, and support their overall health. By applying skilled techniques to the muscles and soft tissues, massage therapists help alleviate pain, improve circulation, and promote mental well-being. Before scheduling your appointment at Roselle Center for Healing in Fairfax, VA, learn more about this treatment below.
-                    </p>
-                  </RevealSection>
-                </div>
-                <RevealSection delay={0.15}>
-                  <GsapImageParallax src="https://cdcssl.ibsrv.net/ibimg/smb/1023x681_80/webmgr/0g/5/2/massage%20therapy.jpg.webp?5d81ced378b1d807f74ed89a022d31f0" alt="Massage therapy session with therapist applying techniques to alleviate back pain and promote relaxation." className="w-full rounded-xl" />
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <StatStrip
+            stats={[
+              { value: "6+", label: "Techniques" },
+              { value: "Tailored", label: "Sessions" },
+              { value: "Pain", label: "Relief" },
+              { value: "Whole-body", label: "Wellness" },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>About</p>
-                <SplitReveal text="Understanding Massage Therapy" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Massage therapy involves the manipulation of muscles, tendons, and ligaments to relieve discomfort and improve physical function. It is often used to address chronic pain, injuries, or everyday stress. This hands-on approach also helps release built-up tension and improve overall mobility. Each session is tailored to the client&rsquo;s individual needs to ensure targeted care and effective results.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureSplit
+            eyebrow="Therapeutic Care"
+            title="Expert massage therapy in Fairfax, VA."
+            body="Massage therapy provides clients with a natural way to relax, reduce tension, and support their overall health. By applying skilled techniques to the muscles and soft tissues, our therapists help alleviate pain, improve circulation, and promote mental well-being."
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x681_80/webmgr/0g/5/2/massage%20therapy.jpg.webp?5d81ced378b1d807f74ed89a022d31f0"
+            imageAlt="Massage therapy."
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Techniques</p>
-                <SplitReveal text="Types of Techniques Used" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  There are several types of massage therapy designed to meet different goals. Some of these types include the following:
-                </p>
-              </RevealSection>
-              <div className="grid grid-cols-2 gap-s4 mt-s8 max-md:grid-cols-1">
-                {TECHNIQUES.map((t, i) => (
-                  <RevealSection key={t.name} delay={0.05 * i}>
-                    <SpotlightCard className="bg-card-bg rounded-xl p-s5 flex flex-col gap-s2 card-hover-lift">
-                      <span className="text-xs font-semibold tracking-widest text-accent">{String(i + 1).padStart(2, "0")}</span>
-                      <h3 className="text-fluid-lg text-fg font-medium">{t.name}</h3>
-                      <p className="text-sm leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>{t.desc}</p>
-                    </SpotlightCard>
-                  </RevealSection>
-                ))}
-              </div>
-            </div>
-          </section>
+          <PillarSection
+            tone="dark"
+            eyebrow="About"
+            title="Understanding massage therapy."
+            intro="Massage therapy involves the manipulation of muscles, tendons, and ligaments to relieve discomfort and improve physical function. It addresses chronic pain, injuries, or everyday stress — releasing built-up tension and improving overall mobility."
+            cta={{ label: "Book a session", href: "/appointment" }}
+            pillars={[
+              { title: "Soft-tissue work", description: "Skilled manipulation of muscles, tendons, and ligaments where pain hides." },
+              { title: "Chronic relief", description: "Targeted care for chronic pain, recurring tightness, and old injuries." },
+              { title: "Daily stress", description: "Releases built-up everyday tension for a calmer body and mind." },
+              { title: "Tailored sessions", description: "Each visit is personalized to your body and goals — no two are the same." },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Key Benefits</p>
-                <SplitReveal text="The Benefits of Massage Therapy" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Massage therapy offers a wide range of benefits that support both body and mind, including:
-                </p>
-              </RevealSection>
-              <div className="grid grid-cols-2 gap-s4 mt-s8 max-md:grid-cols-1">
-                {MASSAGE_BENEFITS.map((b, i) => (
-                  <RevealSection key={b} delay={0.05 * i}>
-                    <SpotlightCard className="bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)] rounded-xl p-s5 flex items-center gap-s3 card-hover-lift">
-                      <span className="text-xs font-semibold tracking-widest" style={{ color: "rgba(198,177,128,0.85)" }}>{String(i + 1).padStart(2, "0")}</span>
-                      <span className="text-fluid-base text-bg">{b}</span>
-                    </SpotlightCard>
-                  </RevealSection>
-                ))}
-              </div>
-            </div>
-          </section>
+          <FeatureGrid
+            eyebrow="Techniques"
+            title="Types of techniques used."
+            intro="There are several types of massage therapy designed to meet different goals:"
+            cols={3}
+            cards={[
+              { title: "Swedish Massage", description: "Gentle, flowing strokes to promote relaxation and improve circulation." },
+              { title: "Deep Tissue Massage", description: "Targets deeper muscle layers to relieve chronic tension and knots." },
+              { title: "Sports Massage", description: "Focuses on preventing injury and enhancing recovery for athletes." },
+              { title: "Trigger Point Therapy", description: "Applies pressure to specific points to reduce localized pain." },
+              { title: "Prenatal Massage", description: "Designed for expectant mothers to reduce pregnancy-related discomfort." },
+              { title: "Reflexology", description: "Stimulates pressure points on the feet or hands linked to other body areas." },
+            ]}
+          />
 
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="service-cta-panel flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Visit Roselle Center for Healing for Chronic Pain Treatment</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      If you&rsquo;re considering massage therapy, contact Roselle Center for Healing in Fairfax, VA, at (703) 698-7117 today. We&rsquo;re happy to answer any questions you may have and help you schedule your appointment. When you&rsquo;re searching for massage therapy near you, our team is ready to assist!
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureGrid
+            tone="dark"
+            eyebrow="Key Benefits"
+            title="The benefits of massage therapy."
+            intro="A wide range of benefits that support both body and mind."
+            cols={3}
+            cards={[
+              { title: "Tension Relief", description: "Reduces muscle tension and stiffness throughout the body." },
+              { title: "Pain & Mobility", description: "Alleviates chronic pain and improves joint mobility." },
+              { title: "Circulation", description: "Enhances blood circulation and promotes faster healing." },
+              { title: "Stress Relief", description: "Lowers stress and anxiety levels." },
+              { title: "Mood Boost", description: "Boosts mood through the release of endorphins." },
+              { title: "Recovery", description: "Supports recovery from injuries and physical exertion." },
+            ]}
+          />
 
+          <ImageCta
+            eyebrow="Visit us"
+            title="Visit Roselle Center for Healing today."
+            body="If you're considering massage therapy, contact our team — we're happy to answer any questions you may have and help you schedule your appointment."
+            image="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=70&auto=format&fit=crop"
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
-
           <Footer />
         </main>
       </SmoothScroll>

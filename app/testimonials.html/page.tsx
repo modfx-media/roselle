@@ -3,9 +3,10 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
+import PageHero from "../components/templates/PageHero";
+import ContentBlock from "../components/templates/ContentBlock";
+import CtaBand from "../components/templates/CtaBand";
 
 
 const TESTIMONIALS = [
@@ -205,46 +206,26 @@ export default function TestimonialsPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-          {/* ── Hero ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/about-us.html" className="transition-colors duration-200 hover:text-accent">About</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Testimonials</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Testimonials" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Testimonials · Fairfax, VA"
+            title="Real stories from real patients."
+            subtitle="We value our patients' experience at Roselle Center for Healing. Read what they have to say about their journey to better health with us."
+            crumbs={[{ label: "Home", href: "/" }, { label: "About", href: "/about-us.html" }, { label: "Testimonials" }]}
+            image="/services/testimonials.jpg"
+            imageAlt="Patient testimonials."
+            primaryCta={{ label: "Book an appointment", href: "/appointment" }}
+            secondaryCta={{ label: "Read Google Reviews", href: "https://www.google.com/maps/place/Roselle+Center+for+Healing" }}
+          />
 
-          {/* ── Intro ── */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <h2 className="text-fluid-3xl text-fg font-serif tracking-tight leading-[1.12] mb-s6">Roselle Center for Healing: Patient Testimonials in Fairfax, VA</h2>
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  We value our patients&apos; experience at Roselle Center For Healing. If you are currently a patient, please feel free to complete the following Client Experience Questionnaire. The Questionnaire is in Adobe Acrobat format, and requires the free Acrobat Reader to view.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.15}>
-                <div className="mt-s6 flex flex-wrap gap-s4">
-                  <a href="https://www.rosellecare.com/storage/app/media/_SHARED/Client_Experience_Questionnaire.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-accent underline underline-offset-4 transition-colors duration-200 hover:text-fg">Download &amp; Print Questionnaire</a>
-                </div>
-              </RevealSection>
-              <RevealSection delay={0.2}>
-                <p className="mt-s8 text-fluid-base font-medium" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  READ OUR{" "}
-                  <a href="https://www.google.com/maps/place/Roselle+Center+for+Healing/@38.8677307,-77.2378405,15z/data=!4m8!3m7!1s0x89b64c80369d3901:0x2367cc50a24ac1ff!8m2!3d38.8677307!4d-77.2378405!9m1!1b1!16s%2Fg%2F1tfcv301" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-4 transition-colors duration-200 hover:text-fg font-semibold">GOOGLE REVIEWS</a>{" "}
-                  TOO!
-                </p>
-              </RevealSection>
+          <ContentBlock
+            eyebrow="Share your experience"
+            title="Tell us about your visit."
+            body="If you are currently a patient, please feel free to complete our Client Experience Questionnaire. It's in Adobe Acrobat format and requires the free Acrobat Reader to view."
+          >
+            <div className="mt-s6 flex flex-wrap gap-s4">
+              <a href="https://www.rosellecare.com/storage/app/media/_SHARED/Client_Experience_Questionnaire.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-accent underline underline-offset-4 hover:text-fg transition-colors">Download &amp; print questionnaire</a>
             </div>
-          </section>
+          </ContentBlock>
 
           {/* ── Testimonials Grid ── */}
           <section className="bg-bg py-section-py overflow-hidden">
@@ -274,24 +255,7 @@ export default function TestimonialsPage() {
             </div>
           </section>
 
-          {/* ── CTA ── */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Share Your Experience</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      We love hearing from our patients. Contact Roselle Center For Healing in Fairfax, VA to share your experience or schedule an appointment today.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
+          <CtaBand tone="gold" eyebrow="Share your experience" title="We'd love to hear from you." body="Contact Roselle Center for Healing in Fairfax, VA to share your experience or schedule an appointment today." primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }} secondaryCta={{ label: "Book online", href: "/appointment" }} />
 
 
           <Contact />

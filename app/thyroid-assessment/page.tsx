@@ -2,40 +2,34 @@
 import { useState } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Contact from "../components/Contact";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
-import Contact from "../components/Contact";
-
+import PageHero from "../components/templates/PageHero";
+import ImageCta from "../components/templates/ImageCta";
 
 const QUESTIONS = [
-  "Are you experiencing the hair loss or slow growth?",
+  "Are you experiencing hair loss or slow growth?",
   "Do you have dry and cracked heels?",
   "Do you gain or lose weight easily?",
   "Do you have any eyebrow loss?",
-  "Do you have slow or fast heartbeat?",
+  "Do you have a slow or fast heartbeat?",
   "Do you have heat or cold intolerance?",
   "Do you have brittle nails?",
-  "Do you have irregular menstrual cycle?",
+  "Do you have an irregular menstrual cycle?",
   "Do you have constipation or diarrhea?",
-  "Do you feel fatigue?",
+  "Do you feel fatigued?",
 ];
 
 export default function ThyroidAssessmentPage() {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [additionalQuestion, setAdditionalQuestion] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
-  const handleAnswer = (index: number, value: string) => {
-    setAnswers((prev) => ({ ...prev, [index]: value }));
-  };
-
+  const handleAnswer = (i: number, v: string) => setAnswers((p) => ({ ...p, [i]: v }));
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
   };
-
   const allAnswered = QUESTIONS.every((_, i) => answers[i] !== undefined);
 
   return (
@@ -43,49 +37,43 @@ export default function ThyroidAssessmentPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
+          <PageHero
+            eyebrow="Health Assessment · Fairfax, VA"
+            title="Comprehensive thyroid health assessment."
+            subtitle='Complete this assessment and receive "The Thyroid Puzzle" Health Education Video.'
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Health Education", href: "/education-lectures.html" },
+              { label: "Thyroid Assessment" },
+            ]}
+            image="/services/man-medical-office-physiotherapist-is-rehabilitating-back.jpg"
+            imageAlt="Thyroid health assessment."
+            primaryCta={{ label: "Take the assessment", href: "#assessment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          {/* ── Hero ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/education-lectures.html" className="transition-colors duration-200 hover:text-accent">Health Education</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Thyroid Assessment</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Comprehensive Thyroid Health Assessment at Roselle Center for Healing" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
-
-          {/* ── Intro ── */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Health Assessment</p>
-                <SplitReveal text="Thyroid Assessment" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <h3 className="mt-s4 text-fluid-lg text-fg font-serif tracking-tight leading-snug max-w-[640px]">
-                  Complete this assessment and receive &ldquo;The Thyroid Puzzle&rdquo; Health Education Video
-                </h3>
-              </RevealSection>
-            </div>
-          </section>
-
-          {/* ── Assessment Form ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
+          <section id="assessment" className="about-noise bg-fg py-section-py overflow-hidden relative">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
+              <RevealSection>
+                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>
+                  Self-screening
+                </p>
+                <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-[1.12] max-w-[28ch]">
+                  Answer 10 quick questions.
+                </h2>
+              </RevealSection>
+
               {submitted ? (
                 <RevealSection>
-                  <div className="p-s8 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)] max-w-[640px]">
-                    <h3 className="text-fluid-2xl text-bg font-serif tracking-tight mb-s3">Thank You!</h3>
-                    <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>Your thyroid assessment has been submitted. Our team will review your responses and follow up with you.</p>
+                  <div className="mt-s8 p-s8 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)] max-w-[640px]">
+                    <h3 className="text-fluid-2xl text-bg font-serif tracking-tight mb-s3">Thank you!</h3>
+                    <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>
+                      Your thyroid assessment has been submitted. Our team will review your responses and follow up with you shortly.
+                    </p>
                   </div>
                 </RevealSection>
               ) : (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="mt-s8">
                   <div className="grid grid-cols-2 gap-s6 max-md:grid-cols-1">
                     {QUESTIONS.map((q, i) => (
                       <RevealSection key={i} delay={i * 0.04}>
@@ -94,29 +82,22 @@ export default function ThyroidAssessmentPage() {
                             {i + 1}. {q}<span className="text-accent">*</span>
                           </p>
                           <div className="flex items-center gap-s4 mt-auto">
-                            <label className="flex items-center gap-2 cursor-pointer">
-                              <input
-                                type="radio"
-                                name={`thyroid-q-${i}`}
-                                value="yes"
-                                required
-                                checked={answers[i] === "yes"}
-                                onChange={() => handleAnswer(i, "yes")}
-                                className="accent-accent w-4 h-4"
-                              />
-                              <span className="text-sm" style={{ color: "rgba(245,244,239,0.65)" }}>Yes</span>
-                            </label>
-                            <label className="flex items-center gap-2 cursor-pointer">
-                              <input
-                                type="radio"
-                                name={`thyroid-q-${i}`}
-                                value="no"
-                                checked={answers[i] === "no"}
-                                onChange={() => handleAnswer(i, "no")}
-                                className="accent-accent w-4 h-4"
-                              />
-                              <span className="text-sm" style={{ color: "rgba(245,244,239,0.65)" }}>No</span>
-                            </label>
+                            {["yes", "no"].map((v) => (
+                              <label key={v} className="flex items-center gap-2 cursor-pointer">
+                                <input
+                                  type="radio"
+                                  name={`thyroid-q-${i}`}
+                                  value={v}
+                                  required={v === "yes"}
+                                  checked={answers[i] === v}
+                                  onChange={() => handleAnswer(i, v)}
+                                  className="accent-accent w-4 h-4"
+                                />
+                                <span className="text-sm capitalize" style={{ color: "rgba(245,244,239,0.65)" }}>
+                                  {v}
+                                </span>
+                              </label>
+                            ))}
                           </div>
                         </div>
                       </RevealSection>
@@ -126,7 +107,7 @@ export default function ThyroidAssessmentPage() {
                   <RevealSection delay={0.45}>
                     <div className="mt-s8 max-w-[640px] flex flex-col gap-s4">
                       <label htmlFor="thyroid-additional" className="text-sm font-medium text-bg">
-                        Please let us know if you have any questions about thyroid.
+                        Have any questions about thyroid health?
                       </label>
                       <textarea
                         id="thyroid-additional"
@@ -134,9 +115,15 @@ export default function ThyroidAssessmentPage() {
                         value={additionalQuestion}
                         onChange={(e) => setAdditionalQuestion(e.target.value)}
                         placeholder="Enter any questions you may have…"
-                        className="w-full rounded-lg border border-[rgba(245,244,239,0.12)] bg-[rgba(245,244,239,0.04)] px-s4 py-s3 text-bg text-fluid-base placeholder:text-[rgba(245,244,239,0.25)] focus:outline-none input-gold-focus focus:border-accent transition-colors duration-200 resize-y"
+                        className="w-full rounded-lg border border-[rgba(245,244,239,0.12)] bg-[rgba(245,244,239,0.04)] px-s4 py-s3 text-bg text-fluid-base placeholder:text-[rgba(245,244,239,0.25)] focus:outline-none focus:border-accent transition-colors duration-200 resize-y"
                       />
-                      <button type="submit" disabled={!allAnswered} className="btn-primary self-start disabled:opacity-40 disabled:cursor-not-allowed transition-opacity duration-200">Submit Assessment</button>
+                      <button
+                        type="submit"
+                        disabled={!allAnswered}
+                        className="btn-primary self-start disabled:opacity-40 disabled:cursor-not-allowed transition-opacity duration-200"
+                      >
+                        Submit assessment
+                      </button>
                     </div>
                   </RevealSection>
                 </form>
@@ -144,28 +131,16 @@ export default function ThyroidAssessmentPage() {
             </div>
           </section>
 
-          {/* ── CTA Card ── */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Questions About Thyroid Health?</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      Contact Roselle Center For Healing in Fairfax, VA for a thyroid health consultation.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
-
+          <ImageCta
+            eyebrow="Talk to us"
+            title="Questions about thyroid health?"
+            body="Contact Roselle Center For Healing in Fairfax, VA, for a thyroid health consultation."
+            image="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1600&q=70&auto=format&fit=crop"
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>

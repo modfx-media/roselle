@@ -1,138 +1,91 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
-import GsapImageParallax from "../components/motion/GsapImageParallax";
 import Contact from "../components/Contact";
-
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import FeatureSplit from "../components/templates/FeatureSplit";
+import ContentBlock from "../components/templates/ContentBlock";
+import StatStrip from "../components/templates/StatStrip";
+import ImageCta from "../components/templates/ImageCta";
 
 export default function WebsterTechniquePage() {
   return (
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1 service-page-shell">
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/services.html" className="transition-colors duration-200 hover:text-accent">Services</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Webster Technique</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Webster Technique" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+        <main className="relative z-1">
+          <PageHero
+            eyebrow="Webster Technique · Fairfax, VA"
+            title="The Webster Technique: a gentler path through pregnancy."
+            subtitle="Chiropractic care designed to balance the pelvis and ease delivery."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services.html" },
+              { label: "Webster Technique" },
+            ]}
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x682_80/webmgr/0g/5/2/services_pregnancy_adjustment.jpg.webp?ad530771e18af6965b4c24192753ce0b"
+            imageAlt="Pregnant woman gently cradling her belly."
+            primaryCta={{ label: "Book a consultation", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-[1fr_1fr] gap-s10 items-center max-[900px]:grid-cols-1 max-[900px]:gap-s8">
-                <div>
-                  <RevealSection>
-                    <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Prenatal Care</p>
-                    <h2 className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]">The Webster Technique</h2>
-                  </RevealSection>
-                  <RevealSection delay={0.1}>
-                    <p className="text-fluid-base leading-relaxed mt-s6" style={{ color: "rgba(42,41,40,0.68)" }}>
-                      Pregnancy is an exciting, but can also be overwhelming since your body is changing rapidly to accommodate growing the fetus and preparing for childbirth. While discomfort is common throughout pregnancy, especially toward the end, chiropractic care can help relieve pain. We provide chiropractic adjustments, such as the Webster Technique, at Roselle Center for Healing in Fairfax, VA, and you can learn more about the treatment below:
-                    </p>
-                  </RevealSection>
-                </div>
-                <RevealSection delay={0.15}>
-                  <GsapImageParallax src="https://cdcssl.ibsrv.net/ibimg/smb/1023x682_80/webmgr/0g/5/2/services_pregnancy_adjustment.jpg.webp?ad530771e18af6965b4c24192753ce0b" alt="Pregnant woman in a red dress gently cradling her belly, symbolizing prenatal care and the benefits of chiropractic treatment for expectant mothers." className="w-full rounded-xl" />
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <StatStrip
+            stats={[
+              { value: "Pelvic", label: "Balance" },
+              { value: "Non-invasive", label: "Care" },
+              { value: "Gentle", label: "Adjustments" },
+              { value: "All trimesters", label: "Welcome" },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Risk Factors</p>
-                <SplitReveal text="Factors that Increase Your Risk of Sacral and Pelvic Imbalance" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Postural changes, weight gain, and hormones can increase the risk of sacral and pelvic imbalance. Your pelvis supports your ligaments, tendons, and muscles, which endure more pressure as your body changes. It&rsquo;s important that these in the best shape possible for childbirth, and part of that is seeking chiropractic treatment for proper alignment.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.15}>
-                <p className="text-fluid-base leading-relaxed mt-s5 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  An aligned pelvis provides babies with a higher chance of being in the correct position for birth. The Webster Technique helps to balance the pelvis and provide room for the baby to develop. This technique is non-invasive and helps make pregnancy more comfortable.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureSplit
+            eyebrow="Prenatal Care"
+            title="The Webster Technique."
+            body="Pregnancy is exciting, but it can also be overwhelming as your body changes rapidly to grow your baby and prepare for childbirth. While discomfort is common — especially toward the end — chiropractic care can help relieve pain. We provide chiropractic adjustments, including the Webster Technique, at Roselle Center for Healing in Fairfax, VA."
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x682_80/webmgr/0g/5/2/services_pregnancy_adjustment.jpg.webp?ad530771e18af6965b4c24192753ce0b"
+            imageAlt="Prenatal chiropractic care."
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Technique</p>
-                <SplitReveal text="What is the Webster Technique?" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  The Webster Technique focuses on the pelvis, sacrum, ligaments, and muscles around the pelvic region. Dr. Larry Webster developed this chiropractic technique in the 1980s to help ease labor and delivery. His focus was on the baby restriction to movement inside the uterus, which causes pain and discomfort for the mother and complications for the baby.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            tone="dark"
+            eyebrow="Risk Factors"
+            title="Factors that Increase Your Risk of Sacral and Pelvic Imbalance."
+            body={[
+              "Postural changes, weight gain, and hormones can all increase the risk of sacral and pelvic imbalance. Your pelvis supports ligaments, tendons, and muscles that endure more pressure as your body changes — chiropractic alignment helps keep them in the best shape possible for childbirth.",
+              "An aligned pelvis gives babies a higher chance of being in the correct position for birth. The Webster Technique helps balance the pelvis and provide room for the baby to develop. It is non-invasive and helps make pregnancy more comfortable.",
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Procedure</p>
-                <SplitReveal text="How is the Webster Technique Performed?" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Before applying the Webster Technique, our chiropractor will speak with you about your your overall health and the progression of your pregnancy. Then, we will perform a series of adjustments and help relax the soft tissues. Even though the goal is to create space in the pelvis for your baby, our chiropractor will not attempt to turn the baby. Instead, we will use the adjustments to allow the baby to move naturally.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            eyebrow="Technique"
+            title="What is the Webster Technique?"
+            body="The Webster Technique focuses on the pelvis, sacrum, ligaments, and muscles around the pelvic region. Dr. Larry Webster developed this chiropractic technique in the 1980s to help ease labor and delivery. His focus was on baby restriction to movement inside the uterus, which causes pain and discomfort for the mother and complications for the baby."
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Eligibility</p>
-                <SplitReveal text="Do I Qualify for the Webster Technique?" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  The Webster technique is safe and beneficial for any of our pregnant patients. It is a less invasive method to help turn your baby and ease pressure on your pelvis. The technique can be helful if you are worried about a breech baby or have concerns about your pelvis or sacrum during pregnancy.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            tone="dark"
+            eyebrow="Procedure"
+            title="How is the Webster Technique Performed?"
+            body="Before applying the Webster Technique, our chiropractor will speak with you about your overall health and the progression of your pregnancy. Then we perform a series of adjustments and help relax the soft tissues. Even though the goal is to create space in the pelvis for your baby, our chiropractor does not attempt to turn the baby — adjustments allow the baby to move naturally."
+          />
 
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="service-cta-panel flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Contact us for Treatment Today!</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      At Roselle Center for Healing in Fairfax, VA, our goal is to help you stay comfortable and healthy during pregnancy. Our chiropractor offers the Webster Technique to expectant mothers to help ease discomfort and create room for your baby to develop. Our comprehensive treatment plans will address any concerns you may have to ensure your body is ready for childbirth. To learn more about our services, call us at (703) 698-7117 today.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            eyebrow="Eligibility"
+            title="Do I Qualify for the Webster Technique?"
+            body="The Webster technique is safe and beneficial for any of our pregnant patients. It is a less invasive method to help turn your baby and ease pressure on your pelvis. It can be helpful if you are worried about a breech baby or have concerns about your pelvis or sacrum during pregnancy."
+          />
 
+          <ImageCta
+            eyebrow="Contact us"
+            title="Contact us for treatment today!"
+            body="At Roselle Center for Healing in Fairfax, VA, our goal is to help you stay comfortable and healthy during pregnancy. Our comprehensive treatment plans address any concerns you may have to ensure your body is ready for childbirth. Call us at (703) 698-7117 to learn more."
+            image="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1600&q=70&auto=format&fit=crop"
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
-
           <Footer />
         </main>
       </SmoothScroll>

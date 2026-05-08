@@ -5,10 +5,10 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
 import MagneticButton from "../components/motion/MagneticButton";
 import allPosts from "./blogPosts.json";
 import Contact from "../components/Contact";
+import PageHero from "../components/templates/PageHero";
 
 const POSTS_PER_PAGE = 16;
 const TOTAL_POSTS = allPosts.length;
@@ -46,24 +46,16 @@ export default function BlogPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-          {/* Hero */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
-                  <span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Blog</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal
-                text="Roselle Center For Healing Blog: Chiropractic Care & Wellness Tips"
-                as="h1"
-                className="text-fluid-5xl text-bg tracking-tight leading-[1.05]"
-              />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Blog · Fairfax, VA"
+            title="Chiropractic care & wellness tips."
+            subtitle="Practical insights on chiropractic, nutrition, posture, and whole-body wellness from the team at Roselle Center for Healing."
+            crumbs={[{ label: "Home", href: "/" }, { label: "Blog" }]}
+            image="/services/blog-cover.jpg"
+            imageAlt="Roselle Center for Healing blog."
+            primaryCta={{ label: "Book an appointment", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
           {/* Blog Posts Grid */}
           <section className="about-noise bg-fg py-section-py overflow-hidden relative">

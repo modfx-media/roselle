@@ -1,32 +1,11 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
-import GsapImageParallax from "../components/motion/GsapImageParallax";
 import Contact from "../components/Contact";
-
-
-const SYMPTOMS = [
-  {
-    label: "Severe Fatigue",
-    desc: "Waking up tired, even after sleeping for ten hours.",
-  },
-  {
-    label: "\"Fibro Fog\"",
-    desc: "Difficulty concentrating or remembering details.",
-  },
-  {
-    label: "Sleep Disturbances",
-    desc: "Restless legs or sleep apnea.",
-  },
-  {
-    label: "Sensory Sensitivity",
-    desc: "Strong reactions to bright lights, noise, or odors.",
-  },
-];
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import FaqAccordion from "../components/templates/FaqAccordion";
+import CtaBand from "../components/templates/CtaBand";
 
 export default function FibromyalgiaFaqsPage() {
   return (
@@ -34,211 +13,65 @@ export default function FibromyalgiaFaqsPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
+          <PageHero
+            eyebrow="Fibromyalgia FAQs · Fairfax, VA"
+            title="Fibromyalgia FAQs: symptoms, causes & care."
+            subtitle="Understanding fibromyalgia is the first step toward reclaiming your health."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Conditions Treated", href: "/conditions-treated" },
+              { label: "Fibromyalgia", href: "/fibromyalgia" },
+              { label: "FAQs" },
+            ]}
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/elbowpain.jpg.webp?3e133dc321a6cb3315ba317476add68a"
+            imageAlt="Patient consulting with chiropractor about fibromyalgia."
+            primaryCta={{ label: "Book a consultation", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          {/* ── Hero ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs mb-s4" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="hover:text-bg transition-colors duration-200">Home</a>
-                  <span>/</span>
-                  <a href="/conditions-treated" className="hover:text-bg transition-colors duration-200">Conditions Treated</a>
-                  <span>/</span>
-                  <a href="/fibromyalgia" className="hover:text-bg transition-colors duration-200">Fibromyalgia</a>
-                  <span>/</span>
-                  <span className="text-bg">Fibromyalgia FAQs</span>
-                </nav>
-              </RevealSection>
+          <FaqAccordion
+            eyebrow="Frequently asked"
+            title="Fibromyalgia FAQs."
+            intro="It's one of the most frustrating diagnoses a patient can receive — you look fine on the outside, but feel like you have the flu every day. We look past the symptoms to understand why your body is sounding the alarm."
+            items={[
+              {
+                q: "What is fibromyalgia?",
+                a: "Fibromyalgia is a complex, chronic disorder that affects millions of people, yet it remains widely misunderstood. Patients experience widespread musculoskeletal pain, severe fatigue, and other symptoms — often with normal blood work and no visible signs.",
+              },
+              {
+                q: "What causes fibromyalgia? (The \"Volume Knob\" Theory)",
+                a: [
+                  "Most experts agree that fibromyalgia is a problem with how the brain and spinal cord process pain signals. Think of your nervous system like a stereo. In a healthy body, the volume is set to a normal level. In a body with fibromyalgia, that volume knob is turned all the way up.",
+                  "This process — called \"central sensitization\" — means things that shouldn't hurt (like a gentle touch or a change in weather) are interpreted by your brain as intense pain. Triggers often include physical trauma (like a car accident), surgery, infection, or significant psychological stress.",
+                ],
+              },
+              {
+                q: "What are the most common symptoms?",
+                a: [
+                  "The hallmark symptom is widespread musculoskeletal pain. But it rarely stops there. Patients often experience:",
+                  "• Severe fatigue — waking up tired even after sleeping for ten hours.",
+                  "• \"Fibro fog\" — difficulty concentrating or remembering details.",
+                  "• Sleep disturbances — restless legs or sleep apnea.",
+                  "• Sensory sensitivity — strong reactions to bright lights, noise, or odors.",
+                ],
+              },
+              {
+                q: "How does Roselle Center for Healing treat fibromyalgia?",
+                a: "Because this is a multi-system issue, a single pill is rarely the answer. As a holistic clinic, we combine chiropractic care, acupuncture, and nutrition to address the root dysfunction. You need a team that understands how to calm a hypersensitive nervous system.",
+              },
+            ]}
+          />
 
-              <SplitReveal
-                text="Fibromyalgia"
-                as="h1"
-                className="text-fluid-5xl text-bg leading-[1.05] tracking-tight max-w-4xl"
-              >
-                {" "}<span className="sr-word inline-block text-accent">FAQs</span>
-              </SplitReveal>
-
-              <RevealSection delay={0.2}>
-                <p className="text-fluid-base mt-s4 max-w-2xl leading-relaxed" style={{ color: "rgba(245,244,239,0.6)" }}>
-                  Symptoms, causes &amp; chiropractic care in Fairfax, VA. Understanding fibromyalgia
-                  is the first step toward reclaiming your health.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          {/* ── Image + Intro ── */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-2 gap-s8 items-center max-lg:grid-cols-1">
-                <RevealSection>
-                  <div className="rounded-xl overflow-hidden">
-                    <GsapImageParallax
-                      src="https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/elbowpain.jpg.webp?3e133dc321a6cb3315ba317476add68a"
-                      alt="Patient consulting with chiropractor, examining elbow pain, emphasizing personalized care for fibromyalgia treatment."
-                      speed={0.15}
-                      className="w-full rounded-xl"
-                    />
-                  </div>
-                </RevealSection>
-
-                <RevealSection delay={0.1}>
-                  <p className="text-xs tracking-widest uppercase mb-s2 text-accent font-sans">Understanding Fibromyalgia</p>
-                  <h2 className="text-fluid-3xl text-fg leading-tight tracking-tight mb-s4">
-                    Causes &amp; Symptoms
-                  </h2>
-                  <p className="text-fluid-base leading-relaxed mb-s3" style={{ color: "rgba(42,41,40,0.6)" }}>
-                    It is one of the most frustrating diagnoses a patient can receive. You look fine
-                    on the outside. Your blood work often comes back normal. Yet, you feel like you
-                    have the flu every single day. Your muscles ache, your energy is non-existent,
-                    and your brain feels foggy.
-                  </p>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                    Fibromyalgia is a complex, chronic disorder that affects millions of people, yet
-                    it remains widely misunderstood. At the Roselle Center For Healing, we look past
-                    the symptoms to understand why your body is sounding the alarm.
-                  </p>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
-
-          {/* ── The "Volume Knob" Theory ── */}
-          <section className="about-noise bg-fg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-2 gap-s8 items-start max-lg:grid-cols-1">
-                <RevealSection>
-                  <p className="text-xs tracking-widest uppercase mb-s2 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>
-                    How It Works
-                  </p>
-                  <h2 className="text-fluid-3xl text-bg leading-tight tracking-tight mb-s4">
-                    The &ldquo;Volume Knob&rdquo; <span className="text-accent">Theory</span>
-                  </h2>
-                  <p className="text-fluid-base leading-relaxed mb-s3" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    While the exact cause is still being researched, most experts agree that
-                    fibromyalgia is a problem with how the brain and spinal cord process pain
-                    signals.
-                  </p>
-                  <p className="text-fluid-base leading-relaxed mb-s3" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    Think of your nervous system like a stereo. In a healthy body, the volume is set
-                    to a normal level. In a body with fibromyalgia, that volume knob is turned all
-                    the way up. This process, called &ldquo;central sensitization,&rdquo; means that
-                    things that shouldn&rsquo;t hurt&mdash;like a gentle touch or a change in
-                    weather&mdash;are interpreted by your brain as intense pain.
-                  </p>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    Triggers for this shift can vary. It often begins after a physical trauma (like a
-                    car accident), surgery, infection, or significant psychological stress.
-                  </p>
-                </RevealSection>
-
-                <RevealSection delay={0.1}>
-                  <p className="text-xs tracking-widest uppercase mb-s2 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>
-                    Common Symptoms
-                  </p>
-                  <h2 className="text-fluid-3xl text-bg leading-tight tracking-tight mb-s4">
-                    Recognizing the <span className="text-accent">Signs</span>
-                  </h2>
-                  <p className="text-fluid-base leading-relaxed mb-s4" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    The hallmark symptom is widespread musculoskeletal pain. But it rarely stops
-                    there. Patients often experience:
-                  </p>
-
-                  <div className="flex flex-col gap-s3">
-                    {SYMPTOMS.map((s, i) => (
-                      <div
-                        key={s.label}
-                        className="rounded-xl p-s4"
-                        style={{
-                          background: "rgba(245,244,239,0.04)",
-                          border: "1px solid rgba(245,244,239,0.08)",
-                        }}
-                      >
-                        <div className="flex items-start gap-s3">
-                          <span
-                            className="shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-xs font-semibold text-accent"
-                            style={{ background: "rgba(198,177,128,0.12)", border: "1px solid rgba(198,177,128,0.25)" }}
-                          >
-                            {i + 1}
-                          </span>
-                          <div>
-                            <h3 className="text-base font-serif font-semibold text-bg mb-0.5">{s.label}</h3>
-                            <p className="text-sm leading-relaxed" style={{ color: "rgba(245,244,239,0.5)" }}>
-                              {s.desc}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
-
-          {/* ── A Holistic Path Forward ── */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="text-xs tracking-widest uppercase mb-s2 text-accent font-sans">Treatment Approach</p>
-                <h2 className="text-fluid-3xl text-fg leading-tight tracking-tight mb-s4">
-                  A Holistic Path Forward
-                </h2>
-                <p className="text-fluid-base leading-relaxed max-w-3xl mb-s3" style={{ color: "rgba(42,41,40,0.6)" }}>
-                  Because this is a multi-system issue, a single pill is rarely the answer. You need
-                  a comprehensive approach.
-                </p>
-                <p className="text-fluid-base leading-relaxed max-w-3xl" style={{ color: "rgba(42,41,40,0.6)" }}>
-                  That is where we come in. As a holistic clinic, we combine chiropractic care,
-                  acupuncture, and nutrition to address the root dysfunction. If you are searching
-                  for a chiropractor near you, you need a team that understands how to calm a
-                  hypersensitive nervous system.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          {/* ── CTA ── */}
-          <section className="about-noise bg-fg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div
-                  className="rounded-2xl p-s8 max-md:p-s6 text-center"
-                  style={{
-                    background: "rgba(245,244,239,0.04)",
-                    border: "1px solid rgba(245,244,239,0.08)",
-                  }}
-                >
-                  <h2 className="text-fluid-3xl text-bg font-serif leading-tight tracking-tight mb-s3">
-                    There Is Hope!
-                  </h2>
-                  <p className="text-fluid-base leading-relaxed max-w-2xl mx-auto mb-s6" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    You don&rsquo;t have to navigate this alone. If you are looking for effective
-                    fibromyalgia treatment near you, we are ready to help you lower the volume on
-                    your pain. Call the Roselle Center For Healing today at (703)&nbsp;698-7117 to
-                    discuss your fibromyalgia treatment options.
-                  </p>
-                  <div className="flex gap-s3 justify-center flex-wrap">
-                    <MagneticButton onClick={() => window.location.href = "/appointment"}>
-                      Book an Appointment
-                    </MagneticButton>
-                    <a
-                      href="tel:+17036987117"
-                      className="inline-flex items-center gap-2 text-sm px-5 py-2.5 rounded-full font-medium transition-colors duration-200 text-bg"
-                      style={{ border: "1px solid rgba(245,244,239,0.25)" }}
-                    >
-                      (703) 698-7117
-                    </a>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
-
+          <CtaBand
+            tone="gold"
+            eyebrow="There is hope"
+            title="You don't have to navigate this alone."
+            body="If you're looking for effective fibromyalgia treatment near you, we're ready to help you lower the volume on your pain."
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>

@@ -1,208 +1,385 @@
 "use client";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import MagneticButton from "./motion/MagneticButton";
+import { motion, AnimatePresence } from "framer-motion";
 import ScrollMarquee from "./motion/ScrollMarquee";
-import SplitReveal from "./motion/SplitReveal";
 
-const TAGS = ["Chiropractic", "Acupuncture", "Massage Therapy", "Nutrition", "Functional Medicine", "Applied Kinesiology", "Thermography"];
-
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
-};
-const item = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 100, damping: 20 } },
-};
+const TAGS = [
+  "Chiropractic",
+  "Acupuncture",
+  "Massage Therapy",
+  "Nutrition",
+  "Functional Medicine",
+  "Applied Kinesiology",
+  "Thermography",
+];
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
   useEffect(() => setMounted(true), []);
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (videoOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [videoOpen]);
 
   return (
     <div id="hero" data-section="hero">
-      <section className="pt-[calc(var(--spacing-nav-h)+var(--spacing-s8))] pb-s10 relative overflow-hidden"
-        style={{
-          background: "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(198,177,128,0.08) 0%, transparent 70%), #f5f4ef",
-        }}
+      <section
+        className="relative w-full overflow-hidden"
+        style={{ minHeight: "100vh", background: "#1a1917" }}
       >
-
-        {/* ── Grain texture overlay ── */}
-        <div className="absolute inset-0 pointer-events-none z-0" aria-hidden="true" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")`,
-          backgroundSize: "180px 180px",
-        }} />
-
-        {/* ── Grid lines ── */}
-        <div className="hero-grid-bg" aria-hidden="true" />
-
-        {/* ── Animated ambient orbs ── */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
-          <motion.div
-            className="absolute rounded-full"
-            style={{
-              width: 600, height: 600,
-              top: "-15%", left: "60%",
-              background: "radial-gradient(circle, rgba(198,177,128,0.13) 0%, transparent 70%)",
-              filter: "blur(40px)",
-            }}
-            animate={{ x: [0, 40, -20, 0], y: [0, -30, 20, 0] }}
-            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+        {/* ── Full-bleed background image ── */}
+        <div className="absolute inset-0 z-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/services/man-medical-office-physiotherapist-is-rehabilitating-back.jpg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover"
           />
-          <motion.div
-            className="absolute rounded-full"
+          {/* Dark cinematic gradient overlay */}
+          <div
+            className="absolute inset-0"
             style={{
-              width: 500, height: 500,
-              top: "30%", left: "-10%",
-              background: "radial-gradient(circle, rgba(74,158,255,0.07) 0%, transparent 70%)",
-              filter: "blur(50px)",
+              background:
+                "linear-gradient(180deg, rgba(26,25,23,0.78) 0%, rgba(26,25,23,0.62) 30%, rgba(26,25,23,0.78) 75%, rgba(26,25,23,0.95) 100%)",
             }}
-            animate={{ x: [0, -30, 40, 0], y: [0, 40, -20, 0] }}
-            transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 3 }}
           />
-          <motion.div
-            className="absolute rounded-full"
+          {/* Extra contrast layer for headline legibility */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "rgba(26,25,23,0.25)" }}
+          />
+          {/* Subtle gold tint */}
+          <div
+            className="absolute inset-0"
             style={{
-              width: 400, height: 400,
-              bottom: "10%", right: "5%",
-              background: "radial-gradient(circle, rgba(198,177,128,0.09) 0%, transparent 70%)",
-              filter: "blur(35px)",
+              background:
+                "radial-gradient(ellipse 70% 60% at 50% 40%, rgba(198,177,128,0.10) 0%, transparent 70%)",
             }}
-            animate={{ x: [0, 20, -30, 0], y: [0, -20, 30, 0] }}
-            transition={{ duration: 16, repeat: Infinity, ease: "easeInOut", delay: 6 }}
           />
         </div>
 
-        <div className="w-full max-w-max-w mx-auto px-s6 relative z-1 max-md:px-s4">
-          <motion.div
-            className="flex flex-col items-center text-center gap-s3 mb-s8 max-w-[760px] mx-auto"
-            variants={container} initial="hidden" animate="show"
-          >
-            {/* Eyebrow */}
-            <motion.div variants={item} className="flex items-center gap-3">
-              <span className="w-5 h-px" style={{ background: "rgba(198,177,128,0.5)" }} />
-              <span className="text-xs tracking-[0.22em] uppercase font-sans"
-                style={{ color: "rgba(198,177,128,0.85)" }}>Roselle Center for Healing · Fairfax, VA</span>
-              <span className="w-5 h-px" style={{ background: "rgba(198,177,128,0.5)" }} />
-            </motion.div>
+        {/* Grain */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0 opacity-50"
+          aria-hidden="true"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E")`,
+            backgroundSize: "180px 180px",
+          }}
+        />
 
-            {/* Headline */}
-            <SplitReveal
-              text="Holistic Healing in"
-              as="h1"
-              className="text-fluid-5xl text-fg leading-[1.08] tracking-tight"
+        {/* ── Content ── */}
+        <div
+          className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 flex flex-col"
+          style={{
+            minHeight: "100vh",
+            paddingTop: "calc(var(--spacing-nav-h) + var(--spacing-s8))",
+          }}
+        >
+          {/* Centered headline block */}
+          <div className="flex-1 flex flex-col items-center justify-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 mb-s4"
+              style={{
+                background: "rgba(245,244,239,0.10)",
+                border: "1px solid rgba(198,177,128,0.45)",
+                backdropFilter: "blur(8px)",
+              }}
             >
-              {" "}<span className="sr-word inline-block gradient-text">Fairfax,&nbsp;VA</span>
-            </SplitReveal>
-
-            {/* Sub */}
-            <motion.p variants={item} className="text-fluid-lg leading-relaxed max-w-[52ch]"
-              style={{ color: "rgba(42,41,40,0.65)" }}>
-              A truly multidisciplinary approach — chiropractic, acupuncture, massage, nutrition,
-              and more — to address root causes, not just symptoms.
-            </motion.p>
-
-            {/* Free consult badge */}
-            <motion.div variants={item}>
-              <span className="inline-block rounded-full px-3.5 py-1 text-xs text-fg"
-                style={{ background: "rgba(198,177,128,0.18)", border: "1px solid rgba(198,177,128,0.4)" }}>
-                Free 20-Minute Consultation Available
+              <span
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ background: "#c6b180" }}
+              />
+              <span
+                className="text-[11px] tracking-[0.22em] uppercase font-sans"
+                style={{ color: "rgba(245,244,239,0.85)" }}
+              >
+                Roselle Center for Healing · Fairfax, VA
               </span>
             </motion.div>
 
-            {/* CTAs */}
-            <motion.div variants={item} className="flex gap-s2 flex-wrap justify-center">
-              <MagneticButton onClick={() => window.location.href = "/appointment"}>
-                Book an Appointment
-              </MagneticButton>
-              <a href="tel:+17036987117"
-                className="inline-flex items-center justify-center h-11 px-s4 rounded-full
-                           text-sm text-fg font-medium whitespace-nowrap transition-colors duration-200"
-                style={{ border: "1px solid rgba(42,41,40,0.25)" }}>
-                (703) 698-7117
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="leading-[1.02] tracking-tight max-w-[14ch]"
+              style={{
+                color: "#f5f4ef",
+                fontSize: "clamp(2.5rem, 5.5vw, 4.75rem)",
+              }}
+            >
+              Heal naturally.{" "}
+              <span className="italic font-serif" style={{ color: "#c6b180" }}>
+                Live fully.
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="mt-s4 text-fluid-lg leading-relaxed max-w-[54ch]"
+              style={{ color: "rgba(245,244,239,0.75)" }}
+            >
+              A truly multidisciplinary approach — chiropractic, acupuncture, massage,
+              nutrition, and more — to address root causes, not just symptoms.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-s5 flex items-center gap-s3 flex-wrap justify-center"
+            >
+              <a
+                href="/appointment"
+                className="inline-flex items-center justify-center h-12 px-s5 rounded-full
+                           text-sm font-semibold whitespace-nowrap transition-transform duration-200
+                           hover:scale-[1.03]"
+                style={{ background: "#c6b180", color: "#2a2928" }}
+              >
+                Book Appointment
+              </a>
+              <a
+                href="tel:+17036987117"
+                className="group inline-flex items-center gap-2 h-12 px-s2 text-sm font-medium transition-colors"
+                style={{ color: "#f5f4ef" }}
+              >
+                <span>Free 20-min consultation</span>
+                <span
+                  className="inline-flex items-center justify-center w-7 h-7 rounded-full
+                             transition-transform duration-200 group-hover:translate-x-0.5"
+                  style={{ border: "1px solid rgba(245,244,239,0.4)" }}
+                >
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                    <path
+                      d="M2 5h6M5.5 2.5L8 5 5.5 7.5"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
               </a>
             </motion.div>
-          </motion.div>
+          </div>
 
-          {/* Video */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="relative mb-s4"
-          >
-            {/* Glow behind video */}
-            <div className="absolute -inset-4 rounded-2xl pointer-events-none z-0" style={{
-              background: "radial-gradient(ellipse at 50% 50%, rgba(198,177,128,0.12) 0%, transparent 70%)",
-              filter: "blur(20px)",
-            }} />
-            <div className="rounded-xl overflow-hidden aspect-video relative bg-fg z-1"
-              style={{ boxShadow: "0 32px 80px rgba(42,41,40,0.18), 0 0 0 1px rgba(198,177,128,0.12)" }}>
-              <video
-                autoPlay muted loop playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-              >
-                <source src="/welcome_to_the_roselle_center_for_healing (1080p).mp4" type="video/mp4" />
-              </video>
-
-              {/* Review overlay */}
-              <motion.div
-                className="absolute bottom-s3 left-s3 rounded-xl p-s2 px-s3 max-w-[280px] z-10"
-                style={{
-                  background: "rgba(245,244,239,0.92)",
-                  backdropFilter: "blur(12px)",
-                  boxShadow: "0 8px 32px rgba(42,41,40,0.15)",
-                }}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1, type: "spring", stiffness: 120, damping: 20 }}
-              >
-                <div className="flex gap-0.5 mb-1.5">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-accent text-sm">&#9733;</span>
-                  ))}
-                </div>
-                <p className="text-sm text-fg leading-snug mb-2.5">
-                  &ldquo;I have been coming to Roselle Center for over 10 years. I love it!&rdquo;
+          {/* Bottom row: featured card (left) + Watch button (right) */}
+          <div className="relative pb-s6 pt-s8 flex items-end justify-between gap-s4 max-md:flex-col max-md:items-stretch">
+            <motion.a
+              href="/3d-spine-simulator"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="group flex items-center gap-s3 rounded-xl p-2 pr-s4 max-w-[380px] transition-colors"
+              style={{
+                background: "rgba(245,244,239,0.08)",
+                border: "1px solid rgba(245,244,239,0.14)",
+                backdropFilter: "blur(12px)",
+              }}
+            >
+              <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/spine-simulator-1.webp"
+                  alt=""
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p
+                  className="text-[10px] tracking-[0.2em] uppercase mb-0.5"
+                  style={{ color: "#c6b180" }}
+                >
+                  Featured
                 </p>
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg overflow-hidden shrink-0 bg-fg">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="https://i.pravatar.cc/80?img=25" alt="Rhonda L." className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-fg">Rhonda L.</p>
-                    <p className="text-xs" style={{ color: "rgba(42,41,40,0.5)" }}>Google Review · 10+ years</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Stats badge top-right */}
-              <motion.div
-                className="absolute top-s3 right-s3 rounded-xl px-s3 py-2 z-10 text-right"
-                style={{
-                  background: "rgba(245,244,239,0.92)",
-                  backdropFilter: "blur(12px)",
-                  boxShadow: "0 8px 32px rgba(42,41,40,0.12)",
-                }}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.2, type: "spring", stiffness: 120, damping: 20 }}
+                <p
+                  className="text-sm font-medium truncate"
+                  style={{ color: "#f5f4ef" }}
+                >
+                  Try our 3D Spine Simulator
+                </p>
+              </div>
+              <span
+                className="inline-flex items-center justify-center w-7 h-7 rounded-full shrink-0
+                           transition-transform duration-200 group-hover:translate-x-0.5"
+                style={{ background: "rgba(245,244,239,0.12)", color: "#f5f4ef" }}
               >
-                <p className="text-xl font-serif font-medium text-fg leading-none">40+</p>
-                <p className="text-xs mt-0.5" style={{ color: "rgba(42,41,40,0.5)" }}>Years of healing</p>
-              </motion.div>
-            </div>
-          </motion.div>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path
+                    d="M2 5h6M5.5 2.5L8 5 5.5 7.5"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </motion.a>
 
-          {/* Marquee */}
+            <motion.button
+              type="button"
+              onClick={() => setVideoOpen(true)}
+              initial={{ opacity: 0, scale: 0.92, y: 12 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative self-end max-md:self-stretch"
+              aria-label="Watch welcome video"
+            >
+              {/* Small video thumbnail card */}
+              <div
+                className="relative overflow-hidden rounded-xl
+                           w-[420px] h-[240px] max-lg:w-[360px] max-lg:h-[210px]
+                           max-md:w-full max-md:h-[220px]
+                           transition-transform duration-300 group-hover:scale-[1.02]"
+                style={{
+                  boxShadow:
+                    "0 18px 48px rgba(0,0,0,0.45), 0 0 0 1px rgba(245,244,239,0.12)",
+                }}
+              >
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  aria-hidden="true"
+                >
+                  <source
+                    src="/welcome_to_the_roselle_center_for_healing (1080p).mp4"
+                    type="video/mp4"
+                  />
+                </video>
+
+                {/* Dim overlay */}
+                <div
+                  className="absolute inset-0 transition-colors duration-300 group-hover:bg-black/10"
+                  style={{ background: "rgba(26,25,23,0.45)" }}
+                />
+
+                {/* WATCH label (left) */}
+                <span
+                  className="absolute left-s3 top-1/2 -translate-y-1/2 text-[11px] tracking-[0.28em] uppercase font-medium"
+                  style={{ color: "#f5f4ef" }}
+                >
+                  Watch
+                </span>
+
+                {/* Play disc (center) */}
+                <span
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                             inline-flex items-center justify-center w-[72px] h-[72px] rounded-full
+                             transition-transform duration-300 group-hover:scale-110"
+                  style={{
+                    background: "#c6b180",
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.35)",
+                  }}
+                >
+                  <span
+                    className="absolute inset-0 rounded-full animate-ping"
+                    style={{
+                      background: "rgba(198,177,128,0.35)",
+                      animationDuration: "2.4s",
+                    }}
+                    aria-hidden="true"
+                  />
+                  <svg
+                    width="22"
+                    height="24"
+                    viewBox="0 0 18 20"
+                    fill="none"
+                    className="relative ml-0.5"
+                  >
+                    <path d="M2 2v16l14-8L2 2z" fill="#2a2928" />
+                  </svg>
+                </span>
+              </div>
+            </motion.button>
+          </div>
+
+          {/* Marquee strip */}
           {mounted && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2, duration: 0.6 }}>
-              <ScrollMarquee items={TAGS} baseSpeed={50} direction={1} />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.6 }}
+              className="pb-s4 -mx-s6 max-md:-mx-s4"
+              style={{
+                borderTop: "1px solid rgba(245,244,239,0.10)",
+                paddingTop: "var(--spacing-s3)",
+              }}
+            >
+              <div style={{ color: "rgba(245,244,239,0.55)" }}>
+                <ScrollMarquee items={TAGS} baseSpeed={40} direction={1} />
+              </div>
             </motion.div>
           )}
         </div>
+
+        {/* ── Video Modal ── */}
+        <AnimatePresence>
+          {videoOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-s4"
+              style={{ background: "rgba(26,25,23,0.92)", backdropFilter: "blur(8px)" }}
+              onClick={() => setVideoOpen(false)}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                className="relative w-full max-w-[1100px] aspect-video rounded-xl overflow-hidden"
+                style={{ boxShadow: "0 40px 100px rgba(0,0,0,0.6)" }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <video
+                  autoPlay
+                  controls
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover bg-fg"
+                >
+                  <source
+                    src="/welcome_to_the_roselle_center_for_healing (1080p).mp4"
+                    type="video/mp4"
+                  />
+                </video>
+                <button
+                  type="button"
+                  onClick={() => setVideoOpen(false)}
+                  aria-label="Close video"
+                  className="absolute top-3 right-3 w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:bg-white/20"
+                  style={{ background: "rgba(0,0,0,0.5)", color: "#f5f4ef" }}
+                >
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path
+                      d="M2 2l10 10M12 2L2 12"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
     </div>
   );

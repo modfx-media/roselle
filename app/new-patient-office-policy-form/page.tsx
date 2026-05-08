@@ -3,9 +3,9 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
 import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
+import PageHero from "../components/templates/PageHero";
 
 
 export default function NewPatientOfficePolicyFormPage() {
@@ -15,19 +15,14 @@ export default function NewPatientOfficePolicyFormPage() {
       <SmoothScroll>
         <main className="relative z-1">
 
-          {/* ── Hero ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>New Patient Office Policy Form</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="New Patient Office Policy Form" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Patient Forms · Fairfax, VA"
+            title="New patient office policy."
+            subtitle="Important office information and patient history we'll need on your first visit. Download the PDF or fill out online."
+            crumbs={[{ label: "Home", href: "/" }, { label: "Office Policy Form" }]}
+            image="/services/office-policy.jpg"
+            imageAlt="New patient office policy."
+          />
 
           {/* ── Content ── */}
           <section className="bg-bg py-section-py overflow-hidden">

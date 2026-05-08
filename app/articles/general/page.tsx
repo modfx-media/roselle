@@ -5,11 +5,11 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import SmoothScroll from "../../components/motion/SmoothScroll";
 import RevealSection from "../../components/motion/RevealSection";
-import SplitReveal from "../../components/motion/SplitReveal";
 import MagneticButton from "../../components/motion/MagneticButton";
 import allArticles from "./articlesData.json";
 import categories from "./categoriesData.json";
 import Contact from "../../components/Contact";
+import PageHero from "../../components/templates/PageHero";
 
 const POSTS_PER_PAGE = 16;
 const TOTAL_POSTS = allArticles.length;
@@ -52,24 +52,16 @@ export default function ArticlesPage() {
       <SmoothScroll>
         <main className="relative z-1">
 
-          {/* ── Hero ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a>
-                  <span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Articles</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal
-                text="Community Content"
-                as="h1"
-                className="text-fluid-5xl text-bg tracking-tight leading-[1.05]"
-              />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Community Content · Fairfax, VA"
+            title="Health & wellness articles."
+            subtitle="A growing library of articles on chiropractic care, conditions treated, therapies & techniques, nutrition, and more — curated for our community."
+            crumbs={[{ label: "Home", href: "/" }, { label: "Articles" }]}
+            image="/services/articles-cover.jpg"
+            imageAlt="Community articles."
+            primaryCta={{ label: "Book an appointment", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
           {/* ── Articles + Sidebar ── */}
           <section className="about-noise bg-fg py-section-py overflow-hidden relative">

@@ -91,6 +91,7 @@ const NAV: NavEntry[] = [
     ],
   },
   { label: "Ageless Health Store", href: "/istore" },
+  { label: "Podcast", href: "/podcast" },
   {
     label: "Contact",
     href: "/contact",

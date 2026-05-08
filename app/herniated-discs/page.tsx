@@ -1,12 +1,15 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
-
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import ContentBlock from "../components/templates/ContentBlock";
+import FeatureGrid from "../components/templates/FeatureGrid";
+import StatStrip from "../components/templates/StatStrip";
+import PillarSection from "../components/templates/PillarSection";
+import ChecklistSplit from "../components/templates/ChecklistSplit";
+import ImageCta from "../components/templates/ImageCta";
 
 export default function HerniatedDiscsPage() {
   return (
@@ -14,142 +17,126 @@ export default function HerniatedDiscsPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-          {/* HERO */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/conditions-treated" className="transition-colors duration-200 hover:text-accent">Where is Your Pain? Conditions Treated</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Herniated Discs</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Herniated Discs" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Herniated Discs · Fairfax, VA"
+            title="Non-surgical care for herniated discs."
+            subtitle="Relieve pressure, reduce inflammation, and restore proper spinal function — without surgery."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Conditions Treated", href: "/conditions-treated" },
+              { label: "Herniated Discs" },
+            ]}
+            image="/services/man-medical-office-physiotherapist-is-rehabilitating-back.jpg"
+            imageAlt="Patient receiving spinal care for herniated disc."
+            primaryCta={{ label: "Book an appointment", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          {/* Overview – light */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Understanding Herniated Discs</p>
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  A herniated disc occurs when the soft, gel-like center of a spinal disc pushes through a crack in the tougher exterior casing. This displaced disc material can press on nearby spinal nerves, causing pain, numbness, tingling, or weakness that may radiate into the arms or legs. Herniated discs most commonly affect the lower back and neck, and they can significantly impact your daily life and mobility. At Roselle Center For Healing in Fairfax, VA, we provide non-surgical treatment options designed to relieve pressure, reduce inflammation, and restore proper spinal function.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <StatStrip
+            stats={[
+              { value: "Non-surgical", label: "Care" },
+              { value: "Drug-free", label: "Approach" },
+              { value: "Personalized", label: "Plans" },
+              { value: "Lasting", label: "Relief" },
+            ]}
+          />
 
-          {/* Symptoms – dark */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Recognizing the Signs</p>
-                <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-snug mb-s6">Symptoms of Herniated Discs</h2>
-              </RevealSection>
-              <div className="grid grid-cols-2 gap-s8 max-md:grid-cols-1">
-                <RevealSection delay={0.05}>
-                  <h3 className="text-fluid-lg text-bg font-serif tracking-tight mb-s3">Radiating Pain</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    A herniated disc in the lower back often causes sharp or burning pain that radiates down the buttock and into the leg — commonly known as sciatica. When a disc herniates in the neck, pain may shoot into the shoulder and arm. The intensity can range from a dull ache to debilitating discomfort.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.1}>
-                  <h3 className="text-fluid-lg text-bg font-serif tracking-tight mb-s3">Numbness &amp; Tingling</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    Pressure on the spinal nerves can produce numbness, tingling, or a pins-and-needles sensation in the areas served by those nerves. This may affect the hands, fingers, feet, or toes depending on which disc is involved.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.15}>
-                  <h3 className="text-fluid-lg text-bg font-serif tracking-tight mb-s3">Muscle Weakness</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    Nerve compression from a herniated disc can weaken the muscles that the affected nerves serve. You may notice difficulty lifting objects, gripping things securely, or an increased tendency to stumble.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.2}>
-                  <h3 className="text-fluid-lg text-bg font-serif tracking-tight mb-s3">Stiffness &amp; Limited Mobility</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                    Stiffness in the neck or lower back is a common symptom, particularly in the morning or after prolonged sitting. The surrounding muscles may spasm as they try to stabilize the affected area, further restricting your range of motion.
-                  </p>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <PillarSection
+            eyebrow="Understanding Herniated Discs"
+            title="What's happening inside the spine."
+            intro="A herniated disc occurs when the soft, gel-like center of a spinal disc pushes through a crack in the tougher exterior casing. This displaced disc material can press on nearby spinal nerves, causing pain, numbness, tingling, or weakness that may radiate into the arms or legs. At Roselle Center For Healing in Fairfax, VA, we provide non-surgical treatment options designed to relieve pressure, reduce inflammation, and restore proper spinal function."
+            tone="light"
+            cta={{ label: "Book your assessment", href: "/appointment" }}
+            pillars={[
+              { title: "Disc structure", description: "Soft inner gel pushes through a tear in the disc's outer casing." },
+              { title: "Nerve pressure", description: "Displaced material presses on nearby spinal nerves." },
+              { title: "Radiating symptoms", description: "Pain, numbness, tingling, or weakness in the arms or legs." },
+              { title: "Non-surgical care", description: "Relieve pressure, reduce inflammation, restore function." },
+            ]}
+          />
 
-          {/* Treatment Options – light */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Our Approach</p>
-                <h2 className="text-fluid-3xl text-fg font-serif tracking-tight leading-snug mb-s6">Chiropractic Treatment Options</h2>
-              </RevealSection>
-              <div className="grid grid-cols-2 gap-s8 max-md:grid-cols-1">
-                <RevealSection delay={0.05}>
-                  <h3 className="text-fluid-lg text-fg font-serif tracking-tight mb-s3">Spinal Adjustments</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    Gentle, targeted adjustments help restore proper alignment to the spine, reducing pressure on the herniated disc and the nerves it is compressing. This can provide significant pain relief and improve mobility.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.1}>
-                  <h3 className="text-fluid-lg text-fg font-serif tracking-tight mb-s3">Spinal Decompression Therapy</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    Non-surgical spinal decompression uses controlled traction to gently stretch the spine, creating negative pressure within the disc. This helps retract the herniated material and promotes the flow of nutrients and oxygen into the disc for healing.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.15}>
-                  <h3 className="text-fluid-lg text-fg font-serif tracking-tight mb-s3">Soft Tissue Therapy</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    Massage therapy and myofascial release techniques help relax the muscles surrounding the herniated disc. This reduces muscle spasm, improves circulation to the injured area, and supports the body&apos;s natural healing processes.
-                  </p>
-                </RevealSection>
-                <RevealSection delay={0.2}>
-                  <h3 className="text-fluid-lg text-fg font-serif tracking-tight mb-s3">Therapeutic Exercises</h3>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    We prescribe specific exercises designed to strengthen the muscles that support the spine, improve flexibility, and help prevent future disc injuries. A strong core and balanced musculature are essential to long-term spinal health.
-                  </p>
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <FeatureGrid
+            tone="dark"
+            eyebrow="Recognizing the Signs"
+            title="Symptoms of Herniated Discs."
+            cols={2}
+            cards={[
+              {
+                title: "Radiating Pain",
+                description:
+                  "A herniated disc in the lower back often causes sharp or burning pain that radiates down the buttock and into the leg — commonly known as sciatica. When a disc herniates in the neck, pain may shoot into the shoulder and arm.",
+              },
+              {
+                title: "Numbness & Tingling",
+                description:
+                  "Pressure on the spinal nerves can produce numbness, tingling, or a pins-and-needles sensation in the areas served by those nerves. This may affect the hands, fingers, feet, or toes.",
+              },
+              {
+                title: "Muscle Weakness",
+                description:
+                  "Nerve compression from a herniated disc can weaken the muscles that the affected nerves serve. You may notice difficulty lifting objects, gripping things securely, or an increased tendency to stumble.",
+              },
+              {
+                title: "Stiffness & Limited Mobility",
+                description:
+                  "Stiffness in the neck or lower back is a common symptom, particularly in the morning or after prolonged sitting. The surrounding muscles may spasm as they try to stabilize the affected area.",
+              },
+            ]}
+          />
 
-          {/* Recovery and Prevention – dark */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Long-Term Wellness</p>
-                <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-snug mb-s6">Recovery and Prevention</h2>
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Recovering from a herniated disc requires consistent, patient-centered care. Our treatment plans are tailored to your specific condition and goals, combining in-office adjustments with at-home exercises and lifestyle modifications. Posture correction, core strengthening, and ergonomic adjustments to your work and home environment all play a critical role in preventing future disc problems and maintaining a healthy spine for years to come.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureGrid
+            eyebrow="Our Approach"
+            title="Chiropractic Treatment Options."
+            cols={2}
+            cards={[
+              {
+                title: "Spinal Adjustments",
+                description:
+                  "Gentle, targeted adjustments help restore proper alignment to the spine, reducing pressure on the herniated disc and the nerves it is compressing — significant pain relief and improved mobility.",
+              },
+              {
+                title: "Spinal Decompression Therapy",
+                description:
+                  "Non-surgical decompression uses controlled traction to gently stretch the spine, creating negative pressure within the disc. This helps retract the herniated material and promotes nutrient flow.",
+              },
+              {
+                title: "Soft Tissue Therapy",
+                description:
+                  "Massage therapy and myofascial release help relax the muscles surrounding the herniated disc — reducing spasm, improving circulation, and supporting natural healing.",
+              },
+              {
+                title: "Therapeutic Exercises",
+                description:
+                  "Specific exercises designed to strengthen the muscles that support the spine, improve flexibility, and prevent future disc injuries. A strong core is essential to long-term spinal health.",
+              },
+            ]}
+          />
 
-          {/* CTA card */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Get Back to Living Without Pain</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>Contact Roselle Center For Healing to discuss non-surgical treatment options for your herniated disc.</p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
+          <ChecklistSplit
+            tone="dark"
+            eyebrow="Long-Term Wellness"
+            title="Recovery and Prevention."
+            body="Recovering from a herniated disc requires consistent, patient-centered care. Our treatment plans are tailored to your specific condition and goals, combining in-office adjustments with at-home exercises and lifestyle modifications."
+            image="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=1080&q=70&auto=format&fit=crop"
+            imageAlt="Patient performing rehab exercises for spinal health."
+            items={[
+              "Tailored in-office adjustments",
+              "At-home exercises and lifestyle modifications",
+              "Posture correction and core strengthening",
+              "Ergonomic adjustments at work and home",
+            ]}
+          />
 
+          <ImageCta
+            eyebrow="Get back to living"
+            title="Get back to living without pain."
+            body="Contact Roselle Center For Healing to discuss non-surgical treatment options for your herniated disc."
+            image="https://images.unsplash.com/photo-1584516150909-c43483ee7932?w=1600&q=70&auto=format&fit=crop"
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>

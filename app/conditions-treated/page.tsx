@@ -1,12 +1,13 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
-
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import ContentBlock from "../components/templates/ContentBlock";
+import FeatureGrid from "../components/templates/FeatureGrid";
+import StatStrip from "../components/templates/StatStrip";
+import CtaBand from "../components/templates/CtaBand";
 
 export default function ConditionsTreatedPage() {
   return (
@@ -14,138 +15,90 @@ export default function ConditionsTreatedPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Where is Your Pain? Conditions Treated</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Conditions Treated" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Conditions Treated · Fairfax, VA"
+            title="Where is your pain? Conditions we treat."
+            subtitle="Integrated chiropractic care for the entire body — addressing root causes, not just symptoms."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Conditions Treated" },
+            ]}
+            image="/services/man-medical-office-physiotherapist-is-rehabilitating-back.jpg"
+            imageAlt="Chiropractic care for various conditions."
+            primaryCta={{ label: "Book a consultation", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Overview</p>
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  There are various conditions that a chiropractor near you in Fairfax, VA can assess and treat. At Roselle Center for Healing, we treat the entire body and provide integrated chiropractic services to address a full range of conditions. Some of the conditions we commonly treat include:
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <StatStrip
+            stats={[
+              { value: "Whole-body", label: "Care" },
+              { value: "Personalized", label: "Plans" },
+              { value: "Integrated", label: "Therapies" },
+              { value: "Root-cause", label: "Focus" },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Back Pain</p>
-                <SplitReveal text="Back Pain" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Back pain is one of the most common reasons people visit a chiropractor. Whether it&rsquo;s due to poor posture, a herniated disc, or a car accident injury, we offer personalized care to help you recover. Our team creates targeted treatment plans to relieve pain, restore mobility, and prevent future issues.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            eyebrow="Overview"
+            title="What we treat at Roselle Center for Healing."
+            body="There are various conditions a chiropractor near you in Fairfax, VA can assess and treat. At Roselle Center for Healing, we treat the entire body and provide integrated chiropractic services to address a full range of conditions. Below are some of the conditions we commonly treat."
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Knee Pain</p>
-                <SplitReveal text="Back Pain Relief and Preventative Chiropractic Treatments" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  When it comes to knee pain, finding a chiropractor near you in Fairfax, VA who understands the mechanics of the knee is key. Our chiropractor assesses how your spine, hips, and knees work together to find the root cause of discomfort. Through adjustments, soft tissue therapy, and rehabilitative exercises, we help restore joint function and reduce inflammation.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureGrid
+            tone="dark"
+            eyebrow="Common Conditions"
+            title="Conditions we commonly treat."
+            cols={3}
+            cards={[
+              {
+                title: "Back Pain",
+                description:
+                  "One of the most common reasons people visit a chiropractor — from poor posture and herniated discs to auto injuries. Personalized care to restore mobility and prevent future issues.",
+                href: "/back-pain",
+              },
+              {
+                title: "Knee Pain",
+                description:
+                  "We assess how your spine, hips, and knees work together to find the root cause. Adjustments, soft tissue therapy, and rehab exercises restore function.",
+                href: "/knee-pain",
+              },
+              {
+                title: "Neck Pain",
+                description:
+                  "From stress, posture, or injury — we focus on spinal alignment and nerve pressure to reduce stiffness and restore range of motion.",
+                href: "/neck-pain",
+              },
+              {
+                title: "Shoulder Pain",
+                description:
+                  "From overuse, muscle tension, or spinal misalignment — a whole-body approach with adjustments, exercises, and soft tissue therapy.",
+                href: "/shoulder-pain",
+              },
+              {
+                title: "Sciatica",
+                description:
+                  "Radiating pain from the lower back down the leg, often linked to disc issues or nerve compression. Chiropractic care eases pressure and improves mobility.",
+                href: "/sciatica",
+              },
+              {
+                title: "Whiplash",
+                description:
+                  "A common auto injury causing neck and shoulder pain, headaches, and stiffness. Treatments restore alignment, ease pain, and support recovery.",
+                href: "/whiplash",
+              },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Neck Pain</p>
-                <SplitReveal text="Neck Pain" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Neck pain can result from stress, poor posture, or injury. Our chiropractic approach focuses on improving spinal alignment and relieving nerve pressure to reduce stiffness and restore range of motion. Whether your pain is chronic or the result of a recent incident, we provide safe and effective solutions.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Shoulder Pain</p>
-                <SplitReveal text="Shoulder Pain" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Shoulder pain can be caused by overuse, muscle tension, or misalignment in the spine. Our team takes a whole-body approach to identify the underlying cause and develop a plan that includes adjustments, exercises, and soft tissue therapies.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Sciatica</p>
-                <SplitReveal text="Sciatica" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Sciatica causes radiating pain from the lower back down through the leg. It&rsquo;s often linked to disc issues or nerve compression. Chiropractic care can help ease pressure on the sciatic nerve, reduce pain, and improve your mobility through gentle adjustments and targeted therapy.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Whiplash</p>
-                <SplitReveal text="Whiplash" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Whiplash is a common auto injury that causes neck and shoulder pain, headaches, and stiffness. If left untreated, the damage can become long-lasting. Our chiropractic treatments aim to restore proper alignment, ease pain, and support recovery after a car accident or sports injury.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Contact us for an Appointment Today!</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      If you are experiencing pain from any of the conditions listed above, our team at Roselle Center for Healing in Fairfax, VA, is here to help. We provide comprehensive chiropractic care tailored to your specific needs. To schedule your consultation, contact us at (703) 698-7117 today.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
-
+          <CtaBand
+            tone="gold"
+            eyebrow="Contact us"
+            title="Contact us for an appointment today."
+            body="If you're experiencing pain from any of these conditions, our team at Roselle Center for Healing in Fairfax, VA, is here to help. We provide comprehensive chiropractic care tailored to your specific needs."
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
-
           <Footer />
         </main>
       </SmoothScroll>

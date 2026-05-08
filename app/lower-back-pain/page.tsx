@@ -1,147 +1,116 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
-import GsapImageParallax from "../components/motion/GsapImageParallax";
 import Contact from "../components/Contact";
-
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import FeatureSplit from "../components/templates/FeatureSplit";
+import ContentBlock from "../components/templates/ContentBlock";
+import StatStrip from "../components/templates/StatStrip";
+import PillarSection from "../components/templates/PillarSection";
+import ChecklistSplit from "../components/templates/ChecklistSplit";
+import ImageCta from "../components/templates/ImageCta";
 
 export default function LowerBackPainPage() {
   return (
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1 service-page-shell">
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/services.html" className="transition-colors duration-200 hover:text-accent">Services</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Lower Back Pain</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Lower Back Pain" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-xl text-bg/60 mt-s4 max-w-[36ch]">Finding Relief from Lower Back Pain in Fairfax, VA</p>
-              </RevealSection>
-            </div>
-          </section>
+        <main className="relative z-1">
+          <PageHero
+            eyebrow="Lower Back Pain · Fairfax, VA"
+            title="Finding relief from lower back pain in Fairfax, VA."
+            subtitle="Personalized chiropractic care from Dr. Tom Roselle, designed to find lasting relief — not just temporary fixes."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services.html" },
+              { label: "Lower Back Pain" },
+            ]}
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/man-lower-back-pain.jpg.webp?b51ba65f6ffa89b768063c3dac3003bb"
+            imageAlt="Man experiencing lower back pain, highlighting spinal discomfort."
+            primaryCta={{ label: "Book an appointment", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-[1fr_1fr] gap-s10 items-center max-[900px]:grid-cols-1 max-[900px]:gap-s8">
-                <div>
-                  <RevealSection>
-                    <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Overview</p>
-                  </RevealSection>
-                  <RevealSection delay={0.1}>
-                    <p className="text-fluid-base leading-relaxed mt-s6" style={{ color: "rgba(42,41,40,0.68)" }}>
-                      Lower back pain is one of the most common reasons people seek care from a chiropractor near you. Whether caused by an injury, poor posture, or a condition like sciatica, this type of pain can interfere with daily life and make even simple activities a challenge. At Roselle Center for Healing in Fairfax, VA, Dr. Tom Roselle and his team provide personalized care to help patients find lasting relief.
-                    </p>
-                  </RevealSection>
-                </div>
-                <RevealSection delay={0.15}>
-                  <GsapImageParallax src="https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/man-lower-back-pain.jpg.webp?b51ba65f6ffa89b768063c3dac3003bb" alt="Man experiencing lower back pain, highlighting spinal discomfort, relevant to chiropractic care for lower back relief at Roselle Center for Healing in Fairfax, VA." className="w-full rounded-xl" />
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <StatStrip
+            stats={[
+              { value: "30+", label: "Years experience" },
+              { value: "Personalized", label: "Care plans" },
+              { value: "Whole-body", label: "Approach" },
+              { value: "5★", label: "Patient rated" },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Understanding</p>
-                <SplitReveal text="Understanding Lower Back Pain" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  The lower back is made up of muscles, ligaments, discs, and joints that all work together to support the body. When any of these structures are strained or misaligned, pain and stiffness can develop. Without proper lower back pain treatment, symptoms often worsen, making it difficult to sit, stand, or move comfortably.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureSplit
+            eyebrow="Overview"
+            title="A common reason patients reach out — and what makes our care different."
+            body="Lower back pain is one of the most common reasons people seek care from a chiropractor near you. Whether caused by an injury, poor posture, or a condition like sciatica, this type of pain can interfere with daily life and make even simple activities a challenge. At Roselle Center for Healing in Fairfax, VA, Dr. Tom Roselle and his team provide personalized care to help patients find lasting relief."
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/man-lower-back-pain.jpg.webp?b51ba65f6ffa89b768063c3dac3003bb"
+            imageAlt="Lower back pain consultation."
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Causes</p>
-                <SplitReveal text="Causes of Lower Back Pain" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Some of the most common causes of lower back discomfort include:
-                </p>
-                <ul className="mt-s4 max-w-[720px] space-y-2 list-disc pl-6" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  <li className="text-fluid-base leading-relaxed">Muscle strain or overuse</li>
-                  <li className="text-fluid-base leading-relaxed">Herniated or bulging discs</li>
-                  <li className="text-fluid-base leading-relaxed">Poor posture from sitting too long</li>
-                  <li className="text-fluid-base leading-relaxed">Stress on the spine from injuries or accidents</li>
-                  <li className="text-fluid-base leading-relaxed">Conditions such as sciatica</li>
-                </ul>
-              </RevealSection>
-              <RevealSection delay={0.15}>
-                <p className="text-fluid-base leading-relaxed mt-s5 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  If your pain radiates into the leg or hip, you may benefit from specialized sciatica treatment near you, designed to reduce nerve compression and restore mobility.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <PillarSection
+            tone="dark"
+            eyebrow="Understanding"
+            title="Understanding Lower Back Pain."
+            intro="The lower back is made up of muscles, ligaments, discs, and joints that all work together to support the body. When any of these structures are strained or misaligned, pain and stiffness can develop. Without proper lower back pain treatment, symptoms often worsen, making it difficult to sit, stand, or move comfortably."
+            cta={{ label: "Book your assessment", href: "/appointment" }}
+            pillars={[
+              { title: "Muscles & ligaments", description: "Soft tissues that support the spine and stabilize movement." },
+              { title: "Discs", description: "Cushions between vertebrae that absorb daily impact." },
+              { title: "Joints", description: "Connection points that allow flexibility and range of motion." },
+              { title: "Alignment", description: "Misalignments cause stiffness, pain, and worsening symptoms." },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Treatment</p>
-                <SplitReveal text="Chiropractic Care for Back Pain Relief" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Chiropractic care focuses on correcting spinal alignment to relieve pressure, reduce inflammation, and restore function. Dr. Tom Roselle uses a comprehensive approach that may include adjustments, soft tissue therapy, and lifestyle recommendations. By addressing the root cause, chiropractic care provides effective lower back pain treatment near you that goes beyond temporary symptom relief.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            eyebrow="Causes"
+            title="Causes of Lower Back Pain."
+            body="Some of the most common causes of lower back discomfort include:"
+          >
+            <ul className="mt-s4 max-w-[720px] space-y-2 list-disc pl-6 text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.7)" }}>
+              <li>Muscle strain or overuse</li>
+              <li>Herniated or bulging discs</li>
+              <li>Poor posture from sitting too long</li>
+              <li>Stress on the spine from injuries or accidents</li>
+              <li>Conditions such as sciatica</li>
+            </ul>
+            <p className="text-fluid-base leading-relaxed mt-s5 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
+              If your pain radiates into the leg or hip, you may benefit from specialized sciatica treatment near you, designed to reduce nerve compression and restore mobility.
+            </p>
+          </ContentBlock>
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Holistic</p>
-                <SplitReveal text="A Holistic Approach to Healing" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  At Roselle Center for Healing, patients receive more than standard chiropractic care. The team combines integrative therapies to support healing, reduce stress, and prevent future flare-ups. Whether you need customized sciatica treatment or ongoing support for chronic pain, you&rsquo;ll find comprehensive solutions tailored to your unique needs.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            tone="dark"
+            eyebrow="Treatment"
+            title="Chiropractic Care for Back Pain Relief."
+            body="Chiropractic care focuses on correcting spinal alignment to relieve pressure, reduce inflammation, and restore function. Dr. Tom Roselle uses a comprehensive approach that may include adjustments, soft tissue therapy, and lifestyle recommendations. By addressing the root cause, chiropractic care provides effective lower back pain treatment near you that goes beyond temporary symptom relief."
+          />
 
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="service-cta-panel flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Take the First Step Toward Relief</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      Don&rsquo;t let lower back pain control your life. If you&rsquo;re searching for a trusted chiropractor near you in Fairfax, VA, Dr. Tom Roselle and the team at Roselle Center for Healing are here to help. Call us today at (703) 698-7117 to schedule your consultation and begin your journey toward lasting relief.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
+          <ChecklistSplit
+            eyebrow="Holistic"
+            title="A Holistic Approach to Healing."
+            body="At Roselle Center for Healing, patients receive more than standard chiropractic care. The team combines integrative therapies to support healing, reduce stress, and prevent future flare-ups. Whether you need customized sciatica treatment or ongoing support for chronic pain, you'll find comprehensive solutions tailored to your unique needs."
+            image="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=1080&q=70&auto=format&fit=crop"
+            imageAlt="Patient receiving holistic lower back care."
+            items={[
+              "Integrative therapies for healing",
+              "Stress reduction support",
+              "Customized sciatica treatment available",
+              "Comprehensive solutions for chronic pain",
+            ]}
+          />
 
+          <ImageCta
+            eyebrow="Take the first step"
+            title="Take the first step toward relief."
+            body="Don't let lower back pain control your life. If you're searching for a trusted chiropractor near you in Fairfax, VA, Dr. Tom Roselle and the team at Roselle Center for Healing are here to help. Call us today at (703) 698-7117 to schedule your consultation and begin your journey toward lasting relief."
+            image="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&q=70&auto=format&fit=crop"
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
-
           <Footer />
         </main>
       </SmoothScroll>

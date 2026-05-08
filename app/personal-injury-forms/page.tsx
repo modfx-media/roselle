@@ -4,8 +4,8 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
 import Contact from "../components/Contact";
+import PageHero from "../components/templates/PageHero";
 
 
 const inputClass = "w-full rounded-lg bg-[rgba(245,244,239,0.06)] border border-[rgba(245,244,239,0.1)] px-4 py-3 text-sm text-bg placeholder:text-[rgba(245,244,239,0.3)] focus:outline-none input-gold-focus focus:border-accent transition-colors duration-200";
@@ -38,19 +38,14 @@ export default function PersonalInjuryFormsPage() {
       <SmoothScroll>
         <main className="relative z-1">
 
-          {/* ── Hero ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Personal Injury Forms</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Personal Injury Forms" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Patient Forms · Fairfax, VA"
+            title="Personal injury forms."
+            subtitle="Help us understand your injury, post-accident symptoms, and our personal injury claims policy so we can support your recovery."
+            crumbs={[{ label: "Home", href: "/" }, { label: "Personal Injury Forms" }]}
+            image="/services/personal-injury.jpg"
+            imageAlt="Personal injury forms."
+          />
 
           {/* ── Policy Letter ── */}
           <section className="bg-bg py-section-py overflow-hidden">

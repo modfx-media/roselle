@@ -1,13 +1,11 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
-import GsapImageParallax from "../components/motion/GsapImageParallax";
 import Contact from "../components/Contact";
-
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import FaqAccordion from "../components/templates/FaqAccordion";
+import CtaBand from "../components/templates/CtaBand";
 
 export default function BackPainFaqsPage() {
   return (
@@ -15,147 +13,63 @@ export default function BackPainFaqsPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/chronic-pain" className="transition-colors duration-200 hover:text-accent">Where is Your Pain? Conditions Treated</a><span>/</span>
-                  <a href="/back-pain" className="transition-colors duration-200 hover:text-accent">Back Pain</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Back Pain FAQs</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Back Pain FAQs" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Patient questions, answered"
+            title="Back pain — your questions, answered."
+            subtitle="If you have back pain due to an auto accident or a medical condition, the discomfort can limit your mobility and prevent you from completing certain tasks. Before you schedule, take a look at the questions we hear most often."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Where is Your Pain? Conditions Treated", href: "/chronic-pain" },
+              { label: "Back Pain", href: "/back-pain" },
+              { label: "Back Pain FAQs" },
+            ]}
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x599_80/webmgr/0g/5/2/backpain2.jpg.webp?5e09f2e65d557a69799049a7fdb7935b"
+            imageAlt="Man holding lower back outdoors, illustrating common back pain experiences."
+            primaryCta={{ label: "Schedule a consultation", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7177", href: "tel:+17036987177" }}
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-[1fr_1fr] gap-s10 items-center max-[900px]:grid-cols-1 max-[900px]:gap-s8">
-                <div>
-                  <RevealSection>
-                    <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">FAQs</p>
-                  </RevealSection>
-                  <RevealSection delay={0.1}>
-                    <p className="text-fluid-base leading-relaxed mt-s6" style={{ color: "rgba(42,41,40,0.68)" }}>
-                      If you have back pain due to an auto accident or a medical condition, the discomfort can limit your mobility and prevent you from completing certain tasks. At Roselle Center for Healing in Fairfax, VA, we provide a variety of treatments to alleviate your discomfort and help you feel your best. Before you schedule your appointment, take a look at some frequently asked questions regarding back pain below:
-                    </p>
-                  </RevealSection>
-                </div>
-                <RevealSection delay={0.15}>
-                  <GsapImageParallax src="https://cdcssl.ibsrv.net/ibimg/smb/1023x599_80/webmgr/0g/5/2/backpain2.jpg.webp?5e09f2e65d557a69799049a7fdb7935b" alt="Man experiencing back pain while standing outdoors, holding lower back, emphasizing common back pain issues related to mobility and discomfort." className="w-full rounded-xl" />
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <FaqAccordion
+            title="Everything patients ask us about back pain."
+            intro="A quick reference to the questions we hear in the office every week. Don't see yours? Call us — we'll talk it through."
+            items={[
+              {
+                q: "Why is back pain so common?",
+                a: "The back is comprised of various bones, joints, muscles, discs, nerves, ligaments, and tendons. These components are involved in every movement of the day. Due to this, they can easily be injured or damaged. Even if you are sitting with poor posture, you may experience back pain.",
+              },
+              {
+                q: "Can a chiropractor really help with back pain?",
+                a: "Chiropractic care specializes in the musculoskeletal system. Our chiropractors can provide natural, non-invasive methods that address the causes of upper back pain and lower back pain, such as misalignments, herniated discs, and nerve compression.",
+              },
+              {
+                q: "Can natural methods actually relieve back pain?",
+                a: "The natural methods that our chiropractors utilize are designed to treat the source of the pain. For example, if you have back pain due to a misalignment, correcting the misalignment can eliminate your discomfort. Along with that, if the pain is from nerve compression, we can help relieve the compression to help you feel better.",
+              },
+              {
+                q: "How do adjustments help?",
+                a: "Adjustments are a fundamental part of chiropractic care. When a misalignment is present, it puts undue pressure on the nerves, muscles, discs, and other spinal column components. As a result, you may experience intense pain and discomfort. The adjustments are used to restore alignment, which relieves the issue causing you pain.",
+              },
+              {
+                q: "Comprehensive back pain treatments — more than just adjustments?",
+                a: "While adjustments are commonly used, they are often combined with other treatments to help you heal faster. For example, spinal decompression may be used in conjunction with the adjustments to treat sciatica.",
+              },
+              {
+                q: "How many sessions will I need to feel better?",
+                a: "The number of sessions that is needed will depend on what is causing your pain. If you are experiencing lower back pain due to a lifting injury, you may not need as many sessions as someone who has been injured in an auto accident. Additionally, someone with a chronic condition like degenerative disc disease will typically need more appointments than someone who is recovering from an injury. However, most people will begin to feel relief within the first few sessions.",
+              },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>FAQ</p>
-                <SplitReveal text="Why is back pain so common?" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  The back is comprised of various bones, joints, muscles, discs, nerves, ligaments, and tendons. These components are involved in every movement of the day. Due to this, they can easily be injured or damaged. Even if you are sitting with poor posture, you may experience back pain.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">FAQ</p>
-                <SplitReveal text="Can a chiropractor really help with back pain?" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Chiropractic care specializes in the musculoskeletal system. Our chiropractors can provide natural, non-invasive methods that address the causes of upper back pain and lower back pain, such as misalignments, herniated discs, and nerve compression.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>FAQ</p>
-                <SplitReveal text="Can natural methods actually relieve back pain?" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  The natural methods that our chiropractors utilize are designed to treat the source of the pain. For example, if you have back pain due to a misalignment, correcting the misalignment can eliminate your discomfort. Along with that, if the pain is from nerve compression, we can help relieve the compression to help you feel better.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">FAQ</p>
-                <SplitReveal text="How do adjustments help?" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Adjustments are a fundamental part of chiropractic care. When a misalignment is present, it puts undue pressure on the nerves, muscles, discs, and other spinal column components. As a result, you may experience intense pain and discomfort. The adjustments are used to restore alignment, which relieves the issue causing you pain.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>FAQ</p>
-                <SplitReveal text="Comprehensive Back Pain Treatments: More Than Just Adjustments" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  While adjustments are commonly used, they are often combined with other treatments to help you heal faster. For example, spinal decompression may be used in conjunction with the adjustments to treat sciatica.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">FAQ</p>
-                <SplitReveal text="How many sessions will I need to feel better?" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  The number of sessions that is needed will depend on what is causing your pain. If you are experiencing lower back pain due to a lifting injury, you may not need as many sessions as someone who has been injured in an auto accident. Additionally, someone with a chronic condition like degenerative disc disease will typically need more appointments than someone who is recovering from an injury. However, most people will begin to feel relief within the first few sessions.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Contact us for an Appointment Today</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      If you are experiencing back pain that is not subsiding, let our team at Roselle Center for Healing in Fairfax, VA, help. With the right care, we can ease your symptoms so you can return to your active lifestyle. To schedule your initial consultation, call us at (703) 698-7177 today. When you&rsquo;re seeking a chiropractor near me, we look forward to assisting you!
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987177"}>Call (703) 698-7177</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
-
+          <CtaBand
+            tone="gold"
+            eyebrow="Schedule today"
+            title="Contact us for an appointment today."
+            body="If you are experiencing back pain that is not subsiding, let our team at Roselle Center for Healing in Fairfax, VA, help. With the right care, we can ease your symptoms so you can return to your active lifestyle."
+            primaryCta={{ label: "Call (703) 698-7177", href: "tel:+17036987177" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
-
           <Footer />
         </main>
       </SmoothScroll>

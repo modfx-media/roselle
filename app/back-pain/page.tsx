@@ -1,13 +1,15 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
-import GsapImageParallax from "../components/motion/GsapImageParallax";
 import Contact from "../components/Contact";
-
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import FeatureSplit from "../components/templates/FeatureSplit";
+import ContentBlock from "../components/templates/ContentBlock";
+import StatStrip from "../components/templates/StatStrip";
+import PillarSection from "../components/templates/PillarSection";
+import ChecklistSplit from "../components/templates/ChecklistSplit";
+import ImageCta from "../components/templates/ImageCta";
 
 export default function BackPainPage() {
   return (
@@ -15,115 +17,92 @@ export default function BackPainPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/chronic-pain" className="transition-colors duration-200 hover:text-accent">Where is Your Pain? Conditions Treated</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Back Pain</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Back Pain" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Where it hurts · Treated naturally"
+            title="Back pain, finally explained — and addressed at the source."
+            subtitle="A debilitating problem that limits daily life. We help patients in Fairfax, VA pinpoint the root cause and build a personalized plan for lasting relief."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Where is Your Pain? Conditions Treated", href: "/chronic-pain" },
+              { label: "Back Pain" },
+            ]}
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x599_80/webmgr/0g/5/2/backpain2.jpg.webp?5e09f2e65d557a69799049a7fdb7935b"
+            imageAlt="Man holding lower back outdoors, illustrating the daily impact of back pain."
+            primaryCta={{ label: "Book your assessment", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-[1fr_1fr] gap-s10 items-center max-[900px]:grid-cols-1 max-[900px]:gap-s8">
-                <div>
-                  <RevealSection>
-                    <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Overview</p>
-                    <h2 className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]">Back Pain</h2>
-                  </RevealSection>
-                  <RevealSection delay={0.1}>
-                    <p className="text-fluid-base leading-relaxed mt-s6" style={{ color: "rgba(42,41,40,0.68)" }}>
-                      Back pain can be a debilitating problem, and affect your ability to handle daily activities. Back pain can appear as a dull ache or sharp shooting pain. It&rsquo;s often felt in the shoulders, neck, and back. The best way to develop an effective treatment plan is to determine the root cause. If you live in Fairfax, VA, and suffer from back pain, contact the Roselle Center for Healing today to start feeling some relief.
-                    </p>
-                  </RevealSection>
-                </div>
-                <RevealSection delay={0.15}>
-                  <GsapImageParallax src="https://cdcssl.ibsrv.net/ibimg/smb/1023x599_80/webmgr/0g/5/2/backpain2.jpg.webp?5e09f2e65d557a69799049a7fdb7935b" alt="Man experiencing back pain while standing outdoors, holding lower back, emphasizing the impact of back pain on daily activities and overall health." className="w-full rounded-xl" />
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <StatStrip
+            stats={[
+              { value: "30+", label: "Years in Fairfax, VA" },
+              { value: "10k+", label: "Patients treated" },
+              { value: "100%", label: "Drug-free care" },
+              { value: "5★", label: "Patient reviewed" },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Adjustments</p>
-                <SplitReveal text="What Is a Chiropractic Adjustment?" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Chiropractors diagnose and treat conditions such as back pain. They focus on integrative health and the relationship between the nervous system and overall health. They use non-invasive and drug-free techniques. Chiropractic adjustments gently manipulate the spine and return it to proper alignment to reduce pain, and improve functionality.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureSplit
+            eyebrow="Overview"
+            title="Back pain isn't just a back problem."
+            body="Back pain can appear as a dull ache or sharp shooting pain. It's often felt in the shoulders, neck, and back. The best way to develop an effective treatment plan is to determine the root cause. If you live in Fairfax, VA, and suffer from back pain, contact the Roselle Center for Healing today to start feeling some relief."
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x599_80/webmgr/0g/5/2/backpain2.jpg.webp?5e09f2e65d557a69799049a7fdb7935b"
+            imageAlt="Man experiencing back pain while standing outdoors, holding lower back."
+            bullets={[
+              "Whole-body assessment, not just symptom chasing",
+              "Personalized care plans tuned to your lifestyle",
+              "Combines chiropractic, applied kinesiology and rehab",
+            ]}
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Conditions</p>
-                <SplitReveal text="What Conditions Can They Treat?" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  There are several conditions chiropractors can treat, including sciatica and injuries resulting from an accident. Sciatica causes pain that radiates along the sciatic nerve and is often felt in the lower back, buttocks, and legs.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.15}>
-                <p className="text-fluid-base leading-relaxed mt-s5 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Our chiropractor&rsquo;s goal is to determine the cause of your condition to create a targeted solution. In some cases, a herniated disc can cause sciatica. Targeted adjustments and therapeutic exercises are a great solution for multiple spinal issues.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.2}>
-                <p className="text-fluid-base leading-relaxed mt-s5 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Personal injury is common after an accident or sports activity. Some individuals experience whiplash, which primarily causes pain in the neck, but can also cause pain in the back. The focus is on rehabilitation, pain management, and improving mobility.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <PillarSection
+            tone="dark"
+            eyebrow="Adjustments"
+            title="What is a chiropractic adjustment?"
+            intro="Chiropractors diagnose and treat conditions such as back pain. They focus on integrative health and the relationship between the nervous system and overall health. They use non-invasive and drug-free techniques. Chiropractic adjustments gently manipulate the spine and return it to proper alignment to reduce pain, and improve functionality."
+            cta={{ label: "Book your assessment", href: "/appointment" }}
+            pillars={[
+              { title: "Diagnose & treat", description: "Expert assessment to find what's actually driving the pain." },
+              { title: "Nervous system focus", description: "Restore healthy nerve communication, not just bone position." },
+              { title: "Drug-free care", description: "Non-invasive techniques that work with your body, not against it." },
+              { title: "Restore alignment", description: "Gentle spinal manipulation to ease pain and improve function." },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Benefits</p>
-                <SplitReveal text="Are there Benefits to Chiropractic Care?" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Chiropractic care offers alternative treatments for back pain. Chiropractors use manual adjustments, spinal manipulations, and other techniques to realign the spine, reduce pressure on nerves, and promote natural healing, which can result in pain relief. These methods allow the body to heal naturally, providing long-term relief and overall health. We will create treatment plans for each patient, considering goals, lifestyle, and medical history.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            eyebrow="Conditions"
+            title="What conditions can chiropractic treat?"
+            body={[
+              "There are several conditions chiropractors can treat, including sciatica and injuries resulting from an accident. Sciatica causes pain that radiates along the sciatic nerve and is often felt in the lower back, buttocks, and legs.",
+              "Our chiropractor's goal is to determine the cause of your condition to create a targeted solution. In some cases, a herniated disc can cause sciatica. Targeted adjustments and therapeutic exercises are a great solution for multiple spinal issues.",
+              "Personal injury is common after an accident or sports activity. Some individuals experience whiplash, which primarily causes pain in the neck, but can also cause pain in the back. The focus is on rehabilitation, pain management, and improving mobility.",
+            ]}
+          />
 
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Why Choose Roselle Center for Healing?</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      Roselle Center for Healing in Fairfax, VA, provides a holistic and integrative approach to treating back pain, promoting overall health and well-being. We have a knowledgeable staff with expertise in chiropractic adjustments. We can also help with many other concerns. Contact us at (703) 698-7117 to schedule an appointment, so we can help you on a path to pain-free health.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
+          <ChecklistSplit
+            tone="dark"
+            eyebrow="Benefits"
+            title="Why chiropractic care works."
+            body="Chiropractic care offers alternative treatments for back pain. Chiropractors use manual adjustments, spinal manipulations, and other techniques to realign the spine, reduce pressure on nerves, and promote natural healing, which can result in pain relief. These methods allow the body to heal naturally, providing long-term relief and overall health. We will create treatment plans for each patient, considering goals, lifestyle, and medical history."
+            image="https://images.unsplash.com/photo-1620331311520-246422fd82f9?w=1080&q=70&auto=format&fit=crop"
+            imageAlt="Patient receiving a chiropractic spinal adjustment."
+            items={[
+              "Manual adjustments and spinal manipulations",
+              "Reduces pressure on nerves",
+              "Promotes natural healing",
+              "Personalized to your goals, lifestyle, and history",
+            ]}
+          />
 
+          <ImageCta
+            eyebrow="Ready when you are"
+            title="Why choose Roselle Center for Healing?"
+            body="Roselle Center for Healing in Fairfax, VA, provides a holistic and integrative approach to treating back pain — promoting overall health and well-being. Schedule today and start your path to pain-free living."
+            image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=70&auto=format&fit=crop"
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
-
           <Footer />
         </main>
       </SmoothScroll>

@@ -1,131 +1,174 @@
 "use client";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import Contact from "../../components/Contact";
 import SmoothScroll from "../../components/motion/SmoothScroll";
 import RevealSection from "../../components/motion/RevealSection";
-import SplitReveal from "../../components/motion/SplitReveal";
-import MagneticButton from "../../components/motion/MagneticButton";
-import GsapImageParallax from "../../components/motion/GsapImageParallax";
-import Contact from "../../components/Contact";
-
+import PageHero from "../../components/templates/PageHero";
+import FeatureSplit from "../../components/templates/FeatureSplit";
+import StatStrip from "../../components/templates/StatStrip";
 
 export default function NutritionPage() {
   return (
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1 service-page-shell">
-          {/* ── Hero ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/services.html" className="transition-colors duration-200 hover:text-accent">Services</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Nutrition</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Nutrition" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
+        <main className="relative z-1">
+          <PageHero
+            eyebrow="Nutrition · Fairfax, VA"
+            title="Nutritional counseling at Roselle Center for Healing."
+            subtitle="The same trusted team — now expanding your holistic wellness through dietary guidance."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services.html" },
+              { label: "Nutrition" },
+            ]}
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/Nutrition_Roselle_Center_for_Healing.jpg.webp?65877bd81c6ec73799c4c772dc635bcb"
+            imageAlt="Nutritionist counseling session."
+            primaryCta={{ label: "Book a consultation", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
+
+          <StatStrip
+            stats={[
+              { value: "1:1", label: "Personalized Plans" },
+              { value: "20+", label: "Years of Care" },
+              { value: "100%", label: "Whole-Body Approach" },
+              { value: "5★", label: "Patient Reviews" },
+            ]}
+          />
+
+          <FeatureSplit
+            eyebrow="Nutritional Counseling"
+            title="Good nutrition is at the core of holistic health."
+            body="Roselle Center for Healing proudly offers nutritional counseling at our Fairfax, VA, facility. The same professionals you've trusted for chiropractic care can now expand your holistic wellness through dietary assistance."
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/Nutrition_Roselle_Center_for_Healing.jpg.webp?65877bd81c6ec73799c4c772dc635bcb"
+            imageAlt="Healthy food and counseling."
+          />
+
+          {/* ── Section: What is nutrition counseling? — pillar cards on dark ── */}
+          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
+            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
+              <div className="grid grid-cols-12 gap-s8 max-lg:grid-cols-1">
+                <div className="col-span-5 max-lg:col-span-1">
+                  <RevealSection>
+                    <p className="text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Our Approach</p>
+                    <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-[1.12] mb-s5">
+                      What is nutrition counseling?
+                    </h2>
+                    <p className="text-fluid-base leading-relaxed text-bg/55 mb-s6">
+                      Discover the keys to a healthier, more balanced diet. Learn the elements of preventive nutrition — what to incorporate to live a longer, healthier, happier life.
+                    </p>
+                    <a href="/appointment" className="inline-flex items-center gap-2 text-sm font-medium tracking-widest uppercase text-accent hover:text-bg transition-colors">
+                      Book a session →
+                    </a>
+                  </RevealSection>
+                </div>
+
+                <div className="col-span-7 max-lg:col-span-1 grid grid-cols-2 gap-s4 max-sm:grid-cols-1">
+                  {[
+                    { n: "01", t: "Whole-body intake", d: "A full review of your medical history, current habits, and personal goals — so the plan fits your real life." },
+                    { n: "02", t: "Targeted nutrients", d: "Work 1:1 with our nutritionist to identify the minerals, vitamins, and nutrients missing from your diet." },
+                    { n: "03", t: "Disease prevention", d: "Eat to lower your risk of type 2 diabetes, stroke, and heart disease — and to better manage existing conditions." },
+                    { n: "04", t: "Better daily living", d: "Sleep deeper, build steady energy, lose weight at a healthy pace, and feel like yourself again." },
+                  ].map((c, i) => (
+                    <RevealSection key={c.n} delay={i * 0.06}>
+                      <div className="h-full p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
+                        <span className="text-xs tracking-widest uppercase text-accent font-sans">{c.n}</span>
+                        <h3 className="text-fluid-lg text-bg font-serif tracking-tight leading-snug mt-s3 mb-s2">{c.t}</h3>
+                        <p className="text-sm leading-relaxed text-bg/50">{c.d}</p>
+                      </div>
+                    </RevealSection>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
 
-          {/* ── Intro + Image ── */}
+          {/* ── Section: Is it right for me? — checklist split ── */}
           <section className="bg-bg py-section-py overflow-hidden">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Nutritional Counseling</p>
-                <SplitReveal text="Nutritional Counseling at Roselle Center for Healing in Fairfax, VA" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <div className="grid grid-cols-2 gap-s10 mt-s8 items-start max-md:grid-cols-1">
-                <RevealSection delay={0.1}>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    Good nutrition is at the core of holistic health. Roselle Center for Healing proudly announces nutritional counseling as an additional service offered at our Fairfax, VA, facility. The same professionals you&rsquo;ve trusted for chiropractic care can now expand your holistic wellness through dietary assistance.
-                  </p>
+              <div className="grid grid-cols-2 gap-s10 items-center max-lg:grid-cols-1">
+                <RevealSection>
+                  <div className="rounded-xl overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/Nutrition_Roselle_Center_for_Healing.jpg.webp?65877bd81c6ec73799c4c772dc635bcb"
+                      alt="Personalized nutrition plan."
+                      className="w-full h-auto"
+                    />
+                  </div>
                 </RevealSection>
-                <RevealSection delay={0.2}>
-                  <GsapImageParallax
-                    src="https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/Nutrition_Roselle_Center_for_Healing.jpg.webp?65877bd81c6ec73799c4c772dc635bcb"
-                    alt="Nutritionist writing notes during a counseling session with fresh fruits, emphasizing dietary guidance at Roselle Center for Healing."
-                    className="rounded-lg w-full aspect-[3/2] object-cover"
-                  />
+
+                <RevealSection delay={0.1}>
+                  <p className="text-xs tracking-widest uppercase text-accent mb-s3 font-sans">For You</p>
+                  <h2 className="text-fluid-3xl text-fg font-serif tracking-tight leading-[1.12] mb-s5 max-w-[24ch]">
+                    Is nutrition counseling right for me?
+                  </h2>
+                  <p className="text-fluid-base leading-relaxed text-fg/65 mb-s6">
+                    A holistic approach to health can reduce dependence on medications and procedures. We tailor every plan to your accessibility, dietary preferences, goals, and budget — so it actually works.
+                  </p>
+
+                  <ul className="flex flex-col gap-s3">
+                    {[
+                      "Maximize your diet and unlock the power of healthy eating",
+                      "Personalized to your preferences, budget, and lifestyle",
+                      "Easier to follow than one-size-fits-all programs",
+                      "Designed for sustainable, long-term results",
+                    ].map((t) => (
+                      <li key={t} className="flex items-start gap-s3 text-fluid-base text-fg/75">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </RevealSection>
               </div>
             </div>
           </section>
 
-          {/* ── What Is Nutrition Counseling? ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Services</p>
-                <SplitReveal text="What Is Nutrition Counseling?" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Nutrition counseling near you can help you discover the keys to a healthier, more balanced diet. You&rsquo;ll learn elements of preventive nutrition, including what to incorporate into your diet to live a longer, healthier, happier life.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.15}>
-                <p className="text-fluid-base leading-relaxed mt-s5 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Roselle Center for Healing staffs leading Nutritionists to assist you. You can work one-on-one with our Nutritionists to discover which minerals, vitamins, and nutrients are missing from your diet.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.2}>
-                <p className="text-fluid-base leading-relaxed mt-s5 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Eating a healthy, balanced diet can help you lose weight, sleep better, improve your energy level, and prevent chronic disease. If you have a disease or medical condition, nutrition counseling can assist with symptom management for a better quality of life. You might also lower your risk of type 2 diabetes, stroke, and heart disease by controlling your weight and avoiding obesity.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.25}>
-                <p className="text-fluid-base leading-relaxed mt-s5 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  An appointment with a Nutritionist will entail a review of your medical history and health, goal-setting, and diet discussions and plans.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          {/* ── Is Nutrition Counseling Right for Me? ── */}
-          <section className="bg-bg py-section-py overflow-hidden">
+          {/* ── Section: Final CTA — full-bleed image card ── */}
+          <section className="bg-bg pb-section-py">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
               <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">For You</p>
-                <SplitReveal text="Is Nutrition Counseling Right for Me?" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Visiting our nutritionist at Roselle Center for Healing for nutritional counseling is a wise idea for all individuals in the Fairfax, VA, area who wish to maximize their diets and unlock the power of healthy eating. A holistic approach to health can reduce dependence on medications and medical procedures.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.15}>
-                <p className="text-fluid-base leading-relaxed mt-s5 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  We&rsquo;ll tailor your nutritional treatment to your needs, including your accessibility to food, your dietary preferences, health goals, and budget. You&rsquo;ll find your tailored nutrition plan easier to follow than a conventional one-size-fits-all plan, and you will enjoy exploring balanced meals that provide goodness for your body.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          {/* ── CTA ── */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="service-cta-panel flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Experience the Benefits of Nutrition Counseling Today by Scheduling Your Appointment</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      Roselle Center for Healing is your choice for a healthier you. Our facility in Fairfax, VA, specializes in nutrition, thermography, acupuncture, detoxification, massage therapy, allergy testing, applied kinesiology, and chiropractic care, including chiropractic sports medicine and pediatric chiropractic treatments. We can help you unlock better health with our treatments and modalities. We&rsquo;re accepting new patients and provide all our new patient forms on our website so you can print them and complete them before your appointment. Schedule your appointment today by calling (703) 698-7117.
+                <div
+                  className="relative overflow-hidden rounded-2xl px-s10 py-s12 max-md:px-s6 max-md:py-s10"
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(135deg, rgba(42,41,40,0.92) 0%, rgba(42,41,40,0.78) 60%, rgba(198,177,128,0.55) 100%), url("https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/Nutrition_Roselle_Center_for_Healing.jpg.webp?65877bd81c6ec73799c4c772dc635bcb")',
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <div className="max-w-[640px]">
+                    <p className="text-xs tracking-widest uppercase text-accent mb-s4 font-sans">Schedule today</p>
+                    <h2 className="text-fluid-4xl text-bg font-serif tracking-tight leading-[1.08] mb-s5">
+                      Experience the benefits of nutrition counseling.
+                    </h2>
+                    <p className="text-fluid-base leading-relaxed text-bg/75 mb-s7">
+                      We specialize in nutrition, thermography, acupuncture, detoxification, massage therapy, allergy testing, applied kinesiology, and chiropractic care — accepting new patients now.
                     </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
+                    <div className="flex flex-wrap gap-s3">
+                      <a
+                        href="tel:+17036987117"
+                        className="inline-flex items-center gap-2 bg-accent text-fg px-7 py-3.5 rounded-full text-sm font-medium tracking-wide hover:bg-bg transition-colors"
+                      >
+                        Call (703) 698-7117
+                      </a>
+                      <a
+                        href="/appointment"
+                        className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-medium tracking-wide text-bg border border-bg/30 hover:bg-bg/10 transition-colors"
+                      >
+                        Book online
+                      </a>
+                    </div>
                   </div>
                 </div>
               </RevealSection>
             </div>
           </section>
 
-
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>

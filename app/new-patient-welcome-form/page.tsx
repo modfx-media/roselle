@@ -4,9 +4,9 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
 import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
+import PageHero from "../components/templates/PageHero";
 
 
 const inputClass = "w-full rounded-lg bg-[rgba(245,244,239,0.06)] border border-[rgba(245,244,239,0.1)] px-4 py-3 text-sm text-bg placeholder:text-[rgba(245,244,239,0.3)] focus:outline-none input-gold-focus focus:border-accent transition-colors duration-200";
@@ -29,19 +29,14 @@ export default function NewPatientWelcomeFormPage() {
       <SmoothScroll>
         <main className="relative z-1">
 
-          {/* ── Hero ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>New Patient Welcome Form</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="New Patient Welcome Form" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <PageHero
+            eyebrow="Patient Forms · Fairfax, VA"
+            title="New patient welcome form."
+            subtitle="Tell us about your health history, current state, and wellness goals so we can prepare for your first visit."
+            crumbs={[{ label: "Home", href: "/" }, { label: "New Patient Welcome Form" }]}
+            image="/services/new-patient-welcome.jpg"
+            imageAlt="New patient welcome form."
+          />
 
           {/* ── Form ── */}
           <section className="about-noise bg-fg py-section-py overflow-hidden relative">

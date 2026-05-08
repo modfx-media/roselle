@@ -1,157 +1,114 @@
 "use client";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import SmoothScroll from "../../components/motion/SmoothScroll";
-import RevealSection from "../../components/motion/RevealSection";
-import SplitReveal from "../../components/motion/SplitReveal";
-import MagneticButton from "../../components/motion/MagneticButton";
-import SpotlightCard from "../../components/motion/SpotlightCard";
-import GsapImageParallax from "../../components/motion/GsapImageParallax";
 import Contact from "../../components/Contact";
-
-
-const BENEFITS = [
-  "Relief from chronic pain and muscle tension",
-  "Improved posture and flexibility",
-  "Support for injury recovery",
-  "Better stress management",
-  "Enhanced overall energy and wellness",
-];
+import SmoothScroll from "../../components/motion/SmoothScroll";
+import PageHero from "../../components/templates/PageHero";
+import FeatureSplit from "../../components/templates/FeatureSplit";
+import ContentBlock from "../../components/templates/ContentBlock";
+import FeatureGrid from "../../components/templates/FeatureGrid";
+import StatStrip from "../../components/templates/StatStrip";
+import PillarSection from "../../components/templates/PillarSection";
+import ChecklistSplit from "../../components/templates/ChecklistSplit";
+import ImageCta from "../../components/templates/ImageCta";
 
 export default function AppliedKinesiologyPage() {
   return (
     <>
       <Nav />
       <SmoothScroll>
-        <main className="relative z-1 service-page-shell">
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <a href="/services.html" className="transition-colors duration-200 hover:text-accent">Services</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Applied Kinesiology</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Applied Kinesiology in Fairfax, VA | Roselle Center for Healing" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+        <main className="relative z-1">
+          <PageHero
+            eyebrow="Applied Kinesiology · Fairfax, VA"
+            title="Applied Kinesiology at Roselle Center for Healing."
+            subtitle="A specialized assessment that helps restore balance, function, and well-being."
+            crumbs={[
+              { label: "Home", href: "/" },
+              { label: "Services", href: "/services.html" },
+              { label: "Applied Kinesiology" },
+            ]}
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x578_80/webmgr/0g/5/2/68950206e498b_AppliedKinesiology.png.webp?fe0223bb81434c67b13f30eca32771ff"
+            imageAlt="Applied Kinesiology technique demonstration."
+            primaryCta={{ label: "Book an evaluation", href: "/appointment" }}
+            secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <div className="grid grid-cols-[1fr_1fr] gap-s10 items-center max-[900px]:grid-cols-1 max-[900px]:gap-s8">
-                <div>
-                  <RevealSection>
-                    <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Holistic Assessment</p>
-                    <h2 className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]">Discover the Benefits of Kinesiology in Fairfax, VA</h2>
-                  </RevealSection>
-                  <RevealSection delay={0.1}>
-                    <p className="text-fluid-base leading-relaxed mt-s6" style={{ color: "rgba(42,41,40,0.68)" }}>
-                      When it comes to understanding how the body works and finding natural solutions for pain and stress, kinesiology is a powerful tool. At Roselle Center for Healing in Fairfax, VA, Dr. Tom Roselle and his team offer specialized care, including Applied Kinesiology, to help patients achieve balance, restore function, and improve overall well-being.
-                    </p>
-                  </RevealSection>
-                </div>
-                <RevealSection delay={0.15}>
-                  <GsapImageParallax src="https://cdcssl.ibsrv.net/ibimg/smb/1023x578_80/webmgr/0g/5/2/68950206e498b_AppliedKinesiology.png.webp?fe0223bb81434c67b13f30eca32771ff" alt="Chiropractor demonstrating Applied Kinesiology technique with patient in Fairfax, VA, focusing on muscle testing and body balance." className="w-full rounded-xl" />
-                </RevealSection>
-              </div>
-            </div>
-          </section>
+          <StatStrip
+            stats={[
+              { value: "Holistic", label: "Approach" },
+              { value: "Hands-on", label: "Method" },
+              { value: "Personalized", label: "Care" },
+              { value: "Whole-body", label: "Balance" },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>About</p>
-                <SplitReveal text="What Is Kinesiology?" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Kinesiology is the study of human movement and how muscles, joints, and the nervous system work together. In chiropractic care, it goes beyond anatomy to assess how the body responds to stress, injuries, or imbalances. If you&rsquo;ve been searching for kinesiology near you, this therapy offers a unique way to identify underlying issues that may not always show up in standard medical tests.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureSplit
+            eyebrow="Holistic Assessment"
+            title="Discover the benefits of kinesiology."
+            body="When it comes to understanding how the body works and finding natural solutions for pain and stress, kinesiology is a powerful tool. At Roselle Center for Healing, Dr. Tom Roselle and his team offer specialized care, including Applied Kinesiology, to help patients achieve balance, restore function, and improve overall well-being."
+            image="https://cdcssl.ibsrv.net/ibimg/smb/1023x578_80/webmgr/0g/5/2/68950206e498b_AppliedKinesiology.png.webp?fe0223bb81434c67b13f30eca32771ff"
+            imageAlt="Kinesiology evaluation."
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">How It Works</p>
-                <SplitReveal text="How Applied Kinesiology Works" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Applied Kinesiology is a hands-on method used by a chiropractor near you to evaluate muscle function and its relationship to the body&rsquo;s systems. Through gentle muscle testing, a chiropractor can detect imbalances that may be contributing to pain, fatigue, or other health concerns. Once identified, personalized care plans may include adjustments, nutritional support, and kinesiology therapy to restore strength and balance.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <PillarSection
+            tone="dark"
+            eyebrow="About"
+            title="What is kinesiology?"
+            intro="Kinesiology is the study of human movement and how muscles, joints, and the nervous system work together. In chiropractic care, it goes beyond anatomy to assess how the body responds to stress, injuries, or imbalances — offering a unique way to identify underlying issues that may not show up in standard medical tests."
+            cta={{ label: "Book an evaluation", href: "/appointment" }}
+            pillars={[
+              { title: "Movement science", description: "The study of how muscles, joints, and the nervous system function together." },
+              { title: "Beyond anatomy", description: "Assesses how your body responds to stress, injury, and imbalances." },
+              { title: "Hidden issues", description: "Surfaces underlying problems that standard tests often miss." },
+              { title: "Whole-body lens", description: "A unique perspective that informs every adjustment and recommendation." },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Key Benefits</p>
-                <SplitReveal text="Benefits of Kinesiology Therapy" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Patients often turn to kinesiology therapy for a wide range of reasons, including:
-                </p>
-              </RevealSection>
-              <div className="grid grid-cols-2 gap-s4 mt-s8 max-md:grid-cols-1">
-                {BENEFITS.map((b, i) => (
-                  <RevealSection key={b} delay={0.05 * i}>
-                    <SpotlightCard className="bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)] rounded-xl p-s5 flex items-center gap-s3 card-hover-lift">
-                      <span className="text-xs font-semibold tracking-widest" style={{ color: "rgba(198,177,128,0.85)" }}>{String(i + 1).padStart(2, "0")}</span>
-                      <span className="text-fluid-base text-bg">{b}</span>
-                    </SpotlightCard>
-                  </RevealSection>
-                ))}
-              </div>
-              <RevealSection delay={0.3}>
-                <p className="text-fluid-base leading-relaxed mt-s8 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  By combining chiropractic care with applied kinesiology, patients in Fairfax, VA receive a more holistic and comprehensive approach to health.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <ChecklistSplit
+            eyebrow="How It Works"
+            title="How Applied Kinesiology works."
+            body="Applied Kinesiology is a hands-on method used to evaluate muscle function and its relationship to the body's systems. Through gentle muscle testing, a chiropractor can detect imbalances that may be contributing to pain, fatigue, or other health concerns."
+            image="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1080&q=70&auto=format&fit=crop"
+            imageAlt="Chiropractor performing a hands-on muscle assessment."
+            items={[
+              "Hands-on, gentle muscle testing",
+              "Detects imbalances behind pain and fatigue",
+              "Personalized care plans built around your results",
+              "Adjustments, nutrition, and kinesiology combined",
+            ]}
+          />
 
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Why Us</p>
-                <SplitReveal text="Why Choose Roselle Center for Healing?" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  At Roselle Center for Healing, Dr. Tom Roselle and his team take the time to understand each patient&rsquo;s unique needs. With a blend of chiropractic techniques and applied kinesiology, they help restore balance to the body and empower patients to take charge of their health. If you&rsquo;re looking for a trusted chiropractor near you who provides kinesiology therapy, this clinic offers proven solutions in a supportive environment.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
+          <FeatureGrid
+            tone="dark"
+            eyebrow="Key Benefits"
+            title="Benefits of kinesiology therapy."
+            intro="Patients turn to kinesiology therapy for a wide range of reasons:"
+            cols={2}
+            cards={[
+              { title: "Chronic pain relief", description: "Relief from chronic pain and muscle tension." },
+              { title: "Posture & flexibility", description: "Improved posture and flexibility for daily comfort." },
+              { title: "Injury recovery", description: "Support for injury recovery and rebuilding strength." },
+              { title: "Stress management", description: "Better stress management and nervous system balance." },
+              { title: "Energy & wellness", description: "Enhanced overall energy and whole-body wellness." },
+            ]}
+          />
 
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <h3 className="text-fluid-2xl text-bg font-serif tracking-tight leading-snug mb-s5">Take the First Step Toward Better Health</h3>
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  Whether you&rsquo;re struggling with ongoing discomfort, recovering from an injury, or simply want to feel stronger and more balanced, kinesiology may be the key. Call Roselle Center for Healing at (703) 698-7117 today to schedule your consultation and learn how applied kinesiology can help you live your healthiest life.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.15}>
-                <div className="mt-s8">
-                  <MagneticButton className="btn-primary-inverted" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            eyebrow="Why Us"
+            title="Why choose Roselle Center for Healing?"
+            body="Dr. Tom Roselle and his team take time to understand each patient's unique needs. With a blend of chiropractic techniques and applied kinesiology, they help restore balance and empower patients to take charge of their health — proven solutions in a supportive environment."
+          />
 
+          <ImageCta
+            eyebrow="Take the first step"
+            title="Take the first step toward better health."
+            body="Whether you're struggling with discomfort, recovering from an injury, or simply want to feel stronger and more balanced, kinesiology may be the key."
+            image="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=1600&q=70&auto=format&fit=crop"
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Book online", href: "/appointment" }}
+          />
 
           <Contact />
-
-
           <Footer />
         </main>
       </SmoothScroll>

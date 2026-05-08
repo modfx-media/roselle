@@ -1,12 +1,11 @@
 "use client";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import SplitReveal from "../components/motion/SplitReveal";
-import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
-
+import SmoothScroll from "../components/motion/SmoothScroll";
+import PageHero from "../components/templates/PageHero";
+import ContentBlock from "../components/templates/ContentBlock";
+import CtaBand from "../components/templates/CtaBand";
 
 export default function AppointmentPage() {
   return (
@@ -14,86 +13,36 @@ export default function AppointmentPage() {
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
+          <PageHero
+            eyebrow="Schedule · Fairfax, VA"
+            title="Request an appointment."
+            subtitle="Call us directly or email our office to schedule your visit. We will do our best to accommodate your preferred day and time."
+            crumbs={[{ label: "Home", href: "/" }, { label: "Appointment Request" }]}
+            image="/services/online-appointment.jpg"
+            imageAlt="Schedule an appointment."
+            primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
+            secondaryCta={{ label: "Email rosellecare@gmail.com", href: "mailto:rosellecare@gmail.com" }}
+          />
 
-          {/* ── Hero ── */}
-          <section className="inner-hero-gradient relative overflow-hidden">
-            <div className="hero-grid-bg" />
-            <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4 pt-[calc(var(--spacing-nav-h)+6rem)] pb-section-py">
-              <RevealSection>
-                <nav className="flex items-center gap-2 text-xs tracking-wide mb-s6" style={{ color: "rgba(245,244,239,0.45)" }}>
-                  <a href="/" className="transition-colors duration-200 hover:text-accent">Home</a><span>/</span>
-                  <span style={{ color: "rgba(245,244,239,0.7)" }}>Appointment Request</span>
-                </nav>
-              </RevealSection>
-              <SplitReveal text="Appointment Request" as="h1" className="text-fluid-5xl text-bg tracking-tight leading-[1.05]" />
-            </div>
-          </section>
+          <ContentBlock
+            eyebrow="How to book"
+            title="Two easy ways to schedule."
+            body={[
+              "To request an appointment with Roselle Center For Healing, call us directly at (703) 698-7117 or email rosellecare@gmail.com.",
+              "Please note: your appointment is not confirmed until you receive confirmation from our office.",
+            ]}
+          />
 
-          {/* ── Section 1: Appointment Info (light) ── */}
-          <section className="bg-bg py-section-py overflow-hidden">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Schedule</p>
-                <SplitReveal text="Request an Appointment" as="h2" className="text-fluid-3xl text-fg tracking-tight leading-[1.12] max-w-[28ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(42,41,40,0.68)" }}>
-                  Use this form to request an appointment with us. While we will do our best to accommodate your requested day and time, please note, your appointment is not fully booked until you get a confirmation from us!
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.15}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px] font-medium text-fg">
-                  To schedule your appointment, please call us directly or email our office.
-                </p>
-              </RevealSection>
-              <RevealSection delay={0.2}>
-                <div className="mt-s8 flex flex-col gap-s4 items-start">
-                  <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  <p className="text-fluid-base" style={{ color: "rgba(42,41,40,0.68)" }}>
-                    Or email us at <a href="mailto:rosellecare@gmail.com" className="text-fg font-medium hover:text-accent transition-colors duration-200">rosellecare@gmail.com</a>
-                  </p>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
+          <ContentBlock
+            tone="dark"
+            eyebrow="Our Practice"
+            title="Roselle Center for Healing."
+            body="At Roselle Center For Healing, we're fully dedicated to providing solutions that address your unique needs. This personal care is why patients throughout the Fairfax area choose us."
+          />
 
-          {/* ── Section 2: Location (dark) ── */}
-          <section className="about-noise bg-fg py-section-py overflow-hidden relative">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              <RevealSection>
-                <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans" style={{ color: "rgba(198,177,128,0.85)" }}>Our Practice</p>
-                <SplitReveal text="Roselle Center For Healing" as="h2" className="text-fluid-3xl text-bg tracking-tight leading-[1.12] max-w-[32ch]" />
-              </RevealSection>
-              <RevealSection delay={0.1}>
-                <p className="text-fluid-base leading-relaxed mt-s6 max-w-[720px]" style={{ color: "rgba(245,244,239,0.55)" }}>
-                  At Roselle Center For Healing, we are fully dedicated to providing solutions to address your unique needs. This personal care is why people throughout the Fairfax area come to Roselle Center For Healing.
-                </p>
-              </RevealSection>
-            </div>
-          </section>
-
-          {/* ── CTA Card ── */}
-          <section className="bg-bg py-section-py">
-            <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-              <RevealSection>
-                <div className="flex items-center justify-between gap-s6 p-s8 px-s10 rounded-xl max-md:flex-col max-md:text-center max-md:p-s6 max-md:px-s4 bg-card-bg">
-                  <div className="flex flex-col gap-s3 max-w-[560px]">
-                    <h3 className="text-fluid-2xl text-fg font-serif font-medium tracking-tight leading-snug">Schedule Your Visit</h3>
-                    <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(42,41,40,0.6)" }}>
-                      Ready to take the next step toward better health? Contact Roselle Center For Healing in Fairfax, VA to schedule your appointment today.
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-s3 items-center shrink-0">
-                    <MagneticButton className="btn-primary" onClick={() => window.location.href = "tel:+17036987117"}>Call (703) 698-7117</MagneticButton>
-                  </div>
-                </div>
-              </RevealSection>
-            </div>
-          </section>
-
+          <CtaBand tone="gold" eyebrow="Ready to begin?" title="Schedule your visit today." body="Take the next step toward better health with Roselle Center For Healing in Fairfax, VA." primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }} secondaryCta={{ label: "Email us", href: "mailto:rosellecare@gmail.com" }} />
 
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>
