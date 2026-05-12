@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "./motion/MagneticButton";
@@ -575,10 +576,17 @@ export default function Nav() {
         {/* Logo */}
         <a
           href="/"
-          className="shrink-0 bg-transparent border-none cursor-pointer p-0 font-serif text-xl font-medium text-fg no-underline transition-transform duration-200 hover:scale-[1.03]"
+          className="shrink-0 bg-transparent border-none cursor-pointer p-0 no-underline transition-transform duration-200 hover:scale-[1.03] flex items-center"
           aria-label="Roselle Center — Home"
         >
-          Roselle Center
+          <Image
+            src="/roselle:public:logo.png"
+            alt="Roselle Center for Healing"
+            width={220}
+            height={64}
+            priority
+            className="h-10 sm:h-12 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop */}
