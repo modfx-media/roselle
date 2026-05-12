@@ -65,19 +65,19 @@ export default function Footer() {
         transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
       }}
     >
-      {/* removed image */}
-
       <div className="pt-s8 pb-s8 max-md:pb-32">
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
-
           <div className="grid grid-cols-[280px_1fr] gap-s8 mb-s8 pb-s8
                           max-lg:grid-cols-1 max-lg:gap-s6"
             style={{ borderBottom: "1px solid rgba(245,244,239,0.1)" }}>
             {/* Brand column */}
             <div>
-              <p className="text-2xl text-bg font-serif font-medium leading-snug">
-                Roselle Center<br />for Healing
-              </p>
+              <img
+                src="/footer-logo-white-txt.png"
+                alt="Roselle Center for Healing Logo"
+                style={{ maxWidth: 220, width: "100%", height: "auto", marginBottom: 12 }}
+                loading="lazy"
+              />
               <p className="text-sm mt-s2 leading-relaxed" style={{ color: "rgba(245,244,239,0.4)" }}>
                 Holistic chiropractic &amp; integrative wellness<br />in Fairfax, VA.
               </p>
