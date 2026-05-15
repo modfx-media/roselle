@@ -19,11 +19,11 @@ export default function Home() {
       <SmoothScroll>
         <main className="relative z-1">
           <Hero />
+          <Conditions />
           <About />
           <SectionMarquee />
           <Services />
           <WhyUs />
-          <Conditions />
           <SectionMarquee direction={-1} />
           <Testimonials />
           <HealthEducation />
