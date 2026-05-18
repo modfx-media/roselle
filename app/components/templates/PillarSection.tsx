@@ -32,7 +32,7 @@ export default function PillarSection({
   const introColor = dark ? "text-bg/55" : "text-fg/65";
   const cardBg = dark
     ? "bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]"
-    : "bg-[rgba(42,41,40,0.03)] border border-[rgba(42,41,40,0.08)]";
+    : "bg-[rgba(10,22,40,0.03)] border border-[rgba(42,41,40,0.08)]";
   const cardTitle = dark ? "text-bg" : "text-fg";
   const cardDesc = dark ? "text-bg/55" : "text-fg/60";
 

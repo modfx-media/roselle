@@ -44,9 +44,14 @@ export default function Contact() {
             className="w-full h-full object-cover"
             style={{ y: imgY, scale: 1.12, filter: "brightness(0.28) saturate(0.7)" }}
           />
+          {/* Navy color tint — recolors the image blue */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "#0a1628", mixBlendMode: "multiply", opacity: 0.85 }}
+          />
           {/* Vignette */}
           <div className="absolute inset-0"
-            style={{ background: "radial-gradient(ellipse at 60% 40%, rgba(42,41,40,0.3) 0%, rgba(10,9,8,0.92) 70%)" }} />
+            style={{ background: "radial-gradient(ellipse at 60% 40%, rgba(10,22,40,0.55) 0%, rgba(3,7,18,0.95) 70%)" }} />
           {/* Gold bloom */}
           <div className="absolute pointer-events-none"
             style={{ top: "20%", right: "15%", width: "500px", height: "500px",

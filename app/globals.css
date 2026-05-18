@@ -14,6 +14,12 @@
   --color-cta-text: #f5f4ef;
   --color-accent:   #c6b180;
 
+  /* Navy section/dark background color — replaces former black-looking warm dark.
+     Kept separate from --color-fg so text colors (which use --color-fg) stay unchanged. */
+  --color-section-bg: #0a1628;
+  --color-section-bg-mid: #0f1d33;
+  --color-section-bg-edge: #030712;
+
   --font-serif: var(--font-libre-baskerville), Georgia, serif;
   --font-sans:  var(--font-inter), system-ui, sans-serif;
 
@@ -85,7 +91,7 @@
     @apply inline-flex items-center justify-center relative overflow-hidden
            w-fit shrink-0 border-none rounded-full px-s4 h-11
            text-sm font-medium cursor-pointer whitespace-nowrap;
-    background: linear-gradient(135deg, #2a2928 0%, #3d3b39 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #1a2a44 100%);
     box-shadow: 2px 3px 9px color-mix(in srgb, var(--color-accent) 30%, transparent);
     color: var(--color-cta-text);
     transition: all 0.25s ease;
@@ -134,7 +140,7 @@
     background:
       radial-gradient(circle at 0% 0%,   color-mix(in srgb, var(--color-bg) 18%, transparent) 0%, transparent 50%),
       radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--color-bg) 18%, transparent) 0%, transparent 50%),
-      var(--color-fg);
+      var(--color-section-bg);
   }
 
   /* ── Scroll reveal ── */
@@ -177,7 +183,7 @@
       160deg,
       rgba(198,177,128,0.12) 0%,
       transparent 50%,
-      rgba(42,41,40,0.4) 100%
+      rgba(10,22,40,0.4) 100%
     );
   }
 
@@ -389,14 +395,14 @@
    DARK POST EXPERIENCE — Blog + Article single pages
    ============================================================ */
 .post-shell {
-  background: linear-gradient(180deg, #1a1714 0%, #030712 100%);
+  background: linear-gradient(180deg, #0a1628 0%, #030712 100%);
 }
 
 .post-hero {
   background:
     radial-gradient(ellipse 60% 60% at 5% 50%, rgba(198,177,128,0.09) 0%, transparent 60%),
     radial-gradient(ellipse 40% 40% at 90% 15%, rgba(198,177,128,0.06) 0%, transparent 55%),
-    linear-gradient(145deg, #030712 0%, #1f1b17 55%, #2a2928 100%);
+    linear-gradient(145deg, #030712 0%, #0f1d33 55%, #0a1628 100%);
 }
 
 .post-watermark {
@@ -443,7 +449,7 @@
 
 .post-body-section {
   position: relative;
-  background: linear-gradient(180deg, #1a1714 0%, #030712 100%);
+  background: linear-gradient(180deg, #0a1628 0%, #030712 100%);
   overflow: hidden;
 }
 
@@ -514,7 +520,7 @@
 .post-cta-panel {
   background:
     radial-gradient(ellipse 70% 80% at 50% 50%, rgba(198,177,128,0.10) 0%, transparent 65%),
-    linear-gradient(135deg, #1a1714 0%, #030712 100%);
+    linear-gradient(135deg, #0a1628 0%, #030712 100%);
   border: 1px solid rgba(198,177,128,0.14);
   box-shadow: 0 24px 60px rgba(0,0,0,0.35);
 }
@@ -535,7 +541,7 @@
   background:
     radial-gradient(ellipse 60% 60% at 5% 50%, rgba(198,177,128,0.09) 0%, transparent 60%),
     radial-gradient(ellipse 40% 40% at 90% 15%, rgba(198,177,128,0.06) 0%, transparent 55%),
-    linear-gradient(145deg, #030712 0%, #1f1b17 55%, #2a2928 100%);
+    linear-gradient(145deg, #030712 0%, #0f1d33 55%, #0a1628 100%);
 }
 
 .post-hours-row {
@@ -720,13 +726,13 @@ html.lenis, html.lenis body {
 .inner-hero-gradient {
   background:
     radial-gradient(ellipse 60% 50% at 10% 40%, rgba(198,177,128,0.07) 0%, transparent 70%),
-    linear-gradient(135deg, #030712 0%, #1f1b17 60%, #2a2928 100%);
+    linear-gradient(135deg, #030712 0%, #0f1d33 60%, #0a1628 100%);
 }
 
 /* ── CTA button gradient ── */
 @layer components {
   .btn-gradient {
-    background: linear-gradient(135deg, #2a2928 0%, #3d3b39 100%);
+    background: linear-gradient(135deg, #0a1628 0%, #1a2a44 100%);
     transition: all 0.25s ease;
     will-change: transform;
   }
@@ -758,7 +764,7 @@ html.lenis, html.lenis body {
 
   /* ── Footer background gradient ── */
   .footer-gradient {
-    background: linear-gradient(180deg, #1a1714 0%, #030712 100%);
+    background: linear-gradient(180deg, #0a1628 0%, #030712 100%);
   }
 
   /* ── Gold focus ring for form inputs ── */
@@ -778,7 +784,7 @@ html.lenis, html.lenis body {
     background:
       radial-gradient(ellipse 72% 58% at 14% 28%, rgba(198,177,128,0.11) 0%, transparent 58%),
       radial-gradient(ellipse 54% 48% at 84% 18%, rgba(245,244,239,0.06) 0%, transparent 62%),
-      linear-gradient(135deg, #030712 0%, #1a1714 52%, #2a2928 100%);
+      linear-gradient(135deg, #030712 0%, #0f1d33 52%, #0a1628 100%);
   }
 
   .service-page-shell > section.inner-hero-gradient .hero-grid-bg {
@@ -817,7 +823,7 @@ html.lenis, html.lenis body {
   .service-page-shell > section.about-noise.bg-fg {
     background:
       radial-gradient(ellipse 48% 66% at 6% 40%, rgba(198,177,128,0.09) 0%, transparent 68%),
-      linear-gradient(150deg, #030712 0%, #1a1714 48%, #2a2928 100%);
+      linear-gradient(150deg, #030712 0%, #0f1d33 48%, #0a1628 100%);
   }
 
   .service-page-shell > section.about-noise.bg-fg > div {
@@ -844,7 +850,7 @@ html.lenis, html.lenis body {
   }
 
   .service-cta-panel {
-    background: linear-gradient(135deg, #030712 0%, #1a1714 52%, #2a2928 100%) !important;
+    background: linear-gradient(135deg, #030712 0%, #0f1d33 52%, #0a1628 100%) !important;
     border: 1px solid rgba(198,177,128,0.18);
     box-shadow: 0 24px 70px rgba(3,7,18,0.28);
     position: relative;
@@ -889,7 +895,7 @@ html.lenis, html.lenis body {
   .service-page-shell .gsap-parallax-frame {
     border-radius: 24px;
     overflow: hidden;
-    background: #2a2928;
+    background: #0a1628;
     box-shadow: 0 18px 50px rgba(3,7,18,0.22);
   }
 
@@ -929,4 +935,16 @@ html.lenis, html.lenis body {
 }
 .nav-link-gold:hover::after {
   width: 100%;
+}
+
+/* ============================================================
+   NAVY SECTION BACKGROUND OVERRIDE
+   The Tailwind v4 `bg-fg` utility is generated from --color-fg
+   (which we keep at #2a2928 for *text* contrast on cream).
+   Anywhere `bg-fg` is used as a section background, we want navy
+   instead of the warm near-black. The rule below overrides only
+   the background — text utilities (`text-fg`) are unaffected.
+   ============================================================ */
+.bg-fg {
+  background-color: var(--color-section-bg) !important;
 }

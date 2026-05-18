@@ -22,9 +22,9 @@ export type PageHeroProps = {
   /** Image alt text */
   imageAlt?: string;
   /** Primary CTA */
-  primaryCta?: { label: string; href: string };
+  primaryCta?: { label: string; href: string; external?: boolean };
   /** Secondary ghost CTA */
-  secondaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string; external?: boolean };
   /** Reduced vertical padding (use on minor pages) */
   compact?: boolean;
 };
@@ -53,7 +53,7 @@ export default function PageHero({
     <section
       className="relative overflow-hidden"
       style={{
-        background: image ? "#1a1918" : undefined,
+        background: image ? "#0a1628" : undefined,
       }}
     >
       {/* Background — image or fallback gradient */}
@@ -70,7 +70,7 @@ export default function PageHero({
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(20,19,18,0.85) 0%, rgba(20,19,18,0.55) 35%, rgba(20,19,18,0.85) 100%)",
+                "linear-gradient(180deg, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.55) 35%, rgba(10,22,40,0.85) 100%)",
             }}
           />
           {/* Gold radial accent */}
@@ -168,11 +168,15 @@ export default function PageHero({
 
         {(primaryCta || secondaryCta) && (
           <RevealSection delay={0.24}>
-            <div className="mt-s7 flex flex-wrap items-center gap-s3">
+            <div className="mt-s10 flex flex-wrap items-center gap-s3">
               {primaryCta && (
                 <MagneticButton
                   className="btn-primary"
-                  onClick={() => (window.location.href = primaryCta.href)}
+                  onClick={() =>
+                    primaryCta.external
+                      ? window.open(primaryCta.href, "_blank", "noopener,noreferrer")
+                      : (window.location.href = primaryCta.href)
+                  }
                 >
                   {primaryCta.label}
                 </MagneticButton>
@@ -180,6 +184,8 @@ export default function PageHero({
               {secondaryCta && (
                 <a
                   href={secondaryCta.href}
+                  target={secondaryCta.external ? "_blank" : undefined}
+                  rel={secondaryCta.external ? "noopener noreferrer" : undefined}
                   className="inline-flex items-center gap-2 text-sm font-medium pl-2 pr-1 py-2 rounded-full transition-colors duration-200"
                   style={{ color: "rgba(245,244,239,0.85)" }}
                 >

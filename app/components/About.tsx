@@ -18,7 +18,7 @@ export default function About() {
       <section className="about-noise py-section-py overflow-hidden relative"
         style={{
           background: `radial-gradient(ellipse 40% 40% at 85% 15%, rgba(198,177,128,0.06) 0%, transparent 70%),
-                       linear-gradient(160deg, #030712 0%, #1a1714 50%, #2a2928 100%)`,
+                       linear-gradient(160deg, #030712 0%, #0f1d33 50%, #0a1628 100%)`,
         }}
       >
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
@@ -40,7 +40,7 @@ export default function About() {
                       />
                       <div className="absolute bottom-s3 left-s3 right-s3 rounded-lg p-s2 px-s3 z-2"
                         style={{
-                          background: "rgba(42,41,40,0.75)",
+                          background: "rgba(10,22,40,0.75)",
                           backdropFilter: "blur(12px)",
                           WebkitBackdropFilter: "blur(12px)",
                           border: "1px solid rgba(198,177,128,0.2)",
@@ -64,7 +64,7 @@ export default function About() {
                     />
                     <div className="absolute bottom-s3 left-s3 right-s3 rounded-lg p-s2 px-s3 z-2"
                       style={{
-                        background: "rgba(42,41,40,0.75)",
+                        background: "rgba(10,22,40,0.75)",
                         backdropFilter: "blur(12px)",
                         WebkitBackdropFilter: "blur(12px)",
                         border: "1px solid rgba(198,177,128,0.2)",

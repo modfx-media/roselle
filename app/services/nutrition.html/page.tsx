@@ -135,7 +135,7 @@ export default function NutritionPage() {
                   className="relative overflow-hidden rounded-2xl px-s10 py-s12 max-md:px-s6 max-md:py-s10"
                   style={{
                     backgroundImage:
-                      'linear-gradient(135deg, rgba(42,41,40,0.92) 0%, rgba(42,41,40,0.78) 60%, rgba(198,177,128,0.55) 100%), url("https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/Nutrition_Roselle_Center_for_Healing.jpg.webp?65877bd81c6ec73799c4c772dc635bcb")',
+                      'linear-gradient(135deg, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.78) 60%, rgba(198,177,128,0.55) 100%), url("https://cdcssl.ibsrv.net/ibimg/smb/1023x683_80/webmgr/0g/5/2/Nutrition_Roselle_Center_for_Healing.jpg.webp?65877bd81c6ec73799c4c772dc635bcb")',
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                   }}

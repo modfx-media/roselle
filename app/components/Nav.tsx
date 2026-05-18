@@ -102,101 +102,95 @@ const NAV: NavEntry[] = [
     ],
   },
   {
-    label: "Latest News",
-    href: "/blog",
+    label: "Community Content",
+    href: "/articles/general",
     links: [
       {
-        label: "Community Content",
-        href: "/articles/general",
+        label: "About Chiropractic Care",
+        href: "/articles/general/category/39542",
         children: [
-          {
-            label: "About Chiropractic Care",
-            href: "/articles/general/category/39542",
-            children: [
-              { label: "What is Chiropractic", href: "/articles/general/category/40985" },
-              { label: "How Does it Work", href: "/articles/general/category/40986" },
-              { label: "Who is Chiropractic For", href: "/articles/general/category/40988" },
-              { label: "Vertebral Subluxation", href: "/articles/general/category/40989" },
-              { label: "Wellness Resources", href: "/articles/general/category/40987" },
-            ],
-          },
-          {
-            label: "Common Conditions Treated",
-            href: "/articles/general/category/39539",
-            children: [
-              { label: "Auto Accident Injuries", href: "/articles/general/category/40897" },
-              { label: "Back and Shoulder Pain", href: "/articles/general/category/40996" },
-              { label: "Body Pain", href: "/articles/general/category/40997" },
-              { label: "Chronic Condition Relief", href: "/articles/general/category/40999" },
-              { label: "Conditions Affecting Women", href: "/articles/general/category/40993" },
-              { label: "Headaches", href: "/articles/general/category/40915" },
-              { label: "Herniated Discs", href: "/articles/general/category/40998" },
-              { label: "Improved Health", href: "/articles/general/category/41000" },
-              { label: "Pediatric Ailments", href: "/articles/general/category/40991" },
-              { label: "Repetitive Use Injuries", href: "/articles/general/category/40994" },
-              { label: "Respiratory Function", href: "/articles/general/category/40992" },
-            ],
-          },
-          {
-            label: "Health & Wellness",
-            href: "/articles/general/category/64024",
-            children: [
-              { label: "Healthy Thinking", href: "/articles/general/category/39628" },
-              { label: "Life in Motion", href: "/articles/general/category/39543" },
-              { label: "Wellness Lifestyle Tips", href: "/articles/general/category/39632" },
-              { label: "Wellness Essentials", href: "/articles/general/category/39634" },
-              { label: "Wellness Perspectives", href: "/articles/general/category/39631" },
-              { label: "Get Positive", href: "/articles/general/category/39629" },
-              { label: "Relaxation Techniques", href: "/articles/general/category/39630" },
-              { label: "Treat Yourself Well", href: "/articles/general/category/40977" },
-              { label: "Treat Others Well", href: "/articles/general/category/40978" },
-              { label: "Eat Well", href: "/articles/general/category/40979" },
-              { label: "At Home", href: "/articles/general/category/39639" },
-              { label: "At Work", href: "/articles/general/category/39635" },
-              { label: "Exercise", href: "/articles/general/category/39636" },
-              { label: "Nutrition", href: "/articles/general/category/39637" },
-              { label: "What You Wear", href: "/articles/general/category/39638" },
-              { label: "Mental", href: "/articles/general/category/40981" },
-              { label: "Spiritual", href: "/articles/general/category/40983" },
-              { label: "Social", href: "/articles/general/category/40982" },
-              { label: "Physical", href: "/articles/general/category/40980" },
-            ],
-          },
-          {
-            label: "Therapies & Techniques",
-            href: "/articles/general/category/64025",
-            children: [
-              { label: "Techniques", href: "/articles/general/category/41001" },
-              { label: "Therapies", href: "/articles/general/category/41002" },
-            ],
-          },
-          {
-            label: "Newsletter Library",
-            href: "/articles/general/category/39807",
-            children: [
-              { label: "Back, Body & Joint Pain", href: "/articles/general/category/41052" },
-              { label: "Healthy Tips", href: "/articles/general/category/41045" },
-              { label: "Exercise & Fitness", href: "/articles/general/category/41046" },
-              { label: "Injury Rehab & Prevention", href: "/articles/general/category/41057" },
-              { label: "Kid's Health", href: "/articles/general/category/41043" },
-              { label: "Illness Prevention", href: "/articles/general/category/41053" },
-              { label: "Chronic Conditions", href: "/articles/general/category/41048" },
-              { label: "Nutrition & Healthy Eating", href: "/articles/general/category/41042" },
-              { label: "Breaking Bad Habits", href: "/articles/general/category/41056" },
-              { label: "Senior Health", href: "/articles/general/category/41051" },
-              { label: "Weight Loss", href: "/articles/general/category/41058" },
-              { label: "Pregnancy & Parenting", href: "/articles/general/category/41044" },
-              { label: "Wellness", href: "/articles/general/category/41072" },
-              { label: "Mind-Body Connection", href: "/articles/general/category/41047" },
-              { label: "Stress & Anxiety", href: "/articles/general/category/41049" },
-              { label: "Life-Work Balance", href: "/articles/general/category/41055" },
-              { label: "Staying Young", href: "/articles/general/category/41050" },
-              { label: "Staying Motivated", href: "/articles/general/category/41054" },
-            ],
-          },
-          { label: "Wellness4Kids", href: "/articles/general/category/39627" },
+          { label: "What is Chiropractic", href: "/articles/general/category/40985" },
+          { label: "How Does it Work", href: "/articles/general/category/40986" },
+          { label: "Who is Chiropractic For", href: "/articles/general/category/40988" },
+          { label: "Vertebral Subluxation", href: "/articles/general/category/40989" },
+          { label: "Wellness Resources", href: "/articles/general/category/40987" },
         ],
       },
+      {
+        label: "Common Conditions Treated",
+        href: "/articles/general/category/39539",
+        children: [
+          { label: "Auto Accident Injuries", href: "/articles/general/category/40897" },
+          { label: "Back and Shoulder Pain", href: "/articles/general/category/40996" },
+          { label: "Body Pain", href: "/articles/general/category/40997" },
+          { label: "Chronic Condition Relief", href: "/articles/general/category/40999" },
+          { label: "Conditions Affecting Women", href: "/articles/general/category/40993" },
+          { label: "Headaches", href: "/articles/general/category/40915" },
+          { label: "Herniated Discs", href: "/articles/general/category/40998" },
+          { label: "Improved Health", href: "/articles/general/category/41000" },
+          { label: "Pediatric Ailments", href: "/articles/general/category/40991" },
+          { label: "Repetitive Use Injuries", href: "/articles/general/category/40994" },
+          { label: "Respiratory Function", href: "/articles/general/category/40992" },
+        ],
+      },
+      {
+        label: "Health & Wellness",
+        href: "/articles/general/category/64024",
+        children: [
+          { label: "Healthy Thinking", href: "/articles/general/category/39628" },
+          { label: "Life in Motion", href: "/articles/general/category/39543" },
+          { label: "Wellness Lifestyle Tips", href: "/articles/general/category/39632" },
+          { label: "Wellness Essentials", href: "/articles/general/category/39634" },
+          { label: "Wellness Perspectives", href: "/articles/general/category/39631" },
+          { label: "Get Positive", href: "/articles/general/category/39629" },
+          { label: "Relaxation Techniques", href: "/articles/general/category/39630" },
+          { label: "Treat Yourself Well", href: "/articles/general/category/40977" },
+          { label: "Treat Others Well", href: "/articles/general/category/40978" },
+          { label: "Eat Well", href: "/articles/general/category/40979" },
+          { label: "At Home", href: "/articles/general/category/39639" },
+          { label: "At Work", href: "/articles/general/category/39635" },
+          { label: "Exercise", href: "/articles/general/category/39636" },
+          { label: "Nutrition", href: "/articles/general/category/39637" },
+          { label: "What You Wear", href: "/articles/general/category/39638" },
+          { label: "Mental", href: "/articles/general/category/40981" },
+          { label: "Spiritual", href: "/articles/general/category/40983" },
+          { label: "Social", href: "/articles/general/category/40982" },
+          { label: "Physical", href: "/articles/general/category/40980" },
+        ],
+      },
+      {
+        label: "Therapies & Techniques",
+        href: "/articles/general/category/64025",
+        children: [
+          { label: "Techniques", href: "/articles/general/category/41001" },
+          { label: "Therapies", href: "/articles/general/category/41002" },
+        ],
+      },
+      {
+        label: "Newsletter Library",
+        href: "/articles/general/category/39807",
+        children: [
+          { label: "Back, Body & Joint Pain", href: "/articles/general/category/41052" },
+          { label: "Healthy Tips", href: "/articles/general/category/41045" },
+          { label: "Exercise & Fitness", href: "/articles/general/category/41046" },
+          { label: "Injury Rehab & Prevention", href: "/articles/general/category/41057" },
+          { label: "Kid's Health", href: "/articles/general/category/41043" },
+          { label: "Illness Prevention", href: "/articles/general/category/41053" },
+          { label: "Chronic Conditions", href: "/articles/general/category/41048" },
+          { label: "Nutrition & Healthy Eating", href: "/articles/general/category/41042" },
+          { label: "Breaking Bad Habits", href: "/articles/general/category/41056" },
+          { label: "Senior Health", href: "/articles/general/category/41051" },
+          { label: "Weight Loss", href: "/articles/general/category/41058" },
+          { label: "Pregnancy & Parenting", href: "/articles/general/category/41044" },
+          { label: "Wellness", href: "/articles/general/category/41072" },
+          { label: "Mind-Body Connection", href: "/articles/general/category/41047" },
+          { label: "Stress & Anxiety", href: "/articles/general/category/41049" },
+          { label: "Life-Work Balance", href: "/articles/general/category/41055" },
+          { label: "Staying Young", href: "/articles/general/category/41050" },
+          { label: "Staying Motivated", href: "/articles/general/category/41054" },
+        ],
+      },
+      { label: "Wellness4Kids", href: "/articles/general/category/39627" },
     ],
   },
   {
@@ -325,7 +319,7 @@ function DropdownLink({ link, index }: { link: NavLink; index: number }) {
               <div
                 className="shadow-[0_16px_40px_-4px_rgba(0,0,0,0.4)]"
                 style={{
-                  background: "var(--color-fg)",
+                  background: "var(--color-section-bg)",
                   borderRadius: pos.side === "right" ? "0 12px 12px 0" : "12px 0 0 12px",
                 }}
               >
@@ -412,7 +406,7 @@ function SubFlyoutLink({ item }: { item: SubLink }) {
               <div
                 className="shadow-[0_16px_40px_-4px_rgba(0,0,0,0.4)]"
                 style={{
-                  background: "var(--color-fg)",
+                  background: "var(--color-section-bg)",
                   borderRadius: pos.side === "right" ? "0 12px 12px 0" : "12px 0 0 12px",
                 }}
               >
@@ -498,14 +492,14 @@ function NavDropdown({ item }: { item: NavEntry }) {
               className={`absolute -top-1.5 w-3 h-3 rotate-45 rounded-sm ${
                 isMega ? "left-8" : "left-1/2 -translate-x-1/2"
               }`}
-              style={{ background: "var(--color-fg)" }}
+              style={{ background: "var(--color-section-bg)" }}
             />
 
             <div
               data-dropdown-panel
               className="relative rounded-2xl shadow-[0_24px_60px_-8px_rgba(42,41,40,0.35)]"
               style={{
-                background: "var(--color-fg)",
+                background: "var(--color-section-bg)",
                 border: "1px solid rgba(245,244,239,0.08)",
               }}
             >
@@ -618,7 +612,7 @@ export default function Nav() {
                      w-10 h-10 border-none rounded-md cursor-pointer
                      flex items-center justify-center transition-colors duration-300 z-10"
           style={{
-            background: mobileOpen ? "var(--color-fg)" : "transparent",
+            background: mobileOpen ? "var(--color-section-bg)" : "transparent",
           }}
         >
           <motion.span

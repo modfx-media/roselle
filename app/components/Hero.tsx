@@ -31,7 +31,7 @@ export default function Hero() {
     <div id="hero" data-section="hero">
       <section
         className="relative w-full overflow-hidden"
-        style={{ minHeight: "100vh", background: "#1a1917" }}
+        style={{ minHeight: "100vh", background: "#0a1628" }}
       >
         {/* ── Full-bleed background image ── */}
         <div className="absolute inset-0 z-0">
@@ -42,18 +42,23 @@ export default function Hero() {
             aria-hidden="true"
             className="w-full h-full object-cover"
           />
+          {/* Navy color tint — recolors the image blue */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "#0a1628", mixBlendMode: "multiply", opacity: 0.85 }}
+          />
           {/* Dark cinematic gradient overlay */}
           <div
             className="absolute inset-0"
             style={{
               background:
-                "linear-gradient(180deg, rgba(26,25,23,0.78) 0%, rgba(26,25,23,0.62) 30%, rgba(26,25,23,0.78) 75%, rgba(26,25,23,0.95) 100%)",
+                "linear-gradient(180deg, rgba(10,22,40,0.78) 0%, rgba(10,22,40,0.62) 30%, rgba(10,22,40,0.78) 75%, rgba(10,22,40,0.95) 100%)",
             }}
           />
           {/* Extra contrast layer for headline legibility */}
           <div
             className="absolute inset-0"
-            style={{ background: "rgba(26,25,23,0.25)" }}
+            style={{ background: "rgba(10,22,40,0.25)" }}
           />
           {/* Subtle gold tint */}
           <div
@@ -175,59 +180,8 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Bottom row: featured card (left) + Watch button (right) */}
-          <div className="relative pb-s6 pt-s8 flex items-end justify-between gap-s4 max-md:flex-col max-md:items-stretch">
-            <motion.a
-              href="/3d-spine-simulator"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="group flex items-center gap-s3 rounded-xl p-2 pr-s4 max-w-[380px] transition-colors"
-              style={{
-                background: "rgba(245,244,239,0.08)",
-                border: "1px solid rgba(245,244,239,0.14)",
-                backdropFilter: "blur(12px)",
-              }}
-            >
-              <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/spine-simulator-1.webp"
-                  alt=""
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p
-                  className="text-[10px] tracking-[0.2em] uppercase mb-0.5"
-                  style={{ color: "#c6b180" }}
-                >
-                  Featured
-                </p>
-                <p
-                  className="text-sm font-medium truncate"
-                  style={{ color: "#f5f4ef" }}
-                >
-                  Try our 3D Spine Simulator
-                </p>
-              </div>
-              <span
-                className="inline-flex items-center justify-center w-7 h-7 rounded-full shrink-0
-                           transition-transform duration-200 group-hover:translate-x-0.5"
-                style={{ background: "rgba(245,244,239,0.12)", color: "#f5f4ef" }}
-              >
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path
-                    d="M2 5h6M5.5 2.5L8 5 5.5 7.5"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </motion.a>
-
+          {/* Bottom row: Watch button (right) */}
+          <div className="relative pb-s6 pt-s8 flex items-end justify-end gap-s4 max-md:flex-col max-md:items-stretch">
             <motion.button
               type="button"
               onClick={() => setVideoOpen(true)}
@@ -265,8 +219,8 @@ export default function Hero() {
 
                 {/* Dim overlay */}
                 <div
-                  className="absolute inset-0 transition-colors duration-300 group-hover:bg-black/10"
-                  style={{ background: "rgba(26,25,23,0.45)" }}
+                  className="absolute inset-0 transition-colors duration-300 group-hover:bg-[#0a1628]/10"
+                  style={{ background: "rgba(10,22,40,0.45)" }}
                 />
 
                 {/* WATCH label (left) */}
@@ -337,7 +291,7 @@ export default function Hero() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="fixed inset-0 z-50 flex items-center justify-center p-s4"
-              style={{ background: "rgba(26,25,23,0.92)", backdropFilter: "blur(8px)" }}
+              style={{ background: "rgba(10,22,40,0.92)", backdropFilter: "blur(8px)" }}
               onClick={() => setVideoOpen(false)}
             >
               <motion.div
@@ -365,7 +319,7 @@ export default function Hero() {
                   onClick={() => setVideoOpen(false)}
                   aria-label="Close video"
                   className="absolute top-3 right-3 w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:bg-white/20"
-                  style={{ background: "rgba(0,0,0,0.5)", color: "#f5f4ef" }}
+                  style={{ background: "rgba(10,22,40,0.5)", color: "#f5f4ef" }}
                 >
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path

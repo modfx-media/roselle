@@ -129,7 +129,7 @@ export default function Testimonials() {
                   <motion.div
                     className="rounded-2xl p-s4 flex flex-col gap-s2 h-full"
                     style={{
-                      background: i % 2 === 0 ? "rgba(42,41,40,0.03)" : "rgba(245,244,239,1)",
+                      background: i % 2 === 0 ? "rgba(10,22,40,0.03)" : "rgba(245,244,239,1)",
                       border: "1px solid rgba(42,41,40,0.07)",
                       boxShadow: "0 2px 16px rgba(42,41,40,0.04)",
                     }}
@@ -152,7 +152,7 @@ export default function Testimonials() {
                     <div className="flex items-center gap-2 pt-s2"
                       style={{ borderTop: "1px solid rgba(42,41,40,0.06)" }}>
                       <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold shrink-0"
-                        style={{ background: "var(--color-fg)", color: "var(--color-bg)" }}>
+                        style={{ background: "var(--color-section-bg)", color: "var(--color-bg)" }}>
                         {r.name[0]}
                       </div>
                       <div>

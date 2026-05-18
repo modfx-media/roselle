@@ -104,7 +104,7 @@ export default function AboutUsPage() {
                 <div
                   className="mt-s8 rounded-xl overflow-hidden"
                   style={{
-                    background: "rgba(42,41,40,0.04)",
+                    background: "rgba(10,22,40,0.04)",
                     border: "1px solid rgba(42,41,40,0.08)",
                   }}
                 >

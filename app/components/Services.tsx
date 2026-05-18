@@ -182,7 +182,7 @@ export default function Services() {
                     className="absolute inset-0"
                     style={{
                       background:
-                        "linear-gradient(180deg, rgba(26,25,23,0.10) 0%, rgba(26,25,23,0.15) 45%, rgba(26,25,23,0.85) 100%)",
+                        "linear-gradient(180deg, rgba(10,22,40,0.10) 0%, rgba(10,22,40,0.15) 45%, rgba(10,22,40,0.85) 100%)",
                     }}
                   />
 

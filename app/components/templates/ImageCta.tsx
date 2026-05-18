@@ -29,7 +29,7 @@ export default function ImageCta({
           <div
             className="relative overflow-hidden rounded-2xl px-s10 py-s12 max-md:px-s6 max-md:py-s10"
             style={{
-              backgroundImage: `linear-gradient(135deg, rgba(42,41,40,0.92) 0%, rgba(42,41,40,0.78) 60%, rgba(198,177,128,0.55) 100%), url("${image}")`,
+              backgroundImage: `linear-gradient(135deg, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.78) 60%, rgba(198,177,128,0.55) 100%), url("${image}")`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
