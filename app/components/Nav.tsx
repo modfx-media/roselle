@@ -563,7 +563,7 @@ export default function Nav() {
       className={`fixed top-s2 left-0 right-0 z-100 animate-nav-in`}
     >
       <div
-        className={`w-full max-w-[1320px] mx-auto px-s4 h-nav-h rounded-xl
+        className={`w-full max-w-[1440px] mx-auto px-s4 h-nav-h rounded-xl
                       flex items-center justify-between relative transition-all duration-300
                       ${scrolled ? "nav-frosted" : "bg-card-bg backdrop-blur-sm"}`}
       >
@@ -584,7 +584,7 @@ export default function Nav() {
         </a>
 
         {/* Desktop */}
-        <div className="hidden xl:flex items-center gap-1 ml-4">
+        <div className="hidden min-[1400px]:flex items-center gap-1 ml-4 min-w-0">
           {NAV.map((item) =>
             item.links ? (
               <NavDropdown key={item.label} item={item} />
@@ -594,8 +594,9 @@ export default function Nav() {
               </a>
             ),
           )}
-          <div className="ml-3">
+          <div className="ml-3 mr-1 shrink-0">
             <MagneticButton
+              strength={0.15}
               onClick={() => window.location.href = "/appointment"}
             >
               Book Now
@@ -608,7 +609,7 @@ export default function Nav() {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
-          className="xl:hidden absolute top-1/2 right-s3 -translate-y-1/2
+          className="min-[1400px]:hidden absolute top-1/2 right-s3 -translate-y-1/2
                      w-10 h-10 border-none rounded-md cursor-pointer
                      flex items-center justify-center transition-colors duration-300 z-10"
           style={{
