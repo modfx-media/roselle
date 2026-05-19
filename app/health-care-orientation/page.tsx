@@ -7,11 +7,25 @@ import SmoothScroll from "../components/motion/SmoothScroll";
 import PageHero from "../components/templates/PageHero";
 import ContentBlock from "../components/templates/ContentBlock";
 import ImageCta from "../components/templates/ImageCta";
+import { submitContactForm } from "../lib/sendForm";
 
 export default function HealthCareOrientationPage() {
   const [question, setQuestion] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = (e: React.FormEvent) => { e.preventDefault(); setSubmitted(true); };
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSending(true);
+    setError(null);
+    const result = await submitContactForm("Health Care Orientation Confirmation", {
+      "Confirmation": "Patient confirms watching the orientation video.",
+      "Questions after watching": question,
+    });
+    setSending(false);
+    if (result.ok) setSubmitted(true);
+    else setError(result.error || "Could not submit. Please try again.");
+  };
 
   return (
     <>
@@ -52,7 +66,8 @@ export default function HealthCareOrientationPage() {
                 <form onSubmit={handleSubmit} className="max-w-[640px] flex flex-col gap-s4">
                   <label htmlFor="orientation-question" className="text-sm font-medium text-bg">Do you have any questions after watching this video? <span className="text-accent">*</span></label>
                   <textarea id="orientation-question" required rows={5} value={question} onChange={(e) => setQuestion(e.target.value)} placeholder="Enter any questions you may have…" className="w-full rounded-lg border border-[rgba(245,244,239,0.12)] bg-[rgba(245,244,239,0.04)] px-s4 py-s3 text-bg text-fluid-base placeholder:text-bg/25 focus:outline-none focus:border-accent transition-colors resize-y" />
-                  <button type="submit" className="btn-primary-inverted self-start">Submit Confirmation</button>
+                  <button type="submit" disabled={sending} className="btn-primary-inverted self-start disabled:opacity-60 disabled:cursor-not-allowed">{sending ? "Submitting…" : "Submit Confirmation"}</button>
+                  {error && <p className="text-xs text-red-300">{error}</p>}
                 </form>
               )}
             </div>

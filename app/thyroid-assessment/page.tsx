@@ -7,6 +7,7 @@ import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
 import PageHero from "../components/templates/PageHero";
 import ImageCta from "../components/templates/ImageCta";
+import { submitContactForm } from "../lib/sendForm";
 
 const QUESTIONS = [
   "Are you experiencing hair loss or slow growth?",
@@ -25,10 +26,22 @@ export default function ThyroidAssessmentPage() {
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [additionalQuestion, setAdditionalQuestion] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const handleAnswer = (i: number, v: string) => setAnswers((p) => ({ ...p, [i]: v }));
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError(null);
+    const fields: Record<string, string> = {};
+    QUESTIONS.forEach((q, i) => {
+      fields[`Q${i + 1}. ${q}`] = answers[i] ?? "";
+    });
+    fields["Additional questions"] = additionalQuestion;
+    const result = await submitContactForm("Thyroid Health Assessment", fields);
+    setSending(false);
+    if (result.ok) setSubmitted(true);
+    else setError(result.error || "Could not submit assessment. Please try again.");
   };
   const allAnswered = QUESTIONS.every((_, i) => answers[i] !== undefined);
 
@@ -119,11 +132,14 @@ export default function ThyroidAssessmentPage() {
                       />
                       <button
                         type="submit"
-                        disabled={!allAnswered}
+                        disabled={!allAnswered || sending}
                         className="btn-primary self-start disabled:opacity-40 disabled:cursor-not-allowed transition-opacity duration-200"
                       >
-                        Submit assessment
+                        {sending ? "Submitting…" : "Submit assessment"}
                       </button>
+                      {error && (
+                        <p className="text-xs text-red-300">{error}</p>
+                      )}
                     </div>
                   </RevealSection>
                 </form>

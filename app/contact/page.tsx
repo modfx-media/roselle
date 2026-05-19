@@ -6,18 +6,28 @@ import Contact from "../components/Contact";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import PageHero from "../components/templates/PageHero";
 import CtaBand from "../components/templates/CtaBand";
+import { submitContactForm } from "../lib/sendForm";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent("Contact Form Submission");
-    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nMessage: ${formData.message}`);
-    window.location.href = `mailto:rosellecare@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
+    setSending(true);
+    setError(null);
+    const result = await submitContactForm("Contact Form", {
+      Name: formData.name,
+      Email: formData.email,
+      Phone: formData.phone,
+      Message: formData.message,
+    });
+    setSending(false);
+    if (result.ok) setSent(true);
+    else setError(result.error || "Could not send message. Please try again.");
   };
 
   return (
@@ -180,7 +190,7 @@ export default function ContactPage() {
                       }}
                     >
                       <p className="text-sm text-bg font-medium">
-                        Thank you! Your email client should open shortly. If it doesn&apos;t, please email rosellecare@gmail.com directly.
+                        Thank you! Your message has been sent. We&apos;ll be in touch shortly.
                       </p>
                     </div>
                   ) : (
@@ -232,12 +242,16 @@ export default function ContactPage() {
                       <div className="col-span-2 max-sm:col-span-1 mt-s2">
                         <button
                           type="submit"
-                          className="inline-flex items-center justify-center gap-2 h-12 px-s5 rounded-full text-sm font-medium w-full transition-transform hover:-translate-y-0.5"
+                          disabled={sending}
+                          className="inline-flex items-center justify-center gap-2 h-12 px-s5 rounded-full text-sm font-medium w-full transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
                           style={{ background: "#c6b180", color: "#0a1628" }}
                         >
-                          Send Message
+                          {sending ? "Sending…" : "Send Message"}
                           <span aria-hidden="true">→</span>
                         </button>
+                        {error && (
+                          <p className="mt-s3 text-xs text-red-300">{error}</p>
+                        )}
                       </div>
                     </form>
                   )}

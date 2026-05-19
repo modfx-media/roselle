@@ -7,6 +7,7 @@ import RevealSection from "../components/motion/RevealSection";
 import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
 import PageHero from "../components/templates/PageHero";
+import { serializeForm, submitContactForm } from "../lib/sendForm";
 
 
 const inputClass = "w-full rounded-lg bg-[rgba(245,244,239,0.06)] border border-[rgba(245,244,239,0.1)] px-4 py-3 text-sm text-bg placeholder:text-[rgba(245,244,239,0.3)] focus:outline-none input-gold-focus focus:border-accent transition-colors duration-200";
@@ -17,10 +18,18 @@ const radioLabelStyle = { color: "rgba(245,244,239,0.55)" };
 
 export default function NewPatientWelcomeFormPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    const fields = serializeForm(e.currentTarget);
+    setSending(true);
+    setError(null);
+    const result = await submitContactForm("New Patient Welcome Form", fields);
+    setSending(false);
+    if (result.ok) setSubmitted(true);
+    else setError(result.error || "Could not submit the form. Please try again.");
   }
 
   return (
@@ -174,10 +183,11 @@ export default function NewPatientWelcomeFormPage() {
 
                     {/* Submit */}
                     <RevealSection delay={0.04}>
-                      <div className="flex justify-center">
-                        <button type="submit" className="btn-primary px-12 py-4 text-sm tracking-widest uppercase font-sans font-medium rounded-lg bg-accent text-fg transition-colors duration-200 hover:bg-bg hover:text-fg">
-                          Submit
+                      <div className="flex justify-center flex-col items-center gap-s3">
+                        <button type="submit" disabled={sending} className="btn-primary px-12 py-4 text-sm tracking-widest uppercase font-sans font-medium rounded-lg bg-accent text-fg transition-colors duration-200 hover:bg-bg hover:text-fg disabled:opacity-60 disabled:cursor-not-allowed">
+                          {sending ? "Submitting…" : "Submit"}
                         </button>
+                        {error && <p className="text-xs text-red-300">{error}</p>}
                       </div>
                     </RevealSection>
                   </div>

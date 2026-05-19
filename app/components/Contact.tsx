@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import MagneticButton from "./motion/MagneticButton";
 import SplitReveal from "./motion/SplitReveal";
+import { submitContactForm } from "../lib/sendForm";
 
 const HOURS = [
   { day: "Mon", full: "Monday",    time: "7:00 – 5:00",   open: true },
@@ -18,6 +19,8 @@ const TODAY = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][new Date().getDay()];
 export default function Contact() {
   const [email, setEmail]   = useState("");
   const [sent, setSent]     = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError]   = useState<string | null>(null);
   const sectionRef          = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
@@ -153,10 +156,14 @@ export default function Contact() {
                     <motion.form key="form"
                       className="flex gap-2 rounded-2xl p-1.5"
                       style={{ background: "rgba(245,244,239,0.05)", border: "1px solid rgba(245,244,239,0.1)" }}
-                      onSubmit={e => {
+                      onSubmit={async e => {
                         e.preventDefault();
-                        window.location.href = `mailto:rosellecare@gmail.com?subject=Appointment Request&body=Email: ${email}`;
-                        setSent(true);
+                        setSending(true);
+                        setError(null);
+                        const result = await submitContactForm("Quick Contact (Footer)", { Email: email });
+                        setSending(false);
+                        if (result.ok) setSent(true);
+                        else setError(result.error || "Could not send message.");
                       }}>
                       <input type="email" placeholder="Your email address" required
                         value={email} onChange={e => setEmail(e.target.value)}
@@ -173,10 +180,11 @@ export default function Contact() {
                           e.currentTarget.style.boxShadow = "none";
                         }}
                       />
-                      <MagneticButton className="btn-primary-inverted" type="submit">Send</MagneticButton>
+                      <MagneticButton className="btn-primary-inverted" type="submit">{sending ? "…" : "Send"}</MagneticButton>
                     </motion.form>
                   )}
                 </AnimatePresence>
+                {error && <p className="mt-s2 text-xs text-red-300">{error}</p>}
               </motion.div>
 
               {/* Divider */}

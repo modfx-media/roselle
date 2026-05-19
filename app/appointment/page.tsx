@@ -7,6 +7,7 @@ import Contact from "../components/Contact";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import PageHero from "../components/templates/PageHero";
 import CtaBand from "../components/templates/CtaBand";
+import { submitContactForm } from "../lib/sendForm";
 
 export default function AppointmentPage() {
   const [formData, setFormData] = useState({
@@ -22,31 +23,30 @@ export default function AppointmentPage() {
     message: "",
   });
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(
-      `Appointment Request — ${formData.firstName} ${formData.lastName}`.trim(),
-    );
-    const body = encodeURIComponent(
-      [
-        `Name: ${formData.firstName} ${formData.lastName}`,
-        `Email: ${formData.email}`,
-        `Phone: ${formData.phone}`,
-        `Patient: ${formData.patientType}`,
-        `Service: ${formData.service}`,
-        `Preferred Date: ${formData.preferredDate}`,
-        `Preferred Time: ${formData.preferredTime}`,
-        `Preferred Contact: ${formData.contactMethod}`,
-        "",
-        `Reason for visit / notes:`,
-        formData.message,
-      ].join("\n"),
-    );
-    window.location.href = `mailto:rosellecare@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
+    setSending(true);
+    setError(null);
+    const result = await submitContactForm("Appointment Request", {
+      "First name": formData.firstName,
+      "Last name": formData.lastName,
+      Email: formData.email,
+      Phone: formData.phone,
+      "Patient type": formData.patientType,
+      Service: formData.service,
+      "Preferred date": formData.preferredDate,
+      "Preferred time": formData.preferredTime,
+      "Preferred contact": formData.contactMethod,
+      "Reason for visit / notes": formData.message,
+    });
+    setSending(false);
+    if (result.ok) setSent(true);
+    else setError(result.error || "Could not send request. Please try again.");
   };
 
   // Shared input styling
@@ -244,7 +244,7 @@ export default function AppointmentPage() {
                       }}
                     >
                       <p className="text-sm text-bg font-medium">
-                        Thank you! Your email client should open shortly. If it doesn&apos;t, please email rosellecare@gmail.com directly.
+                        Thank you! Your appointment request has been sent. Our office will reach out to confirm.
                       </p>
                     </div>
                   ) : (
@@ -426,12 +426,16 @@ export default function AppointmentPage() {
                       <div className="col-span-2 max-sm:col-span-1 mt-s2">
                         <button
                           type="submit"
-                          className="inline-flex items-center justify-center gap-2 h-12 px-s5 rounded-full text-sm font-medium w-full transition-transform hover:-translate-y-0.5"
+                          disabled={sending}
+                          className="inline-flex items-center justify-center gap-2 h-12 px-s5 rounded-full text-sm font-medium w-full transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
                           style={{ background: "#c6b180", color: "#0a1628" }}
                         >
-                          Send Request
+                          {sending ? "Sending…" : "Send Request"}
                           <span aria-hidden="true">→</span>
                         </button>
+                        {error && (
+                          <p className="mt-s3 text-xs text-red-300">{error}</p>
+                        )}
                       </div>
                     </form>
                   )}
