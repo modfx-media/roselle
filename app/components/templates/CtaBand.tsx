@@ -7,8 +7,8 @@ export type CtaBandProps = {
   eyebrow?: string;
   title: string;
   body?: string;
-  primaryCta?: { label: string; href: string };
-  secondaryCta?: { label: string; href: string };
+  primaryCta?: { label: string; href: string; external?: boolean };
+  secondaryCta?: { label: string; href: string; external?: boolean };
   /** "dark" places the band on the dark fg background; "light" places it on the cream bg */
   tone?: "light" | "dark" | "gold";
 };
@@ -108,7 +108,11 @@ export default function CtaBand({
               {primaryCta && (
                 <MagneticButton
                   className={btnClass}
-                  onClick={() => (window.location.href = primaryCta.href)}
+                  onClick={() =>
+                    primaryCta.external
+                      ? window.open(primaryCta.href, "_blank", "noopener,noreferrer")
+                      : (window.location.href = primaryCta.href)
+                  }
                 >
                   {primaryCta.label}
                 </MagneticButton>
@@ -116,6 +120,8 @@ export default function CtaBand({
               {secondaryCta && (
                 <a
                   href={secondaryCta.href}
+                  target={secondaryCta.external ? "_blank" : undefined}
+                  rel={secondaryCta.external ? "noopener noreferrer" : undefined}
                   className="text-sm font-medium underline-offset-4 hover:underline transition-colors duration-200"
                   style={{ color: secondaryColor }}
                 >

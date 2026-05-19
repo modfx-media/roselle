@@ -25,7 +25,7 @@ export default function EducationLecturesPage() {
             image="/services/learning.jpg"
             imageAlt="Health education lecture."
             primaryCta={{ label: "Call to register", href: "tel:+17036987117" }}
-            secondaryCta={{ label: "Register online", href: "https://www.drtomroselle.com/health-education-class-registration/" }}
+            secondaryCta={{ label: "Register online", href: "https://www.drtomroselle.com/health-education-class-registration/", external: true }}
           />
 
           <ContentBlock
@@ -45,6 +45,7 @@ export default function EducationLecturesPage() {
                 description:
                   "Your foundation matters! Every step you take sends a kinetic chain reaction from your arches all the way to your neck. Learn how to fortify your foundation with Dr. Harlan Browning, DC. Wednesday, April 29 at 6:00 PM. Space is limited — call (703) 698-7117 or register online.",
                 href: "https://www.drtomroselle.com/health-education-class-registration/",
+                external: true,
               },
               {
                 title: "Blooms & Bowls",
@@ -77,7 +78,7 @@ export default function EducationLecturesPage() {
             title="Want to attend a health education lecture?"
             body="Contact Roselle Center For Healing in Fairfax, VA to register for upcoming lectures and workshops."
             primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
-            secondaryCta={{ label: "Register online", href: "https://www.drtomroselle.com/health-education-class-registration/" }}
+            secondaryCta={{ label: "Register online", href: "https://www.drtomroselle.com/health-education-class-registration/", external: true }}
           />
 
           <Contact />

@@ -48,7 +48,7 @@
   --text-fluid-5xl:  clamp(3rem,     5.5vw, 4.5rem);
 
   --spacing-section-py: clamp(5rem, 9vw, 8rem);
-  --spacing-nav-h: 68px;
+  --spacing-nav-h: 80px;
   --spacing-max-w: 1200px;
 }
 
@@ -123,17 +123,19 @@
 
   /* ── Nav link underline ── */
   .nav-link {
-    @apply text-xs font-semibold bg-transparent border-none cursor-pointer py-0.5 px-1.5 relative whitespace-nowrap no-underline;
+    @apply text-sm font-semibold bg-transparent border-none cursor-pointer py-1 px-3 relative whitespace-nowrap no-underline tracking-[-0.005em];
     color: var(--color-fg);
   }
   .nav-link::after {
     content: '';
-    @apply absolute bottom-[-1px] left-0 h-px;
-    width: 0;
+    @apply absolute bottom-[2px] left-3 right-3 h-px;
+    width: auto;
+    transform: scaleX(0);
+    transform-origin: left center;
     background: var(--color-accent);
-    transition: width 0.22s ease;
+    transition: transform 0.25s ease;
   }
-  .nav-link:hover::after { width: 100%; }
+  .nav-link:hover::after { transform: scaleX(1); }
 
   /* ── Nav dropdown bg ── */
   .nav-menu-dropdown {

@@ -89,6 +89,7 @@ const NAV: NavEntry[] = [
       { label: "Teleworking: Ergonomics Survival Guide", href: "/teleworking-ergonomics-survival-guide" },
       { label: "Thyroid Assessment", href: "/thyroid-assessment" },
       { label: "Spine Simulator", href: "/spine-simulator.html" },
+      { label: "Special Features", href: "/special-offer.html" },
     ],
   },
   { label: "Ageless Health Store", href: "/istore" },
@@ -99,126 +100,6 @@ const NAV: NavEntry[] = [
     links: [
       { label: "Contact a Staff Member Directly", href: "/contact-staff-member.html" },
       { label: "Patient Feedback", href: "/contact-us/patient-feedback.html" },
-    ],
-  },
-  {
-    label: "Community Content",
-    href: "/articles/general",
-    links: [
-      {
-        label: "About Chiropractic Care",
-        href: "/articles/general/category/39542",
-        children: [
-          { label: "What is Chiropractic", href: "/articles/general/category/40985" },
-          { label: "How Does it Work", href: "/articles/general/category/40986" },
-          { label: "Who is Chiropractic For", href: "/articles/general/category/40988" },
-          { label: "Vertebral Subluxation", href: "/articles/general/category/40989" },
-          { label: "Wellness Resources", href: "/articles/general/category/40987" },
-        ],
-      },
-      {
-        label: "Common Conditions Treated",
-        href: "/articles/general/category/39539",
-        children: [
-          { label: "Auto Accident Injuries", href: "/articles/general/category/40897" },
-          { label: "Back and Shoulder Pain", href: "/articles/general/category/40996" },
-          { label: "Body Pain", href: "/articles/general/category/40997" },
-          { label: "Chronic Condition Relief", href: "/articles/general/category/40999" },
-          { label: "Conditions Affecting Women", href: "/articles/general/category/40993" },
-          { label: "Headaches", href: "/articles/general/category/40915" },
-          { label: "Herniated Discs", href: "/articles/general/category/40998" },
-          { label: "Improved Health", href: "/articles/general/category/41000" },
-          { label: "Pediatric Ailments", href: "/articles/general/category/40991" },
-          { label: "Repetitive Use Injuries", href: "/articles/general/category/40994" },
-          { label: "Respiratory Function", href: "/articles/general/category/40992" },
-        ],
-      },
-      {
-        label: "Health & Wellness",
-        href: "/articles/general/category/64024",
-        children: [
-          { label: "Healthy Thinking", href: "/articles/general/category/39628" },
-          { label: "Life in Motion", href: "/articles/general/category/39543" },
-          { label: "Wellness Lifestyle Tips", href: "/articles/general/category/39632" },
-          { label: "Wellness Essentials", href: "/articles/general/category/39634" },
-          { label: "Wellness Perspectives", href: "/articles/general/category/39631" },
-          { label: "Get Positive", href: "/articles/general/category/39629" },
-          { label: "Relaxation Techniques", href: "/articles/general/category/39630" },
-          { label: "Treat Yourself Well", href: "/articles/general/category/40977" },
-          { label: "Treat Others Well", href: "/articles/general/category/40978" },
-          { label: "Eat Well", href: "/articles/general/category/40979" },
-          { label: "At Home", href: "/articles/general/category/39639" },
-          { label: "At Work", href: "/articles/general/category/39635" },
-          { label: "Exercise", href: "/articles/general/category/39636" },
-          { label: "Nutrition", href: "/articles/general/category/39637" },
-          { label: "What You Wear", href: "/articles/general/category/39638" },
-          { label: "Mental", href: "/articles/general/category/40981" },
-          { label: "Spiritual", href: "/articles/general/category/40983" },
-          { label: "Social", href: "/articles/general/category/40982" },
-          { label: "Physical", href: "/articles/general/category/40980" },
-        ],
-      },
-      {
-        label: "Therapies & Techniques",
-        href: "/articles/general/category/64025",
-        children: [
-          { label: "Techniques", href: "/articles/general/category/41001" },
-          { label: "Therapies", href: "/articles/general/category/41002" },
-        ],
-      },
-      {
-        label: "Newsletter Library",
-        href: "/articles/general/category/39807",
-        children: [
-          { label: "Back, Body & Joint Pain", href: "/articles/general/category/41052" },
-          { label: "Healthy Tips", href: "/articles/general/category/41045" },
-          { label: "Exercise & Fitness", href: "/articles/general/category/41046" },
-          { label: "Injury Rehab & Prevention", href: "/articles/general/category/41057" },
-          { label: "Kid's Health", href: "/articles/general/category/41043" },
-          { label: "Illness Prevention", href: "/articles/general/category/41053" },
-          { label: "Chronic Conditions", href: "/articles/general/category/41048" },
-          { label: "Nutrition & Healthy Eating", href: "/articles/general/category/41042" },
-          { label: "Breaking Bad Habits", href: "/articles/general/category/41056" },
-          { label: "Senior Health", href: "/articles/general/category/41051" },
-          { label: "Weight Loss", href: "/articles/general/category/41058" },
-          { label: "Pregnancy & Parenting", href: "/articles/general/category/41044" },
-          { label: "Wellness", href: "/articles/general/category/41072" },
-          { label: "Mind-Body Connection", href: "/articles/general/category/41047" },
-          { label: "Stress & Anxiety", href: "/articles/general/category/41049" },
-          { label: "Life-Work Balance", href: "/articles/general/category/41055" },
-          { label: "Staying Young", href: "/articles/general/category/41050" },
-          { label: "Staying Motivated", href: "/articles/general/category/41054" },
-        ],
-      },
-      { label: "Wellness4Kids", href: "/articles/general/category/39627" },
-    ],
-  },
-  {
-    label: "More",
-    href: "#",
-    links: [
-      { label: "Preferred Providers", href: "/about/preferred-providers.html" },
-      { label: "Special Offers", href: "/special-offer.html" },
-      {
-        label: "Where is Your Pain?",
-        href: "/conditions-treated",
-        children: [
-          { label: "Back Pain", href: "/back-pain" },
-          { label: "Back Pain FAQs", href: "/back-pain-faqs" },
-          { label: "Fibromyalgia", href: "/fibromyalgia" },
-          { label: "Fibromyalgia FAQs", href: "/fibromyalgia-faqs" },
-          { label: "Integrative Health", href: "/integrative-health" },
-          { label: "Knee Pain", href: "/knee-pain" },
-          { label: "Lower Back Pain FAQs", href: "/lower-back-pain-faqs" },
-          { label: "Muscle Strains & Sprains", href: "/muscle-strains-a-sprains" },
-          { label: "Neck Pain", href: "/neck-pain" },
-          { label: "Neck Pain FAQs", href: "/neck-pain-faqs" },
-          { label: "Rotator Cuff", href: "/rotator-cuff" },
-          { label: "Sciatica", href: "/sciatica" },
-          { label: "Shoulder Pain", href: "/shoulder-pain" },
-          { label: "Whiplash", href: "/whiplash" },
-        ],
-      },
     ],
   },
 ];
@@ -454,13 +335,13 @@ function NavDropdown({ item }: { item: NavEntry }) {
       >
         {item.label}
         <motion.svg
-          width="10"
-          height="10"
+          width="12"
+          height="12"
           viewBox="0 0 10 10"
           fill="none"
           animate={{ rotate: open ? 180 : 0 }}
           transition={{ duration: 0.2 }}
-          style={{ opacity: 0.45 }}
+          style={{ opacity: 0.5 }}
         >
           <path
             d="M2 3.5L5 6.5L8 3.5"
@@ -583,8 +464,8 @@ export default function Nav() {
           />
         </a>
 
-        {/* Desktop */}
-        <div className="hidden min-[1400px]:flex items-center gap-1 ml-4 min-w-0">
+        {/* Desktop nav links — centered between logo and Book Now */}
+        <div className="hidden min-[1400px]:flex flex-1 items-center justify-center gap-1 px-s4 min-w-0">
           {NAV.map((item) =>
             item.links ? (
               <NavDropdown key={item.label} item={item} />
@@ -594,14 +475,16 @@ export default function Nav() {
               </a>
             ),
           )}
-          <div className="ml-3 mr-1 shrink-0">
-            <MagneticButton
-              strength={0.15}
-              onClick={() => window.location.href = "/appointment"}
-            >
-              Book Now
-            </MagneticButton>
-          </div>
+        </div>
+
+        {/* Book Now — anchored right on desktop */}
+        <div className="hidden min-[1400px]:flex shrink-0">
+          <MagneticButton
+            strength={0.15}
+            onClick={() => window.location.href = "/appointment"}
+          >
+            Book Now
+          </MagneticButton>
         </div>
 
         {/* Hamburger */}

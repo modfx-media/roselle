@@ -7,6 +7,7 @@ export type FeatureCard = {
   title: string;
   description: string;
   href?: string;
+  external?: boolean;
   icon?: string;
   image?: string;
 };
@@ -93,7 +94,11 @@ export default function FeatureGrid({
         <div className={`grid ${colsClass} gap-s5`}>
           {cards.map((c, i) => {
             const Wrapper: React.ElementType = c.href ? "a" : "div";
-            const wrapperProps = c.href ? { href: c.href } : {};
+            const wrapperProps = c.href
+              ? c.external
+                ? { href: c.href, target: "_blank", rel: "noopener noreferrer" }
+                : { href: c.href }
+              : {};
             return (
               <RevealSection key={i} delay={i * 0.05}>
                 <Wrapper
