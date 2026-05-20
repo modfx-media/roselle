@@ -45,16 +45,16 @@ export default function Contact() {
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover"
-            style={{ y: imgY, scale: 1.12, filter: "brightness(0.28) saturate(0.7)" }}
+            style={{ y: imgY, scale: 1.12, filter: "brightness(0.45) saturate(0.8)" }}
           />
           {/* Navy color tint — recolors the image blue */}
           <div
             className="absolute inset-0"
-            style={{ background: "#0a1628", mixBlendMode: "multiply", opacity: 0.85 }}
+            style={{ background: "#2a4575", mixBlendMode: "multiply", opacity: 0.7 }}
           />
           {/* Vignette */}
           <div className="absolute inset-0"
-            style={{ background: "radial-gradient(ellipse at 60% 40%, rgba(10,22,40,0.55) 0%, rgba(3,7,18,0.95) 70%)" }} />
+            style={{ background: "radial-gradient(ellipse at 60% 40%, rgba(42,69,117,0.4) 0%, rgba(26,47,82,0.85) 70%)" }} />
           {/* Gold bloom */}
           <div className="absolute pointer-events-none"
             style={{ top: "20%", right: "15%", width: "500px", height: "500px",
@@ -82,7 +82,7 @@ export default function Contact() {
             <SplitReveal text="Start Your Journey" as="h2"
               className="text-fluid-5xl text-bg tracking-tight leading-[1.0]" stagger={0.05} />
             <SplitReveal text="to Wellness." as="h2"
-              className="text-fluid-5xl tracking-tight leading-[1.0]" stagger={0.05}>
+              className="text-fluid-5xl text-bg tracking-tight leading-[1.0]" stagger={0.05}>
               <span className="sr-word inline-block text-accent">&nbsp;</span>
             </SplitReveal>
           </div>

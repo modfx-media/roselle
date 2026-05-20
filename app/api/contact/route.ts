@@ -57,10 +57,10 @@ function renderHtml(formType: string, fields: Record<string, unknown>, meta: Rec
     .join("");
 
   return `<!doctype html><html><body style="font-family:Arial,Helvetica,sans-serif;color:#222;">
-    <h2 style="margin:0 0 16px;color:#0a1628;">New submission: ${escapeHtml(formType)}</h2>
+    <h2 style="margin:0 0 16px;color:#091321;">New submission: ${escapeHtml(formType)}</h2>
     <p style="margin:0 0 16px;color:#555;">A new form was submitted on rosellecare.com.</p>
     <table style="border-collapse:collapse;width:100%;max-width:720px;">${rows || `<tr><td style="padding:8px 12px;border:1px solid #e5e5e5;color:#888;">(no fields submitted)</td></tr>`}</table>
-    ${metaRows ? `<h3 style="margin:24px 0 8px;color:#0a1628;font-size:14px;">Meta</h3><table style="border-collapse:collapse;width:100%;max-width:720px;">${metaRows}</table>` : ""}
+    ${metaRows ? `<h3 style="margin:24px 0 8px;color:#091321;font-size:14px;">Meta</h3><table style="border-collapse:collapse;width:100%;max-width:720px;">${metaRows}</table>` : ""}
   </body></html>`;
 }
 

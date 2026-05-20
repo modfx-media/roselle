@@ -16,9 +16,9 @@
 
   /* Navy section/dark background color — replaces former black-looking warm dark.
      Kept separate from --color-fg so text colors (which use --color-fg) stay unchanged. */
-  --color-section-bg: #0a1628;
-  --color-section-bg-mid: #0f1d33;
-  --color-section-bg-edge: #030712;
+  --color-section-bg: #091321;
+  --color-section-bg-mid: #1a2f52;
+  --color-section-bg-edge: #091321;
 
   --font-serif: var(--font-libre-baskerville), Georgia, serif;
   --font-sans:  var(--font-inter), system-ui, sans-serif;
@@ -91,7 +91,7 @@
     @apply inline-flex items-center justify-center relative overflow-hidden
            w-fit shrink-0 border-none rounded-full px-s4 h-11
            text-sm font-medium cursor-pointer whitespace-nowrap;
-    background: linear-gradient(135deg, #0a1628 0%, #1a2a44 100%);
+    background: #032759;
     box-shadow: 2px 3px 9px color-mix(in srgb, var(--color-accent) 30%, transparent);
     color: var(--color-cta-text);
     transition: all 0.25s ease;
@@ -397,14 +397,14 @@
    DARK POST EXPERIENCE — Blog + Article single pages
    ============================================================ */
 .post-shell {
-  background: linear-gradient(180deg, #0a1628 0%, #030712 100%);
+  background: linear-gradient(180deg, #1a2f52 0%, #091321 100%);
 }
 
 .post-hero {
   background:
     radial-gradient(ellipse 60% 60% at 5% 50%, rgba(198,177,128,0.09) 0%, transparent 60%),
     radial-gradient(ellipse 40% 40% at 90% 15%, rgba(198,177,128,0.06) 0%, transparent 55%),
-    linear-gradient(145deg, #030712 0%, #0f1d33 55%, #0a1628 100%);
+    linear-gradient(145deg, #091321 0%, #1a2f52 55%, #2a4575 100%);
 }
 
 .post-watermark {
@@ -451,7 +451,7 @@
 
 .post-body-section {
   position: relative;
-  background: linear-gradient(180deg, #0a1628 0%, #030712 100%);
+  background: linear-gradient(180deg, #1a2f52 0%, #091321 100%);
   overflow: hidden;
 }
 
@@ -522,7 +522,7 @@
 .post-cta-panel {
   background:
     radial-gradient(ellipse 70% 80% at 50% 50%, rgba(198,177,128,0.10) 0%, transparent 65%),
-    linear-gradient(135deg, #0a1628 0%, #030712 100%);
+    linear-gradient(135deg, #1a2f52 0%, #091321 100%);
   border: 1px solid rgba(198,177,128,0.14);
   box-shadow: 0 24px 60px rgba(0,0,0,0.35);
 }
@@ -530,7 +530,7 @@
 .post-cta-panel .btn-primary,
 .post-cta-panel .btn-primary-inverted {
   background: linear-gradient(135deg, #c6b180, #a8905e);
-  color: #030712;
+  color: #2a2928;
   box-shadow: 0 10px 26px rgba(198,177,128,0.24);
 }
 
@@ -543,7 +543,7 @@
   background:
     radial-gradient(ellipse 60% 60% at 5% 50%, rgba(198,177,128,0.09) 0%, transparent 60%),
     radial-gradient(ellipse 40% 40% at 90% 15%, rgba(198,177,128,0.06) 0%, transparent 55%),
-    linear-gradient(145deg, #030712 0%, #0f1d33 55%, #0a1628 100%);
+    linear-gradient(145deg, #091321 0%, #1a2f52 55%, #2a4575 100%);
 }
 
 .post-hours-row {
@@ -728,13 +728,13 @@ html.lenis, html.lenis body {
 .inner-hero-gradient {
   background:
     radial-gradient(ellipse 60% 50% at 10% 40%, rgba(198,177,128,0.07) 0%, transparent 70%),
-    linear-gradient(135deg, #030712 0%, #0f1d33 60%, #0a1628 100%);
+    linear-gradient(135deg, #091321 0%, #1a2f52 60%, #2a4575 100%);
 }
 
 /* ── CTA button gradient ── */
 @layer components {
   .btn-gradient {
-    background: linear-gradient(135deg, #0a1628 0%, #1a2a44 100%);
+    background: #032759;
     transition: all 0.25s ease;
     will-change: transform;
   }
@@ -766,7 +766,7 @@ html.lenis, html.lenis body {
 
   /* ── Footer background gradient ── */
   .footer-gradient {
-    background: linear-gradient(180deg, #0a1628 0%, #030712 100%);
+    background: linear-gradient(180deg, #1a2f52 0%, #091321 100%);
   }
 
   /* ── Gold focus ring for form inputs ── */
@@ -786,7 +786,7 @@ html.lenis, html.lenis body {
     background:
       radial-gradient(ellipse 72% 58% at 14% 28%, rgba(198,177,128,0.11) 0%, transparent 58%),
       radial-gradient(ellipse 54% 48% at 84% 18%, rgba(245,244,239,0.06) 0%, transparent 62%),
-      linear-gradient(135deg, #030712 0%, #0f1d33 52%, #0a1628 100%);
+      linear-gradient(135deg, #091321 0%, #1a2f52 52%, #2a4575 100%);
   }
 
   .service-page-shell > section.inner-hero-gradient .hero-grid-bg {
@@ -825,7 +825,7 @@ html.lenis, html.lenis body {
   .service-page-shell > section.about-noise.bg-fg {
     background:
       radial-gradient(ellipse 48% 66% at 6% 40%, rgba(198,177,128,0.09) 0%, transparent 68%),
-      linear-gradient(150deg, #030712 0%, #0f1d33 48%, #0a1628 100%);
+      linear-gradient(150deg, #091321 0%, #1a2f52 48%, #2a4575 100%);
   }
 
   .service-page-shell > section.about-noise.bg-fg > div {
@@ -852,7 +852,7 @@ html.lenis, html.lenis body {
   }
 
   .service-cta-panel {
-    background: linear-gradient(135deg, #030712 0%, #0f1d33 52%, #0a1628 100%) !important;
+    background: linear-gradient(135deg, #091321 0%, #1a2f52 52%, #2a4575 100%) !important;
     border: 1px solid rgba(198,177,128,0.18);
     box-shadow: 0 24px 70px rgba(3,7,18,0.28);
     position: relative;
@@ -897,7 +897,7 @@ html.lenis, html.lenis body {
   .service-page-shell .gsap-parallax-frame {
     border-radius: 24px;
     overflow: hidden;
-    background: #0a1628;
+    background: #091321;
     box-shadow: 0 18px 50px rgba(3,7,18,0.22);
   }
 

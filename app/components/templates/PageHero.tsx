@@ -53,7 +53,7 @@ export default function PageHero({
     <section
       className="relative overflow-hidden"
       style={{
-        background: image ? "#0a1628" : undefined,
+        background: image ? "#091321" : undefined,
       }}
     >
       {/* Background — image or fallback gradient */}

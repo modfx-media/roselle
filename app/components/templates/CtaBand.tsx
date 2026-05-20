@@ -37,7 +37,7 @@ export default function CtaBand({
   if (tone === "gold") {
     panelStyle = {
       background:
-        "linear-gradient(135deg, #0a1628 0%, #1a2a44 60%, #6b5938 100%)",
+        "linear-gradient(135deg, #091321 0%, #091321 60%, #6b5938 100%)",
       color: "#f5f4ef",
     };
     titleClass = "text-bg";

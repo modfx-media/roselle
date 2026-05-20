@@ -169,7 +169,7 @@ export default function ContactPage() {
                 <div
                   className="p-s6 rounded-2xl max-sm:p-s5"
                   style={{
-                    background: "#0a1628",
+                    background: "#091321",
                     boxShadow:
                       "0 24px 60px rgba(10,22,40,0.18), 0 0 0 1px rgba(245,244,239,0.06)",
                   }}
@@ -244,7 +244,7 @@ export default function ContactPage() {
                           type="submit"
                           disabled={sending}
                           className="inline-flex items-center justify-center gap-2 h-12 px-s5 rounded-full text-sm font-medium w-full transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
-                          style={{ background: "#c6b180", color: "#0a1628" }}
+                          style={{ background: "#c6b180", color: "#091321" }}
                         >
                           {sending ? "Sending…" : "Send Message"}
                           <span aria-hidden="true">→</span>

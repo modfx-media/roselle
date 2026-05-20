@@ -31,7 +31,7 @@ export default function Hero() {
     <div id="hero" data-section="hero">
       <section
         className="relative w-full overflow-hidden"
-        style={{ minHeight: "100vh", background: "#0a1628" }}
+        style={{ minHeight: "100vh", background: "#091321" }}
       >
         {/* ── Full-bleed background image ── */}
         <div className="absolute inset-0 z-0">
@@ -45,7 +45,7 @@ export default function Hero() {
           {/* Navy color tint — recolors the image blue */}
           <div
             className="absolute inset-0"
-            style={{ background: "#0a1628", mixBlendMode: "multiply", opacity: 0.85 }}
+            style={{ background: "#091321", mixBlendMode: "multiply", opacity: 0.85 }}
           />
           {/* Dark cinematic gradient overlay */}
           <div
@@ -219,7 +219,7 @@ export default function Hero() {
 
                 {/* Dim overlay */}
                 <div
-                  className="absolute inset-0 transition-colors duration-300 group-hover:bg-[#0a1628]/10"
+                  className="absolute inset-0 transition-colors duration-300 group-hover:bg-[#091321]/10"
                   style={{ background: "rgba(10,22,40,0.45)" }}
                 />
 

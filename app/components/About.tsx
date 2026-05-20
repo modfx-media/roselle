@@ -17,8 +17,8 @@ export default function About() {
     <div id="about" data-section="about">
       <section className="about-noise py-section-py overflow-hidden relative"
         style={{
-          background: `radial-gradient(ellipse 40% 40% at 85% 15%, rgba(198,177,128,0.06) 0%, transparent 70%),
-                       linear-gradient(160deg, #030712 0%, #0f1d33 50%, #0a1628 100%)`,
+          background: `radial-gradient(ellipse 40% 40% at 85% 15%, rgba(74,158,255,0.07) 0%, transparent 70%),
+                       linear-gradient(160deg, #091321 0%, #1a2f52 55%, #2a4575 100%)`,
         }}
       >
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">

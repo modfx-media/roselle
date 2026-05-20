@@ -223,7 +223,7 @@ export default function AppointmentPage() {
                 <div
                   className="p-s6 rounded-2xl max-sm:p-s5"
                   style={{
-                    background: "#0a1628",
+                    background: "#091321",
                     boxShadow:
                       "0 24px 60px rgba(10,22,40,0.18), 0 0 0 1px rgba(245,244,239,0.06)",
                   }}
@@ -324,11 +324,11 @@ export default function AppointmentPage() {
                             paddingRight: "2.5rem",
                           }}
                         >
-                          <option value="" disabled style={{ color: "#0a1628" }}>
+                          <option value="" disabled style={{ color: "#091321" }}>
                             Select a service
                           </option>
                           {services.map((s) => (
-                            <option key={s} value={s} style={{ color: "#0a1628" }}>
+                            <option key={s} value={s} style={{ color: "#091321" }}>
                               {s}
                             </option>
                           ))}
@@ -357,11 +357,11 @@ export default function AppointmentPage() {
                             paddingRight: "2.5rem",
                           }}
                         >
-                          <option value="" style={{ color: "#0a1628" }}>No preference</option>
-                          <option value="Morning (7am–11am)" style={{ color: "#0a1628" }}>Morning (7am–11am)</option>
-                          <option value="Midday (11am–2pm)" style={{ color: "#0a1628" }}>Midday (11am–2pm)</option>
-                          <option value="Afternoon (2pm–5pm)" style={{ color: "#0a1628" }}>Afternoon (2pm–5pm)</option>
-                          <option value="Evening (5pm–7pm)" style={{ color: "#0a1628" }}>Evening (5pm–7pm)</option>
+                          <option value="" style={{ color: "#091321" }}>No preference</option>
+                          <option value="Morning (7am–11am)" style={{ color: "#091321" }}>Morning (7am–11am)</option>
+                          <option value="Midday (11am–2pm)" style={{ color: "#091321" }}>Midday (11am–2pm)</option>
+                          <option value="Afternoon (2pm–5pm)" style={{ color: "#091321" }}>Afternoon (2pm–5pm)</option>
+                          <option value="Evening (5pm–7pm)" style={{ color: "#091321" }}>Evening (5pm–7pm)</option>
                         </select>
                       </div>
 
@@ -428,7 +428,7 @@ export default function AppointmentPage() {
                           type="submit"
                           disabled={sending}
                           className="inline-flex items-center justify-center gap-2 h-12 px-s5 rounded-full text-sm font-medium w-full transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
-                          style={{ background: "#c6b180", color: "#0a1628" }}
+                          style={{ background: "#c6b180", color: "#091321" }}
                         >
                           {sending ? "Sending…" : "Send Request"}
                           <span aria-hidden="true">→</span>

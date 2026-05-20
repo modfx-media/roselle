@@ -53,10 +53,16 @@ export default function Conditions() {
 
   return (
     <div id="conditions" data-section="conditions">
-      <section className="relative bg-fg overflow-hidden py-section-py">
+      <section
+        className="relative overflow-hidden py-section-py"
+        style={{
+          background:
+            "linear-gradient(180deg, #f5f4ef 0%, #c9d4e3 22%, #5b7aa8 55%, #1a2f52 85%, #091321 100%)",
+        }}
+      >
 
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-          style={{ background: "radial-gradient(ellipse at 50% 60%, rgba(74,158,255,0.06) 0%, transparent 65%)" }} />
+          style={{ background: "radial-gradient(ellipse at 50% 60%, rgba(74,158,255,0.08) 0%, transparent 65%)" }} />
 
         <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 
@@ -65,18 +71,18 @@ export default function Conditions() {
             <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5 }}
               className="flex items-center justify-center gap-3 mb-s4">
-              <span className="w-6 h-px" style={{ background: "rgba(198,177,128,0.5)" }} />
+              <span className="w-6 h-px" style={{ background: "rgba(9,19,33,0.4)" }} />
               <span className="text-xs tracking-[0.22em] uppercase font-sans"
-                style={{ color: "rgba(198,177,128,0.75)" }}>Conditions Treated</span>
-              <span className="w-6 h-px" style={{ background: "rgba(198,177,128,0.5)" }} />
+                style={{ color: "#5a4a1f" }}>Conditions Treated</span>
+              <span className="w-6 h-px" style={{ background: "rgba(9,19,33,0.4)" }} />
             </motion.div>
             <SplitReveal text="Where Is Your" as="h2"
-              className="text-fluid-5xl text-bg tracking-tight leading-[1.0] inline">
-              {" "}<span className="sr-word inline-block text-accent">Pain?</span>
+              className="text-fluid-5xl tracking-tight leading-[1.0] inline text-[#091321]">
+              {" "}<span className="sr-word inline-block text-[#8a6f2a]">Pain?</span>
             </SplitReveal>
             <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-sm mt-s3" style={{ color: "rgba(245,244,239,0.45)" }}>
+              className="text-sm mt-s3" style={{ color: "rgba(9,19,33,0.6)" }}>
               Learn how we can help with your pain
             </motion.p>
           </div>
@@ -116,8 +122,8 @@ export default function Conditions() {
                     href={r.href}
                     className="flex flex-col cursor-pointer rounded-xl px-4 py-3"
                     style={{
-                      background: act ? "rgba(198,177,128,0.12)" : "rgba(245,244,239,0.05)",
-                      border: `1px solid ${act ? "rgba(198,177,128,0.35)" : "rgba(245,244,239,0.08)"}`,
+                      background: act ? "#26477a" : "#1a2f52",
+                      border: `1px solid ${act ? "rgba(198,177,128,0.55)" : "rgba(245,244,239,0.15)"}`,
                       transition: "background 0.2s, border-color 0.2s",
                     }}
                     onMouseEnter={() => { setActive(r.label); recalc(); }}
@@ -128,8 +134,8 @@ export default function Conditions() {
                     transition={{ duration: 0.5, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
                     animate={{
                       boxShadow: act
-                        ? ["0 0 12px rgba(198,177,128,0.5)", "0 0 35px rgba(198,177,128,1)", "0 0 12px rgba(198,177,128,0.5)"]
-                        : ["0 0 4px rgba(198,177,128,0.0)", "0 0 18px rgba(198,177,128,0.4)", "0 0 4px rgba(198,177,128,0.0)"],
+                        ? ["0 0 16px rgba(255,210,120,0.75)", "0 0 38px rgba(255,210,120,1)", "0 0 16px rgba(255,210,120,0.75)"]
+                        : ["0 0 12px rgba(255,210,120,0.55)", "0 0 26px rgba(255,210,120,0.85)", "0 0 12px rgba(255,210,120,0.55)"],
                       transition: {
                         boxShadow: {
                           duration: act ? 1.0 : 2.8,
@@ -141,10 +147,10 @@ export default function Conditions() {
                     }}
                   >
                     <p className="text-xs font-semibold tracking-widest uppercase"
-                      style={{ color: act ? "rgba(245,244,239,0.95)" : "rgba(245,244,239,0.65)" }}>
+                      style={{ color: "#ffffff" }}>
                       {r.label}
                     </p>
-                    <p className="text-xs mt-0.5" style={{ color: "rgba(245,244,239,0.28)" }}>{r.sub}</p>
+                    <p className="text-xs mt-0.5" style={{ color: "rgba(255,255,255,0.75)" }}>{r.sub}</p>
                   </motion.a>
                 );
               })}

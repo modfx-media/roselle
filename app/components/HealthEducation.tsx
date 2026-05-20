@@ -81,7 +81,7 @@ export default function HealthEducation() {
                 className="group relative block rounded-2xl overflow-hidden"
                 style={{
                   aspectRatio: "16/9",
-                  background: "#0a1628",
+                  background: "#091321",
                   boxShadow:
                     "0 24px 60px rgba(10,22,40,0.18), 0 0 0 1px rgba(42,41,40,0.08)",
                 }}
@@ -194,7 +194,7 @@ export default function HealthEducation() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 h-12 px-s5 rounded-full text-sm font-medium"
                     style={{
-                      background: "#0a1628",
+                      background: "#032759",
                       color: "#f5f4ef",
                     }}
                     whileHover={{ y: -2 }}
