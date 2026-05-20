@@ -40,7 +40,7 @@ export default function RootLayout({
       <head>
         <meta name="color-scheme" content="light" />
       </head>
-      <body className="antialiased">
+      <body className="antialiased" suppressHydrationWarning>
         <MotionProvider>
           <FloatingBackground />
           {children}
