@@ -84,8 +84,8 @@ export default function Footer() {
               <div className="mt-s3 flex flex-col gap-1.5">
                 <a href="tel:+17036987117" className="text-sm transition-colors duration-200 hover:text-bg"
                   style={{ color: "rgba(245,244,239,0.55)" }}>(703) 698-7117</a>
-                <a href="mailto:rosellecare@gmail.com" className="text-sm transition-colors duration-200 hover:text-bg"
-                  style={{ color: "rgba(245,244,239,0.55)" }}>rosellecare@gmail.com</a>
+                <a href="mailto:info@rosellecare.com" className="text-sm transition-colors duration-200 hover:text-bg"
+                  style={{ color: "rgba(245,244,239,0.55)" }}>info@rosellecare.com</a>
                 <p className="text-sm leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
                   8500 Executive Park Ave, Suite 300<br />Fairfax, VA 22031
                 </p>

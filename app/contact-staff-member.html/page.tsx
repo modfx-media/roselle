@@ -25,7 +25,7 @@ export default function ContactStaffMemberPage() {
             image="https://cdcssl.ibsrv.net/ibimg/smb/1023x512_80/webmgr/0g/5/2/slider_01.jpg.webp?30ed42aefe12e4398d68ac595384cd0c"
             imageAlt="Roselle Center for Healing."
             primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
-            secondaryCta={{ label: "Email front desk", href: "mailto:rosellecare@gmail.com" }}
+            secondaryCta={{ label: "Email front desk", href: "mailto:info@rosellecare.com" }}
           />
 
           <FeatureGrid
@@ -36,7 +36,7 @@ export default function ContactStaffMemberPage() {
               { title: "Address", description: "8500 Executive Park Ave, STE 300 — Fairfax, VA 22031" },
               { title: "Phone", description: "(703) 698-7117", href: "tel:+17036987117" },
               { title: "Fax", description: "(703) 698-5729" },
-              { title: "Email Front Desk", description: "rosellecare@gmail.com", href: "mailto:rosellecare@gmail.com" },
+              { title: "Email Front Desk", description: "info@rosellecare.com", href: "mailto:info@rosellecare.com" },
             ]}
           />
 
@@ -46,7 +46,7 @@ export default function ContactStaffMemberPage() {
             title="Ready to connect with our team?"
             body="To reach a specific staff member, call our front desk or email us — we'll direct your inquiry to the right person."
             primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
-            secondaryCta={{ label: "Email us", href: "mailto:rosellecare@gmail.com" }}
+            secondaryCta={{ label: "Email us", href: "mailto:info@rosellecare.com" }}
           />
 
           <Contact />

@@ -85,7 +85,7 @@ export default function AppointmentPage() {
             image="/services/online-appointment.jpg"
             imageAlt="Schedule an appointment."
             primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
-            secondaryCta={{ label: "Email rosellecare@gmail.com", href: "mailto:rosellecare@gmail.com" }}
+            secondaryCta={{ label: "Email info@rosellecare.com", href: "mailto:info@rosellecare.com" }}
           />
 
           {/* Two-column: info cards (left) + request form (right) */}
@@ -152,8 +152,8 @@ export default function AppointmentPage() {
                         </svg>
                       ),
                       label: "Email us",
-                      value: "rosellecare@gmail.com",
-                      href: "mailto:rosellecare@gmail.com",
+                      value: "info@rosellecare.com",
+                      href: "mailto:info@rosellecare.com",
                       cta: "Send email",
                     },
                     {
@@ -450,7 +450,7 @@ export default function AppointmentPage() {
             title="Schedule your visit today."
             body="Take the next step toward better health with Roselle Center For Healing in Fairfax, VA."
             primaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
-            secondaryCta={{ label: "Email us", href: "mailto:rosellecare@gmail.com" }}
+            secondaryCta={{ label: "Email us", href: "mailto:info@rosellecare.com" }}
           />
 
           <Contact />

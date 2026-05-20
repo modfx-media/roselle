@@ -112,8 +112,8 @@ export default function ContactPage() {
                         </svg>
                       ),
                       label: "Email",
-                      value: "rosellecare@gmail.com",
-                      href: "mailto:rosellecare@gmail.com",
+                      value: "info@rosellecare.com",
+                      href: "mailto:info@rosellecare.com",
                     },
                     {
                       icon: (
