@@ -38,9 +38,9 @@ const CARDS: PodcastCard[] = [
   },
   {
     eyebrow: "Never Miss an Episode",
-    title: "Subscribe and stay in the loop.",
+    title: "Sign up for the newsletter.",
     body: "Follow Ageless Health® with Dr. Tom Roselle, DC and get every new episode the moment it drops.",
-    cta: { label: "Subscribe & follow", href: PODCAST_URL },
+    cta: { label: "Subscribe & follow", href: "https://www.drtomroselle.com/newsletter-sign-up/" },
     icon: "bell",
   },
 ];
