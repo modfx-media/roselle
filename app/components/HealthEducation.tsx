@@ -91,7 +91,7 @@ export default function HealthEducation() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`https://img.youtube.com/vi/${FEATURE.videoId}/maxresdefault.jpg`}
+                  src="/the-tv-special-thumbnail.jpg"
                   alt={FEATURE.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
