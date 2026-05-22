@@ -39,6 +39,7 @@ export default function RootLayout({
     >
       <head>
         <meta name="color-scheme" content="light" />
+        <meta name="google-site-verification" content="g-8XAtFfdRIDiEEqyIgM62EoBhemmQcNZr4MvkkAVDQ" />
       </head>
       <body className="antialiased" suppressHydrationWarning>
         <MotionProvider>
