@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Libre_Baskerville } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import FloatingBackground from "./components/FloatingBackground";
 import MotionProvider from "./components/MotionProvider";
@@ -42,6 +43,18 @@ export default function RootLayout({
         <meta name="google-site-verification" content="g-8XAtFfdRIDiEEqyIgM62EoBhemmQcNZr4MvkkAVDQ" />
       </head>
       <body className="antialiased" suppressHydrationWarning>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DDTSPD3MQC"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DDTSPD3MQC');
+          `}
+        </Script>
         <MotionProvider>
           <FloatingBackground />
           {children}
