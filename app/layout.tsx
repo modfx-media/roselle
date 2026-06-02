@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     siteName: "Roselle Center for Healing",
     type: "website",
   },
+  icons: {
+    icon: "/fevicon.png",
+    shortcut: "/fevicon.png",
+    apple: "/fevicon.png",
+  },
 };
 
 export default function RootLayout({
