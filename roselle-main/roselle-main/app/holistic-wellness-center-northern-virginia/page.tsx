@@ -1,18 +1,18 @@
 "use client";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import WhyUs from "../components/WhyUs";
-import Testimonials from "../components/Testimonials";
-import PageHero from "../components/templates/PageHero";
-import StatStrip from "../components/templates/StatStrip";
-import FeatureSplit from "../components/templates/FeatureSplit";
-import FeatureGrid from "../components/templates/FeatureGrid";
-import ContentBlock from "../components/templates/ContentBlock";
-import FaqAccordion from "../components/templates/FaqAccordion";
-import ImageCta from "../components/templates/ImageCta";
-import CtaBand from "../components/templates/CtaBand";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import WhyUs from "@/app/components/WhyUs";
+import Testimonials from "@/app/components/Testimonials";
+import PageHero from "@/app/components/templates/PageHero";
+import StatStrip from "@/app/components/templates/StatStrip";
+import FeatureSplit from "@/app/components/templates/FeatureSplit";
+import FeatureGrid from "@/app/components/templates/FeatureGrid";
+import ContentBlock from "@/app/components/templates/ContentBlock";
+import FaqAccordion from "@/app/components/templates/FaqAccordion";
+import ImageCta from "@/app/components/templates/ImageCta";
+import CtaBand from "@/app/components/templates/CtaBand";
 
 export default function HolisticWellnessCenterNorthernVirginiaPage() {
   return (

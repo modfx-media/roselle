@@ -1,15 +1,15 @@
 "use client";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import Testimonials from "../components/Testimonials";
-import PageHero from "../components/templates/PageHero";
-import StatStrip from "../components/templates/StatStrip";
-import FeatureSplit from "../components/templates/FeatureSplit";
-import PillarSection from "../components/templates/PillarSection";
-import FaqAccordion from "../components/templates/FaqAccordion";
-import ImageCta from "../components/templates/ImageCta";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import Testimonials from "@/app/components/Testimonials";
+import PageHero from "@/app/components/templates/PageHero";
+import StatStrip from "@/app/components/templates/StatStrip";
+import FeatureSplit from "@/app/components/templates/FeatureSplit";
+import PillarSection from "@/app/components/templates/PillarSection";
+import FaqAccordion from "@/app/components/templates/FaqAccordion";
+import ImageCta from "@/app/components/templates/ImageCta";
 
 export default function ChiropractorMcLeanVAPage() {
   return (
