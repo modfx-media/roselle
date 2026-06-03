@@ -89,7 +89,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/auto-accidents`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/herniated-discs`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
 
-    /* ── pSEO: Location + Service Pages ── */
+    /* ── pSEO Batch 1: Location pages (pushed previously) ── */
     { url: `${BASE}/chiropractor-vienna-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/chiropractor-burke-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/chiropractor-herndon-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
@@ -98,5 +98,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/back-pain-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/best-chiropractor-northern-virginia`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/sciatica-treatment-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+
+    /* ── pSEO Batch 2: Service authority pages ── */
+    { url: `${BASE}/chiropractic-care-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/neck-pain-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/headaches-migraines-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/auto-accident-chiropractor-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/massage-therapy-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/functional-medicine-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/sports-injury-treatment-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/prenatal-chiropractor-fairfax-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+
+    /* ── pSEO Batch 3: More location pages ── */
+    { url: `${BASE}/chiropractor-springfield-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/chiropractor-mclean-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/chiropractor-reston-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/chiropractor-centreville-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/chiropractor-oakton-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/chiropractor-annandale-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/chiropractor-falls-church-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+
+    /* ── pSEO Batch 4: Condition + location variations ── */
+    { url: `${BASE}/acupuncture-vienna-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/acupuncture-herndon-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/back-pain-vienna-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/neck-pain-herndon-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/sciatica-herndon-va`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
   ];
 }
