@@ -1,12 +1,12 @@
 "use client";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import PageHero from "../components/templates/PageHero";
-import ContentBlock from "../components/templates/ContentBlock";
-import FeatureGrid from "../components/templates/FeatureGrid";
-import CtaBand from "../components/templates/CtaBand";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import PageHero from "@/app/components/templates/PageHero";
+import ContentBlock from "@/app/components/templates/ContentBlock";
+import FeatureGrid from "@/app/components/templates/FeatureGrid";
+import CtaBand from "@/app/components/templates/CtaBand";
 
 const CATEGORIES = ["Back, Body & Joint Pain","Healthy Tips","Exercise & Fitness","Injury Rehab & Prevention","Kid's Health","Illness Prevention","Chronic Conditions","Nutrition & Healthy Eating","Breaking Bad Habits","Senior Health","Weight Loss","Pregnancy & Parenting","Wellness","Mind-Body Connection","Stress & Anxiety","Life-Work Balance","Staying Young","Staying Motivated"];
 

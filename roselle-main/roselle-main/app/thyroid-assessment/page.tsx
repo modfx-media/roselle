@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import PageHero from "../components/templates/PageHero";
-import ImageCta from "../components/templates/ImageCta";
-import { submitContactForm } from "../lib/sendForm";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import RevealSection from "@/app/components/motion/RevealSection";
+import PageHero from "@/app/components/templates/PageHero";
+import ImageCta from "@/app/components/templates/ImageCta";
+import { submitContactForm } from "@/app/lib/sendForm";
 
 const QUESTIONS = [
   "Are you experiencing hair loss or slow growth?",

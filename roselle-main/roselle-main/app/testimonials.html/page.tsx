@@ -1,12 +1,12 @@
 "use client";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import Contact from "../components/Contact";
-import PageHero from "../components/templates/PageHero";
-import ContentBlock from "../components/templates/ContentBlock";
-import CtaBand from "../components/templates/CtaBand";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import RevealSection from "@/app/components/motion/RevealSection";
+import Contact from "@/app/components/Contact";
+import PageHero from "@/app/components/templates/PageHero";
+import ContentBlock from "@/app/components/templates/ContentBlock";
+import CtaBand from "@/app/components/templates/CtaBand";
 
 
 const TESTIMONIALS = [

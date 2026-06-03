@@ -1,11 +1,11 @@
 "use client";
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
-import Contact from "../../components/Contact";
-import SmoothScroll from "../../components/motion/SmoothScroll";
-import PageHero from "../../components/templates/PageHero";
-import FeatureSplit from "../../components/templates/FeatureSplit";
-import CtaBand from "../../components/templates/CtaBand";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import PageHero from "@/app/components/templates/PageHero";
+import FeatureSplit from "@/app/components/templates/FeatureSplit";
+import CtaBand from "@/app/components/templates/CtaBand";
 
 const TEAM = [
   { name: "Dr. Tom Roselle, DC, PAK, PAc, DCCN, DCBCN", role: "Founder & Lead Chiropractor", image: "https://cdcssl.ibsrv.net/ibimg/smb/800x1067_80/webmgr/0g/5/2/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844", alt: "Dr. Tom Roselle, DC.", bio: ["In 1972, Dr. R. Thomas Roselle graduated with a Bachelor's Degree from Kent State University. He went on to receive a Doctor of Chiropractic Degree from the National College of Chiropractic in Lombard, Illinois in 1977 and certifications for acupuncture and nutrition. Since 1977, he has practiced in the state of New York and Virginia.", "He has served on the Boards of Directors of the Northern Virginia Chiropractic Society and New York State Chiropractic Association, and held multiple local and state offices. He has taught at the National University of Health Sciences, the International College of Applied Kinesiology, Northern Virginia Community College and Jamestown Community College.", "Since 1983, Dr. Roselle has hosted a radio talk show — now \"Dr. Tom Roselle Live!®\" — providing listeners with the latest information on integrative, holistic and wellness health care methods.", "Dr. Roselle is the founder of Caring For Others Ltd., a charity that provides alternative health care for those in need."] },

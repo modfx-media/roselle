@@ -1,12 +1,12 @@
 "use client";
-import Nav from "../../components/Nav";
-import Footer from "../../components/Footer";
-import Contact from "../../components/Contact";
-import SmoothScroll from "../../components/motion/SmoothScroll";
-import RevealSection from "../../components/motion/RevealSection";
-import PageHero from "../../components/templates/PageHero";
-import FeatureSplit from "../../components/templates/FeatureSplit";
-import StatStrip from "../../components/templates/StatStrip";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import RevealSection from "@/app/components/motion/RevealSection";
+import PageHero from "@/app/components/templates/PageHero";
+import FeatureSplit from "@/app/components/templates/FeatureSplit";
+import StatStrip from "@/app/components/templates/StatStrip";
 
 export default function NutritionPage() {
   return (

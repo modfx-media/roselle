@@ -1,14 +1,14 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import PageHero from "../components/templates/PageHero";
-import ContentBlock from "../components/templates/ContentBlock";
-import SpotlightCard from "../components/motion/SpotlightCard";
-import SplitReveal from "../components/motion/SplitReveal";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import PageHero from "@/app/components/templates/PageHero";
+import ContentBlock from "@/app/components/templates/ContentBlock";
+import SpotlightCard from "@/app/components/motion/SpotlightCard";
+import SplitReveal from "@/app/components/motion/SplitReveal";
 
 const PODCAST_URL = "https://www.drtomroselle.com/ageless-health-podcast";
 const CONNECT_URL = "https://www.drtomroselle.com/connect/";

@@ -1,11 +1,11 @@
 "use client";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import PageHero from "../components/templates/PageHero";
-import FaqAccordion from "../components/templates/FaqAccordion";
-import CtaBand from "../components/templates/CtaBand";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import PageHero from "@/app/components/templates/PageHero";
+import FaqAccordion from "@/app/components/templates/FaqAccordion";
+import CtaBand from "@/app/components/templates/CtaBand";
 
 export default function FibromyalgiaFaqsPage() {
   return (

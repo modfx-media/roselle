@@ -1,11 +1,11 @@
 "use client";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import PageHero from "../components/templates/PageHero";
-import ContentBlock from "../components/templates/ContentBlock";
-import CtaBand from "../components/templates/CtaBand";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import PageHero from "@/app/components/templates/PageHero";
+import ContentBlock from "@/app/components/templates/ContentBlock";
+import CtaBand from "@/app/components/templates/CtaBand";
 
 const FORMS = [
   { number: 1, title: "Notice of Privacy Practices (NPP)", tag: "Required", description: "Describes how medical information about you may be used and disclosed.", download: "https://www.rosellecare.com/storage/app/media/documents/1_notice_of_privacy_practice_2017.pdf", fillOut: "/notice-of-privacy-practices-npp-form" },

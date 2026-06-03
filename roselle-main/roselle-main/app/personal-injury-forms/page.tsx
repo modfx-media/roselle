@@ -1,12 +1,12 @@
 "use client";
 import { useState, type FormEvent } from "react";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import Contact from "../components/Contact";
-import PageHero from "../components/templates/PageHero";
-import { serializeForm, submitContactForm } from "../lib/sendForm";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import RevealSection from "@/app/components/motion/RevealSection";
+import Contact from "@/app/components/Contact";
+import PageHero from "@/app/components/templates/PageHero";
+import { serializeForm, submitContactForm } from "@/app/lib/sendForm";
 
 
 const inputClass = "w-full rounded-lg bg-[rgba(245,244,239,0.06)] border border-[rgba(245,244,239,0.1)] px-4 py-3 text-sm text-bg placeholder:text-[rgba(245,244,239,0.3)] focus:outline-none input-gold-focus focus:border-accent transition-colors duration-200";

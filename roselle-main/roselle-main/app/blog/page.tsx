@@ -1,14 +1,14 @@
 "use client";
 
 import { useState, useMemo, useCallback } from "react";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import RevealSection from "../components/motion/RevealSection";
-import MagneticButton from "../components/motion/MagneticButton";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import RevealSection from "@/app/components/motion/RevealSection";
+import MagneticButton from "@/app/components/motion/MagneticButton";
 import allPosts from "./blogPosts.json";
-import Contact from "../components/Contact";
-import PageHero from "../components/templates/PageHero";
+import Contact from "@/app/components/Contact";
+import PageHero from "@/app/components/templates/PageHero";
 
 const POSTS_PER_PAGE = 16;
 const TOTAL_POSTS = allPosts.length;

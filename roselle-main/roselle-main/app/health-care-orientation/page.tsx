@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import PageHero from "../components/templates/PageHero";
-import ContentBlock from "../components/templates/ContentBlock";
-import ImageCta from "../components/templates/ImageCta";
-import { submitContactForm } from "../lib/sendForm";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import PageHero from "@/app/components/templates/PageHero";
+import ContentBlock from "@/app/components/templates/ContentBlock";
+import ImageCta from "@/app/components/templates/ImageCta";
+import { submitContactForm } from "@/app/lib/sendForm";
 
 export default function HealthCareOrientationPage() {
   const [question, setQuestion] = useState("");

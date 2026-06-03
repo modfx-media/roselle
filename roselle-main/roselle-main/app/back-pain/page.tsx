@@ -1,15 +1,15 @@
 "use client";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import Contact from "../components/Contact";
-import SmoothScroll from "../components/motion/SmoothScroll";
-import PageHero from "../components/templates/PageHero";
-import FeatureSplit from "../components/templates/FeatureSplit";
-import ContentBlock from "../components/templates/ContentBlock";
-import StatStrip from "../components/templates/StatStrip";
-import PillarSection from "../components/templates/PillarSection";
-import ChecklistSplit from "../components/templates/ChecklistSplit";
-import ImageCta from "../components/templates/ImageCta";
+import Nav from "@/app/components/Nav";
+import Footer from "@/app/components/Footer";
+import Contact from "@/app/components/Contact";
+import SmoothScroll from "@/app/components/motion/SmoothScroll";
+import PageHero from "@/app/components/templates/PageHero";
+import FeatureSplit from "@/app/components/templates/FeatureSplit";
+import ContentBlock from "@/app/components/templates/ContentBlock";
+import StatStrip from "@/app/components/templates/StatStrip";
+import PillarSection from "@/app/components/templates/PillarSection";
+import ChecklistSplit from "@/app/components/templates/ChecklistSplit";
+import ImageCta from "@/app/components/templates/ImageCta";
 
 export default function BackPainPage() {
   return (
