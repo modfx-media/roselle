@@ -1,77 +1,17 @@
-"use client";
-import { useState, type FormEvent } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
 import Contact from "../components/Contact";
 import PageHero from "../components/templates/PageHero";
-import { serializeForm, submitContactForm } from "../lib/sendForm";
-
-
-const inputClass = "w-full rounded-lg bg-[rgba(245,244,239,0.06)] border border-[rgba(245,244,239,0.1)] px-4 py-3 text-sm text-bg placeholder:text-[rgba(245,244,239,0.3)] focus:outline-none input-gold-focus focus:border-accent transition-colors duration-200";
-const labelClass = "block text-xs tracking-widest uppercase mb-2 font-sans";
-const labelStyle = { color: "rgba(198,177,128,0.85)" };
-const radioLabelClass = "flex items-center gap-2 text-sm cursor-pointer";
-const radioLabelStyle = { color: "rgba(245,244,239,0.55)" };
-
-const RACE_OPTIONS = [
-  "American Indian or Alaska Native",
-  "Asian",
-  "Black or African American",
-  "Native Hawaiian or Other Pacific Islander",
-  "White",
-  "Other Race",
-  "Declined to Specify",
-];
-
-const LANGUAGE_OPTIONS = [
-  "English", "Spanish", "French", "German", "Chinese", "Japanese",
-  "Korean", "Vietnamese", "Tagalog", "Arabic", "Russian", "Portuguese",
-  "Italian", "Hindi", "Other",
-];
-
-const VERIFICATION_QUESTIONS = [
-  "What is your mother's maiden name?",
-  "What city were you born in?",
-  "What is the name of your first pet?",
-  "What is your favorite movie?",
-  "What street did you grow up on?",
-  "What was the make of your first car?",
-  "What is your favorite book?",
-  "What school did you attend for sixth grade?",
-];
-
-const CONTACT_METHODS = [
-  "Primary Phone",
-  "Secondary Phone",
-  "Mobile Phone",
-  "Home Email",
-  "Work Email",
-];
+import GHLContactForm from "../components/GHLContactForm";
 
 export default function EHRPatientHealthHistoryFormPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const fields = serializeForm(e.currentTarget);
-    setSending(true);
-    setError(null);
-    const result = await submitContactForm("EHR Patient Health History Form", fields);
-    setSending(false);
-    if (result.ok) setSubmitted(true);
-    else setError(result.error || "Could not submit the form. Please try again.");
-  }
-
   return (
     <>
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-
           <PageHero
             eyebrow="Patient Forms · Fairfax, VA"
             title="EHR patient health history."
@@ -81,227 +21,33 @@ export default function EHRPatientHealthHistoryFormPage() {
             imageAlt="EHR patient health history."
           />
 
-          {/* ── Form ── */}
           <section className="about-noise bg-fg py-section-py overflow-hidden relative">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              {submitted ? (
-                <RevealSection>
-                  <div className="text-center py-s10">
-                    <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-snug mb-s3">Thank You!</h2>
-                    <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>Your form has been submitted. We will contact you shortly.</p>
-                  </div>
-                </RevealSection>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <div className="max-w-[820px] mx-auto flex flex-col gap-s8">
-
-                    {/* Demographics */}
-                    <RevealSection>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s5">Demographics</h3>
-                        <div className="grid grid-cols-2 gap-s4 max-md:grid-cols-1">
-                          <div><label className={labelClass} style={labelStyle}>Today&apos;s Date</label><input type="date" className={inputClass} /></div>
-                          <div />
-                          <div><label className={labelClass} style={labelStyle}>First Name *</label><input type="text" required className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Nick Name</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Last Name *</label><input type="text" required className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Middle Name</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Suffix</label><input type="text" className={inputClass} placeholder="Jr., Sr., III, etc." /></div>
-                          <div />
-                          <div><label className={labelClass} style={labelStyle}>Home Email</label><input type="email" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Work Email</label><input type="email" className={inputClass} /></div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Email Preference</label>
-                            <div className="flex gap-s4">
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="emailPref" value="Home" className="accent-accent" /> Home</label>
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="emailPref" value="Work" className="accent-accent" /> Work</label>
-                            </div>
-                          </div>
-                          <div />
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Preferred Contact Method</label>
-                            <select className={inputClass}>
-                              <option value="">Select...</option>
-                              {CONTACT_METHODS.map((m) => (<option key={m} value={m}>{m}</option>))}
-                            </select>
-                          </div>
-                          <div />
-                          <div><label className={labelClass} style={labelStyle}>Date of Birth *</label><input type="date" required className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Age</label><input type="number" className={inputClass} /></div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Gender</label>
-                            <div className="flex gap-s4">
-                              {["Male", "Female", "Unspecified"].map((g) => (
-                                <label key={g} className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="gender" value={g} className="accent-accent" /> {g}</label>
-                              ))}
-                            </div>
-                          </div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Marital Status</label>
-                            <select className={inputClass}>
-                              <option value="">Select...</option>
-                              {["Single", "Married", "Other"].map((s) => (<option key={s} value={s}>{s}</option>))}
-                            </select>
-                          </div>
-                          <div><label className={labelClass} style={labelStyle}>Social Security Number</label><input type="text" className={inputClass} /></div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Employment Status</label>
-                            <select className={inputClass}>
-                              <option value="">Select...</option>
-                              {["Employed", "Full-Time Student", "Part-Time Student", "Other", "Retired", "Self Employed"].map((s) => (<option key={s} value={s}>{s}</option>))}
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </RevealSection>
-
-                    {/* Race / Ethnicity / Language */}
-                    <RevealSection delay={0.04}>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s5">Race, Ethnicity &amp; Language</h3>
-                        <div className="grid grid-cols-2 gap-s4 max-md:grid-cols-1">
-                          <div className="col-span-2 max-md:col-span-1">
-                            <label className={labelClass} style={labelStyle}>Race</label>
-                            <select className={inputClass}>
-                              <option value="">Select...</option>
-                              {RACE_OPTIONS.map((r) => (<option key={r} value={r}>{r}</option>))}
-                            </select>
-                          </div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Multi-Racial</label>
-                            <div className="flex gap-s4">
-                              {["Yes", "No", "Unknown"].map((v) => (
-                                <label key={v} className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="multiRacial" value={v} className="accent-accent" /> {v}</label>
-                              ))}
-                            </div>
-                          </div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Ethnicity</label>
-                            <select className={inputClass}>
-                              <option value="">Select...</option>
-                              <option value="Hispanic or Latino">Hispanic or Latino</option>
-                              <option value="Not Hispanic or Latino">Not Hispanic or Latino</option>
-                              <option value="Declined to Specify">Declined to Specify</option>
-                            </select>
-                          </div>
-                          <div className="col-span-2 max-md:col-span-1">
-                            <label className={labelClass} style={labelStyle}>Preferred Language</label>
-                            <select className={inputClass}>
-                              <option value="">Select...</option>
-                              {LANGUAGE_OPTIONS.map((l) => (<option key={l} value={l}>{l}</option>))}
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </RevealSection>
-
-                    {/* Verification */}
-                    <RevealSection delay={0.04}>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s5">Verification Question</h3>
-                        <div className="grid grid-cols-2 gap-s4 max-md:grid-cols-1">
-                          <div className="col-span-2 max-md:col-span-1">
-                            <label className={labelClass} style={labelStyle}>Select a Verification Question</label>
-                            <select className={inputClass}>
-                              <option value="">Select...</option>
-                              {VERIFICATION_QUESTIONS.map((q) => (<option key={q} value={q}>{q}</option>))}
-                            </select>
-                          </div>
-                          <div className="col-span-2 max-md:col-span-1">
-                            <label className={labelClass} style={labelStyle}>Verification Answer</label>
-                            <input type="text" className={inputClass} />
-                          </div>
-                        </div>
-                      </div>
-                    </RevealSection>
-
-                    {/* Smoking Status */}
-                    <RevealSection delay={0.04}>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s5">Smoking Status</h3>
-                        <div className="flex flex-col gap-s4">
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Do you currently smoke or have you ever smoked?</label>
-                            <div className="flex gap-s4 flex-wrap">
-                              {["Yes", "Former Smoker", "Never"].map((v) => (
-                                <label key={v} className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="smoking" value={v} className="accent-accent" /> {v}</label>
-                              ))}
-                            </div>
-                          </div>
-                          <div><label className={labelClass} style={labelStyle}>If yes, how often?</label><input type="text" className={inputClass} /></div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Interest in quitting (0 = Not Interested, 10 = Very Interested)</label>
-                            <input type="range" min="0" max="10" className="w-full accent-accent" />
-                            <div className="flex justify-between text-xs mt-1" style={{ color: "rgba(245,244,239,0.35)" }}><span>0</span><span>5</span><span>10</span></div>
-                          </div>
-                        </div>
-                      </div>
-                    </RevealSection>
-
-                    {/* Medical Info */}
-                    <RevealSection delay={0.04}>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s5">Medical Information</h3>
-                        <div className="flex flex-col gap-s4">
-                          <div><label className={labelClass} style={labelStyle}>List current medications</label><textarea rows={3} className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>List any allergies</label><textarea rows={3} className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>List current health problems</label><textarea rows={3} className={inputClass} /></div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Do you have hypertension?</label>
-                            <div className="flex gap-s4">
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="hypertension" value="Yes" className="accent-accent" /> Yes</label>
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="hypertension" value="No" className="accent-accent" /> No</label>
-                            </div>
-                          </div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Do you have diabetes?</label>
-                            <div className="flex gap-s4 flex-wrap">
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="diabetes" value="Yes" className="accent-accent" /> Yes</label>
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="diabetes" value="No" className="accent-accent" /> No</label>
-                            </div>
-                          </div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>If yes, type?</label>
-                            <div className="flex gap-s4">
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="diabetesType" value="Type I" className="accent-accent" /> Type I</label>
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="diabetesType" value="Type II" className="accent-accent" /> Type II</label>
-                            </div>
-                          </div>
-                          <div><label className={labelClass} style={labelStyle}>Last hemoglobin test date</label><input type="date" className={inputClass} /></div>
-                        </div>
-                      </div>
-                    </RevealSection>
-
-                    {/* Vitals */}
-                    <RevealSection delay={0.04}>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s5">Vitals</h3>
-                        <div className="grid grid-cols-3 gap-s4 max-md:grid-cols-1">
-                          <div><label className={labelClass} style={labelStyle}>Height</label><input type="text" className={inputClass} placeholder="e.g. 5'10&quot;" /></div>
-                          <div><label className={labelClass} style={labelStyle}>Weight</label><input type="text" className={inputClass} placeholder="e.g. 170 lbs" /></div>
-                          <div><label className={labelClass} style={labelStyle}>Blood Pressure</label><input type="text" className={inputClass} placeholder="e.g. 120/80" /></div>
-                        </div>
-                      </div>
-                    </RevealSection>
-
-                    {/* Submit */}
-                    <RevealSection delay={0.04}>
-                      <div className="flex flex-col items-center gap-s3">
-                        <button type="submit" disabled={sending} className="btn-primary px-12 py-4 text-sm tracking-widest uppercase font-sans font-medium rounded-lg bg-accent text-fg transition-colors duration-200 hover:bg-bg hover:text-fg disabled:opacity-60 disabled:cursor-not-allowed">
-                          {sending ? "Submitting…" : "Submit"}
-                        </button>
-                        {error && <p className="text-xs text-red-300">{error}</p>}
-                      </div>
-                    </RevealSection>
-                  </div>
-                </form>
-              )}
+              <RevealSection>
+                <div className="max-w-[820px] mx-auto">
+                  <p className="text-xs tracking-widest uppercase text-accent mb-s3 font-sans">Patient Intake</p>
+                  <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-[1.12] mb-s4 max-w-[28ch]">
+                    Get started with your health history.
+                  </h2>
+                  <p className="text-fluid-base mb-s8 max-w-[60ch]" style={{ color: "rgba(245,244,239,0.55)" }}>
+                    Send us your contact details and a brief note about what you&apos;d like to address. Our team will follow up with the secure intake forms and next steps for your visit.
+                  </p>
+                </div>
+              </RevealSection>
+              <RevealSection delay={0.1}>
+                <div className="max-w-[820px] mx-auto">
+                  <GHLContactForm
+                    eyebrow="EHR Health History"
+                    title="Request your intake forms."
+                    subtitle="Tell us a bit about yourself and we'll send the secure patient health history forms to complete before your visit."
+                    height={760}
+                  />
+                </div>
+              </RevealSection>
             </div>
           </section>
 
-
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>

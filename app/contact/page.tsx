@@ -1,35 +1,12 @@
-"use client";
-import { useState } from "react";
+import Script from "next/script";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import PageHero from "../components/templates/PageHero";
 import CtaBand from "../components/templates/CtaBand";
-import { submitContactForm } from "../lib/sendForm";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
-  const [sent, setSent] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSending(true);
-    setError(null);
-    const result = await submitContactForm("Contact Form", {
-      Name: formData.name,
-      Email: formData.email,
-      Phone: formData.phone,
-      Message: formData.message,
-    });
-    setSending(false);
-    if (result.ok) setSent(true);
-    else setError(result.error || "Could not send message. Please try again.");
-  };
-
   return (
     <>
       <Nav />
@@ -165,96 +142,78 @@ export default function ContactPage() {
                   ))}
                 </div>
 
-                {/* Right — form */}
+                {/* Right — form (GHL embed) */}
                 <div
-                  className="p-s6 rounded-2xl max-sm:p-s5"
+                  className="p-s6 rounded-2xl max-sm:p-s5 relative overflow-hidden"
                   style={{
                     background: "#091321",
                     boxShadow:
                       "0 24px 60px rgba(10,22,40,0.18), 0 0 0 1px rgba(245,244,239,0.06)",
                   }}
                 >
-                  <p className="text-[11px] tracking-[0.22em] uppercase text-accent font-medium mb-s2">
-                    Send a Message
-                  </p>
-                  <h3 className="text-fluid-2xl text-bg tracking-tight leading-tight mb-s5">
-                    We&apos;d love to hear from you.
-                  </h3>
-
-                  {sent ? (
-                    <div
-                      className="p-s5 rounded-xl"
-                      style={{
-                        background: "rgba(198,177,128,0.12)",
-                        border: "1px solid rgba(198,177,128,0.35)",
-                      }}
-                    >
-                      <p className="text-sm text-bg font-medium">
-                        Thank you! Your message has been sent. We&apos;ll be in touch shortly.
+                  <div
+                    aria-hidden="true"
+                    className="absolute pointer-events-none"
+                    style={{
+                      top: "-30%",
+                      right: "-20%",
+                      width: "320px",
+                      height: "320px",
+                      background:
+                        "radial-gradient(circle, rgba(198,177,128,0.18) 0%, transparent 65%)",
+                    }}
+                  />
+                  <div className="relative">
+                    <div className="flex items-center gap-3 mb-s2">
+                      <span
+                        className="w-6 h-px"
+                        style={{ background: "rgba(198,177,128,0.6)" }}
+                      />
+                      <p className="text-[11px] tracking-[0.22em] uppercase text-accent font-medium">
+                        Send a Message
                       </p>
                     </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-s3 max-sm:grid-cols-1">
-                      <div className="flex flex-col gap-2">
-                        <label className="text-[10px] tracking-[0.22em] uppercase text-accent font-sans">Name *</label>
-                        <input required type="text" name="name" value={formData.name} onChange={handleChange}
-                          className="w-full rounded-lg px-s3 py-3 text-sm outline-none transition-colors"
-                          style={{
-                            background: "rgba(245,244,239,0.06)",
-                            border: "1px solid rgba(245,244,239,0.12)",
-                            color: "#f5f4ef",
-                          }}
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <label className="text-[10px] tracking-[0.22em] uppercase text-accent font-sans">Email *</label>
-                        <input required type="email" name="email" value={formData.email} onChange={handleChange}
-                          className="w-full rounded-lg px-s3 py-3 text-sm outline-none transition-colors"
-                          style={{
-                            background: "rgba(245,244,239,0.06)",
-                            border: "1px solid rgba(245,244,239,0.12)",
-                            color: "#f5f4ef",
-                          }}
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2 col-span-2 max-sm:col-span-1">
-                        <label className="text-[10px] tracking-[0.22em] uppercase text-accent font-sans">Phone</label>
-                        <input type="tel" name="phone" value={formData.phone} onChange={handleChange}
-                          className="w-full rounded-lg px-s3 py-3 text-sm outline-none transition-colors"
-                          style={{
-                            background: "rgba(245,244,239,0.06)",
-                            border: "1px solid rgba(245,244,239,0.12)",
-                            color: "#f5f4ef",
-                          }}
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2 col-span-2 max-sm:col-span-1">
-                        <label className="text-[10px] tracking-[0.22em] uppercase text-accent font-sans">Message *</label>
-                        <textarea required name="message" rows={5} value={formData.message} onChange={handleChange}
-                          className="w-full rounded-lg px-s3 py-3 text-sm outline-none transition-colors resize-none"
-                          style={{
-                            background: "rgba(245,244,239,0.06)",
-                            border: "1px solid rgba(245,244,239,0.12)",
-                            color: "#f5f4ef",
-                          }}
-                        />
-                      </div>
-                      <div className="col-span-2 max-sm:col-span-1 mt-s2">
-                        <button
-                          type="submit"
-                          disabled={sending}
-                          className="inline-flex items-center justify-center gap-2 h-12 px-s5 rounded-full text-sm font-medium w-full transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed"
-                          style={{ background: "#c6b180", color: "#091321" }}
-                        >
-                          {sending ? "Sending…" : "Send Message"}
-                          <span aria-hidden="true">→</span>
-                        </button>
-                        {error && (
-                          <p className="mt-s3 text-xs text-red-300">{error}</p>
-                        )}
-                      </div>
-                    </form>
-                  )}
+                    <h3 className="text-fluid-2xl text-bg tracking-tight leading-tight mb-s5">
+                      We&apos;d love to hear from you.
+                    </h3>
+
+                    <div
+                      className="rounded-2xl overflow-hidden"
+                      style={{
+                        background: "#f5f4ef",
+                        border: "1px solid rgba(198,177,128,0.25)",
+                        boxShadow:
+                          "0 12px 30px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.04)",
+                      }}
+                    >
+                      <iframe
+                        src="https://api.leadconnectorhq.com/widget/form/opdAHE0wiqjAcA3BG5XU"
+                        style={{
+                          width: "100%",
+                          height: "720px",
+                          border: "none",
+                          borderRadius: "16px",
+                          display: "block",
+                        }}
+                        id="inline-opdAHE0wiqjAcA3BG5XU"
+                        data-layout='{"id":"INLINE"}'
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Contact Form"
+                        data-layout-iframe-id="inline-opdAHE0wiqjAcA3BG5XU"
+                        data-form-id="opdAHE0wiqjAcA3BG5XU"
+                        title="Contact Form"
+                      />
+                    </div>
+                  </div>
+                  <Script
+                    src="https://link.msgsndr.com/js/form_embed.js"
+                    strategy="lazyOnload"
+                  />
                 </div>
               </div>
             </div>

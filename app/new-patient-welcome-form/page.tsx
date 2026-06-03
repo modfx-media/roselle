@@ -1,43 +1,17 @@
-"use client";
-import { useState, type FormEvent } from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import SmoothScroll from "../components/motion/SmoothScroll";
 import RevealSection from "../components/motion/RevealSection";
-import MagneticButton from "../components/motion/MagneticButton";
 import Contact from "../components/Contact";
 import PageHero from "../components/templates/PageHero";
-import { serializeForm, submitContactForm } from "../lib/sendForm";
-
-
-const inputClass = "w-full rounded-lg bg-[rgba(245,244,239,0.06)] border border-[rgba(245,244,239,0.1)] px-4 py-3 text-sm text-bg placeholder:text-[rgba(245,244,239,0.3)] focus:outline-none input-gold-focus focus:border-accent transition-colors duration-200";
-const labelClass = "block text-xs tracking-widest uppercase mb-2 font-sans";
-const labelStyle = { color: "rgba(198,177,128,0.85)" };
-const radioLabelClass = "flex items-center gap-2 text-sm cursor-pointer";
-const radioLabelStyle = { color: "rgba(245,244,239,0.55)" };
+import GHLContactForm from "../components/GHLContactForm";
 
 export default function NewPatientWelcomeFormPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const fields = serializeForm(e.currentTarget);
-    setSending(true);
-    setError(null);
-    const result = await submitContactForm("New Patient Welcome Form", fields);
-    setSending(false);
-    if (result.ok) setSubmitted(true);
-    else setError(result.error || "Could not submit the form. Please try again.");
-  }
-
   return (
     <>
       <Nav />
       <SmoothScroll>
         <main className="relative z-1">
-
           <PageHero
             eyebrow="Patient Forms · Fairfax, VA"
             title="New patient welcome form."
@@ -47,158 +21,33 @@ export default function NewPatientWelcomeFormPage() {
             imageAlt="New patient welcome form."
           />
 
-          {/* ── Form ── */}
           <section className="about-noise bg-fg py-section-py overflow-hidden relative">
             <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4 relative z-1">
-              {submitted ? (
-                <RevealSection>
-                  <div className="text-center py-s10">
-                    <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-snug mb-s3">Thank You!</h2>
-                    <p className="text-fluid-base" style={{ color: "rgba(245,244,239,0.55)" }}>Your form has been submitted. We will contact you shortly.</p>
-                  </div>
-                </RevealSection>
-              ) : (
-                <form onSubmit={handleSubmit}>
-                  <div className="max-w-[820px] mx-auto flex flex-col gap-s8">
-
-                    {/* Today's Date */}
-                    <RevealSection>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <label className={labelClass} style={labelStyle}>Today&apos;s Date</label>
-                        <input type="date" className={inputClass} />
-                      </div>
-                    </RevealSection>
-
-                    {/* Personal Information */}
-                    <RevealSection delay={0.04}>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s5">Personal Information</h3>
-                        <div className="grid grid-cols-2 gap-s4 max-md:grid-cols-1">
-                          <div><label className={labelClass} style={labelStyle}>Name *</label><input type="text" required className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Social Security</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Phone</label><input type="tel" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Mobile Number</label><input type="tel" className={inputClass} /></div>
-                          <div className="col-span-2 max-md:col-span-1"><label className={labelClass} style={labelStyle}>Address</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>City</label><input type="text" className={inputClass} /></div>
-                          <div className="grid grid-cols-2 gap-s4">
-                            <div><label className={labelClass} style={labelStyle}>State</label><input type="text" className={inputClass} /></div>
-                            <div><label className={labelClass} style={labelStyle}>Zip Code</label><input type="text" className={inputClass} /></div>
-                          </div>
-                          <div><label className={labelClass} style={labelStyle}>Age</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Date of Birth</label><input type="date" className={inputClass} /></div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Sex</label>
-                            <div className="flex gap-s4">
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="sex" value="Male" className="accent-accent" /> Male</label>
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="sex" value="Female" className="accent-accent" /> Female</label>
-                            </div>
-                          </div>
-                          <div><label className={labelClass} style={labelStyle}>Marital Status</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Children?</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Occupation</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Employer</label><input type="text" className={inputClass} /></div>
-                          <div className="col-span-2 max-md:col-span-1"><label className={labelClass} style={labelStyle}>Address</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Work Number</label><input type="tel" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Name of Spouse</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Occupation</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Work Number</label><input type="tel" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Emergency Contact</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Phone Number</label><input type="tel" className={inputClass} /></div>
-                          <div className="col-span-2 max-md:col-span-1"><label className={labelClass} style={labelStyle}>How did you hear about us?</label><input type="text" className={inputClass} /></div>
-                        </div>
-                      </div>
-                    </RevealSection>
-
-                    {/* Health History */}
-                    <RevealSection delay={0.04}>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s5">Health History</h3>
-                        <div className="flex flex-col gap-s4">
-                          <div><label className={labelClass} style={labelStyle}>Purpose of this appointment</label><textarea rows={3} className={inputClass} /></div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Is this condition getting progressively worse?</label>
-                            <div className="flex gap-s4">
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="worse" value="Yes" className="accent-accent" /> Yes</label>
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="worse" value="No" className="accent-accent" /> No</label>
-                            </div>
-                          </div>
-                          <div><label className={labelClass} style={labelStyle}>Comes and goes</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>How long has it been since you really felt good?</label><input type="text" className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>What do you believe is wrong with you?</label><textarea rows={3} className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>What positions or activities affect your condition?</label><textarea rows={3} className={inputClass} /></div>
-                          <div><label className={labelClass} style={labelStyle}>Other doctors seen for this condition</label><textarea rows={3} className={inputClass} /></div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Do you take any vitamins?</label>
-                            <div className="flex gap-s4">
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="vitamins" value="Yes" className="accent-accent" /> Yes</label>
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="vitamins" value="No" className="accent-accent" /> No</label>
-                            </div>
-                          </div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Do you think you might need vitamins or minerals?</label>
-                            <div className="flex gap-s4">
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="needVitamins" value="Yes" className="accent-accent" /> Yes</label>
-                              <label className={radioLabelClass} style={radioLabelStyle}><input type="radio" name="needVitamins" value="No" className="accent-accent" /> No</label>
-                            </div>
-                          </div>
-                          <div>
-                            <label className={labelClass} style={labelStyle}>Are you wearing:</label>
-                            <div className="flex flex-wrap gap-s4">
-                              {["Heel Lifts", "Sole Lifts", "Inner Soles", "Arch Supports"].map((item) => (
-                                <label key={item} className={radioLabelClass} style={radioLabelStyle}>
-                                  <input type="checkbox" value={item} className="accent-accent" /> {item}
-                                </label>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </RevealSection>
-
-                    {/* Authorization & Payment Policy */}
-                    <RevealSection delay={0.04}>
-                      <div className="p-s6 rounded-xl bg-[rgba(245,244,239,0.04)] border border-[rgba(245,244,239,0.08)]">
-                        <h3 className="text-fluid-xl text-bg font-serif tracking-tight leading-snug mb-s5">Authorization &amp; Payment Policy</h3>
-                        <div className="flex flex-col gap-s4">
-                          <p className="text-sm leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                            We invite you to discuss with us any questions regarding our services. The best services are based on a friendly, mutual understanding between provider and patient.
-                          </p>
-                          <p className="text-sm leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                            Our policy requires payment in full for all services rendered at the time of visit.
-                          </p>
-                          <p className="text-sm leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                            I authorize the staff to perform any necessary services needed during diagnosis and treatment. I also authorize the provider to release any information required to process insurance claims. I understand that the fee for service will be an arrangement between an insurance carrier and myself. Furthermore, I understand that this office will prepare some reports and forms to assist me in making collections from the insurance company and that any amount authorized to be paid directly to this office will be credited to my account on receipt. However, I clearly understand and agree that all services rendered me are charged directly to me and that I am personally responsible for payment.
-                          </p>
-                          <p className="text-sm leading-relaxed" style={{ color: "rgba(245,244,239,0.55)" }}>
-                            I also understand that balances that are 90 days or older will accumulate 9.5% interest. I understand that if I suspend or terminate my care and treatment, any fees for professional services rendered me will be immediately due and payable. I further understand that if I fail to pay this bill and it is turned over to an attorney or (collection agency) for collections that I will be responsible for all legal fees, court fees and collection agency fees.
-                          </p>
-                          <div className="grid grid-cols-2 gap-s4 max-md:grid-cols-1 mt-s4">
-                            <div><label className={labelClass} style={labelStyle}>Patient&apos;s Signature</label><input type="text" className={inputClass} /></div>
-                            <div><label className={labelClass} style={labelStyle}>Date</label><input type="date" className={inputClass} /></div>
-                            <div className="col-span-2 max-md:col-span-1"><label className={labelClass} style={labelStyle}>Parent or Guardian Authorizing Care</label><input type="text" className={inputClass} /></div>
-                          </div>
-                        </div>
-                      </div>
-                    </RevealSection>
-
-                    {/* Submit */}
-                    <RevealSection delay={0.04}>
-                      <div className="flex justify-center flex-col items-center gap-s3">
-                        <button type="submit" disabled={sending} className="btn-primary px-12 py-4 text-sm tracking-widest uppercase font-sans font-medium rounded-lg bg-accent text-fg transition-colors duration-200 hover:bg-bg hover:text-fg disabled:opacity-60 disabled:cursor-not-allowed">
-                          {sending ? "Submitting…" : "Submit"}
-                        </button>
-                        {error && <p className="text-xs text-red-300">{error}</p>}
-                      </div>
-                    </RevealSection>
-                  </div>
-                </form>
-              )}
+              <RevealSection>
+                <div className="max-w-[820px] mx-auto">
+                  <p className="text-xs tracking-widest uppercase text-accent mb-s3 font-sans">New Patient Welcome</p>
+                  <h2 className="text-fluid-3xl text-bg font-serif tracking-tight leading-[1.12] mb-s4 max-w-[28ch]">
+                    Let&apos;s get you started.
+                  </h2>
+                  <p className="text-fluid-base mb-s8 max-w-[60ch]" style={{ color: "rgba(245,244,239,0.55)" }}>
+                    Send us your contact details and a brief note about your wellness goals. Our team will follow up with the welcome packet and intake forms before your first visit.
+                  </p>
+                </div>
+              </RevealSection>
+              <RevealSection delay={0.1}>
+                <div className="max-w-[820px] mx-auto">
+                  <GHLContactForm
+                    eyebrow="New Patient Welcome"
+                    title="Request your welcome packet."
+                    subtitle="Share what you'd like to address (pain, condition, wellness goals) and we'll send the welcome forms ahead of your first appointment."
+                    height={760}
+                  />
+                </div>
+              </RevealSection>
             </div>
           </section>
 
-
           <Contact />
-
           <Footer />
         </main>
       </SmoothScroll>

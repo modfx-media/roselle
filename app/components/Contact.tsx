@@ -1,9 +1,9 @@
 "use client";
-import { useState, useRef } from "react";
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import Script from "next/script";
+import { motion, useScroll, useTransform } from "framer-motion";
 import MagneticButton from "./motion/MagneticButton";
 import SplitReveal from "./motion/SplitReveal";
-import { submitContactForm } from "../lib/sendForm";
 
 const HOURS = [
   { day: "Mon", full: "Monday",    time: "7:00 – 5:00",   open: true },
@@ -17,10 +17,6 @@ const HOURS = [
 const TODAY = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][new Date().getDay()];
 
 export default function Contact() {
-  const [email, setEmail]   = useState("");
-  const [sent, setSent]     = useState(false);
-  const [sending, setSending] = useState(false);
-  const [error, setError]   = useState<string | null>(null);
   const sectionRef          = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
@@ -134,7 +130,7 @@ export default function Contact() {
                 style={{ background: "rgba(245,244,239,0.08)" }}
               />
 
-              {/* Email form */}
+              {/* Embedded contact form */}
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -144,47 +140,50 @@ export default function Contact() {
                 <p className="text-fluid-base font-serif font-medium text-bg mb-s3 leading-snug">
                   Or send us a message.
                 </p>
-                <AnimatePresence mode="wait">
-                  {sent ? (
-                    <motion.div key="sent"
-                      initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-                      className="rounded-2xl p-s4 text-sm"
-                      style={{ background: "rgba(198,177,128,0.1)", border: "1px solid rgba(198,177,128,0.25)", color: "rgba(198,177,128,0.9)" }}>
-                      ✓ &nbsp;Message sent — we&apos;ll be in touch soon.
-                    </motion.div>
-                  ) : (
-                    <motion.form key="form"
-                      className="flex gap-2 rounded-2xl p-1.5"
-                      style={{ background: "rgba(245,244,239,0.05)", border: "1px solid rgba(245,244,239,0.1)" }}
-                      onSubmit={async e => {
-                        e.preventDefault();
-                        setSending(true);
-                        setError(null);
-                        const result = await submitContactForm("Quick Contact (Footer)", { Email: email });
-                        setSending(false);
-                        if (result.ok) setSent(true);
-                        else setError(result.error || "Could not send message.");
-                      }}>
-                      <input type="email" placeholder="Your email address" required
-                        value={email} onChange={e => setEmail(e.target.value)}
-                        aria-label="Email address"
-                        className="flex-1 bg-transparent border-none px-s3 text-sm h-11 min-w-0 rounded-xl transition-all duration-200"
-                        style={{
-                          color: "rgba(245,244,239,0.8)",
-                          outline: "none",
-                        }}
-                        onFocus={(e) => {
-                          e.currentTarget.style.boxShadow = "0 0 0 2px rgba(198,177,128,0.35)";
-                        }}
-                        onBlur={(e) => {
-                          e.currentTarget.style.boxShadow = "none";
-                        }}
-                      />
-                      <MagneticButton className="btn-primary-inverted" type="submit">{sending ? "…" : "Send"}</MagneticButton>
-                    </motion.form>
-                  )}
-                </AnimatePresence>
-                {error && <p className="mt-s2 text-xs text-red-300">{error}</p>}
+                <div
+                  className="rounded-3xl p-1.5 relative overflow-hidden"
+                  style={{
+                    background: "rgba(245,244,239,0.05)",
+                    border: "1px solid rgba(245,244,239,0.1)",
+                    boxShadow:
+                      "inset 0 1px 0 rgba(255,255,255,0.06), 0 24px 48px rgba(0,0,0,0.25)",
+                  }}
+                >
+                  <div
+                    className="rounded-2xl overflow-hidden"
+                    style={{
+                      background: "#f5f4ef",
+                      border: "1px solid rgba(198,177,128,0.25)",
+                    }}
+                  >
+                    <iframe
+                      src="https://api.leadconnectorhq.com/widget/form/opdAHE0wiqjAcA3BG5XU"
+                      style={{
+                        width: "100%",
+                        height: "640px",
+                        border: "none",
+                        borderRadius: "16px",
+                        display: "block",
+                      }}
+                      id="inline-opdAHE0wiqjAcA3BG5XU"
+                      data-layout='{"id":"INLINE"}'
+                      data-trigger-type="alwaysShow"
+                      data-trigger-value=""
+                      data-activation-type="alwaysActivated"
+                      data-activation-value=""
+                      data-deactivation-type="neverDeactivate"
+                      data-deactivation-value=""
+                      data-form-name="Contact Form"
+                      data-layout-iframe-id="inline-opdAHE0wiqjAcA3BG5XU"
+                      data-form-id="opdAHE0wiqjAcA3BG5XU"
+                      title="Contact Form"
+                    />
+                  </div>
+                </div>
+                <Script
+                  src="https://link.msgsndr.com/js/form_embed.js"
+                  strategy="lazyOnload"
+                />
               </motion.div>
 
               {/* Divider */}
