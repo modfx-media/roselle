@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import MagneticButton from "./motion/MagneticButton";
@@ -479,12 +480,9 @@ export default function Nav() {
 
         {/* Book Now — anchored right on desktop */}
         <div className="hidden min-[1400px]:flex shrink-0">
-          <MagneticButton
-            strength={0.15}
-            onClick={() => window.location.href = "/appointment"}
-          >
+          <Link href="/appointment">
             Book Now
-          </MagneticButton>
+          </Link>
         </div>
 
         {/* Hamburger */}

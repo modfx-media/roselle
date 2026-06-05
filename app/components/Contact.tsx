@@ -1,7 +1,13 @@
 "use client";
+<<<<<<< HEAD
 import { useRef } from "react";
 import Script from "next/script";
 import { motion, useScroll, useTransform } from "framer-motion";
+=======
+import { useState, useRef } from "react";
+import Link from "next/link";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+>>>>>>> 8980656 (push seo audit live)
 import MagneticButton from "./motion/MagneticButton";
 import SplitReveal from "./motion/SplitReveal";
 
@@ -75,11 +81,9 @@ export default function Contact() {
 
           {/* ── Headline ── */}
           <div className="mb-s12">
-            <SplitReveal text="Start Your Journey" as="h2"
-              className="text-fluid-5xl text-bg tracking-tight leading-[1.0]" stagger={0.05} />
-            <SplitReveal text="to Wellness." as="h2"
+            <SplitReveal text="Start Your Journey to" as="h2"
               className="text-fluid-5xl text-bg tracking-tight leading-[1.0]" stagger={0.05}>
-              <span className="sr-word inline-block text-accent">&nbsp;</span>
+              <span className="sr-word inline-block text-accent">Wellness.</span>
             </SplitReveal>
           </div>
 
@@ -302,11 +306,11 @@ export default function Contact() {
                   Ready to start your<br />healing journey?
                 </p>
                 <div className="flex flex-col gap-2 relative z-1">
-                  <MagneticButton
-                    onClick={() => window.location.href = "/appointment"}
+                  <Link
+                    href="/appointment"
                     className="btn-primary-inverted w-fit">
                     Book Online
-                  </MagneticButton>
+                  </Link>
                   <p className="text-xs" style={{ color: "rgba(245,244,239,0.3)" }}>
                     Or call (703) 698-7117
                   </p>
