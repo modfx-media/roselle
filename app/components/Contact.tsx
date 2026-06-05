@@ -1,13 +1,8 @@
 "use client";
-<<<<<<< HEAD
-import { useRef } from "react";
-import Script from "next/script";
-import { motion, useScroll, useTransform } from "framer-motion";
-=======
 import { useState, useRef } from "react";
+import Script from "next/script";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
->>>>>>> 8980656 (push seo audit live)
 import MagneticButton from "./motion/MagneticButton";
 import SplitReveal from "./motion/SplitReveal";
 
