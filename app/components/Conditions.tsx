@@ -6,12 +6,12 @@ import SplitReveal from "./motion/SplitReveal";
 
 // dotX/dotY: % of the 1400x583 rendered image container
 const REGIONS = [
-  { label: "Head & Neck",         sub: "Cervical · Tension",      href: "/neck-pain",     dotX: 61, dotY: 28 },
-  { label: "Upper Back",          sub: "Thoracic · Postural",     href: "/back-pain",     dotX: 62, dotY: 38 },
-  { label: "Shoulder & Clavicle", sub: "Rotator · Impingement",   href: "/shoulder-pain", dotX: 70, dotY: 50 },
-  { label: "Mid-Back",            sub: "Thoracic · Rib",          href: "/back-pain",     dotX: 63, dotY: 60 },
-  { label: "Lower Back",          sub: "Lumbar · Sacral",         href: "/back-pain",     dotX: 64, dotY: 68 },
-  { label: "Elbow, Hand & Wrist", sub: "Carpal · Tennis · Nerve", href: "/shoulder-pain", dotX: 70, dotY: 90 },
+  { label: "Head & Neck",         sub: "Cervical · Tension",      href: "/neck-pain",                 dotX: 61, dotY: 28 },
+  { label: "Upper Back",          sub: "Thoracic · Postural",     href: "/back-pain",                 dotX: 62, dotY: 38 },
+  { label: "Shoulder & Clavicle", sub: "Rotator · Impingement",   href: "/rotator-cuff",              dotX: 70, dotY: 50 },
+  { label: "Mid-Back",            sub: "Thoracic · Rib",          href: "/back-pain",                 dotX: 63, dotY: 60 },
+  { label: "Lower Back",          sub: "Lumbar · Sacral",         href: "/lower-back-pain",           dotX: 64, dotY: 68 },
+  { label: "Elbow, Hand & Wrist", sub: "Carpal · Tennis · Nerve", href: "/muscle-strains-a-sprains",  dotX: 70, dotY: 90 },
 ];
 
 const IMG_W = 1400;

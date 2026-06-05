@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import RevealSection from "./motion/RevealSection";
+import { PRACTICE_STATS } from "../lib/practice-stats";
 
 const REVIEWS = [
   {
@@ -62,8 +63,8 @@ export default function Testimonials() {
               </div>
               <div className="flex items-center gap-s4 shrink-0">
                 <div className="text-right">
-                  <p className="text-3xl font-serif font-medium text-fg leading-none">4.7<span className="text-accent">★</span></p>
-                  <p className="text-xs mt-1" style={{ color: "rgba(42,41,40,0.45)" }}>110 Google Reviews</p>
+                  <p className="text-3xl font-serif font-medium text-fg leading-none">{PRACTICE_STATS.rating}<span className="text-accent">★</span></p>
+                  <p className="text-xs mt-1" style={{ color: "rgba(42,41,40,0.45)" }}>{PRACTICE_STATS.reviewCount} Google Reviews</p>
                 </div>
                 <div className="w-px h-10" style={{ background: "rgba(42,41,40,0.12)" }} />
                 <div className="text-right">
@@ -175,7 +176,7 @@ export default function Testimonials() {
                 className="group inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-100 opacity-55 text-fg hover-underline-gold"
                 style={{ paddingBottom: "2px" }}
               >
-                View all 110 reviews on Google <span className="arrow-nudge">→</span>
+                View all {PRACTICE_STATS.reviewCount} reviews on Google <span className="arrow-nudge">→</span>
               </a>
             </div>
           </RevealSection>

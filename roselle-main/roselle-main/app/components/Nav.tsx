@@ -24,7 +24,7 @@ const NAV: NavEntry[] = [
     label: "New Patient Experience",
     href: "/new-patient-center.html",
     links: [
-      { label: "Purpose & Mission", href: "/purpose-a-misson" },
+      { label: "Purpose & Mission", href: "/purpose-and-mission" },
       { label: "New Patient Center", href: "/new-patient-center.html" },
       { label: "Online Forms", href: "/online-forms.html" },
       { label: "Payment Options", href: "/new-patient-center/payment-options.html" },

@@ -49,7 +49,7 @@ export default function ChiropractorBurkeVAPage() {
               "Burke families deserve care that grows with them — pediatric chiropractic for student athletes at Lake Braddock, prenatal care for expectant mothers, and chronic pain management for professionals commuting to the Pentagon or Amazon HQ2 in Crystal City.",
               "Our clinic at 8500 Executive Park Ave, Fairfax is easily accessible from Burke via Braddock Road or Rolling Road, with ample parking. We've been a Fairfax County institution since the 1990s, and we're taking new patients.",
             ]}
-            image="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
+            image="/dr-tom-roselle.webp"
             imageAlt="Dr. Tom Roselle DC treating patients from Burke and surrounding Fairfax County communities"
             bullets={[
               "Pediatric through senior care — all ages welcome",

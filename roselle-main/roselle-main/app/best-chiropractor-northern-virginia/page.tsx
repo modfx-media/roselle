@@ -49,7 +49,7 @@ export default function BestChiropractorNorthernVirginiaPage() {
               "Most chiropractic offices are exactly that: a chiropractor. Some add massage. Very few offer applied kinesiology, functional medicine, clinical nutrition, traditional Chinese acupuncture, and thermography under one roof — coordinated by practitioners who communicate with each other about your case.",
               "Roselle Center for Healing was doing multidisciplinary integrative care before it became a trend. Dr. Tom Roselle, DC has built a team that approaches each patient as a system, not a symptom — and the patient outcomes reflect it.",
             ]}
-            image="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
+            image="/dr-tom-roselle.webp"
             imageAlt="Dr. Tom Roselle DC and the Roselle Center team — best chiropractor in Northern Virginia"
             bullets={[
               "Internal care coordination — not external referrals",

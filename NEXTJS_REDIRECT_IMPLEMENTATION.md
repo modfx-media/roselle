@@ -100,7 +100,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/purpose-a-misson',
+        source: '/purpose-and-mission',
         destination: '/about/mission',
         permanent: true,
       },
@@ -144,7 +144,7 @@ const redirectMap: Record<string, string> = {
   '/about-us/meet-the-doctors---therapists.html': '/about/team',
   '/new-patient-office-policy-form': '/new-patients/office-policy',
   '/acupuncture-faqs': '/services/acupuncture/faq',
-  '/purpose-a-misson': '/about/mission',
+  '/purpose-and-mission': '/about/mission',
 };
 
 export function middleware(request: NextRequest) {
@@ -265,7 +265,7 @@ Create `vercel.json` in your project root:
       "permanent": true
     },
     {
-      "source": "/purpose-a-misson",
+      "source": "/purpose-and-mission",
       "destination": "/about/mission",
       "permanent": true
     }

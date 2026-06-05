@@ -41,7 +41,7 @@ export default function FunctionalMedicineFairfaxVAPage() {
               "Functional medicine asks 'why' rather than 'what'. Instead of naming a condition and prescribing a medication to manage it, functional medicine investigates the upstream biochemical, structural, and lifestyle factors that created the condition in the first place.",
               "At Roselle Center, our functional medicine approach is built on Dr. Tom Roselle's Ageless Health® philosophy: an integrative framework that combines chiropractic structural care, traditional Chinese medicine (acupuncture), clinical nutrition (DCCN, DCBCN), applied kinesiology diagnostics, and thermography screening. The result is a complete picture most single-specialty practices simply cannot produce.",
             ]}
-            image="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
+            image="/dr-tom-roselle.webp"
             imageAlt="Dr. Tom Roselle DC DCCN functional medicine Fairfax VA"
             bullets={["Thermography — digital infrared imaging for early detection", "Applied kinesiology for neurological imbalance assessment", "Clinical nutrition — DCCN/DCBCN diplomate-level protocols"]}
           />

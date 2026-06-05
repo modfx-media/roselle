@@ -51,7 +51,7 @@ export default function HolisticWellnessCenterNorthernVirginiaPage() {
               "A holistic wellness center is a practice that evaluates and treats you as a complete system — not as a collection of isolated symptoms. Rather than referring you to four different specialists who never communicate, we coordinate care across disciplines internally.",
               "At Roselle Center, that means your chiropractor knows what your acupuncturist found, your nutritionist knows what your applied kinesiologist identified, and your care plan reflects all of that. This is what makes outcomes here different from what you get from a single-specialty office.",
             ]}
-            image="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
+            image="/dr-tom-roselle.webp"
             imageAlt="Dr. Tom Roselle DC — Facility Director and integrative medicine expert in Fairfax VA"
             bullets={[
               "Internal care coordination — no referral silos",

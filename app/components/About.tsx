@@ -4,10 +4,11 @@ import GsapImageParallax from "./motion/GsapImageParallax";
 import CountUp from "./motion/CountUp";
 import SplitReveal from "./motion/SplitReveal";
 import ScrollDrift from "./motion/ScrollDrift";
+import { PRACTICE_STATS } from "../lib/practice-stats";
 
 const STATS = [
   { value: "30", suffix: "+", label: "Years of Practice" },
-  { value: "52",  suffix: "",  label: "Google Reviews" },
+  { value: String(PRACTICE_STATS.reviewCount),  suffix: "",  label: "Google Reviews" },
   { value: "6",   suffix: "",  label: "Specialties" },
   { value: "\u221E",  suffix: "",  label: "Patients Served" },
 ];
@@ -33,7 +34,7 @@ export default function About() {
                     <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
                       style={{ background: "rgba(255,255,255,0.04)" }}>
                       <GsapImageParallax
-                        src="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
+                        src="/dr-tom-roselle.webp"
                         alt="Dr. Tom Roselle, DC"
                         speed={0.22}
                         className="w-full rounded-xl"
@@ -57,7 +58,7 @@ export default function About() {
                   <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
                     style={{ background: "rgba(255,255,255,0.04)" }}>
                     <GsapImageParallax
-                      src="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
+                      src="/dr-tom-roselle.webp"
                       alt="Dr. Tom Roselle, DC"
                       speed={0.22}
                       className="w-full rounded-xl"
@@ -150,7 +151,7 @@ export default function About() {
               {/* CTA link */}
               <RevealSection delay={0.5}>
                 <a
-                  href="/about-us.html/staff"
+                  href="/about-us/meet-the-doctors---therapists.html"
                   className="group inline-flex items-center gap-2 text-sm pb-0.5 transition-colors duration-200"
                   style={{ color: "rgba(245,244,239,0.65)", borderBottom: "1px solid rgba(245,244,239,0.2)" }}
                 >

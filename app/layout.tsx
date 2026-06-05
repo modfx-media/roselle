@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Libre_Baskerville } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -49,6 +49,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#091321",
+  colorScheme: "light",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -58,7 +65,6 @@ export default function RootLayout({
       className={`${inter.variable} ${libreBaskerville.variable}`}
     >
       <head>
-        <meta name="color-scheme" content="light" />
         <meta name="google-site-verification" content="g-8XAtFfdRIDiEEqyIgM62EoBhemmQcNZr4MvkkAVDQ" />
       </head>
       <body className="antialiased" suppressHydrationWarning>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import MagneticButton from "./motion/MagneticButton";
 import SplitReveal from "./motion/SplitReveal";
+import { PRACTICE_STATS } from "../lib/practice-stats";
 
 const HOURS = [
   { day: "Mon", full: "Monday",    time: "7:00 – 5:00",   open: true },
@@ -214,9 +215,9 @@ export default function Contact() {
                     style={{ color: "rgba(198,177,128,0.5)" }}>Rating</p>
                   <p className="font-serif font-medium text-bg leading-none"
                     style={{ fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)" }}>
-                    4.5<span className="text-accent">★</span>
+                    {PRACTICE_STATS.rating}<span className="text-accent">★</span>
                   </p>
-                  <p className="text-xs mt-1" style={{ color: "rgba(245,244,239,0.35)" }}>52 Google Reviews</p>
+                  <p className="text-xs mt-1" style={{ color: "rgba(245,244,239,0.35)" }}>{PRACTICE_STATS.reviewCount} Google Reviews</p>
                 </div>
               </motion.div>
             </div>

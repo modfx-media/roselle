@@ -127,7 +127,7 @@
       "notes": "Acupuncture FAQs"
     },
     {
-      "source": "/purpose-a-misson",
+      "source": "/purpose-and-mission",
       "destination": "/about/mission",
       "permanent": true,
       "priority": 1,

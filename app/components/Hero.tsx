@@ -202,20 +202,12 @@ export default function Hero() {
                     "0 18px 48px rgba(0,0,0,0.45), 0 0 0 1px rgba(245,244,239,0.12)",
                 }}
               >
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
+                <img
+                  src="/welcome-video-poster.jpg"
+                  alt="Welcome to Roselle Center for Healing"
+                  loading="eager"
                   className="absolute inset-0 w-full h-full object-cover"
-                  aria-hidden="true"
-                >
-                  <source
-                    src="/welcome_to_the_roselle_center_for_healing (1080p).mp4"
-                    type="video/mp4"
-                  />
-                </video>
+                />
 
                 {/* Dim overlay */}
                 <div

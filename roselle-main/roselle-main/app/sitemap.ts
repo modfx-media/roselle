@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     /* ── New Patient Experience ── */
     { url: `${BASE}/new-patient-center.html`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${BASE}/purpose-a-misson`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${BASE}/purpose-and-mission`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/online-forms.html`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/new-patient-center/payment-options.html`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/new-patient-information/faq-about-medicare.html`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },

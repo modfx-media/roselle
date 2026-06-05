@@ -20,7 +20,7 @@ const LINKS = {
   About: [
     { label: "Our Doctors",         href: "/about-us/meet-the-doctors---therapists.html" },
     { label: "Dr. Tom Roselle, DC", href: "https://www.drtomroselle.com/" },
-    { label: "Purpose & Mission",   href: "/purpose-a-misson" },
+    { label: "Purpose & Mission",   href: "/purpose-and-mission" },
     { label: "Center Hours",        href: "/about-us/center-hours.html" },
     { label: "Directions",          href: "https://maps.app.goo.gl/5WJebWVTjWfPRX3VA" },
   ],

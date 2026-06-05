@@ -33,7 +33,7 @@ export default function About() {
                     <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
                       style={{ background: "rgba(255,255,255,0.04)" }}>
                       <GsapImageParallax
-                        src="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
+                        src="/dr-tom-roselle.webp"
                         alt="Dr. Tom Roselle, DC"
                         speed={0.22}
                         className="w-full rounded-xl"
@@ -57,7 +57,7 @@ export default function About() {
                   <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
                     style={{ background: "rgba(255,255,255,0.04)" }}>
                     <GsapImageParallax
-                      src="https://cdcssl.ibsrv.net/ibimg/smb/450x600_80/webmgr/0g/5/2/2024/rtr-bio-photo-2016.jpg.webp?60de3fe80a9047a9c27cf25f1300a844"
+                      src="/dr-tom-roselle.webp"
                       alt="Dr. Tom Roselle, DC"
                       speed={0.22}
                       className="w-full rounded-xl"
