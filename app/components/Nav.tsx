@@ -27,6 +27,7 @@ const NAV: NavEntry[] = [
     links: [
       { label: "Purpose & Mission", href: "/purpose-and-mission" },
       { label: "New Patient Center", href: "/new-patient-center.html" },
+      { label: "Welcome Video", href: "/welcome-video" },
       { label: "Online Forms", href: "/online-forms.html" },
       { label: "Payment Options", href: "/new-patient-center/payment-options.html" },
       { label: "FAQ about Medicare", href: "/new-patient-information/faq-about-medicare.html" },
@@ -456,13 +457,12 @@ export default function Nav() {
           aria-label="Roselle Center — Home"
         >
           <Image
-            src="/footer-logo-white-txt.png"
+            src="/header-logo-v2.png"
             alt="Roselle Center for Healing"
             width={220}
             height={64}
             priority
             className="h-10 sm:h-12 w-auto object-contain"
-            style={{ filter: "brightness(0)" }}
           />
         </a>
 
@@ -481,7 +481,11 @@ export default function Nav() {
 
         {/* Book Now — anchored right on desktop */}
         <div className="hidden min-[1400px]:flex shrink-0">
-          <Link href="/appointment">
+          <Link
+            href="/appointment"
+            className="inline-flex items-center justify-center h-11 px-5 rounded-full text-sm font-semibold whitespace-nowrap no-underline transition-all duration-200 hover:scale-[1.04] hover:shadow-[0_8px_24px_rgba(198,177,128,0.35)]"
+            style={{ background: "#C6B180", color: "#091321" }}
+          >
             Book Now
           </Link>
         </div>

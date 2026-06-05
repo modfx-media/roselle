@@ -140,44 +140,87 @@ export default function Contact() {
                 <p className="text-fluid-base font-serif font-medium text-bg mb-s3 leading-snug">
                   Or send us a message.
                 </p>
-                <div
-                  className="rounded-3xl p-1.5 relative overflow-hidden"
-                  style={{
-                    background: "rgba(245,244,239,0.05)",
-                    border: "1px solid rgba(245,244,239,0.1)",
-                    boxShadow:
-                      "inset 0 1px 0 rgba(255,255,255,0.06), 0 24px 48px rgba(0,0,0,0.25)",
-                  }}
-                >
+
+                {/* Outer glow */}
+                <div className="relative">
                   <div
-                    className="rounded-2xl overflow-hidden"
+                    aria-hidden="true"
+                    className="absolute -inset-3 rounded-[28px] pointer-events-none"
                     style={{
-                      background: "#f5f4ef",
-                      border: "1px solid rgba(198,177,128,0.25)",
+                      background:
+                        "radial-gradient(ellipse at 50% 0%, rgba(198,177,128,0.22) 0%, transparent 60%), radial-gradient(ellipse at 50% 100%, rgba(74,158,255,0.14) 0%, transparent 60%)",
+                      filter: "blur(18px)",
+                    }}
+                  />
+
+                  {/* Gold gradient border wrapper */}
+                  <div
+                    className="relative rounded-3xl p-px overflow-hidden"
+                    style={{
+                      background:
+                        "linear-gradient(140deg, rgba(198,177,128,0.7) 0%, rgba(198,177,128,0.15) 40%, rgba(245,244,239,0.08) 60%, rgba(198,177,128,0.55) 100%)",
+                      boxShadow:
+                        "0 30px 60px -20px rgba(0,0,0,0.55), 0 0 0 1px rgba(198,177,128,0.08)",
                     }}
                   >
-                    <iframe
-                      src="https://api.leadconnectorhq.com/widget/form/opdAHE0wiqjAcA3BG5XU"
+                    <div
+                      className="rounded-[calc(1.5rem-1px)] overflow-hidden relative"
                       style={{
-                        width: "100%",
-                        height: "640px",
-                        border: "none",
-                        borderRadius: "16px",
-                        display: "block",
+                        background:
+                          "linear-gradient(180deg, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.98) 100%)",
+                        backdropFilter: "blur(20px)",
+                        WebkitBackdropFilter: "blur(20px)",
                       }}
-                      id="inline-opdAHE0wiqjAcA3BG5XU"
-                      data-layout='{"id":"INLINE"}'
-                      data-trigger-type="alwaysShow"
-                      data-trigger-value=""
-                      data-activation-type="alwaysActivated"
-                      data-activation-value=""
-                      data-deactivation-type="neverDeactivate"
-                      data-deactivation-value=""
-                      data-form-name="Contact Form"
-                      data-layout-iframe-id="inline-opdAHE0wiqjAcA3BG5XU"
-                      data-form-id="opdAHE0wiqjAcA3BG5XU"
-                      title="Contact Form"
-                    />
+                    >
+                      {/* Header strip */}
+                      <div
+                        className="flex items-center justify-between px-s5 py-s3 border-b"
+                        style={{ borderColor: "rgba(198,177,128,0.18)" }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                          <span
+                            className="text-[11px] tracking-[0.22em] uppercase font-sans"
+                            style={{ color: "rgba(198,177,128,0.85)" }}
+                          >
+                            Contact Form
+                          </span>
+                        </div>
+                        <span
+                          className="text-[11px] font-sans"
+                          style={{ color: "rgba(245,244,239,0.5)" }}
+                        >
+                          Replies within 24 hrs
+                        </span>
+                      </div>
+
+                      {/* Iframe wrapper */}
+                      <div className="p-s3 max-md:p-s2">
+                        <iframe
+                          src="https://api.leadconnectorhq.com/widget/form/opdAHE0wiqjAcA3BG5XU"
+                          style={{
+                            width: "100%",
+                            height: "640px",
+                            border: "none",
+                            borderRadius: "14px",
+                            display: "block",
+                            background: "transparent",
+                          }}
+                          id="inline-opdAHE0wiqjAcA3BG5XU"
+                          data-layout='{"id":"INLINE"}'
+                          data-trigger-type="alwaysShow"
+                          data-trigger-value=""
+                          data-activation-type="alwaysActivated"
+                          data-activation-value=""
+                          data-deactivation-type="neverDeactivate"
+                          data-deactivation-value=""
+                          data-form-name="Contact Form"
+                          data-layout-iframe-id="inline-opdAHE0wiqjAcA3BG5XU"
+                          data-form-id="opdAHE0wiqjAcA3BG5XU"
+                          title="Contact Form"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <Script

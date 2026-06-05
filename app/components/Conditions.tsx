@@ -57,12 +57,12 @@ export default function Conditions() {
         className="relative overflow-hidden py-section-py"
         style={{
           background:
-            "linear-gradient(180deg, #f5f4ef 0%, #c9d4e3 22%, #5b7aa8 55%, #1a2f52 85%, #091321 100%)",
+            "linear-gradient(180deg, #ffffff 0%, #eef1f6 12%, #8aa1c4 38%, #2a4575 70%, #1a2f52 100%)",
         }}
       >
 
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-          style={{ background: "radial-gradient(ellipse at 50% 60%, rgba(74,158,255,0.08) 0%, transparent 65%)" }} />
+          style={{ background: "radial-gradient(ellipse at 50% 60%, rgba(74,158,255,0.12) 0%, transparent 60%)" }} />
 
         <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 
@@ -71,18 +71,18 @@ export default function Conditions() {
             <motion.div initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.5 }}
               className="flex items-center justify-center gap-3 mb-s4">
-              <span className="w-6 h-px" style={{ background: "rgba(9,19,33,0.4)" }} />
-              <span className="text-xs tracking-[0.22em] uppercase font-sans"
-                style={{ color: "#5a4a1f" }}>Conditions Treated</span>
-              <span className="w-6 h-px" style={{ background: "rgba(9,19,33,0.4)" }} />
+              <span className="w-6 h-px" style={{ background: "rgba(9,19,33,0.7)" }} />
+              <span className="text-xs tracking-[0.22em] uppercase font-sans font-semibold"
+                style={{ color: "#3d2f10" }}>Conditions Treated</span>
+              <span className="w-6 h-px" style={{ background: "rgba(9,19,33,0.7)" }} />
             </motion.div>
             <SplitReveal text="Where Is Your" as="h2"
-              className="text-fluid-5xl tracking-tight leading-[1.0] inline text-[#091321]">
-              {" "}<span className="sr-word inline-block text-[#8a6f2a]">Pain?</span>
+              className="text-fluid-5xl tracking-tight leading-[1.0] inline text-[#04080f]">
+              {" "}<span className="sr-word inline-block text-[#6b5414]">Pain?</span>
             </SplitReveal>
             <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-sm mt-s3" style={{ color: "rgba(9,19,33,0.6)" }}>
+              className="text-sm mt-s3" style={{ color: "rgba(9,19,33,0.85)" }}>
               Learn how we can help with your pain
             </motion.p>
           </div>

@@ -19,8 +19,9 @@ export default function About() {
     <div id="about" data-section="about">
       <section className="about-noise py-section-py overflow-hidden relative"
         style={{
-          background: `radial-gradient(ellipse 40% 40% at 85% 15%, rgba(74,158,255,0.07) 0%, transparent 70%),
-                       linear-gradient(160deg, #091321 0%, #1a2f52 55%, #2a4575 100%)`,
+          background: `radial-gradient(ellipse 50% 45% at 85% 12%, rgba(74,158,255,0.16) 0%, transparent 70%),
+                       radial-gradient(ellipse 60% 50% at 10% 95%, rgba(198,177,128,0.12) 0%, transparent 70%),
+                       linear-gradient(180deg, #1a2f52 0%, #16294a 45%, #1f3866 100%)`,
         }}
       >
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
@@ -107,21 +108,21 @@ export default function About() {
 
               <div className="flex flex-col gap-s3">
                 <RevealSection delay={0.18}>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.62)" }}>
+                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.92)" }}>
                     At Roselle Center for Healing, we take a truly holistic approach to your health.
                     Lasting wellness comes from understanding your body as a connected system — our goal
                     is to address root causes of discomfort, not just symptoms.
                   </p>
                 </RevealSection>
                 <RevealSection delay={0.26}>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.62)" }}>
+                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.85)" }}>
                     Our accomplished team includes chiropractors, massage therapists, acupuncturists,
                     holistic nutritionists, and thermography specialists. Together we create
                     individualized treatment plans tailored to your unique needs.
                   </p>
                 </RevealSection>
                 <RevealSection delay={0.34}>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.62)" }}>
+                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.85)" }}>
                     Patients of all ages — from children to seniors — benefit from our personalized,
                     natural, non-invasive methods. Many notice improvements in energy, sleep, posture,
                     and overall well-being over time.
@@ -133,19 +134,19 @@ export default function About() {
               <RevealSection delay={0.42}>
                 <div className="grid grid-cols-4 mt-s2 rounded-lg overflow-hidden
                                 max-[900px]:grid-cols-2 max-[480px]:grid-cols-2"
-                  style={{ border: "1px solid rgba(245,244,239,0.08)" }}>
+                  style={{ border: "1px solid rgba(198,177,128,0.28)", boxShadow: "0 0 0 1px rgba(0,0,0,0.2) inset" }}>
                   {STATS.map((s, i) => (
                     <div key={s.label} className="p-s3 relative"
                       style={{
-                        borderRight: i < STATS.length - 1 ? "1px solid rgba(245,244,239,0.08)" : "none",
-                        background: "radial-gradient(circle, rgba(198,177,128,0.12) 0%, transparent 70%)",
+                        borderRight: i < STATS.length - 1 ? "1px solid rgba(198,177,128,0.18)" : "none",
+                        background: "radial-gradient(circle at 50% 0%, rgba(198,177,128,0.22) 0%, transparent 75%)",
                       }}>
                       <p className="text-fluid-2xl text-bg font-serif leading-none tracking-tight">
                         <CountUp value={s.value} className="text-fluid-2xl text-bg font-serif leading-none tracking-tight" />
                         {s.suffix && <span className="text-accent">{s.suffix}</span>}
                       </p>
                       <p className="text-xs mt-1.5 tracking-wide leading-snug"
-                        style={{ color: "rgba(245,244,239,0.38)" }}>{s.label}</p>
+                        style={{ color: "rgba(245,244,239,0.7)" }}>{s.label}</p>
                     </div>
                   ))}
                 </div>
@@ -156,7 +157,7 @@ export default function About() {
                 <a
                   href="/about-us/meet-the-doctors---therapists.html"
                   className="group inline-flex items-center gap-2 text-sm pb-0.5 transition-colors duration-200"
-                  style={{ color: "rgba(245,244,239,0.65)", borderBottom: "1px solid rgba(245,244,239,0.2)" }}
+                  style={{ color: "rgba(245,244,239,0.92)", borderBottom: "1px solid rgba(198,177,128,0.5)" }}
                 >
                   Meet our doctors &amp; specialists
                   <span className="text-accent arrow-nudge">&rarr;</span>
