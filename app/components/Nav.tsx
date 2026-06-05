@@ -457,7 +457,15 @@ export default function Nav() {
           aria-label="Roselle Center — Home"
         >
           <Image
+<<<<<<< HEAD
             src="/header-logo-v2.png"
+=======
+<<<<<<< HEAD
+            src="/footer-logo-white-txt.png"
+=======
+            src="/header-logo-v2.png"
+>>>>>>> 5ebb560 (new updates)
+>>>>>>> 64c91ba (new updates)
             alt="Roselle Center for Healing"
             width={220}
             height={64}
