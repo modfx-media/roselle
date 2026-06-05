@@ -456,12 +456,13 @@ export default function Nav() {
           aria-label="Roselle Center — Home"
         >
           <Image
-            src="/roselle:public:logo.png"
+            src="/footer-logo-white-txt.png"
             alt="Roselle Center for Healing"
             width={220}
             height={64}
             priority
             className="h-10 sm:h-12 w-auto object-contain"
+            style={{ filter: "brightness(0)" }}
           />
         </a>
 

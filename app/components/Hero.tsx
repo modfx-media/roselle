@@ -203,7 +203,7 @@ export default function Hero() {
                 }}
               >
                 <img
-                  src="/welcome-video-poster.jpg"
+                  src="/cta.webp"
                   alt="Welcome to Roselle Center for Healing"
                   loading="eager"
                   className="absolute inset-0 w-full h-full object-cover"

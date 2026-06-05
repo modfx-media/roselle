@@ -4,6 +4,7 @@ import GsapImageParallax from "./motion/GsapImageParallax";
 import CountUp from "./motion/CountUp";
 import SplitReveal from "./motion/SplitReveal";
 import ScrollDrift from "./motion/ScrollDrift";
+import AboutImageMotion from "./motion/AboutImageMotion";
 import { PRACTICE_STATS } from "../lib/practice-stats";
 
 const STATS = [
@@ -34,11 +35,12 @@ export default function About() {
                     <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
                       style={{ background: "rgba(255,255,255,0.04)" }}>
                       <GsapImageParallax
-                        src="/dr-tom-roselle.webp"
+                        src="/dr-tom-roselle.jpg"
                         alt="Dr. Tom Roselle, DC"
                         speed={0.22}
                         className="w-full rounded-xl"
                       />
+                      <AboutImageMotion />
                       <div className="absolute bottom-s3 left-s3 right-s3 rounded-lg p-s2 px-s3 z-2"
                         style={{
                           background: "rgba(10,22,40,0.75)",
@@ -58,11 +60,12 @@ export default function About() {
                   <div className="about-image-overlay w-full rounded-xl overflow-hidden relative"
                     style={{ background: "rgba(255,255,255,0.04)" }}>
                     <GsapImageParallax
-                      src="/dr-tom-roselle.webp"
+                      src="/dr-tom-roselle.jpg"
                       alt="Dr. Tom Roselle, DC"
                       speed={0.22}
                       className="w-full rounded-xl"
                     />
+                    <AboutImageMotion />
                     <div className="absolute bottom-s3 left-s3 right-s3 rounded-lg p-s2 px-s3 z-2"
                       style={{
                         background: "rgba(10,22,40,0.75)",
