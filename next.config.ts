@@ -16,7 +16,6 @@ const nextConfig: NextConfig = {
       { source: "/services/applied-kinesiology", destination: "/services/applied-kinesiology.html", permanent: true },
       { source: "/services/nutrition", destination: "/services/nutrition.html", permanent: true },
       { source: "/services/massage-therapy", destination: "/services/massage-therapy.html", permanent: true },
-      { source: "/purpose-and-mission", destination: "/purpose-and-mission", permanent: true },
       { source: "/sciatica-treatment", destination: "/sciatica", permanent: true },
       { source: "/prenatal-chiropractic-care", destination: "/prenatal-chiropractic", permanent: true },
       { source: "/lower-back-pain", destination: "/back-pain", permanent: true },
