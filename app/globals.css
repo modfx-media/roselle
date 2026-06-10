@@ -217,6 +217,14 @@
     @apply overflow-hidden;
     mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
   }
+
+  /* ── PageHero split layout (text + video) ── */
+  @media (max-width: 900px) {
+    .page-hero-split {
+      grid-template-columns: 1fr !important;
+    }
+  }
+
   .marquee-track {
     @apply flex gap-s2 w-max;
     animation: marqueeScroll 28s linear infinite;

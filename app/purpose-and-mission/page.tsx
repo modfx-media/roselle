@@ -25,6 +25,10 @@ export default function PurposeMissionPage() {
             ]}
             image="https://cdcssl.ibsrv.net/ibimg/smb/1023x567_80/webmgr/0g/5/2/2024/rcfh-desk.png.webp?69ad103845fefe6b7f70b54853f523bb"
             imageAlt="Reception at Roselle Center for Healing."
+            video={{
+              src: "https://player.vimeo.com/video/157681369?title=0&byline=0&portrait=0",
+              title: "Roselle Center for Healing — Purpose & Mission",
+            }}
             primaryCta={{ label: "Book a consultation", href: "/appointment" }}
             secondaryCta={{ label: "Call (703) 698-7117", href: "tel:+17036987117" }}
           />

@@ -17,11 +17,10 @@ const STATS = [
 export default function About() {
   return (
     <div id="about" data-section="about">
-      <section className="about-noise py-section-py overflow-hidden relative"
+      <section className="py-section-py overflow-hidden relative"
         style={{
-          background: `radial-gradient(ellipse 50% 45% at 85% 12%, rgba(74,158,255,0.16) 0%, transparent 70%),
-                       radial-gradient(ellipse 60% 50% at 10% 95%, rgba(198,177,128,0.12) 0%, transparent 70%),
-                       linear-gradient(180deg, #1a2f52 0%, #16294a 45%, #1f3866 100%)`,
+          background:
+            "linear-gradient(180deg, #ffffff 0%, #eef1f6 12%, #8aa1c4 38%, #2a4575 70%, #1a2f52 90%, #1a2f52 100%)",
         }}
       >
         <div className="w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
@@ -87,35 +86,35 @@ export default function About() {
             {/* Vertical divider */}
             <div className="w-px self-stretch max-[900px]:hidden"
               aria-hidden="true"
-              style={{ background: "linear-gradient(to bottom, transparent, rgba(198,177,128,0.3) 20%, rgba(198,177,128,0.3) 80%, transparent)" }}
+              style={{ background: "linear-gradient(to bottom, transparent, rgba(9,19,33,0.25) 30%, rgba(198,177,128,0.45) 85%, transparent)" }}
             />
 
             {/* Right: content */}
             <div className="flex flex-col justify-center gap-s6 max-[900px]:pl-0 pl-s4">
               <RevealSection delay={0.1}>
                 <p className="inline-flex items-center gap-1.5 text-xs tracking-widest uppercase mb-s3 font-sans"
-                  style={{ color: "rgba(198,177,128,0.85)" }}>
+                  style={{ color: "#6b5414" }}>
                   Fairfax, VA &nbsp;&middot;&nbsp; Est. 1990s
                 </p>
                 <SplitReveal
                   text="A Multidisciplinary Team You Can"
                   as="h2"
-                  className="text-fluid-4xl text-bg leading-[1.08] tracking-tight"
+                  className="text-fluid-4xl leading-[1.08] tracking-tight text-[#04080f]"
                 >
-                  {" "}<span className="sr-word inline-block text-accent">Trust</span>
+                  {" "}<span className="sr-word inline-block text-[#6b5414]">Trust</span>
                 </SplitReveal>
               </RevealSection>
 
               <div className="flex flex-col gap-s3">
                 <RevealSection delay={0.18}>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.92)" }}>
+                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(9,19,33,0.88)" }}>
                     At Roselle Center for Healing, we take a truly holistic approach to your health.
                     Lasting wellness comes from understanding your body as a connected system — our goal
                     is to address root causes of discomfort, not just symptoms.
                   </p>
                 </RevealSection>
                 <RevealSection delay={0.26}>
-                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.85)" }}>
+                  <p className="text-fluid-base leading-relaxed" style={{ color: "rgba(245,244,239,0.92)" }}>
                     Our accomplished team includes chiropractors, massage therapists, acupuncturists,
                     holistic nutritionists, and thermography specialists. Together we create
                     individualized treatment plans tailored to your unique needs.

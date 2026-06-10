@@ -57,12 +57,12 @@ export default function Conditions() {
         className="relative overflow-hidden py-section-py"
         style={{
           background:
-            "linear-gradient(180deg, #ffffff 0%, #eef1f6 12%, #8aa1c4 38%, #2a4575 70%, #1a2f52 100%)",
+            "linear-gradient(180deg, #ffffff 0%, #eef1f6 12%, #8aa1c4 38%, #2a4575 70%, #1a2f52 90%, #1a2f52 100%)",
         }}
       >
 
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true"
-          style={{ background: "radial-gradient(ellipse at 50% 60%, rgba(74,158,255,0.12) 0%, transparent 60%)" }} />
+          style={{ background: "radial-gradient(ellipse 60% 40% at 50% 45%, rgba(74,158,255,0.12) 0%, transparent 70%)" }} />
 
         <div className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4">
 

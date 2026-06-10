@@ -25,6 +25,8 @@ export type PageHeroProps = {
   primaryCta?: { label: string; href: string; external?: boolean };
   /** Secondary ghost CTA */
   secondaryCta?: { label: string; href: string; external?: boolean };
+  /** Optional video shown on the right side of the banner (e.g. Vimeo / YouTube embed URL) */
+  video?: { src: string; title?: string };
   /** Reduced vertical padding (use on minor pages) */
   compact?: boolean;
 };
@@ -44,6 +46,7 @@ export default function PageHero({
   imageAlt,
   primaryCta,
   secondaryCta,
+  video,
   compact = false,
 }: PageHeroProps) {
   const padTop = "calc(var(--spacing-nav-h) + 6rem)";
@@ -93,6 +96,20 @@ export default function PageHero({
         className="relative z-10 w-full max-w-max-w mx-auto px-s6 max-md:px-s4"
         style={{ paddingTop: padTop, paddingBottom: padBottom }}
       >
+        <div
+          className={video ? "page-hero-split" : ""}
+          style={
+            video
+              ? {
+                  display: "grid",
+                  gridTemplateColumns: "minmax(0, 1fr) minmax(0, 520px)",
+                  gap: "var(--spacing-s8)",
+                  alignItems: "center",
+                }
+              : undefined
+          }
+        >
+          <div>
         {crumbs && crumbs.length > 0 && (
           <RevealSection>
             <nav
@@ -204,6 +221,33 @@ export default function PageHero({
             </div>
           </RevealSection>
         )}
+          </div>
+
+          {video && (
+            <RevealSection delay={0.18}>
+              <div
+                className="relative w-full rounded-2xl overflow-hidden"
+                style={{
+                  aspectRatio: "16 / 9",
+                  background: "rgba(10,22,40,0.6)",
+                  border: "1px solid rgba(198,177,128,0.35)",
+                  boxShadow:
+                    "0 20px 60px -20px rgba(0,0,0,0.65), 0 0 0 1px rgba(255,255,255,0.04) inset",
+                }}
+              >
+                <iframe
+                  src={video.src}
+                  title={video.title || "Video"}
+                  className="absolute inset-0 w-full h-full"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
+              </div>
+            </RevealSection>
+          )}
+        </div>
       </div>
     </section>
   );
